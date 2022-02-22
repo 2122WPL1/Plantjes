@@ -21,6 +21,9 @@ Plantjes/Dao/SQLConnection.cs
 # Mono auto generated files
 mono_crash.*
 
+#planten connectie
+Plantjes/Dao/SQLConnection.cs
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
