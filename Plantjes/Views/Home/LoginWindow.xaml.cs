@@ -1,5 +1,7 @@
 ﻿using Plantjes.ViewModels;
+using System.Net;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Plantjes.Views.Home
 {/*written by kenny*/
@@ -12,6 +14,16 @@ namespace Plantjes.Views.Home
         {
             DataContext = GalaSoft.MvvmLight.Ioc.SimpleIoc.Default.GetInstance<ViewModelLogin>();
             InitializeComponent();
+        }
+
+        private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Xander - PasswordBox
+            if (this.DataContext != null)
+            {
+                ((dynamic)this.DataContext)._passwordInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
+            }
+            // end Xander
         }
     }
 }

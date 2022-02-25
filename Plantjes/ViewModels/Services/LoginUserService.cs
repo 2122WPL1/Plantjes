@@ -42,30 +42,39 @@ namespace Plantjes.ViewModels.Services
             else
             {//indien geen geldig emailadress, errorMessage opvullen
                 loginResult.errorMessage = "Dit is geen geldig Vives emailadres.";
+                return loginResult;
             }
-
-            //omzetten van het ingegeven passwoord naar een gehashed passwoord
-            var passwordBytes = Encoding.ASCII.GetBytes(passwordInput);
-            var md5Hasher = new MD5CryptoServiceProvider();
-            var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
-
-            if (gebruiker != null)
+            //xander - password check
+            if (passwordInput != null)
             {
-                _gebruiker = gebruiker;
-                loginResult.gebruiker = gebruiker;
-                //passwoord controle
-                if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
-                {   //indien true status naar LoggedIn zetten
-                    loginResult.loginStatus = LoginStatus.LoggedIn;
+                //omzetten van het ingegeven passwoord naar een gehashed passwoord
+                var passwordBytes = Encoding.ASCII.GetBytes(passwordInput);
+                var md5Hasher = new MD5CryptoServiceProvider();
+                var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
+
+                if (gebruiker != null)
+                {
+                    _gebruiker = gebruiker;
+                    loginResult.gebruiker = gebruiker;
+                    //passwoord controle
+                    if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
+                    {   //indien true status naar LoggedIn zetten
+                        loginResult.loginStatus = LoginStatus.LoggedIn;
+                    }
+                    else
+                    {   //indien false errorMessage opvullen
+                        loginResult.errorMessage += "\r\n" + "Het ingegeven wachtwoord is niet juist, probeer opnieuw";
+                    }
                 }
                 else
-                {   //indien false errorMessage opvullen
-                    loginResult.errorMessage += "\r\n"+"Het ingegeven wachtwoord is niet juist, probeer opnieuw";
+                {   // als de gebruiker niet gevonden wordt, errorMessage invullen
+                    loginResult.errorMessage = $"Er is geen account gevonden voor {userNameInput} " + "\r\n" + " gelieve eerst te registreren";
                 }
             }
             else
-            {   // als de gebruiker niet gevonden wordt, errorMessage invullen
-                loginResult.errorMessage = $"Er is geen account gevonden voor {userNameInput} "+"\r\n"+" gelieve eerst te registreren";
+            {
+                //xander - password check
+                loginResult.errorMessage = "Gelieve een wachtwoord in te geven.";
             }
             return loginResult;
         }

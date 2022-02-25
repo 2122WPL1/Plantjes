@@ -22,7 +22,7 @@
 
         <Grid.Background>
             <!--add background image-->
-            <ImageBrush  Stretch="Fill" ImageSource="../../../Image/waterval.jpeg"/>
+            <ImageBrush  Stretch="Fill" ImageSource="../../Image/waterval.jpeg"/>
         </Grid.Background>
 
         <Label x:Name="lblUserName" Content="gebruikersnaam:" HorizontalAlignment="Left" Margin="41,61,0,0" VerticalAlignment="Top" Foreground="White"/>
@@ -30,8 +30,8 @@
 
         <TextBox Name="txtGebruikersnaam"
                  Text="{Binding Path=userNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,61,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
-        <TextBox x:Name="txtWachtwoord"
-                 Text="{Binding passwordInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,92,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
+        <PasswordBox x:Name="txtWachtwoord" 
+                 PasswordChanged="txtWachtwoord_PasswordChanged" Margin="155,92,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
 
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="155,130,0,0" VerticalAlignment="Top" Height="25" Width="87" BorderBrush="#FF2AE633"  Background="#FF474029"   FontWeight="Bold" FontSize="15" Foreground="#FFA2BC5B" 
                 Command="{Binding Path= loginCommand}">
@@ -70,7 +70,7 @@
             </Button.Effect>
         </Button>
         <Label x:Name="lblError" Content="{Binding errorMessage}" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Top" Foreground="WhiteSmoke" Height="56" Width="396" FontWeight="Bold"/>
-
+        <MediaElement HorizontalAlignment="Left" Height="100" Margin="272,95,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
