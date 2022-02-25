@@ -9,7 +9,7 @@
     <Grid Margin="10,10,10,0" Height="700" VerticalAlignment="Top">
 
 
-        <Canvas x:Name="CvsZoeken" Visibility="Visible" Background="#99FFFFFF" HorizontalAlignment="Left" Width="214" Margin="10,0,0,10" Height="663" VerticalAlignment="Bottom" >
+        <Canvas x:Name="CvsZoeken" Visibility="Visible" Background="#FFA0A0A0" HorizontalAlignment="Left" Width="214" Margin="10,0,0,10" Height="663" VerticalAlignment="Bottom" >
             <Label Content="Type" Canvas.Top="12" Width="200" Height="28" Canvas.Left="8" BorderThickness="1" Background="#FFA2C8A2"  BorderBrush="#FF20331C">
                 <Label.Effect>
                     <DropShadowEffect/>

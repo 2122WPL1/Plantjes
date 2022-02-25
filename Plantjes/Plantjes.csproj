@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Image\waterval.jpeg" />
+    <None Remove="Views\Home\Usericon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,7 @@
     <Resource Include="Image\waterval.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\Home\Usericon.png" />
   </ItemGroup>
 
   <ItemGroup>
