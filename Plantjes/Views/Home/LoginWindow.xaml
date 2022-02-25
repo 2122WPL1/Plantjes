@@ -16,7 +16,7 @@
 
     </Window.Resources>
 
-    <Viewbox Height="300" Width="464">
+    <Viewbox MaxHeight="300" MaxWidth="464">
         <Grid Height="293" Width="473">
 
             <Label x:Name="lblUserName" Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Foreground="White"/>
