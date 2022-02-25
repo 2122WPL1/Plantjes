@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8EA9E2E-05F0-4D82-8313-BEFEFC9A570C" name="Gebruiker">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="FB43D2D1-FBBD-7816-40C6-E3FABC9B207E">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vivesnr" id="778736F1-832B-53F6-7564-FB5D91D03DF5">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="voornaam" id="889B5430-092D-518C-9E1B-AD07915BF0E0">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="achternaam" id="97A0787A-E08C-2A80-6A2C-BDADC297954F">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rol" id="C05A1AC7-7650-9145-6AC1-5A036C92454D">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="paswoord (hash)" id="190FE47F-9FF1-AFED-05EF-9D13E173DD1F">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT041</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emailadres" id="8F02FD39-7825-174D-6798-60F92DFA7C29">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_login" id="B7DA09D5-10ED-C421-114B-A002724DF121">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="425FDFAF-9DCA-DE54-19B8-F74506F88BD8" name="users_PK">
+<createdBy>vando</createdBy>
+<createdTime>2021-02-09 08:29:04 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB43D2D1-FBBD-7816-40C6-E3FABC9B207E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

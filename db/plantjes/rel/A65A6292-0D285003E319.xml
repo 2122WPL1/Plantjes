@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="plant_v4" id="A65A6292-4485-0F39-C6EA-0D285003E319" mainViewID="9C0F4F1A-C165-D74B-F157-1032A38F81BD">
+<createdBy>vando</createdBy>
+<createdTime>2021-03-09 14:44:30 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

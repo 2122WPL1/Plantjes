@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6E8F6A95-6858-4BDF-52D3-E90CED3F5624" name="Fenotype">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<notes><![CDATA[uiterlijk
+geel]]></notes>
+<ownerDesignName>plantjes</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="8CE1F08A-3F28-D035-719C-CD646694D206">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="plant_id" id="82486804-1EDB-890D-B635-712C88DA1548">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7F177D8A-01C3-0BB1-6A96-2F6D852BA9FC" referredColumn="31785041-2FE0-76AF-2A32-DB14D405FC98"/>
+</associations>
+</Column>
+<Column name="bladgrootte" id="6D688400-D203-EEE4-1334-1787C23911BD">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bladvorm" id="4035B4A0-F2F9-26A4-1AD8-E3168212DE58">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ratioBloeiBlad" id="DA720D4C-70C3-200C-B9B6-171D8AA37F4F">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-11 15:01:52 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="spruitfenologie" id="782B0D1D-A348-856B-A103-79CFB5D4AB4C">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 20:10:46 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bloeiwijze" id="62611E63-F4B7-1AAD-BC1F-781659DD531F">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-11 15:01:52 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="habitus" id="046E1338-FE6A-382A-C4E5-CA3C3017E52D">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-11 15:01:52 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="levensvorm" id="2027C1C9-95CE-E01D-A0BD-ABF8ADDA6F35">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-11 15:01:52 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="411A58DC-E737-52B9-2B02-D6F61A418DB3" name="fenotype_PK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:12 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8CE1F08A-3F28-D035-719C-CD646694D206"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69B6A1DD-7FCB-8D37-5367-78AD54B4E01B" name="fenotype_plant_FK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:42:43 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="82486804-1EDB-890D-B635-712C88DA1548"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

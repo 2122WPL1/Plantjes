@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AA5B04CD-D755-3FC3-01B1-41B4A8B34E09" name="Tfgsv_Soort">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="soortid" id="FB10F0C1-1B88-B36D-C449-2C229E0C6034">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="geslacht_geslacht_id" id="83268B2D-6BCD-93FE-EB8F-64610DA19D69">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="756A4B23-C1C9-8547-CE84-79CFFE6CEBA3" referredColumn="12AE5F5F-1240-73F9-331C-19FC4B5A161E"/>
+</associations>
+</Column>
+<Column name="soortnaam" id="7E2EBBA4-D15F-7D18-7C0F-441B9364AB6D">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NL naam" id="9EE47C6F-AE5D-18AF-3CEC-5D0C408CA9D7">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="142D4873-FFCA-2EFD-52AC-83800D87FF2E" name="soort_PK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB10F0C1-1B88-B36D-C449-2C229E0C6034"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="20DDD043-6551-7941-2DE2-F7E416A97EE5" name="soort_geslacht_FK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83268B2D-6BCD-93FE-EB8F-64610DA19D69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

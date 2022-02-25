@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="334591A2-E1E5-8421-6D02-5F6558C819C8" name="Comm_Levensvorm">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-01 10:52:39 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="E5147E0D-905B-9D1D-ECE2-5B81DBDFCEA3">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-01 10:52:54 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="levensvorm" id="3842F9BA-95A6-9D31-2C84-28B882107E3F">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-01 10:52:54 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9AA70C71-77E2-03C2-2D8A-00936547BCD8" name="levensvorm_PK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-01 10:52:54 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5147E0D-905B-9D1D-ECE2-5B81DBDFCEA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="plantjes" id="641BCA6A-FE34-DC68-F5EA-01893273C406" version="3.5">
+<createdBy>vando</createdBy>
+<createdTime>2020-01-27 08:59:32 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>641BCA6A-FE34-DC68-F5EA-01893273C406</designId>
+</OSDM_Design>

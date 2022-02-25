@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="854ECC8D-7991-14B0-4287-99A40FDF2A1A" containerWithKeyObject="8504B889-617D-05E8-51A6-362147BCE7CA" localFKIndex="6BB4CD36-A3EE-66D1-8DF3-141802102E70" name="variant_soort_FK">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-10 19:58:57 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<referredTableLongName>soort</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AA5B04CD-D755-3FC3-01B1-41B4A8B34E09</referredTableID>
+<keyObject>142D4873-FFCA-2EFD-52AC-83800D87FF2E</keyObject>
+<referredKeyID>142D4873-FFCA-2EFD-52AC-83800D87FF2E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>soortid</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

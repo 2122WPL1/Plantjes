@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="93F9B431-36B8-9235-A7CF-DBC73C999368" containerWithKeyObject="D61CE6EF-F4EE-4882-9596-84D7CB40CDA6" localFKIndex="06BFAAB2-EF92-A210-05CB-9DAFA8150318" name="abiotiek_plant_FK">
+<createdBy>vando</createdBy>
+<createdTime>2021-03-09 14:44:42 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<referredTableLongName>Plant</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>447106B6-1348-10F2-4197-27B073F3F39C</referredTableID>
+<keyObject>F2D8FF1B-9F54-5AA3-9E12-BDA6C610A58A</keyObject>
+<referredKeyID>F2D8FF1B-9F54-5AA3-9E12-BDA6C610A58A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>plant-id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

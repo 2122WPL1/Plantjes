@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="naakte data fenotype" id="9DD61402-10BB-BFAD-B4D8-CBC449635FC1" mainViewID="AFC1416F-7D9D-D17F-AD5D-2B3662B71504">
+<createdBy>vando</createdBy>
+<createdTime>2020-02-01 10:42:56 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

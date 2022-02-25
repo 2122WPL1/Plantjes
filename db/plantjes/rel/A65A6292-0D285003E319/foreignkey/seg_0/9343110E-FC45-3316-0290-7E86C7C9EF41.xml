@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9343110E-FC45-3316-0290-7E86C7C9EF41" containerWithKeyObject="5A4E2914-76EF-90B5-EB80-C541F1CF26C1" localFKIndex="919729E0-F304-0995-BB14-1B88DD6D27D2" name="fenotype_plant_FK">
+<createdBy>vando</createdBy>
+<createdTime>2021-03-09 14:44:42 UTC</createdTime>
+<ownerDesignName>plantjes</ownerDesignName>
+<referredTableLongName>Plant</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>447106B6-1348-10F2-4197-27B073F3F39C</referredTableID>
+<keyObject>F2D8FF1B-9F54-5AA3-9E12-BDA6C610A58A</keyObject>
+<referredKeyID>F2D8FF1B-9F54-5AA3-9E12-BDA6C610A58A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>plant-id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
