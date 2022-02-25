@@ -117,8 +117,8 @@ namespace Plantjes.ViewModels.Services
                     if (passwordInput == passwordRepeatInput)
                     {   //gebruiker registreren.
                         _dao.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, rolInput, emailAdresInput, passwordInput);
-                        Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
-                                       "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
+                        //Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
+                                      // "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
                         LoginWindow loginWindow = new LoginWindow();
                         loginWindow.Show();
                     }//foutafhandeling

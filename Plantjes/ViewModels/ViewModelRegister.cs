@@ -30,7 +30,13 @@ namespace Plantjes.ViewModels
             errorMessage = _loginService.RegisterButton(vivesNrInput, lastNameInput,
                  firstNameInput, emailAdresInput,
                  passwordInput, passwordRepeatInput, rolInput);
-            
+            //xander - close register window if no error
+            if (errorMessage == null || errorMessage == string.Empty)
+            {
+                Application.Current.Windows[0]?.Close();
+            }
+
+
         }
         #region MVVM TextFieldsBinding
         private string _vivesNrInput;
@@ -141,9 +147,6 @@ namespace Plantjes.ViewModels
             }
         }
         #endregion
-
-
-      
 
 }
 }
