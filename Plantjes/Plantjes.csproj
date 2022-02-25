@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="Views\Home\Usericon.png" />
     <None Remove="Views\Home\VivesLogo.png" />
+    <None Remove="Views\Home\vives_-_groen.png" />
+    <None Remove="Views\Home\vives_-_groen_-_geen_tekst.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +35,8 @@
   <ItemGroup>
     <Resource Include="Image\Usericon.png" />
     <Resource Include="Image\VivesLogo.png" />
+    <Resource Include="Image\vives_-_groen.png" />
+    <Resource Include="Image\vives_-_groen_-_geen_tekst.png" />
   </ItemGroup>
 
   <ItemGroup>
