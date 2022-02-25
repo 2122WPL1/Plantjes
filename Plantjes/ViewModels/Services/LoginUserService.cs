@@ -76,7 +76,7 @@ namespace Plantjes.ViewModels.Services
             string message= String.Empty;
             if (_gebruiker != null)
             {
-                message = $"ingelogd als: {_gebruiker.Voornaam} {_gebruiker.Achternaam}";
+                message = $"Ingelogd als: {_gebruiker.Voornaam} {_gebruiker.Achternaam}";
                 return message;
             }
             return message;
