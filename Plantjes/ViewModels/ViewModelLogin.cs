@@ -4,6 +4,8 @@ using Plantjes.Models.Classes;
 using Plantjes.Models.Enums;
 using Plantjes.Views.Home;
 using System.Windows;
+using System.Windows.Controls;
+using System.Security;
 //written by kenny
 namespace Plantjes.ViewModels
 {
@@ -15,7 +17,7 @@ namespace Plantjes.ViewModels
         public RelayCommand registerCommand { get; set; }
 
         private string _userNameInput;
-        private string _passwordInput;
+        public string _passwordInput;
         private string _errorMessage;
         private string _loggedInMessage;
 

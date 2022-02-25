@@ -22,10 +22,10 @@
             <Label x:Name="lblUserName" Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Foreground="White"/>
             <Label x:Name="lblPasword" Content="Wachtwoord:" HorizontalAlignment="Left" Margin="59,105,0,0" VerticalAlignment="Top" Foreground="White"/>
 
-            <TextBox Name="txtGebruikersnaam"
-                 Text="{Binding Path=userNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="147,74,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="235"/>
-            <TextBox x:Name="txtWachtwoord"
-                 Text="{Binding passwordInput, UpdateSourceTrigger=PropertyChanged}" Margin="146,105,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
+        <TextBox Name="txtGebruikersnaam"
+                 Text="{Binding Path=userNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,61,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
+        <PasswordBox x:Name="txtWachtwoord" 
+                 PasswordChanged="txtWachtwoord_PasswordChanged" Margin="155,92,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
 
             <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="146,143,0,0" VerticalAlignment="Top" Height="25" Width="88" BorderBrush="White"  Background="DarkGreen"   FontWeight="Bold" FontSize="15" Foreground="White" 
                 Command="{Binding Path= loginCommand}">
