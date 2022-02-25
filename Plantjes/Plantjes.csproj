@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Image\waterval.jpeg" />
+    <None Remove="Views\Home\Usericon.png" />
+    <None Remove="Views\Home\VivesLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Image\waterval.jpeg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Image\Usericon.png" />
+    <Resource Include="Image\VivesLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
