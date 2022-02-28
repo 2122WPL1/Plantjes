@@ -34,10 +34,11 @@
             Text="{Binding lastNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,124,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
             <TextBox x:Name="txtEmailAdres"
             Text="{Binding emailAdresInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,155,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
-            <TextBox x:Name="txtWachtwoord"
-            Text="{Binding passwordInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,186,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
-            <TextBox x:Name="txtWachtwoordHerhaal"
-            Text="{Binding passwordRepeatInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,217,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
+            <PasswordBox x:Name="txtWachtwoord" 
+                         PasswordChanged="txtWachtwoord_PasswordChanged" Margin="155,186,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
+            <PasswordBox x:Name="txtWachtwoordHerhaal" 
+                         PasswordChanged="txtWachtwoordHerhaal_OnPasswordChanged"  Margin="155,217,0,0"  VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265"/>
+
             <TextBox x:Name="txtRol"
                  Text="{Binding rolInput, UpdateSourceTrigger=PropertyChanged}" Margin="155,248,0,0"  TextWrapping="Wrap" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="265"/>
 

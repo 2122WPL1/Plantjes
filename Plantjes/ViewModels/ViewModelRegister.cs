@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using System;
+using GalaSoft.MvvmLight.Command;
 using Plantjes.ViewModels.Interfaces;
 using Plantjes.Views.Home;
 using System.Windows;
@@ -33,6 +34,8 @@ namespace Plantjes.ViewModels
             //xander - close register window if no error
             if (errorMessage == null || errorMessage == string.Empty)
             {
+                //xander - clear input on register
+                vivesNrInput = lastNameInput = firstNameInput = emailAdresInput = passwordInput = passwordRepeatInput = rolInput = String.Empty;
                 Application.Current.Windows[0]?.Close();
             }
 
