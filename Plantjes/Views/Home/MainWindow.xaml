@@ -12,29 +12,29 @@
 
     <Window.Resources>
         <!--deze zijn nodig voor de navigatie van de app-->
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelNameResult}">
-            <pages:UserControlName/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelNameResult}">
+            <pages:UserControlName />
         </DataTemplate>
 
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelHabitat}">
-            <pages:UserControlHabitat/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelHabitat}">
+            <pages:UserControlHabitat />
         </DataTemplate>
 
 
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelBloom}">
-            <pages:UserControlBloom/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelBloom}">
+            <pages:UserControlBloom />
         </DataTemplate>
 
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelGrow}">
-            <pages:UserControlGrow/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelGrow}">
+            <pages:UserControlGrow />
         </DataTemplate>
 
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelGrooming}">
-            <pages:UserControlGrooming/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelGrooming}">
+            <pages:UserControlGrooming />
         </DataTemplate>
 
-        <DataTemplate DataType = "{x:Type viewModels:ViewModelAppearance}">
-            <pages:UserControlAppearance/>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelAppearance}">
+            <pages:UserControlAppearance />
         </DataTemplate>
 
     </Window.Resources>
@@ -42,54 +42,52 @@
     <Viewbox MaxHeight="900" MaxWidth="1250">
         <Grid Opacity="0.9">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="46*"/>
-                <ColumnDefinition Width="579*"/>
+                <ColumnDefinition Width="46*" />
+                <ColumnDefinition Width="579*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="884.04"></RowDefinition>
+                <RowDefinition Height="884.04" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnNaam" Content="Plant opzoeken" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White"  Background="DarkGreen"   FontWeight="Bold" FontSize="22" Foreground="White" 
-                Command="{Binding mainNavigationCommand}"
-                CommandParameter="VIEWNAME" Grid.Column="1" >
+            <Button x:Name="btnNaam" Content="Plant opzoeken" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+                    Command="{Binding mainNavigationCommand}"
+                    CommandParameter="VIEWNAME" Grid.Column="1">
                 <Button.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect />
                 </Button.Effect>
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"/>
+                        <Setter Property="CornerRadius" Value="10" />
                     </Style>
                 </Button.Resources>
             </Button>
 
 
-            <ListBox x:Name="lstDetails" Visibility="Hidden" Margin="468,176,47,700" Background="#99FFFFFF" Grid.Column="1"/>
-
-
+            <ListBox x:Name="lstDetails" Visibility="Hidden" Margin="468,176,47,700" Background="#99FFFFFF" Grid.Column="1" />
 
 
             <!--<Frame x:Name="MainFrame" Margin="0,190,0,0"  Content=""/>-->
 
             <!-- hier doe je de binding van het currentViewModel !Clue van het systeem -->
             <Grid x:Name="MainContent" HorizontalAlignment="Left" Width="1230" Margin="10,101,0,0" Height="773" VerticalAlignment="Top" Grid.ColumnSpan="2">
-                <ContentControl Content="{Binding currentViewModel}" HorizontalAlignment="Left" Width="1210" Height="754" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <ContentControl Content="{Binding currentViewModel}" HorizontalAlignment="Left" Width="1210" Height="754" VerticalAlignment="Center" Margin="10,0,0,0" />
             </Grid>
-            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" HorizontalAlignment="Left" Margin="288,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White"  Background="DarkGreen"   FontWeight="Bold" FontSize="22" Foreground="White" 
-            Command="{Binding mainNavigationCommand}"
-            CommandParameter="VIEWNAME" Grid.Column="1" >
+            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" HorizontalAlignment="Left" Margin="288,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+                    Command="{Binding mainNavigationCommand}"
+                    CommandParameter="VIEWNAME" Grid.Column="1">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="10"/>
+                        <Setter Property="CornerRadius" Value="10" />
                     </Style>
                 </Button.Resources>
                 <Button.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect />
                 </Button.Effect>
             </Button>
-            <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,75,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19"/>
-            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/Usericon.png"/>
-            <Image Margin="19,14,1150,806" Grid.ColumnSpan="2" Source="/Image/vives_-_groen_-_geen_tekst.png"/>
+            <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,75,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
+            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/Usericon.png" />
+            <Image Margin="19,14,1150,806" Grid.ColumnSpan="2" Source="/Image/vives_-_groen_-_geen_tekst.png" />
         </Grid>
     </Viewbox>
 

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace Plantjes.Models.Db; 
 
-namespace Plantjes.Models.Db
-{
-    public partial class CommSocialbiliteit
-    {
-        public int Id { get; set; }
-        public string Sociabiliteit { get; set; }
-        public string Waarde { get; set; }
-    }
+public class CommSocialbiliteit {
+    public int Id { get; set; }
+    public string Sociabiliteit { get; set; }
+    public string Waarde { get; set; }
 }
