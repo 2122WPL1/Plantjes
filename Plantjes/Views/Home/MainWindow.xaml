@@ -86,8 +86,8 @@
                 </Button.Effect>
             </Button>
             <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,75,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
-            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/Usericon.png" />
-            <Image Margin="19,14,1150,806" Grid.ColumnSpan="2" Source="/Image/vives_-_groen_-_geen_tekst.png" />
+            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
+            <Image Margin="19,14,1150,806" Grid.ColumnSpan="2" Source="/Image/vives_big.png" />
         </Grid>
     </Viewbox>
 
