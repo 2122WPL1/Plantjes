@@ -40,8 +40,8 @@ public class ViewModelRegister : ViewModelBase {
     private string _firstNameInput;
     private string _lastNameInput;
     private string _emailAdresInput;
-    private string _passwordInput;
-    private string _passwordRepeatInput;
+    public string _passwordInput;
+    public string _passwordRepeatInput;
     private string _rolInput;
     private string _errorMessage;
 

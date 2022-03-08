@@ -558,11 +558,6 @@ public class plantenContext : DbContext {
 
             entity.HasOne(d => d.User).WithMany(p => p.UpdatePlants).HasForeignKey(d => d.Userid).OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("update_users_FK");
         });
-
-        OnModelCreatingPartial(modelBuilder);
     }
 
-    private void OnModelCreatingPartial(ModelBuilder modelBuilder) {
-        throw new NotImplementedException();
-    }
 }
