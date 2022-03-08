@@ -2,55 +2,48 @@
 using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Interfaces;
 
-namespace Plantjes.ViewModels
-{
-    public class ViewModelMain :ViewModelBase
-    {
-        //geschreven door kenny, adhv een voorbeeld van roy
+namespace Plantjes.ViewModels; 
 
-        private SimpleIoc iocc = SimpleIoc.Default;
-        private ViewModelRepo _viewModelRepo;
+public class ViewModelMain : ViewModelBase {
+    private ViewModelBase _currentViewModel;
+    private ISearchService _searchService;
 
-        private ViewModelBase _currentViewModel;
+    private readonly ViewModelRepo _viewModelRepo;
+    //geschreven door kenny, adhv een voorbeeld van roy
 
-        public MyICommand<string> mainNavigationCommand { get; set; }
-        public ViewModelBase currentViewModel
-        {
-            get { return _currentViewModel; }
-            set { SetProperty(ref _currentViewModel, value); }
+    private readonly SimpleIoc iocc = SimpleIoc.Default;
+
+    public IloginUserService loginUserService;
+
+    public ViewModelMain(IloginUserService loginUserService, ISearchService searchService) {
+        loggedInMessage = loginUserService.LoggedInMessage();
+        _viewModelRepo = iocc.GetInstance<ViewModelRepo>();
+        _searchService = searchService;
+        this.loginUserService = loginUserService;
+
+        mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
+        //  dialogService.ShowMessageBox(this, "", "");
+    }
+
+    public MyICommand<string> mainNavigationCommand { get; set; }
+
+    public ViewModelBase currentViewModel {
+        get => _currentViewModel;
+        set => SetProperty(ref _currentViewModel, value);
+    }
+
+    private string _loggedInMessage { get; set; }
+
+    public string loggedInMessage {
+        get => _loggedInMessage;
+        set {
+            _loggedInMessage = value;
+
+            RaisePropertyChanged("loggedInMessage");
         }
+    }
 
-        public IloginUserService loginUserService;
-        private ISearchService _searchService;
-        public ViewModelMain(IloginUserService loginUserService, ISearchService searchService)
-        {
-            loggedInMessage = loginUserService.LoggedInMessage();
-            this._viewModelRepo = iocc.GetInstance<ViewModelRepo>();
-            this._searchService = searchService;
-            this.loginUserService = loginUserService;
-
-            mainNavigationCommand = new MyICommand<string>(this._onNavigationChanged);
-            //  dialogService.ShowMessageBox(this, "", "");
-        }
-
-        private string _loggedInMessage { get; set; }
-        public string loggedInMessage
-        {
-            get
-            {
-                return _loggedInMessage;
-            }
-            set
-            {
-                _loggedInMessage = value;
-
-                RaisePropertyChanged("loggedInMessage");
-            }
-        }
-
-        private void _onNavigationChanged(string userControlName)
-        {
-            this.currentViewModel = this._viewModelRepo.GetViewModel(userControlName);
-        }
+    private void _onNavigationChanged(string userControlName) {
+        currentViewModel = _viewModelRepo.GetViewModel(userControlName);
     }
 }

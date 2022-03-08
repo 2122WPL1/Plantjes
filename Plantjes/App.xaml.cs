@@ -1,41 +1,36 @@
-﻿using Plantjes.ViewModels.HelpClasses;
-using System.Windows;
+﻿using System.Windows;
+using Plantjes.ViewModels.HelpClasses;
 
-namespace Plantjes
-{
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        public App()
-        {
-            //SearchService.CreateInstance();
-            // services registeren
+namespace Plantjes; 
 
-            ServiceProvider.RegisterServices();
+/// <summary>
+///     Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application {
+    public App() {
+        //SearchService.CreateInstance();
+        // services registeren
 
-            // VMprovider toevoegen als "static resource" in MvvM zodat die kan worden gebruikt in de Views om
-            // de ViewModels te koppelen aan de DataContext
-            // instantie die over de hele applicatie kan worden gebruikt in de Views met onderstaande binding
-            // <Window: ...
-            // DataContext="{Binding Source={ StaticResource VMProvider }, Path=MainWindowViewModel }" 
-            // ... 
-            // >
+        ServiceProvider.RegisterServices();
 
-            //var iocc = SimpleIoc.Default;
+        // VMprovider toevoegen als "static resource" in MvvM zodat die kan worden gebruikt in de Views om
+        // de ViewModels te koppelen aan de DataContext
+        // instantie die over de hele applicatie kan worden gebruikt in de Views met onderstaande binding
+        // <Window: ...
+        // DataContext="{Binding Source={ StaticResource VMProvider }, Path=MainWindowViewModel }" 
+        // ... 
+        // >
 
-            //ViewModelRepo.CreateInstance();
+        //var iocc = SimpleIoc.Default;
+
+        //ViewModelRepo.CreateInstance();
 
 
-            this.Resources.Add("VMProvider", new ViewModelProvider());
+        Resources.Add("VMProvider", new ViewModelProvider());
 
-            // de viewmodellen kunnen ook worden toegekend aan de 
-            // datacontext van de view met GetInstance methode van de IoC Container
-            // in de code behind van de view (yyy.xaml.cs)
-            //vb. DataContext = GalaSoft.MvvmLight.Ioc.SimpleIoc.Default.GetInstance<MainWindowViewModel>
-        }
-
-
+        // de viewmodellen kunnen ook worden toegekend aan de 
+        // datacontext van de view met GetInstance methode van de IoC Container
+        // in de code behind van de view (yyy.xaml.cs)
+        //vb. DataContext = GalaSoft.MvvmLight.Ioc.SimpleIoc.Default.GetInstance<MainWindowViewModel>
     }
 }
