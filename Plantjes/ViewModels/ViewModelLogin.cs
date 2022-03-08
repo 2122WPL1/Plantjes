@@ -55,12 +55,12 @@ namespace Plantjes.ViewModels
                 }
                 else
                 {
-                    errorMessage = loginResult.errorMessage;
+                    errorMessage = loginResult.errorMessage + ".";
                 }
             }
             else
             {
-                errorMessage = "gebruikersnaam invullen";
+                errorMessage = "Gebruikersnaam invullen.";
             }
 
         }

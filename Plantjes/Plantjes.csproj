@@ -34,7 +34,6 @@
 
   <ItemGroup>
     <Resource Include="Image\Usericon.png" />
-    <Resource Include="Image\VivesLogo.png" />
     <Resource Include="Image\vives_-_groen.png" />
     <Resource Include="Image\vives_-_groen_-_geen_tekst.png" />
   </ItemGroup>

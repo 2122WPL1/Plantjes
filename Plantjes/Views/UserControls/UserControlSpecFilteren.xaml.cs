@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,11 +16,11 @@ using System.Windows.Shapes;
 namespace Plantjes.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for UserControlName.xaml
+    /// Interaction logic for UserControlSpecFilteren.xaml
     /// </summary>
-    public partial class UserControlName : UserControl
+    public partial class UserControlSpecFilteren : UserControl
     {
-        public UserControlName()
+        public UserControlSpecFilteren()
         {
             InitializeComponent();
         }
