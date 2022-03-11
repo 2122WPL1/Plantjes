@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using GalaSoft.MvvmLight.Command;
+using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Enums;
 using Plantjes.ViewModels.Interfaces;
 using Plantjes.Views.Home;

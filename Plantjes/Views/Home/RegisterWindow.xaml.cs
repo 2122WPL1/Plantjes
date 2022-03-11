@@ -1,17 +1,17 @@
 ﻿using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using GalaSoft.MvvmLight.Ioc;
 using Plantjes.ViewModels;
 
-namespace Plantjes.Views.Home; 
+namespace Plantjes.Views.Home;
 
 /// <summary>
 ///     Interaction logic for RegisterWindow.xaml
 /// </summary>
 public partial class RegisterWindow : Window {
     public RegisterWindow() {
-        DataContext = SimpleIoc.Default.GetInstance<ViewModelRegister>();
+        DataContext = App.Current.Services.GetService(typeof(ViewModelRegister));
+        ;
         InitializeComponent();
     }
 

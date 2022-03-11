@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using GalaSoft.MvvmLight.Ioc;
 using Plantjes.ViewModels;
 
 namespace Plantjes.Views.Home; 
@@ -9,7 +8,7 @@ namespace Plantjes.Views.Home;
 /// </summary>
 public partial class MainWindow : Window {
     public MainWindow() {
-        DataContext = SimpleIoc.Default.GetInstance<ViewModelMain>();
+        DataContext = App.Current.Services.GetService(typeof(ViewModelMain));
         InitializeComponent();
     }
 }

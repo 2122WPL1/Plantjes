@@ -1,24 +1,22 @@
 ﻿using System.Collections.Generic;
-using GalaSoft.MvvmLight.Ioc;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 //geschreven door kenny adhv een voorbeeld van roy
 //herschreven door kenny voor gebruik met ioc
 public class ViewModelRepo {
     //singleton pattern
-    private static readonly SimpleIoc iocc = SimpleIoc.Default;
     //private static ViewModelRepo instance;
 
     private readonly Dictionary<string, ViewModelBase> _viewModels = new();
-    private readonly ViewModelAppearance viewModelAppearance = iocc.GetInstance<ViewModelAppearance>();
-    private readonly ViewModelBloom viewModelBloom = iocc.GetInstance<ViewModelBloom>();
-    private readonly ViewModelGrooming viewModelGrooming = iocc.GetInstance<ViewModelGrooming>();
-    private readonly ViewModelGrow viewModelGrow = iocc.GetInstance<ViewModelGrow>();
-    private readonly ViewModelHabitat viewModelHabitat = iocc.GetInstance<ViewModelHabitat>();
+    private readonly ViewModelAppearance viewModelAppearance = (ViewModelAppearance)App.Current.Services.GetService(typeof(ViewModelAppearance));
+    private readonly ViewModelBloom viewModelBloom = (ViewModelBloom)App.Current.Services.GetService(typeof(ViewModelBloom));
+    private readonly ViewModelGrooming viewModelGrooming = (ViewModelGrooming)App.Current.Services.GetService(typeof(ViewModelGrooming));
+    private readonly ViewModelGrow viewModelGrow = (ViewModelGrow)App.Current.Services.GetService(typeof(ViewModelGrow));
+    private readonly ViewModelHabitat viewModelHabitat = (ViewModelHabitat)App.Current.Services.GetService(typeof(ViewModelHabitat));
 
-    private readonly ViewModelNameResult viewModelNameResult = iocc.GetInstance<ViewModelNameResult>();
-    private readonly ViewModelRegister viewModelRegister = iocc.GetInstance<ViewModelRegister>();
+    private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
+    private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
 
     public ViewModelRepo() {
         //hier een extra lijn code per user control

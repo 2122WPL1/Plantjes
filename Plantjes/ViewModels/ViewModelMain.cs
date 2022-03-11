@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Ioc;
-using Plantjes.ViewModels.HelpClasses;
+﻿using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Interfaces;
 
 namespace Plantjes.ViewModels; 
@@ -10,14 +9,13 @@ public class ViewModelMain : ViewModelBase {
 
     private readonly ViewModelRepo _viewModelRepo;
     //geschreven door kenny, adhv een voorbeeld van roy
-
-    private readonly SimpleIoc iocc = SimpleIoc.Default;
-
+    
     public IloginUserService loginUserService;
 
     public ViewModelMain(IloginUserService loginUserService, ISearchService searchService) {
         loggedInMessage = loginUserService.LoggedInMessage();
-        _viewModelRepo = iocc.GetInstance<ViewModelRepo>();
+        
+        _viewModelRepo = (ViewModelRepo)App.Current.Services.GetService(typeof(ViewModelRepo));
         _searchService = searchService;
         this.loginUserService = loginUserService;
 
