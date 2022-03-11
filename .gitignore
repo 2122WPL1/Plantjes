@@ -7,7 +7,8 @@
 # Plantjes connectie
 Plantjes/Dao/SQLConnection.cs
 
-
+# Jetbrains/Rider
+.idea/
 # User-specific files
 *.rsuser
 *.suo
@@ -369,3 +370,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/db
+/Plantjes/ClassDiagram1.cd

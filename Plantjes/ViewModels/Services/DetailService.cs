@@ -1,26 +1,21 @@
-﻿using GalaSoft.MvvmLight.Ioc;
-using Plantjes.ViewModels.Interfaces;
+﻿using System.ComponentModel;
 using Plantjes.Dao;
-using System.ComponentModel;
+using Plantjes.ViewModels.Interfaces;
 
-namespace Plantjes.ViewModels.Services
-{
-    public class DetailService : IDetailService, INotifyPropertyChanged
-    {
-        //Robin
-        //Op dit moment wordt de service niet gebruikt, deze is opgezet om later de plantdetails te kunnen weergeven en te kunnen toevoegen in alle usercontrols
+namespace Plantjes.ViewModels.Services;
 
-        private DAOLogic _dao;
-        private static DetailService _detailService;
-        private static SimpleIoc iocc = SimpleIoc.Default;
-        private ISearchService _searchService = iocc.GetInstance<ISearchService>();
+public class DetailService : IDetailService, INotifyPropertyChanged {
+    private static DetailService _detailService;
+    //Robin
+    //Op dit moment wordt de service niet gebruikt, deze is opgezet om later de plantdetails te kunnen weergeven en te kunnen toevoegen in alle usercontrols
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public DetailService(ISearchService searchService)
-        {
-            this._dao = DAOLogic.Instance();
-            _searchService = searchService;
-        }
-        
+    private DAOLogic _dao;
+    private ISearchService _searchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
+
+    public DetailService(ISearchService searchService) {
+        _dao = DAOLogic.Instance();
+        _searchService = searchService;
     }
+
+    public event PropertyChangedEventHandler PropertyChanged;
 }

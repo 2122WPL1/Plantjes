@@ -1,48 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GalaSoft.MvvmLight.Ioc;
-using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
-using Plantjes.ViewModels;
+﻿using System.Collections.Generic;
 
-namespace Plantjes.ViewModels
-{
-    //geschreven door kenny adhv een voorbeeld van roy
-    //herschreven door kenny voor gebruik met ioc
-    public class ViewModelRepo
-    {   //singleton pattern
-        private static SimpleIoc iocc = SimpleIoc.Default;
-        //private static ViewModelRepo instance;
+namespace Plantjes.ViewModels;
 
-        private Dictionary<string, ViewModelBase> _viewModels = new Dictionary<string, ViewModelBase>();
-       
-        private ViewModelNameResult viewModelNameResult = iocc.GetInstance<ViewModelNameResult>();
-        private ViewModelRegister viewModelRegister = iocc.GetInstance<ViewModelRegister>();
-        private ViewModelHabitat viewModelHabitat = iocc.GetInstance<ViewModelHabitat>();
-        private ViewModelBloom viewModelBloom = iocc.GetInstance<ViewModelBloom>();
-        private ViewModelGrow viewModelGrow = iocc.GetInstance<ViewModelGrow>();
-        private ViewModelAppearance viewModelAppearance = iocc.GetInstance<ViewModelAppearance>();
-        private ViewModelGrooming viewModelGrooming = iocc.GetInstance<ViewModelGrooming>();
+//geschreven door kenny adhv een voorbeeld van roy
+//herschreven door kenny voor gebruik met ioc
+public class ViewModelRepo {
+    //singleton pattern
+    //private static ViewModelRepo instance;
 
-        public ViewModelRepo()
-        {
-            //hier een extra lijn code per user control
-            _viewModels.Add("VIEWNAME", viewModelNameResult);
-            _viewModels.Add("VIEWHABITAT", viewModelHabitat);
-            _viewModels.Add("VIEWBLOOM", viewModelBloom);
-            _viewModels.Add("VIEWGROW", viewModelGrow);
-            _viewModels.Add("VIEWAPPEARANCE", viewModelAppearance);
-            _viewModels.Add("VIEWGROOMING",viewModelGrooming);
-            _viewModels.Add("VIEWREGISTER", viewModelRegister);
-        }
-        //
-        public ViewModelBase GetViewModel(string modelName)
-        {
-            ViewModelBase result;
-            var ok = this._viewModels.TryGetValue(modelName, out result);
-            return ok ? result : null;
-        }
+    private readonly Dictionary<string, ViewModelBase> _viewModels = new();
+    private readonly ViewModelAppearance viewModelAppearance = (ViewModelAppearance)App.Current.Services.GetService(typeof(ViewModelAppearance));
+    private readonly ViewModelBloom viewModelBloom = (ViewModelBloom)App.Current.Services.GetService(typeof(ViewModelBloom));
+    private readonly ViewModelGrooming viewModelGrooming = (ViewModelGrooming)App.Current.Services.GetService(typeof(ViewModelGrooming));
+    private readonly ViewModelGrow viewModelGrow = (ViewModelGrow)App.Current.Services.GetService(typeof(ViewModelGrow));
+    private readonly ViewModelHabitat viewModelHabitat = (ViewModelHabitat)App.Current.Services.GetService(typeof(ViewModelHabitat));
+
+    private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
+    private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
+
+    public ViewModelRepo() {
+        //hier een extra lijn code per user control
+        _viewModels.Add("VIEWNAME", viewModelNameResult);
+        _viewModels.Add("VIEWHABITAT", viewModelHabitat);
+        _viewModels.Add("VIEWBLOOM", viewModelBloom);
+        _viewModels.Add("VIEWGROW", viewModelGrow);
+        _viewModels.Add("VIEWAPPEARANCE", viewModelAppearance);
+        _viewModels.Add("VIEWGROOMING", viewModelGrooming);
+        _viewModels.Add("VIEWREGISTER", viewModelRegister);
     }
 
+    //
+    public ViewModelBase GetViewModel(string modelName) {
+        ViewModelBase result;
+        var ok = _viewModels.TryGetValue(modelName, out result);
+        return ok ? result : null;
+    }
 }

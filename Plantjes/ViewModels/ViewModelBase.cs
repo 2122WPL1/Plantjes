@@ -1,38 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq.Expressions;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Plantjes.ViewModels
-{
-    public class ViewModelBase : INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
+namespace Plantjes.ViewModels; 
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string property = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+public class ViewModelBase : INotifyPropertyChanged {
+    public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void SetProperty<T>(ref T member, T val,
-            [CallerMemberName] string propertyName = null)
-        {
-            if (object.Equals(member, val)) return;
+    protected virtual void OnPropertyChanged([CallerMemberName] string property = null) {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    }
 
-            member = val;
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+    protected virtual void SetProperty<T>(ref T member, T val, [CallerMemberName] string propertyName = null) {
+        if (Equals(member, val)) return;
 
-        protected virtual void RaisePropertyChanged(string propName)
-        {
-            if (PropertyChanged != null)
-            {
-                Task.Run(() => PropertyChanged(this, new PropertyChangedEventArgs(propName)));
-            }
-        }
-        
+        member = val;
+        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    protected virtual void RaisePropertyChanged(string propName) {
+        if (PropertyChanged != null) Task.Run(() => PropertyChanged(this, new PropertyChangedEventArgs(propName)));
     }
 }

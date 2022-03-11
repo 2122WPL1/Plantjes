@@ -1,18 +1,14 @@
-﻿using GalaSoft.MvvmLight.Ioc;
+﻿using System.Windows;
 using Plantjes.ViewModels;
-using System.Windows;
 
-namespace Plantjes.Views.Home
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            DataContext = SimpleIoc.Default.GetInstance<ViewModelMain>();
-            InitializeComponent();
-        }
+namespace Plantjes.Views.Home; 
+
+/// <summary>
+///     Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window {
+    public MainWindow() {
+        DataContext = App.Current.Services.GetService(typeof(ViewModelMain));
+        InitializeComponent();
     }
 }
