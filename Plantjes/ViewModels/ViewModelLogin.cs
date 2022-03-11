@@ -30,11 +30,8 @@ public class ViewModelLogin : ViewModelBase {
         get => _errorMessage;
         set {
             _errorMessage = value;
-
-            RaisePropertyChanged("errorMessage");
         }
     }
-
     public string userNameInput {
         get => _userNameInput;
         set {
@@ -76,7 +73,8 @@ public class ViewModelLogin : ViewModelBase {
             }
         }
         else {
-            errorMessage = "gebruikersnaam invullen";
+            errorMessage = "Gebruikersnaam invullen.";
         }
+        RaisePropertyChanged("errorMessage");
     }
 }

@@ -9,8 +9,8 @@
     <Grid Margin="10,10,10,0" Height="700" VerticalAlignment="Top">
 
 
-        <Canvas x:Name="CvsZoeken" Visibility="Visible" Background="#FFA0A0A0" HorizontalAlignment="Left" Width="214" Margin="10,0,0,10" Height="663" VerticalAlignment="Bottom">
-            <Label Content="Type" Canvas.Top="12" Width="200" Height="28" Canvas.Left="8" BorderThickness="1" Background="#FFA2C8A2" BorderBrush="#FF20331C">
+        <Canvas x:Name="CvsZoeken" Visibility="Visible" Background="#FFA0A0A0" HorizontalAlignment="Left" Width="214" Margin="10,0,0,10" Height="626" VerticalAlignment="Bottom" >
+            <Label Content="Type" Canvas.Top="12" Width="200" Height="28" Canvas.Left="7" BorderThickness="1" Background="#FFA2C8A2"  BorderBrush="#FF20331C">
                 <Label.Effect>
                     <DropShadowEffect />
                 </Label.Effect>
@@ -19,7 +19,7 @@
                       ItemsSource="{Binding cmbTypes}"
                       DisplayMemberPath="Planttypenaam"
                       SelectedValuePath="Planttypeid"
-                      SelectedItem="{Binding Path=SelectedType, Mode=TwoWay}" IsEditable="True">
+                      SelectedItem="{Binding Path=SelectedType, Mode=TwoWay}" IsEditable="True" SelectionChanged="cmbType_SelectionChanged">
 
                 <ComboBox.Effect>
                     <DropShadowEffect />
@@ -41,12 +41,12 @@
                     <DropShadowEffect />
                 </Label.Effect>
             </Label>
-            <Label Content="Naam" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2" Height="28" Canvas.Left="7" Canvas.Top="410" Width="200" RenderTransformOrigin="0.487,0.673">
+            <Label Content="Naam" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2"  Height="28" Canvas.Left="7" Canvas.Top="279" Width="200" RenderTransformOrigin="0.487,0.673">
                 <Label.Effect>
                     <DropShadowEffect />
                 </Label.Effect>
             </Label>
-            <TextBox x:Name="txtNaam" Text="{Binding Path=SelectedNederlandseNaam}" TextWrapping="Wrap" Height="28" Canvas.Left="7" Canvas.Top="443" Width="200">
+            <TextBox x:Name="txtNaam" Text="{Binding Path=SelectedNederlandseNaam}"  TextWrapping="Wrap" Height="28" Canvas.Left="7" Canvas.Top="312" Width="200">
                 <TextBox.Effect>
                     <DropShadowEffect />
                 </TextBox.Effect>
@@ -65,13 +65,13 @@
                     <DropShadowEffect />
                 </Label.Effect>
             </Label>
-            <Label Content="Soort" Canvas.Left="6" Canvas.Top="212" Width="198" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2" Height="28">
+            <Label Content="Soort" Canvas.Left="7" Canvas.Top="212" Width="200" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2"  Height="28">
                 <Label.Effect>
                     <DropShadowEffect />
                 </Label.Effect>
             </Label>
-            <ComboBox x:Name="cmbGeslacht" Canvas.Left="6" Canvas.Top="177" Width="200" Height="30"
-                      ItemsSource="{Binding cmbGeslacht}"
+            <ComboBox x:Name="cmbGeslacht" Canvas.Left="7" Canvas.Top="177" Width="200" Height="30"
+                      ItemsSource="{Binding cmbGeslacht}" 
                       DisplayMemberPath="Geslachtnaam"
                       SelectedValuePath="GeslachtId"
                       SelectedItem="{Binding Path=SelectedGeslacht, Mode=TwoWay}" IsEditable="True">
@@ -79,7 +79,7 @@
                     <DropShadowEffect />
                 </ComboBox.Effect>
             </ComboBox>
-            <ComboBox x:Name="cmbSoort" Canvas.Left="6" Canvas.Top="245" Width="198" Height="28"
+            <ComboBox x:Name="cmbSoort" Canvas.Left="7" Canvas.Top="245" Width="200" Height="28"
                       ItemsSource="{Binding cmbSoort}"
                       DisplayMemberPath="Soortnaam"
                       SelectedValuePath="Soortid"
@@ -88,6 +88,7 @@
                     <DropShadowEffect />
                 </ComboBox.Effect>
             </ComboBox>
+            <Button x:Name="btnZoeken" Content="Zoeken" FontSize="30" BorderBrush="#FF2AE633"  Background="#FF474029" FontWeight="Bold" FontFamily="Rockwell Nova Extra Bold" Foreground="#FFABC36C" 
             <ComboBox x:Name="cmbVariant" Canvas.Left="6" Canvas.Top="377" Width="198" Height="28"
                       ItemsSource="{Binding cmbVariant}"
                       DisplayMemberPath="Variantnaam"
@@ -106,7 +107,8 @@
             </ComboBox>
             <Button x:Name="btnZoeken" Content="Zoeken" FontSize="24" BorderBrush="#FF2AE633" Background="#FF474029" FontWeight="Bold" FontFamily="Wide Latin" Foreground="#FFA2BC5B"
                     Command="{Binding SearchCommand}"
-                    Height="56" Canvas.Left="7" Canvas.Top="476" Width="196">
+            Height="54" Canvas.Left="4" Canvas.Top="460" Width="198"
+            >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10" />
@@ -117,8 +119,8 @@
                 </Button.Effect>
             </Button>
             <Button x:Name="btnNameReset"
-                    Content="Reset" Background="#FF474029" BorderBrush="#FF40E948" Foreground="#FFABC36C" FontWeight="Bold" FontSize="36"
-                    Command="{Binding ResetCommand}" Height="54" Canvas.Left="4" Canvas.Top="532" Width="198">
+                    Content="Reset" Background="#FF474029" BorderBrush="#FF40E948" Foreground="#FFABC36C" FontWeight="Bold" FontSize="30"
+                    Command="{Binding ResetCommand}" Height="54" Canvas.Left="4" Canvas.Top="532" Width="198" FontFamily="Rockwell Nova Extra Bold">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10" />
@@ -127,6 +129,19 @@
                 <Button.Effect>
                     <DropShadowEffect />
                 </Button.Effect>
+            </Button>
+            <Button x:Name="btnFilteren" Background="#FF474029" BorderBrush="#FF40E948" Foreground="#FFABC36C" FontWeight="Bold" FontSize="30"
+                    Command="{Binding FilterCommand}" Height="85" Canvas.Left="4" Canvas.Top="358" Width="198" FontFamily="Rockwell Nova Extra Bold">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+
+                <TextBlock Text="Specifiek Filteren" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
             </Button>
         </Canvas>
 
