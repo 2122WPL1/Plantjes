@@ -9,6 +9,31 @@
   <ItemGroup>
     <None Remove="Image\waterval.jpeg" />
     <None Remove="Views\Home\Usericon.png" />
+    <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
+    <None Remove="Views\UserControls\aar.png" />
+    <None Remove="Views\UserControls\arching.png" />
+    <None Remove="Views\UserControls\blad.jpg" />
+    <None Remove="Views\UserControls\bloem.jpg" />
+    <None Remove="Views\UserControls\bol of knop.png" />
+    <None Remove="Views\UserControls\kruipend, horizontaal groeiend of  mattenvormend.png" />
+    <None Remove="Views\UserControls\kussenvormend.png" />
+    <None Remove="Views\UserControls\margrietachtig.png" />
+    <None Remove="Views\UserControls\mounded.png" />
+    <None Remove="Views\UserControls\parasolvormig.png" />
+    <None Remove="Views\UserControls\plant.jpg" />
+    <None Remove="Views\UserControls\pluim.png" />
+    <None Remove="Views\UserControls\pollenvormers.png" />
+    <None Remove="Views\UserControls\rond of waaiervormig.png" />
+    <None Remove="Views\UserControls\schermbloemig.png" />
+    <None Remove="Views\UserControls\succulenten.png" />
+    <None Remove="Views\UserControls\transparant.png" />
+    <None Remove="Views\UserControls\tufted.png" />
+    <None Remove="Views\UserControls\uitbuigend.png" />
+    <None Remove="Views\UserControls\Unknown.png" />
+    <None Remove="Views\UserControls\upright-arching.png" />
+    <None Remove="Views\UserControls\upright-divergent.png" />
+    <None Remove="Views\UserControls\upright-erect.png" />
+    <None Remove="Views\UserControls\zuilvormig.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +59,31 @@
     <Resource Include="Image\waterval.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Views\Home\Usericon.png" />
+    <Resource Include="Image\Unknown.png" />
+    <Resource Include="Image\aar.png" />
+    <Resource Include="Image\schermbloemig.png" />
+    <Resource Include="Image\pluim.png" />
+    <Resource Include="Image\bol of knop.png" />
+    <Resource Include="Image\margrietachtig.png" />
+    <Resource Include="Image\transparant.png" />
+    <Resource Include="Image\blad.jpg" />
+    <Resource Include="Image\bloem.jpg" />
+    <Resource Include="Image\plant.jpg" />
+    <Resource Include="Image\%28wortel%29 rozet-planten.png" />
+    <Resource Include="Image\arching.png" />
+    <Resource Include="Image\kruipend, horizontaal groeiend of  mattenvormend.png" />
+    <Resource Include="Image\kussenvormend.png" />
+    <Resource Include="Image\mounded.png" />
+    <Resource Include="Image\parasolvormig.png" />
+    <Resource Include="Image\pollenvormers.png" />
+    <Resource Include="Image\rond of waaiervormig.png" />
+    <Resource Include="Image\succulenten.png" />
+    <Resource Include="Image\tufted.png" />
+    <Resource Include="Image\uitbuigend.png" />
+    <Resource Include="Image\upright-arching.png" />
+    <Resource Include="Image\upright-divergent.png" />
+    <Resource Include="Image\upright-erect.png" />
+    <Resource Include="Views\UserControls\zuilvormig.png" />
   </ItemGroup>
 
   <ItemGroup>
