@@ -1,14 +1,12 @@
 ﻿using System.Windows;
-using GalaSoft.MvvmLight.Ioc;
 using Plantjes.Dao;
 using Plantjes.ViewModels.Interfaces;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelGrow : ViewModelBase {
-    private static readonly SimpleIoc iocc = SimpleIoc.Default;
     private DAOLogic _dao;
-    private IDetailService _detailService = iocc.GetInstance<IDetailService>();
+    private IDetailService _detailService = (IDetailService)App.Current.Services.GetService(typeof(IDetailService));
 
     public ViewModelGrow(IDetailService detailservice) {
         _detailService = detailservice;

@@ -1,19 +1,17 @@
 ﻿using System.Windows;
-using GalaSoft.MvvmLight.Ioc;
 using Plantjes.Dao;
 using Plantjes.ViewModels.Interfaces;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelBloom : ViewModelBase {
-    private static readonly SimpleIoc iocc = SimpleIoc.Default;
     // Using a DependencyProperty as the backing store for 
     //IsCheckBoxChecked.  This enables animation, styling, binding, etc...
 
     private DAOLogic _dao;
-    private IDetailService _detailService = iocc.GetInstance<IDetailService>();
+    private IDetailService _detailService = (IDetailService)App.Current.Services.GetService(typeof(IDetailService));
 
-    private ISearchService _SearchService = iocc.GetInstance<ISearchService>();
+    private ISearchService _SearchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
 
     //geschreven door christophe, op basis van een voorbeeld van owen
     private string _selectedBloeiHoogte;

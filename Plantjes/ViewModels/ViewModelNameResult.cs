@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Media;
-using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.Interfaces;
 
@@ -9,8 +8,7 @@ namespace Plantjes.ViewModels;
 
 public class ViewModelNameResult : ViewModelBase {
     //private ServiceProvider _serviceProvider;
-    private static readonly SimpleIoc iocc = SimpleIoc.Default;
-    private readonly ISearchService _searchService = iocc.GetInstance<ISearchService>();
+    private readonly ISearchService _searchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
 
     public ViewModelNameResult(ISearchService searchService) {
         _searchService = searchService;
