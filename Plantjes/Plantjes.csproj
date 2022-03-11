@@ -54,9 +54,6 @@
     </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Image\waterval.jpeg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Image\Unknown.png" />
     <Resource Include="Image\aar.png" />
     <Resource Include="Image\schermbloemig.png" />
@@ -81,7 +78,6 @@
     <Resource Include="Image\upright-arching.png" />
     <Resource Include="Image\upright-divergent.png" />
     <Resource Include="Image\upright-erect.png" />
-    <Resource Include="Views\UserControls\zuilvormig.png" />
   </ItemGroup>
     <ItemGroup>
         <Resource Include="Image\user.png" />
