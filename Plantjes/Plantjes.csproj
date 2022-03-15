@@ -4,6 +4,7 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>2470011.ico</ApplicationIcon>
     </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +41,9 @@
         <None Remove="Views\Home\VivesLogo.png" />
         <None Remove="Views\Home\vives_-_groen.png" />
         <None Remove="Views\Home\vives_-_groen_-_geen_tekst.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="2470011.ico" />
     </ItemGroup>
 
     <ItemGroup>
