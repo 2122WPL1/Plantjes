@@ -25,17 +25,6 @@
                     <DropShadowEffect />
                 </ComboBox.Effect>
             </ComboBox>
-            <Label Content="Ratio blad/bloei" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2" Height="28" Canvas.Left="4" Canvas.Top="278" Width="200">
-
-                <Label.Effect>
-                    <DropShadowEffect />
-                </Label.Effect>
-            </Label>
-            <Label Content="Variant" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2" Height="28" Canvas.Left="6" Canvas.Top="344" Width="200">
-                <Label.Effect>
-                    <DropShadowEffect />
-                </Label.Effect>
-            </Label>
             <Label Content="Familie" BorderThickness="1" BorderBrush="#FF20331C" Background="#FFA2C8A2" Height="28" Canvas.Left="7" Canvas.Top="78" Width="200">
                 <Label.Effect>
                     <DropShadowEffect />
@@ -88,26 +77,9 @@
                     <DropShadowEffect />
                 </ComboBox.Effect>
             </ComboBox>
-            <Button x:Name="btnZoeken" Content="Zoeken" FontSize="30" BorderBrush="#FF2AE633"  Background="#FF474029" FontWeight="Bold" FontFamily="Rockwell Nova Extra Bold" Foreground="#FFABC36C" 
-            <ComboBox x:Name="cmbVariant" Canvas.Left="6" Canvas.Top="377" Width="198" Height="28"
-                      ItemsSource="{Binding cmbVariant}"
-                      DisplayMemberPath="Variantnaam"
-                      SelectedValuePath="VariantId"
-                      SelectedItem="{Binding Path= SelectedVariant}" IsEditable="True">
-                <ComboBox.Effect>
-                    <DropShadowEffect />
-                </ComboBox.Effect>
-            </ComboBox>
-            <ComboBox Canvas.Left="5" Canvas.Top="311" Width="200" Height="28"
-                      ItemsSource="{Binding cmbRatioBladBloei}"
-                      DisplayMemberPath="RatioBloeiBlad" IsEditable="True">
-                <ComboBox.Effect>
-                    <DropShadowEffect />
-                </ComboBox.Effect>
-            </ComboBox>
-            <Button x:Name="btnZoeken" Content="Zoeken" FontSize="24" BorderBrush="#FF2AE633" Background="#FF474029" FontWeight="Bold" FontFamily="Wide Latin" Foreground="#FFA2BC5B"
+            <Button x:Name="btnZoeken" Content="Zoeken" FontSize="30" BorderBrush="#FF40E948" Background="#FF474029" FontWeight="Bold" FontFamily="Rockwell Nova Extra Bold" Foreground="#FFABC36C"
                     Command="{Binding SearchCommand}"
-            Height="54" Canvas.Left="4" Canvas.Top="460" Width="198"
+            Height="54" Canvas.Left="7" Canvas.Top="460" Width="198"
             >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -120,7 +92,7 @@
             </Button>
             <Button x:Name="btnNameReset"
                     Content="Reset" Background="#FF474029" BorderBrush="#FF40E948" Foreground="#FFABC36C" FontWeight="Bold" FontSize="30"
-                    Command="{Binding ResetCommand}" Height="54" Canvas.Left="4" Canvas.Top="532" Width="198" FontFamily="Rockwell Nova Extra Bold">
+                    Command="{Binding ResetCommand}" Height="54" Canvas.Left="7" Canvas.Top="532" Width="198" FontFamily="Rockwell Nova Extra Bold">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10" />
@@ -131,7 +103,7 @@
                 </Button.Effect>
             </Button>
             <Button x:Name="btnFilteren" Background="#FF474029" BorderBrush="#FF40E948" Foreground="#FFABC36C" FontWeight="Bold" FontSize="30"
-                    Command="{Binding FilterCommand}" Height="85" Canvas.Left="4" Canvas.Top="358" Width="198" FontFamily="Rockwell Nova Extra Bold">
+                    Command="{Binding FilterCommand}" Height="85" Canvas.Left="7" Canvas.Top="358" Width="198" FontFamily="Rockwell Nova Extra Bold">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
