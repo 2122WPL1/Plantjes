@@ -1,10 +1,21 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class TfgsvSoort {
-    public long Soortid { get; set; }
-    public long GeslachtGeslachtId { get; set; }
-    public string Soortnaam { get; set; }
-    public string NlNaam { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class TfgsvSoort
+    {
+        public TfgsvSoort()
+        {
+            TfgsvVariants = new HashSet<TfgsvVariant>();
+        }
 
-    public virtual TfgsvGeslacht GeslachtGeslacht { get; set; }
+        public long Soortid { get; set; }
+        public long GeslachtGeslachtId { get; set; }
+        public string Soortnaam { get; set; }
+        public string NlNaam { get; set; }
+
+        public virtual TfgsvGeslacht GeslachtGeslacht { get; set; }
+        public virtual ICollection<TfgsvVariant> TfgsvVariants { get; set; }
+    }
 }

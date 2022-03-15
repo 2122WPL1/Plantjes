@@ -1,6 +1,11 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class CommOntwikkelsnelheid {
-    public int Id { get; set; }
-    public string Snelheid { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class CommOntwikkelsnelheid
+    {
+        public int Id { get; set; }
+        public string Snelheid { get; set; }
+    }
 }

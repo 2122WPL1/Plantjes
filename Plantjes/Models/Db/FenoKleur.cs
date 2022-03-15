@@ -1,7 +1,12 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class FenoKleur {
-    public int Id { get; set; }
-    public string NaamKleur { get; set; }
-    public byte[] HexWaarde { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class FenoKleur
+    {
+        public int Id { get; set; }
+        public string NaamKleur { get; set; }
+        public byte[] HexWaarde { get; set; }
+    }
 }
