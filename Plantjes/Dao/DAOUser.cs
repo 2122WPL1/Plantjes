@@ -23,14 +23,19 @@ namespace Plantjes.Dao
             var passwordBytes = Encoding.ASCII.GetBytes(password);
             var md5Hasher = new MD5CryptoServiceProvider();
             var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
-
+            Rol role;
+            if (emailadres.EndsWith("@vives.be")) role = context.Rols.First(x => x.Omschrijving == "Docent");
+            else if (emailadres.EndsWith("@student.vives.be")) role = context.Rols.First(x => x.Omschrijving == "Student");
+            else role = context.Rols.First(x => x.Omschrijving == "Oud-Student");
+            if (role == null) throw new MissingMemberException("Rol niet gevonden!");
             var gebruiker = new Gebruiker
             {
                 Vivesnr = vivesNr,
                 Voornaam = firstName,
                 Achternaam = lastName,
                 Emailadres = emailadres,
-                HashPaswoord = passwordHashed
+                HashPaswoord = passwordHashed,
+                Rol = role
             };
             context.Gebruikers.Add(gebruiker);
             context.SaveChanges();
