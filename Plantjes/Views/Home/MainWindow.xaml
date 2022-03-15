@@ -50,7 +50,7 @@
                 <RowDefinition Height="884.04" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnNaam" Content="Plant opzoeken" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+            <Button x:Name="btnNaam" Content="Plant" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
                     Command="{Binding mainNavigationCommand}"
                     CommandParameter="VIEWNAME" Grid.Column="1" Click="btnNaam_Click">
                 <Button.Effect>
