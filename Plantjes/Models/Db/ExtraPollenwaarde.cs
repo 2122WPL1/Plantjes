@@ -1,6 +1,11 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class ExtraPollenwaarde {
-    public int Id { get; set; }
-    public string Waarde { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class ExtraPollenwaarde
+    {
+        public int Id { get; set; }
+        public string Waarde { get; set; }
+    }
 }

@@ -1,6 +1,11 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class CommStrategie {
-    public int Id { get; set; }
-    public string Strategie { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class CommStrategie
+    {
+        public int Id { get; set; }
+        public string Strategie { get; set; }
+    }
 }
