@@ -56,7 +56,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
             }
             else
             {
-                Message = $"{emailAdresInput} is geen geldig emailadres, " + "\r\n" + " of het eamiladres is al in gebruik.";
+                Message = $"{emailAdresInput} is geen geldig emailadres,\r\n of het emailadres is al in gebruik.";
             }
         }
         else
