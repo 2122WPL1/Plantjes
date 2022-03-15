@@ -50,17 +50,9 @@
                 <RowDefinition Height="884.04" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnNaam" Content="Plant opzoeken" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+            <Button x:Name="btnNaam" Content="Plant opzoeken" Margin="82,15,958,809" Style="{StaticResource ButtonUnified}"
                     Command="{Binding mainNavigationCommand}"
                     CommandParameter="VIEWNAME" Grid.Column="1">
-                <Button.Effect>
-                    <DropShadowEffect />
-                </Button.Effect>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10" />
-                    </Style>
-                </Button.Resources>
             </Button>
 
 
@@ -73,17 +65,9 @@
             <Grid x:Name="MainContent" HorizontalAlignment="Left" Width="1230" Margin="10,101,0,0" Height="773" VerticalAlignment="Top" Grid.ColumnSpan="2">
                 <ContentControl Content="{Binding currentViewModel}" HorizontalAlignment="Left" Width="1210" Height="754" VerticalAlignment="Center" Margin="10,0,0,0" />
             </Grid>
-            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" HorizontalAlignment="Left" Margin="288,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="288,16,740,808" Style="{StaticResource ButtonUnified}"
                     Command="{Binding mainNavigationCommand}"
-                    CommandParameter="VIEWNAME" Grid.Column="1">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="10" />
-                    </Style>
-                </Button.Resources>
-                <Button.Effect>
-                    <DropShadowEffect />
-                </Button.Effect>
+                    CommandParameter="VIEWNAME" Grid.Column="1" Width="212">
             </Button>
             <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />

@@ -7,23 +7,24 @@
         <Style TargetType="Button" x:Key="ButtonUnified">
             <Style.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Style.Resources>
             <Setter Property="Height" Value="60"/>
             <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="Width" Value="200"/>
-            <Setter Property="BorderBrush" Value="#FF2AE663"/>
-            <Setter Property="Background" Value="#FF474029"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="DarkGreen"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="#FFABC36C"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="Button.Effect">
                 <Setter.Value>
                     <DropShadowEffect/>
                 </Setter.Value>
             </Setter>
         </Style>
-
+        <!--Height="25" Width="88" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"-->
         <Style TargetType="StackPanel" x:Key="StackPanelListCheckBox">
             <Setter Property="Focusable" Value="False"/>
             <Setter Property="Height" Value="50"/>
@@ -52,6 +53,19 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="DarkGreen"/>
             <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="LabelBorderTitle" BasedOn="{StaticResource LabelBorder}">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="#FF029402"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0.0" Color="#FFABC36C"/>
+                        <GradientStop Offset="1.0" Color="DarkGreen"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
 
         <Style TargetType="Border" x:Key="BorderBox">

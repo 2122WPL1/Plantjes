@@ -1257,7 +1257,7 @@
                     </Border>
                 </GroupBox>
 
-                <Button Width="240" Content="Plant inzenden voor bevestiging" Style="{StaticResource ButtonUnified}" Margin="10,862,960,58"/>
+                <Button Width="240" Content="Plant inzenden" Style="{StaticResource ButtonUnified}" Margin="10,862,960,58"/>
             </Grid>
         </Viewbox>
     </Canvas>
