@@ -66,6 +66,7 @@ public class ViewModelLogin : ViewModelBase
         Application.Current.Shutdown();
     }
 
+    //Binding met de textbox en passwordbox op de login GUI -- Kjell, Warre
     private SolidColorBrush _GebruikersNaamColor;
     public SolidColorBrush GebruikersNaamColor
     {
@@ -100,6 +101,7 @@ public class ViewModelLogin : ViewModelBase
         {
             var loginResult = _loginService.CheckCredentials(userNameInput, passwordInput);
 
+            
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
                 //  loggedInMessage = _loginService.LoggedInMessage(userNameInput);
@@ -107,16 +109,49 @@ public class ViewModelLogin : ViewModelBase
                 mainWindow.Show();
                 Application.Current.Windows[0]?.Close();
             }
+            //Als de logingegevens foutief zijn wordt deze else in actie gezet
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
-                errorMessage = loginResult.errorMessage;
-                GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                //Als het wachtwoord niet ingevuld is en de gebruikersnaam correct is,
+                //dan kleurt de passwordbox rood en de textbox transparant -- Warre, Kjell
+                if (string.IsNullOrWhiteSpace(passwordInput))
+                {
+                    errorMessage = loginResult.errorMessage;
+                    GebruikersNaamColor = new SolidColorBrush(Colors.Transparent);
+                    PasswordColor = new SolidColorBrush(Colors.Red);
+
+
+                    if (!(userNameInput.Contains("@")))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                    }
+                }
+                //Als er een foutief wachtwoord is ingevuld en de gebruikersnaam correct is,
+                //dan kleurt de passwordbox rood en de textbox transparant -- Warre, Kjell
+                else if (!string.IsNullOrWhiteSpace(passwordInput))
+                {
+                    errorMessage = loginResult.errorMessage;
+                    PasswordColor = new SolidColorBrush(Colors.Red);
+
+                    //Als het mailadres geen @ bevat dan is het geen geldig mail adres -- Kjell
+                    if (!(userNameInput.Contains("@")))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                    }
+                }
+                ;
+                
             }
+
         }
-        else 
+        //Als de gebruikersnaam leeg is of foutief is ingevuld 
+        else
         {
             errorMessage = "Gebruikersnaam invullen.";
             GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+            PasswordColor = new SolidColorBrush(Colors.Red);
         }
         RaisePropertyChanged("errorMessage");
     }
