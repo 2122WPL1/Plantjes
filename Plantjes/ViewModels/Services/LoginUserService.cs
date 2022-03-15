@@ -84,7 +84,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
         var loginResult = new LoginResult { loginStatus = LoginStatus.NotLoggedIn };
 
         //check if email is valid email
-        if (userNameInput != null && userNameInput.Contains("@student.vives.be"))
+        if (userNameInput != null) //&& userNameInput.Contains("@student.vives.be")
         {
             //gebruiker zoeken in de databank
             gebruiker = _dao.GetGebruikerWithEmail(userNameInput);
