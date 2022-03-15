@@ -1,10 +1,15 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class Commensalisme {
-    public long Id { get; set; }
-    public long PlantId { get; set; }
-    public string Ontwikkelsnelheid { get; set; }
-    public string Strategie { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class Commensalisme
+    {
+        public long Id { get; set; }
+        public long PlantId { get; set; }
+        public string Ontwikkelsnelheid { get; set; }
+        public string Strategie { get; set; }
 
-    public virtual Plant Plant { get; set; }
+        public virtual Plant Plant { get; set; }
+    }
 }

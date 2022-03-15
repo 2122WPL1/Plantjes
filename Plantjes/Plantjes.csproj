@@ -4,11 +4,13 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>2470011.ico</ApplicationIcon>
     </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Image\waterval.jpeg" />
     <None Remove="Views\Home\Usericon.png" />
+    <None Remove="Views\Home\Vives_Logo_MainWindow.png" />
     <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
     <None Remove="Views\UserControls\aar.png" />
     <None Remove="Views\UserControls\arching.png" />
@@ -41,6 +43,9 @@
         <None Remove="Views\Home\vives_-_groen.png" />
         <None Remove="Views\Home\vives_-_groen_-_geen_tekst.png" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="2470011.ico" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="EntityFramework" Version="6.4.4" />
@@ -50,6 +55,10 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
     </ItemGroup>
 
@@ -83,6 +92,7 @@
         <Resource Include="Image\user.png" />
         <Resource Include="Image\vives_big.png" />
         <Resource Include="Image\vives.png" />
+        <Resource Include="Views\Home\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
     <ItemGroup>

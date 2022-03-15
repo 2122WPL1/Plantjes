@@ -1,13 +1,18 @@
 ﻿using System.Windows;
+
 using Microsoft.Toolkit.Mvvm.Input;
+
+using Plantjes.Models.Db;
 using Plantjes.ViewModels.Interfaces;
 using Plantjes.Views.Home;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 //written by kenny
-public class ViewModelRegister : ViewModelBase {
-    public ViewModelRegister(IloginUserService loginUserService) {
+public class ViewModelRegister : ViewModelBase
+{
+    public ViewModelRegister(IloginUserService loginUserService)
+    {
         _loginService = loginUserService;
         registerCommand = new RelayCommand(RegisterButtonClick);
         backCommand = new RelayCommand(BackButtonClick);
@@ -18,18 +23,21 @@ public class ViewModelRegister : ViewModelBase {
     public RelayCommand registerCommand { get; set; }
     public RelayCommand backCommand { get; set; }
 
-    public void BackButtonClick() {
+    public void BackButtonClick()
+    {
         var loginWindow = new LoginWindow();
         loginWindow.Show();
         Application.Current.Windows[0]?.Close();
     }
 
-    public void RegisterButtonClick() {
-        errorMessage = _loginService.RegisterButton(vivesNrInput, lastNameInput, firstNameInput, emailAdresInput, passwordInput, passwordRepeatInput, rolInput);
+    public void RegisterButtonClick()
+    {
+        errorMessage = _loginService.RegisterButton(vivesNrInput, lastNameInput, firstNameInput, emailAdresInput, passwordInput, passwordRepeatInput);
         //xander - close register window if no error
-        if (errorMessage == null || errorMessage == string.Empty) {
+        if (errorMessage == null || errorMessage == string.Empty)
+        {
             //xander - clear input on register
-            vivesNrInput = lastNameInput = firstNameInput = emailAdresInput = passwordInput = passwordRepeatInput = rolInput = string.Empty;
+            vivesNrInput = lastNameInput = firstNameInput = emailAdresInput = passwordInput = passwordRepeatInput = string.Empty;
             Application.Current.Windows[0]?.Close();
         }
     }
@@ -45,67 +53,73 @@ public class ViewModelRegister : ViewModelBase {
     private string _rolInput;
     private string _errorMessage;
 
-    public string errorMessage {
+    public string errorMessage
+    {
         get => _errorMessage;
-        set {
+        set
+        {
             _errorMessage = value;
 
             RaisePropertyChanged("errorMessage");
         }
     }
 
-    public string vivesNrInput {
+    public string vivesNrInput
+    {
         get => _vivesNrInput;
-        set {
+        set
+        {
             _vivesNrInput = value;
             OnPropertyChanged();
         }
     }
 
-    public string firstNameInput {
+    public string firstNameInput
+    {
         get => _firstNameInput;
-        set {
+        set
+        {
             _firstNameInput = value;
             OnPropertyChanged();
         }
     }
 
-    public string lastNameInput {
+    public string lastNameInput
+    {
         get => _lastNameInput;
-        set {
+        set
+        {
             _lastNameInput = value;
             OnPropertyChanged();
         }
     }
 
-    public string emailAdresInput {
+    public string emailAdresInput
+    {
         get => _emailAdresInput;
-        set {
+        set
+        {
             _emailAdresInput = value;
             OnPropertyChanged();
         }
     }
 
-    public string passwordInput {
+    public string passwordInput
+    {
         get => _passwordInput;
-        set {
+        set
+        {
             _passwordInput = value;
             OnPropertyChanged();
         }
     }
 
-    public string passwordRepeatInput {
+    public string passwordRepeatInput
+    {
         get => _passwordRepeatInput;
-        set {
+        set
+        {
             _passwordRepeatInput = value;
-            OnPropertyChanged();
-        }
-    }
-
-    public string rolInput {
-        get => _rolInput;
-        set {
-            _rolInput = value;
             OnPropertyChanged();
         }
     }

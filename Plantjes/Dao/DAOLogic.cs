@@ -37,6 +37,4 @@ public partial class DAOLogic
         return instance;
     }
     /* HELP FUNCTIONS */
-
-
 }
