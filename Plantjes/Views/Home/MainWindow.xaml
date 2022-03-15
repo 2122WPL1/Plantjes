@@ -85,9 +85,9 @@
                     <DropShadowEffect />
                 </Button.Effect>
             </Button>
-            <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,75,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
+            <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,26,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
-            <Image Margin="19,14,1150,806" Grid.ColumnSpan="2" Source="/Image/vives_big.png" />
+            <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
         </Grid>
     </Viewbox>
 
