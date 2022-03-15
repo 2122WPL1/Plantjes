@@ -64,7 +64,7 @@ public class DAOLogic {
 
     //written by kenny
     public Gebruiker GetGebruikerWithEmail(string userEmail) {
-        var gebruiker = context.Gebruikers.SingleOrDefault(g => g.Emailadres == userEmail);
+        var gebruiker = context.Gebruikers.Where(g => g.Emailadres == userEmail).FirstOrDefault();
         return gebruiker;
     }
 

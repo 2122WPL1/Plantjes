@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Image\waterval.jpeg" />
     <None Remove="Views\Home\Usericon.png" />
+    <None Remove="Views\Home\Vives_Logo_MainWindow.png" />
     <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
     <None Remove="Views\UserControls\aar.png" />
     <None Remove="Views\UserControls\arching.png" />
@@ -83,6 +84,7 @@
         <Resource Include="Image\user.png" />
         <Resource Include="Image\vives_big.png" />
         <Resource Include="Image\vives.png" />
+        <Resource Include="Views\Home\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
     <ItemGroup>
