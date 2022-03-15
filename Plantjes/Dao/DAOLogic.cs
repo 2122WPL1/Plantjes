@@ -78,7 +78,7 @@ public class DAOLogic {
             Vivesnr = vivesNr,
             Voornaam = firstName,
             Achternaam = lastName,
-            Rol = rol,
+            Rol = new Rol() { Omschrijving = rol },
             Emailadres = emailadres,
             HashPaswoord = passwordHashed
         };
