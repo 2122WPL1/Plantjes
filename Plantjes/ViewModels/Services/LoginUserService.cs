@@ -37,7 +37,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".vives.be") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
-                && _dao.CheckIfEmailAlreadyExists(emailAdresInput))
+                && !_dao.CheckIfEmailAlreadyExists(emailAdresInput))
             {
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput)
