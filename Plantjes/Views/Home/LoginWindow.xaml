@@ -19,8 +19,8 @@
     <Viewbox MaxHeight="300" MaxWidth="464">
         <Grid Height="293" Width="473">
 
-            <Label x:Name="lblUserName" Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Foreground="White" />
-            <Label x:Name="lblPasword" Content="Wachtwoord:" HorizontalAlignment="Left" Margin="55,103,0,0" VerticalAlignment="Top" Foreground="White" />
+            <Label x:Name="lblUserName" Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="28,77,0,0" VerticalAlignment="Top" Foreground="White" />
+            <Label x:Name="lblPasword" Content="Wachtwoord:" HorizontalAlignment="Left" Margin="47,106,0,0" VerticalAlignment="Top" Foreground="White" />
 
             <TextBox Name="txtGebruikersnaam"
                      Text="{Binding Path=userNameInput, UpdateSourceTrigger=PropertyChanged}" BorderThickness="2" BorderBrush="{Binding GebruikersNaamColor}" Margin="154,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236" />
@@ -40,7 +40,7 @@
             </Button>
 
 
-            <Button x:Name="btnCancel" Content="Cancel" Margin="295,142,0,0" VerticalAlignment="Top" Height="26" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
+            <Button x:Name="btnCancel" Content="Annuleren" Margin="295,142,0,0" VerticalAlignment="Top" Height="26" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
                     Command="{Binding Path=cancelCommand}" HorizontalAlignment="Left" Width="87" RenderTransformOrigin="0.479,0.891">
                 <Button.Effect>
                     <DropShadowEffect />
@@ -63,12 +63,8 @@
                     <DropShadowEffect />
                 </Button.Effect>
             </Button>
-            <TextBlock x:Name="lblError" Text="{Binding errorMessage}" HorizontalAlignment="Left" Margin="40,16,0,0" VerticalAlignment="Top" Height="56" Width="248" FontWeight="Bold" TextWrapping="WrapWithOverflow" Foreground="White"/>
+            <TextBlock x:Name="lblError" Text="{Binding errorMessage}" HorizontalAlignment="Left" Margin="35,12,0,0" VerticalAlignment="Top" Foreground="WhiteSmoke" Height="56" Width="248" FontWeight="Bold" TextWrapping="WrapWithOverflow"/>
             <Image HorizontalAlignment="Left" Height="97" Margin="293,0,0,0" VerticalAlignment="Top" Width="180" Source="../../Image/vives_big.png" Stretch="UniformToFill"/>
-
-
         </Grid>
     </Viewbox>
-
-
 </Window>
