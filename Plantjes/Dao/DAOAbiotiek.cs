@@ -4,14 +4,14 @@ using Plantjes.Models.Db;
 
 namespace Plantjes.Dao;
 
-public partial class DAOLogic {
+public partial class DAOAbiotiek : DAOLogic {
     //Get a list of all the Abiotiek types
-    public List<Abiotiek> GetAllAbiotieks() {
+    public static List<Abiotiek> GetAllAbiotieks() {
         return context.Abiotieks.ToList();
     }
 
     //Get a list of all the AbiotiekMulti types
-    public List<AbiotiekMulti> GetAllAbiotieksMulti() {
+    public static List<AbiotiekMulti> GetAllAbiotieksMulti() {
         //List is unfiltered, a plantId can be present multiple times
         //The aditional filteren will take place in the ViewModel
         return context.AbiotiekMultis.ToList();
@@ -19,11 +19,11 @@ public partial class DAOLogic {
 
     #region Filter abiotiek from plant
 
-    public IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem) {
+    public static IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem) {
         return context.Abiotieks.Distinct().Where(s => s.PlantId == selectedItem);
     }
 
-    public IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem) {
+    public static IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem) {
         return context.AbiotiekMultis.Distinct().Where(s => s.PlantId == selectedItem);
     }
 
