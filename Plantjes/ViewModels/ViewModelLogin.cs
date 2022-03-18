@@ -73,7 +73,7 @@ public class ViewModelLogin : ViewModelBase {
             }
         }
         else {
-            errorMessage = "Gebruikersnaam invullen.";
+            errorMessage = "Gelieve een gebruikersnaam in te voeren.";
         }
         RaisePropertyChanged("errorMessage");
     }
