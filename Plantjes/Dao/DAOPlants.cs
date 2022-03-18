@@ -34,24 +34,9 @@ namespace Plantjes.Dao
 
             return null;
         }
-
-        public List<BeheerMaand> FillBeheerdaad()
-        {
-            var selection = context.BeheerMaands.ToList();
-            return selection;
-        }
-
-
-
+        
         /* 4.gebruik: var example = DAOLogic.Instance();
     }
-
-
-
-
-
-
-
          */
 
 
@@ -203,45 +188,8 @@ namespace Plantjes.Dao
 
         #region Lists of all the plant properties with multiple values, used to display plant details
 
-        //Get a list of all the Abiotiek types
-        public List<Abiotiek> GetAllAbiotieks()
-        {
-            var abiotiek = context.Abiotieks.ToList();
-            return abiotiek;
-        }
 
-        //Get a list of all the AbiotiekMulti types
-        public List<AbiotiekMulti> GetAllAbiotieksMulti()
-        {
-            //List is unfiltered, a plantId can be present multiple times
-            //The aditional filteren will take place in the ViewModel
-
-            var abioMultiList = context.AbiotiekMultis.ToList();
-
-            return abioMultiList;
-        }
-
-        //Get a list of all the Beheermaand types
-        public List<BeheerMaand> GetBeheerMaanden()
-        {
-            var beheerMaanden = context.BeheerMaands.ToList();
-            return beheerMaanden;
-        }
-
-        public List<Commensalisme> GetAllCommensalisme()
-        {
-            var commensalisme = context.Commensalismes.ToList();
-            return commensalisme;
-        }
-
-        public List<CommensalismeMulti> GetAllCommensalismeMulti()
-        {
-            //List is unfiltered, a plantId can be present multiple times
-            //The aditional filtering will take place in the ViewModel
-
-            var commensalismeMulti = context.CommensalismeMultis.ToList();
-            return commensalismeMulti;
-        }
+        
 
         public List<ExtraEigenschap> GetAllExtraEigenschap()
         {
@@ -300,49 +248,7 @@ namespace Plantjes.Dao
         }
 
         #endregion
-
-        #region FilterAbiotiekFromPlant
-
-        public IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem)
-        {
-            var selection = context.Abiotieks.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        public IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem)
-        {
-            var selection = context.AbiotiekMultis.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        #endregion
-
-        #region FilterBeheerMaandFromPlant
-
-        public IQueryable<BeheerMaand> FilterBeheerMaandFromPlant(int selectedItem)
-        {
-            var selection = context.BeheerMaands.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        #endregion
-
-        #region FilterCommensalismeFromPlant
-
-        public IQueryable<Commensalisme> FilterCommensalismeFromPlant(int selectedItem)
-        {
-            var selection = context.Commensalismes.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        public IQueryable<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)
-        {
-            var selection = context.CommensalismeMultis.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        #endregion
-
+        
         #region FilterExtraEigenschapFromPlant
 
         public IQueryable<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)

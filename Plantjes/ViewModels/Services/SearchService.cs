@@ -290,7 +290,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an Abiotiek list, then we'll need to filter that list
         ////by checking if the Abiotiek.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining Abiotiek types in the detailSelectedPlant Observable Collection
-        var abioList = _dao.GetAllAbiotieks();
+        var abioList = DAOAbiotiek.GetAllAbiotieks();
 
         foreach (var itemAbio in abioList)
         foreach (var plantItem in SelectedPlantInResult.Abiotieks)
@@ -308,7 +308,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an Abiotiek_Multi list, then we'll need to filter that list
         ////by checking if the Abiotiek_Multi.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining Abiotiek_Multi types in the detailSelectedPlant Observable Collection
-        var abioMultiList = _dao.GetAllAbiotieksMulti();
+        var abioMultiList = DAOAbiotiek.GetAllAbiotieksMulti();
         bool hasCheckedPlant;
 
         //bool gebruiken
@@ -336,7 +336,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining Beheermaand types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var beheerMaandList = _dao.GetBeheerMaanden();
+        var beheerMaandList = DAOBeheerMaand.GetBeheerMaanden();
 
         foreach (var itemBeheerMaand in beheerMaandList)
         foreach (var plantItem in SelectedPlantInResult.BeheerMaands)
@@ -367,7 +367,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining Commensalisme types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var commensalismeList = _dao.GetAllCommensalisme();
+        var commensalismeList = DAOCommensalisme.GetAllCommensalisme();
 
         foreach (var itemCommensalisme in commensalismeList)
         foreach (var plantItem in SelectedPlantInResult.Commensalismes)
@@ -384,7 +384,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining CommensalismeMulti types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var commensalismeMultiList = _dao.GetAllCommensalismeMulti();
+        var commensalismeMultiList = DAOCommensalisme.GetAllCommensalismeMulti();
         bool hasCheckedPlant;
 
         foreach (var itemCommensalismeMulti in commensalismeMultiList) {

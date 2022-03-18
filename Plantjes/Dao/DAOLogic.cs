@@ -20,10 +20,12 @@ public partial class DAOLogic
     private static DAOLogic instance = new();
 
     /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
-    public static plantenContext context;
+
+    internal static plantenContext context;
 
     //2. private contructor
-    public DAOLogic()
+    internal DAOLogic()
+
     {
         /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
         context = new plantenContext();
