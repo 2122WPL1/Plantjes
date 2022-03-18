@@ -95,6 +95,7 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
+    //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell 
     private void LoginButtonClick() 
     {
         if (!string.IsNullOrWhiteSpace(userNameInput)) 
@@ -104,49 +105,71 @@ public class ViewModelLogin : ViewModelBase
             
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
-                //  loggedInMessage = _loginService.LoggedInMessage(userNameInput);
                 var mainWindow = new MainWindow();
                 mainWindow.Show();
                 Application.Current.Windows[0]?.Close();
             }
-            //Als de logingegevens foutief zijn wordt deze else in actie gezet
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
-                //Als het wachtwoord niet ingevuld is en de gebruikersnaam correct is,
-                //dan kleurt de passwordbox rood en de textbox transparant -- Warre, Kjell
-                if (string.IsNullOrWhiteSpace(passwordInput))
-                {
-                    errorMessage = loginResult.errorMessage;
-                    GebruikersNaamColor = new SolidColorBrush(Colors.Transparent);
-                    PasswordColor = new SolidColorBrush(Colors.Red);
-
-
-                    if (!(userNameInput.Contains("@")))
-                    {
-                        errorMessage = loginResult.errorMessage;
-                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
-                    }
-                }
-                //Als er een foutief wachtwoord is ingevuld en de gebruikersnaam correct is,
-                //dan kleurt de passwordbox rood en de textbox transparant -- Warre, Kjell
-                else if (!string.IsNullOrWhiteSpace(passwordInput))
-                {
-                    errorMessage = loginResult.errorMessage;
-                    PasswordColor = new SolidColorBrush(Colors.Red);
-
-                    //Als het mailadres geen @ bevat dan is het geen geldig mail adres -- Kjell
-                    if (!(userNameInput.Contains("@")))
-                    {
-                        errorMessage = loginResult.errorMessage;
-                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
-                    }
-                }
-                ;
                 
+                
+                if(string.IsNullOrWhiteSpace(userNameInput))
+                {
+                    if (string.IsNullOrWhiteSpace(passwordInput))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                        PasswordColor = new SolidColorBrush(Colors.Transparent);
+                    }
+                    else if(!string.IsNullOrWhiteSpace(passwordInput))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                        PasswordColor = new SolidColorBrush(Colors.Transparent);
+                        
+                    }
+
+                }
+                else if(!string.IsNullOrWhiteSpace(userNameInput))
+                {
+                    if (userNameInput.Contains("@") && userNameInput.Contains("."))
+                    {
+                        if(string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            GebruikersNaamColor = new SolidColorBrush(Colors.Transparent);
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                        else if(!string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                    }
+                    else if(!(userNameInput.Contains("@") && userNameInput.Contains(".")))
+                    {
+                        if(string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                        else if (!string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+
+                            if (!((userNameInput.Contains("@")) && (userNameInput.Contains("."))))
+                            {
+                                errorMessage = loginResult.errorMessage;
+                                GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                            }
+                        }
+                    }
+                }
             }
 
         }
-        //Als de gebruikersnaam leeg is of foutief is ingevuld 
         else
         {
             errorMessage = "Gebruikersnaam invullen.";
@@ -155,4 +178,5 @@ public class ViewModelLogin : ViewModelBase
         }
         RaisePropertyChanged("errorMessage");
     }
+    //------------------------------------------------------------------------------------------
 }
