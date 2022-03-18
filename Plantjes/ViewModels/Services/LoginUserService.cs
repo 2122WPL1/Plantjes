@@ -37,13 +37,13 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
-                && !_dao.CheckIfEmailAlreadyExists(emailAdresInput))
+                && DAOUser.CheckIfEmailAlreadyExists(emailAdresInput))
             {
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput)
                 {
                     //gebruiker registreren.
-                    _dao.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput);
+                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput);
                     //Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
                     // "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
                     var loginWindow = new LoginWindow();
@@ -84,7 +84,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
         if (userNameInput != null) //&& userNameInput.Contains("@student.vives.be")
         {
             //gebruiker zoeken in de databank
-            gebruiker = _dao.GetGebruikerWithEmail(userNameInput);
+            gebruiker = DAOUser.GetGebruikerWithEmail(userNameInput);
             loginResult.gebruiker = gebruiker;
         }
         else
