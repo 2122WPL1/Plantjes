@@ -1,11 +1,16 @@
-﻿namespace Plantjes.Models.Db; 
+﻿using System;
+using System.Collections.Generic;
 
-public class Foto {
-    public long Fotoid { get; set; }
-    public long Plant { get; set; }
-    public string Eigenschap { get; set; }
-    public string UrlLocatie { get; set; }
-    public byte[] Tumbnail { get; set; }
+namespace Plantjes.Models.Db
+{
+    public partial class Foto
+    {
+        public long Fotoid { get; set; }
+        public long Plant { get; set; }
+        public string Eigenschap { get; set; }
+        public string UrlLocatie { get; set; }
+        public byte[] Tumbnail { get; set; }
 
-    public virtual Plant PlantNavigation { get; set; }
+        public virtual Plant PlantNavigation { get; set; }
+    }
 }

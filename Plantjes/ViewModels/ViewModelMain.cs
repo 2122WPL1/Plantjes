@@ -1,26 +1,25 @@
-﻿using Plantjes.ViewModels.HelpClasses;
+﻿using System.Diagnostics;
+using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelMain : ViewModelBase {
     private ViewModelBase _currentViewModel;
-    private ISearchService _searchService;
 
     private readonly ViewModelRepo _viewModelRepo;
     //geschreven door kenny, adhv een voorbeeld van roy
     
-    public IloginUserService loginUserService;
 
     public ViewModelMain(IloginUserService loginUserService, ISearchService searchService) {
         loggedInMessage = loginUserService.LoggedInMessage();
         
         _viewModelRepo = (ViewModelRepo)App.Current.Services.GetService(typeof(ViewModelRepo));
-        _searchService = searchService;
-        this.loginUserService = loginUserService;
+        this.searchService = (SearchService) searchService;
+        this.loginUserService = (LoginUserService) loginUserService;
 
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
-        //  dialogService.ShowMessageBox(this, "", "");
     }
 
     public MyICommand<string> mainNavigationCommand { get; set; }
@@ -39,6 +38,10 @@ public class ViewModelMain : ViewModelBase {
 
             RaisePropertyChanged("loggedInMessage");
         }
+    }
+    public string rol
+    {
+        get => loginUserService.gebruiker.Rol.Omschrijving;
     }
 
     private void _onNavigationChanged(string userControlName) {
