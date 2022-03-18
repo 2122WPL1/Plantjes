@@ -30,7 +30,7 @@ public class ViewModelGrooming : ViewModelBase {
     }
 
     public void fillComboBoxBeheerdaad() {
-        var list = _dao.FillBeheerdaad().ToList();
+        var list = DAOBeheerMaand.FillBeheerdaad().ToList();
 
 
         foreach (var item in list)

@@ -119,7 +119,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
 
     //geschreven door owen, aangepast door robin voor mvvm en later services
     public void fillComboBoxType(ObservableCollection<TfgsvType> cmbTypeCollection) {
-        var list = _dao.fillTfgsvType();
+        var list = DAOTfgsv.fillTfgsvType();
 
         foreach (var item in list) cmbTypeCollection.Add(item);
     }
@@ -132,10 +132,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected type is selected to prevent null exception
         if (selectedType != null)
             // Requesting te list of families 
-            list = _dao.fillTfgsvFamilie(Convert.ToInt32(selectedType.Planttypeid)).ToList();
+            list = DAOTfgsv.fillTfgsvFamilie(Convert.ToInt32(selectedType.Planttypeid)).ToList();
         else
             // Requesting te list of families  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvFamilie(0).ToList();
+            list = DAOTfgsv.fillTfgsvFamilie(0).ToList();
 
         // clearing te content of te combobox of familie
         cmbFamilieCollection.Clear();
@@ -157,10 +157,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected geslacht is selected to prevent null exception
         if (selectedFamilie != null)
             // Requesting te list of geslacht 
-            list = _dao.fillTfgsvGeslacht(Convert.ToInt32(selectedFamilie.FamileId));
+            list = DAOTfgsv.fillTfgsvGeslacht(Convert.ToInt32(selectedFamilie.FamileId));
         else
             // Requesting te list of Geslacht  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvGeslacht(0);
+            list = DAOTfgsv.fillTfgsvGeslacht(0);
 
         // clearing te content of te combobox of geslacht
         cmbGeslachtCollection.Clear();
@@ -182,10 +182,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected Soort is selected to prevent null exception
         if (selectedGeslacht != null)
             // Requesting te list of Soort 
-            list = _dao.fillTfgsvSoort(Convert.ToInt32(selectedGeslacht.GeslachtId));
+            list = DAOTfgsv.fillTfgsvSoort(Convert.ToInt32(selectedGeslacht.GeslachtId));
         else
             // Requesting te list of Soort  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvSoort(0);
+            list = DAOTfgsv.fillTfgsvSoort(0);
 
         // clearing te content of te combobox of Soort
         cmbSoortCollection.Clear();
@@ -202,7 +202,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxVariant(ObservableCollection<TfgsvVariant> cmbVariantCollection) {
         // Requesting te list of Variant  with 0 because there is noting selected in the combobox of type.
-        var list = _dao.fillTfgsvVariant();
+        var list = DAOTfgsv.fillTfgsvVariant();
         // clearing te content of te combobox of Variant
         cmbVariantCollection.Clear();
         // a list to add type that have been added to the combobox. this is used for preventing two of the same type in the combo box
@@ -290,7 +290,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an Abiotiek list, then we'll need to filter that list
         ////by checking if the Abiotiek.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining Abiotiek types in the detailSelectedPlant Observable Collection
-        var abioList = _dao.GetAllAbiotieks();
+        var abioList = DAOAbiotiek.GetAllAbiotieks();
 
         foreach (var itemAbio in abioList)
         foreach (var plantItem in SelectedPlantInResult.Abiotieks)
@@ -308,7 +308,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an Abiotiek_Multi list, then we'll need to filter that list
         ////by checking if the Abiotiek_Multi.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining Abiotiek_Multi types in the detailSelectedPlant Observable Collection
-        var abioMultiList = _dao.GetAllAbiotieksMulti();
+        var abioMultiList = DAOAbiotiek.GetAllAbiotieksMulti();
         bool hasCheckedPlant;
 
         //bool gebruiken
@@ -336,7 +336,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining Beheermaand types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var beheerMaandList = _dao.GetBeheerMaanden();
+        var beheerMaandList = DAOBeheerMaand.GetBeheerMaanden();
 
         foreach (var itemBeheerMaand in beheerMaandList)
         foreach (var plantItem in SelectedPlantInResult.BeheerMaands)
@@ -367,7 +367,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining Commensalisme types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var commensalismeList = _dao.GetAllCommensalisme();
+        var commensalismeList = DAOCommensalisme.GetAllCommensalisme();
 
         foreach (var itemCommensalisme in commensalismeList)
         foreach (var plantItem in SelectedPlantInResult.Commensalismes)
@@ -384,7 +384,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////Once filtered: put the remaining CommensalismeMulti types in the detailSelectedPlant Observable Collection
 
         ////There is currently no data in this table, but the app is prepared for when it's added.
-        var commensalismeMultiList = _dao.GetAllCommensalismeMulti();
+        var commensalismeMultiList = DAOCommensalisme.GetAllCommensalismeMulti();
         bool hasCheckedPlant;
 
         foreach (var itemCommensalismeMulti in commensalismeMultiList) {
