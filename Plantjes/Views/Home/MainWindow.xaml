@@ -73,7 +73,7 @@
             <Grid x:Name="MainContent" HorizontalAlignment="Left" Width="1230" Margin="10,101,0,0" Height="773" VerticalAlignment="Top" Grid.ColumnSpan="2">
                 <ContentControl Content="{Binding currentViewModel}" HorizontalAlignment="Left" Width="1210" Height="754" VerticalAlignment="Center" Margin="10,0,0,0" />
             </Grid>
-            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Visibility="{Binding ShowEditPlants}" HorizontalAlignment="Left" Margin="288,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Visibility="{Binding ShowEditPlants}" HorizontalAlignment="Left" Margin="255,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
                     Command="{Binding mainNavigationCommand}"
                     CommandParameter="VIEWNAME" Grid.Column="1" Click="btnPlantToevoegen_Click">
                 <Button.Resources>
@@ -90,19 +90,30 @@
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
             <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
             <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
-            <ComboBox x:Name="cmbBeheer" Grid.Column="1" Margin="565,17,447,807" Text="Beheer"
-                      Background="DarkGreen">
-                <ComboBoxItem Name="Item1">
-                    <Button Content="Gebruiker" 
-                            Name="btnGebruikerBeheer">
-                    </Button>
-                </ComboBoxItem>
-                <ComboBoxItem Name="Item2">
-                    <Button Content="Planten" Name="btnPlantenBeheer"></Button>
-                </ComboBoxItem>
-            </ComboBox>
-            <Label x:Name="lblBeheer" Content="Beheer" Grid.Column="1" Margin="565,17,480,807" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" FontWeight="Bold"
-                   />
+            <Button x:Name="btnBeheerGebruikers" Content="Beheer gebruikers"  HorizontalAlignment="Left" Margin="465,15,0,0" VerticalAlignment="Top" Height="62" Width="200" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+                Command="{Binding mainNavigationCommand}"
+                CommandParameter="VIEWBEHEERGEBRUIKERS" Grid.Column="1">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
+                <Button.Effect>
+                    <DropShadowEffect />
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnBeheerPlanten" Content="Beheer planten" HorizontalAlignment="Left" Margin="679,15,0,0" VerticalAlignment="Top" Height="62" Width="201" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+                Command="{Binding mainNavigationCommand}"
+                CommandParameter="VIEWBEHEERPLANTEN" Grid.Column="1">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
+                <Button.Effect>
+                    <DropShadowEffect />
+                </Button.Effect>
+            </Button>
         </Grid>
     </Viewbox>
 

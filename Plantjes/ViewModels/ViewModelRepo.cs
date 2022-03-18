@@ -18,6 +18,12 @@ public class ViewModelRepo {
     private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
     private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
 
+
+    //Verder werken na de vakantie
+    //private readonly ViewModelBeheerGebruik viewModelBeheerGebruik = (ViewModelBeheerGebruik)App.Current.Services.GetService(typeof(ViewModelBeheergebruik));
+    //private readonly ViewModelBeheerPlanten viewModelBeheerPlanten = (ViewModelBeheerPlanten)App.Current.Services.GetService(typeof(ViewModelBeheerPlanten));
+
+
     public ViewModelRepo() {
         //hier een extra lijn code per user control
         _viewModels.Add("VIEWNAME", viewModelNameResult);
@@ -27,6 +33,11 @@ public class ViewModelRepo {
         _viewModels.Add("VIEWAPPEARANCE", viewModelAppearance);
         _viewModels.Add("VIEWGROOMING", viewModelGrooming);
         _viewModels.Add("VIEWREGISTER", viewModelRegister);
+
+
+        //Verder werken na de vakantie
+        //_viewModels.Add("VIEWBEHEERGEBRUIKERS", viewModelBeheerGebruik);
+        //_viewModels.Add("VIEWBEHEERPLANTEN", viewModelBeheerPlanten);
     }
 
     //

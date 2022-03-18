@@ -105,8 +105,13 @@ public class ViewModelLogin : ViewModelBase
             
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
+
+
                 var mainWindow = new MainWindow();
                 mainWindow.Show();
+
+
+
                 Application.Current.Windows[0]?.Close();
             }
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)

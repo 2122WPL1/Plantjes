@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Plantjes.ViewModels.Beheer
 {
-    internal class ViewModelBeheerPlanten
+    public class ViewModelBeheerPlanten
     {
+        
+
+        public ViewModelBeheerPlanten()
+        {
+            
+        }
     }
 }
