@@ -243,24 +243,6 @@ namespace Plantjes.Dao
             return commensalismeMulti;
         }
 
-        public List<ExtraEigenschap> GetAllExtraEigenschap()
-        {
-            var extraEigenschap = context.ExtraEigenschaps.ToList();
-            return extraEigenschap;
-        }
-
-        public List<Fenotype> GetAllFenoTypes()
-        {
-            var fenoTypes = context.Fenotypes.ToList();
-            return fenoTypes;
-        }
-
-        public List<Foto> GetAllFoto()
-        {
-            var foto = context.Fotos.ToList();
-            return foto;
-        }
-
         public List<UpdatePlant> GetAllUpdatePlant()
         {
             var updatePlant = context.UpdatePlants.ToList();
@@ -358,19 +340,19 @@ namespace Plantjes.Dao
             return selection;
         }
 
-        public IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
-        {
-            // this is NOT part of the cascade function and wil not be added as it is not needed 
-            // request List of wanted type
-            // distinct to prevrent more than one of each type
-            // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter.
-            // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
-            // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
-            // Good way to interact with our datacontext
+        //public IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
+        //{
+        //    // this is NOT part of the cascade function and wil not be added as it is not needed 
+        //    // request List of wanted type
+        //    // distinct to prevrent more than one of each type
+        //    // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter.
+        //    // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
+        //    // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
+        //    // Good way to interact with our datacontext
 
-            var selection = context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
-            return selection;
-        }
+        //    var selection = context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
+        //    return selection;
+        //}
 
         #endregion
 
@@ -380,17 +362,17 @@ namespace Plantjes.Dao
 
         #region FilterFenoTypeFromPlant
 
-        public IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
-        {
-            var selection = context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
+        //public IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
+        //{
+        //    var selection = context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
+        //    return selection;
+        //}
 
-        public IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
-        {
-            var selection = context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
+        //public IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
+        //{
+        //    var selection = context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
+        //    return selection;
+        //}
 
         #endregion
 
@@ -431,16 +413,6 @@ namespace Plantjes.Dao
         public IQueryable<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)
         {
             var selection = context.CommensalismeMultis.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
-        }
-
-        #endregion
-
-        #region FilterExtraEigenschapFromPlant
-
-        public IQueryable<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)
-        {
-            var selection = context.ExtraEigenschaps.Distinct().Where(s => s.PlantId == selectedItem);
             return selection;
         }
 
