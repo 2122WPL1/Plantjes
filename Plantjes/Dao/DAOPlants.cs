@@ -191,22 +191,10 @@ namespace Plantjes.Dao
 
         
 
-        public List<ExtraEigenschap> GetAllExtraEigenschap()
+        public List<UpdatePlant> GetAllUpdatePlant()
         {
-            var extraEigenschap = context.ExtraEigenschaps.ToList();
-            return extraEigenschap;
-        }
-
-        public List<Fenotype> GetAllFenoTypes()
-        {
-            var fenoTypes = context.Fenotypes.ToList();
-            return fenoTypes;
-        }
-
-        public List<Foto> GetAllFoto()
-        {
-            var foto = context.Fotos.ToList();
-            return foto;
+            var updatePlant = context.UpdatePlants.ToList();
+            return updatePlant;
         }
 
         #endregion
@@ -215,19 +203,84 @@ namespace Plantjes.Dao
 
 
 
-        public IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
+            if (selectedItem > 0)
+            {
+                var selection = context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam).Where(s => s.TypeTypeid == selectedItem);
+                return selection;
+            }
+            else
+            {
+                var selection = context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam);
+                return selection;
+            }
+        }
+
+        public IQueryable<TfgsvGeslacht> fillTfgsvGeslacht(int selectedItem)
         {
-            // this is NOT part of the cascade function and wil not be added as it is not needed 
             // request List of wanted type
             // distinct to prevrent more than one of each type
-            // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter.
+            // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter
+            // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
+            // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
+            // Good way to interact with our datacontext
+            if (selectedItem > 0)
+            {
+                var selection = context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam).Where(s => s.FamilieFamileId == selectedItem);
+                return selection;
+            }
+            else
+            {
+                var selection = context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam);
+                return selection;
+            }
+        }
+
+        public IQueryable<TfgsvSoort> fillTfgsvSoort(int selectedItem)
+        {
+            // request List of wanted type
+            // distinct to prevrent more than one of each type
+            // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter
+            // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
+            // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
+            // Good way to interact with our datacontext
+            if (selectedItem > 0)
+            {
+                var selection = context.TfgsvSoorts.Where(s => s.GeslachtGeslachtId == selectedItem).OrderBy(s => s.Soortnaam).Distinct();
+                return selection;
+            }
+            else
+            {
+                var selection = context.TfgsvSoorts.Distinct().OrderBy(s => s.Soortnaam);
+                return selection;
+            }
+        }
+
+        public IQueryable<TfgsvVariant> fillTfgsvVariant()
+        {
+            // request List of wanted type
+            // distinct to prevrent more than one of each type
+            // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter
             // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
             // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
             // Good way to interact with our datacontext
 
-            var selection = context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
+            var selection = context.TfgsvVariants.Distinct().OrderBy(s => s.Variantnaam);
             return selection;
         }
+
+        //public IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
+        //{
+        //    // this is NOT part of the cascade function and wil not be added as it is not needed 
+        //    // request List of wanted type
+        //    // distinct to prevrent more than one of each type
+        //    // The if else is to check if something is selected in the previous combobox. if its not he doesn't filter.
+        //    // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
+        //    // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
+        //    // Good way to interact with our datacontext
+
+        //    var selection = context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
+        //    return selection;
+        //}
 
         #region FilterFromPlant
 
@@ -235,25 +288,57 @@ namespace Plantjes.Dao
 
         #region FilterFenoTypeFromPlant
 
-        public IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
+        //public IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
+        //{
+        //    var selection = context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
+        //    return selection;
+        //}
+
+        //public IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
+        //{
+        //    var selection = context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
+        //    return selection;
+        //}
+
+        #endregion
+
+        #region FilterAbiotiekFromPlant
+
+        public IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem)
         {
-            var selection = context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
+            var selection = context.Abiotieks.Distinct().Where(s => s.PlantId == selectedItem);
             return selection;
         }
 
-        public IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
+        public IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem)
         {
-            var selection = context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
+            var selection = context.AbiotiekMultis.Distinct().Where(s => s.PlantId == selectedItem);
             return selection;
         }
 
         #endregion
-        
-        #region FilterExtraEigenschapFromPlant
 
-        public IQueryable<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)
+        #region FilterBeheerMaandFromPlant
+
+        public IQueryable<BeheerMaand> FilterBeheerMaandFromPlant(int selectedItem)
         {
-            var selection = context.ExtraEigenschaps.Distinct().Where(s => s.PlantId == selectedItem);
+            var selection = context.BeheerMaands.Distinct().Where(s => s.PlantId == selectedItem);
+            return selection;
+        }
+
+        #endregion
+
+        #region FilterCommensalismeFromPlant
+
+        public IQueryable<Commensalisme> FilterCommensalismeFromPlant(int selectedItem)
+        {
+            var selection = context.Commensalismes.Distinct().Where(s => s.PlantId == selectedItem);
+            return selection;
+        }
+
+        public IQueryable<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)
+        {
+            var selection = context.CommensalismeMultis.Distinct().Where(s => s.PlantId == selectedItem);
             return selection;
         }
 

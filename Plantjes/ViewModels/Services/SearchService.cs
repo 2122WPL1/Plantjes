@@ -220,7 +220,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     public void fillComboBoxRatioBloeiBlad(ObservableCollection<Fenotype> cmbRatioBladBloeiCollection) {
         //not currently used in the cascade search
         //will be adjusted later (dao)
-        var list = _dao.fillFenoTypeRatioBloeiBlad();
+        var list = DAOFenotype.fillFenoTypeRatioBloeiBlad();
         // a list to add type that have been added to the combobox. this is used for preventing two of the same type in the combo box
         var ControleList = new List<string>();
         //adding or list to the combobox
@@ -407,7 +407,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an ExtraEigenschap list, then we'll need to filter that list
         ////by checking if the ExtraEigenschap.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining ExtraEigenschap types in the detailSelectedPlant Observable Collection
-        var extraEigenschapList = _dao.GetAllExtraEigenschap();
+        var extraEigenschapList = DAOExtraEigenschap.GetAllExtraEigenschap();
 
         foreach (var itemExtraEigenschap in extraEigenschapList)
         foreach (var plantItem in SelectedPlantInResult.ExtraEigenschaps)
@@ -448,7 +448,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         ////First we need an Fenotype list, then we'll need to filter that list
         ////by checking if the Fenotype.PlantId is the same als the SelectedPlantResult.PlantId.
         ////Once filtered: put the remaining Fenotype types in the detailSelectedPlant Observable Collection
-        var fenoTypeList = _dao.GetAllFenoTypes();
+        var fenoTypeList = DAOFenotype.GetAllFenoTypes();
 
         foreach (var itemFenotype in fenoTypeList)
         foreach (var item in SelectedPlantInResult.Fenotypes)
