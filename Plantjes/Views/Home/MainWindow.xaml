@@ -89,6 +89,19 @@
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
             <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
             <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
+            <ComboBox x:Name="cmbBeheer" Grid.Column="1" Margin="565,17,447,807" Text="Beheer"
+                      Background="DarkGreen">
+                <ComboBoxItem Name="Item1">
+                    <Button Content="Gebruiker" 
+                            Name="btnGebruikerBeheer">
+                    </Button>
+                </ComboBoxItem>
+                <ComboBoxItem Name="Item2">
+                    <Button Content="Planten" Name="btnPlantenBeheer"></Button>
+                </ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="lblBeheer" Content="Beheer" Grid.Column="1" Margin="565,17,480,807" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" FontWeight="Bold"
+                   />
         </Grid>
     </Viewbox>
 
