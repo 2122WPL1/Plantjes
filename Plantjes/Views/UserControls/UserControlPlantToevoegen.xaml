@@ -23,7 +23,7 @@
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Ontwikkelsnelheid"/>
-                                        <ComboBox Style="{StaticResource ComboStyle}">
+                                        <ComboBox Width="80">
                                             <ComboBoxItem Content="traag"/>
                                             <ComboBoxItem Content="matig"/>
                                             <ComboBoxItem Content="snel"/>
@@ -592,7 +592,7 @@
                                         <Label Content="Bladhoogte:"/>
                                         <StackPanel Orientation="Horizontal">
                                             <Label Content="Min:"/>
-                                            <ComboBox Style="{StaticResource ComboStyle}">
+                                            <ComboBox Width="80">
                                                 <ComboBoxItem Content="240/250"/>
                                                 <ComboBoxItem Content="230/239"/>
                                                 <ComboBoxItem Content="220/229"/>
@@ -620,7 +620,7 @@
                                                 <ComboBoxItem Content="0/9"/>
                                             </ComboBox>
                                             <Label Content="Max:"/>
-                                            <ComboBox Style="{StaticResource ComboStyle}">
+                                            <ComboBox Width="80">
                                                 <ComboBoxItem Content="240/250"/>
                                                 <ComboBoxItem Content="230/239"/>
                                                 <ComboBoxItem Content="220/229"/>
@@ -1100,7 +1100,7 @@
 
                 <!--Bloem eigenschappen-->
                 <GroupBox 
-                BorderThickness="0" Margin="430,10,523,440">
+                BorderThickness="0" Margin="430,10,518,440">
                     <Border Style="{StaticResource BorderBox}" >
                         <StackPanel>
                             <Label Content="Bloem eigenschappen" Style="{StaticResource LabelBorder}"/>
@@ -1113,7 +1113,7 @@
                                 <Label Content="Nectarwaarde:"/>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -1121,7 +1121,7 @@
                                         <ComboBoxItem Content="5"/>
                                     </ComboBox>
                                     <Label Content="Max:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -1134,7 +1134,7 @@
                                 <Label Content="Pollenwaarde:"/>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -1142,7 +1142,7 @@
                                         <ComboBoxItem Content="5"/>
                                     </ComboBox>
                                     <Label Content="Max:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -1155,7 +1155,7 @@
                                 <Label Content="Bloeihoogte:"/>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="240/250"/>
                                         <ComboBoxItem Content="230/239"/>
                                         <ComboBoxItem Content="220/229"/>
@@ -1183,7 +1183,7 @@
                                         <ComboBoxItem Content="0/9"/>
                                     </ComboBox>
                                     <Label Content="Max:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}">
+                                    <ComboBox Width="80">
                                         <ComboBoxItem Content="240/250"/>
                                         <ComboBoxItem Content="230/239"/>
                                         <ComboBoxItem Content="220/229"/>
@@ -1257,7 +1257,7 @@
                     </Border>
                 </GroupBox>
 
-                <Button Width="240" Content="Plant inzenden" Style="{StaticResource ButtonUnified}" Margin="10,862,960,58"/>
+                <Button Width="240" Content="Plant inzenden" Style="{StaticResource ButtonUnified}" Margin="31,862,939,58"/>
             </Grid>
         </Viewbox>
     </Canvas>

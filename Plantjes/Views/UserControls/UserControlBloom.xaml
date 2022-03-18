@@ -5,21 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="450">
+    <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid>
         <Canvas x:Name="cvsBloei" Visibility="Visible" Background="#99FFFFFF" HorizontalAlignment="Center" Width="450" Height="450">
             <Canvas.Effect>
                 <DropShadowEffect />
             </Canvas.Effect>
-            <!--Blad/bloem kleur fully redesigned by MarijnCo-->
             <GroupBox
                 BorderThickness="0" Margin="0,0,94,68" Height="430" Width="430" Canvas.Left="10" Canvas.Top="10" >
                 <Border Style="{StaticResource BorderBox}">
                     <StackPanel >
                         <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
-                        <Grid Height="367">
+                        <Grid Height="369">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="123*"/>
-                                <ColumnDefinition Width="83*"/>
+                                <ColumnDefinition Width="247*"/>
+                                <ColumnDefinition Width="145*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -27,8 +27,127 @@
                             </Grid.RowDefinitions>
                             <!--Kleurselectie-->
                             <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Bloeit in:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="124"/>
+                                    <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Center" Width="124"/>
+                                </StackPanel>
+                                <ListBox Height="158">
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInJan"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInJan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Januari" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteJan" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteJan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInFeb"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInFeb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Februari" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteFeb" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteFeb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInMar"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInMar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Maart" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteMar"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteMar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInApr" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInApr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="April" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteApr"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteApr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInMay" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInMay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Mei" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteMay"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteMay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInJun"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInJun, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Juni" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteJun" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteJun, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInJul" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInJul, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Juli" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteJul"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteJul, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInAug" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInAug, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Augustus" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteAug"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteAug, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInSep"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInSep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="September" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteSep" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteSep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInOct"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInOct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="Oktober" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteOct"
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteOct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInNov" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInNov, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="November" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteNov" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteNov, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInDec" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeitInDec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Label Content="December" Width="150" HorizontalContentAlignment="Center"/>
+                                            <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteDec" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteDec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                </ListBox>
+
+                            </StackPanel>
+                            <!--Maandselectie-->
+                            <StackPanel 
+                                Grid.Column="1">
                                 <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
-                                <ListBox>
+                                <ListBox Height="159">
                                     <ListBoxItem Focusable="False" >
                                         <StackPanel Style="{StaticResource StackPanelColour}">
                                             <Viewbox>
@@ -147,104 +266,12 @@
                                     </ListBoxItem>
                                 </ListBox>
                             </StackPanel>
-                            <!--Maandselectie-->
-                            <StackPanel 
-                                Grid.Column="1">
-                                <Label Content="Bloeit in:           Bloeihoogte:" Style="{StaticResource LabelBorder}"/>
-                                <ListBox Height="158">
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Januari" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Februari" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Maart" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="April" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Mei" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Juni" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Juli" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Augustus" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="September" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="Oktober" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="November" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                    <ListBoxItem Focusable="False">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                            <Label Content="December" Width="80" HorizontalContentAlignment="Center"/>
-                                            <CheckBox VerticalContentAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListBoxItem>
-                                </ListBox>
-                            </StackPanel>
                             <!--Bloeihoogte-->
-                            <StackPanel 
-                                Grid.Row="1" Grid.Column="1">
+                            <StackPanel Grid.Column="1" Margin="0,184,0,0" Grid.RowSpan="2">
                                 <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}"/>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}"
+                                    <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMin}" 
                                               SelectedItem="{Binding Path=SelectedBloeiHoogte}" IsEditable="True">
                                         <ComboBoxItem Content="240/250"/>
@@ -276,7 +303,7 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:"/>
-                                    <ComboBox Style="{StaticResource ComboStyle}"
+                                    <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMax}"
                                               SelectedItem="{Binding Path=SelectedBloeiHoogte}">
                                         <ComboBoxItem Content="240/250"/>
@@ -307,9 +334,9 @@
                                     </ComboBox>
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel Grid.Row="1">
+                            <StackPanel Margin="0,184,0,0" Grid.RowSpan="2">
                                 <Label Content="Bloeiwijze:" Style="{StaticResource LabelBorder}"/>
-                                <ListBox>
+                                <ListBox Height="160">
                                     <ListBoxItem Focusable="False" >
                                         <StackPanel Style="{StaticResource StackPanelListCheckBox}">
                                             <Viewbox>
