@@ -119,7 +119,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
 
     //geschreven door owen, aangepast door robin voor mvvm en later services
     public void fillComboBoxType(ObservableCollection<TfgsvType> cmbTypeCollection) {
-        var list = _dao.fillTfgsvType();
+        var list = DAOTfgsv.fillTfgsvType();
 
         foreach (var item in list) cmbTypeCollection.Add(item);
     }
@@ -132,10 +132,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected type is selected to prevent null exception
         if (selectedType != null)
             // Requesting te list of families 
-            list = _dao.fillTfgsvFamilie(Convert.ToInt32(selectedType.Planttypeid)).ToList();
+            list = DAOTfgsv.fillTfgsvFamilie(Convert.ToInt32(selectedType.Planttypeid)).ToList();
         else
             // Requesting te list of families  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvFamilie(0).ToList();
+            list = DAOTfgsv.fillTfgsvFamilie(0).ToList();
 
         // clearing te content of te combobox of familie
         cmbFamilieCollection.Clear();
@@ -157,10 +157,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected geslacht is selected to prevent null exception
         if (selectedFamilie != null)
             // Requesting te list of geslacht 
-            list = _dao.fillTfgsvGeslacht(Convert.ToInt32(selectedFamilie.FamileId));
+            list = DAOTfgsv.fillTfgsvGeslacht(Convert.ToInt32(selectedFamilie.FamileId));
         else
             // Requesting te list of Geslacht  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvGeslacht(0);
+            list = DAOTfgsv.fillTfgsvGeslacht(0);
 
         // clearing te content of te combobox of geslacht
         cmbGeslachtCollection.Clear();
@@ -182,10 +182,10 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         // checking if selected Soort is selected to prevent null exception
         if (selectedGeslacht != null)
             // Requesting te list of Soort 
-            list = _dao.fillTfgsvSoort(Convert.ToInt32(selectedGeslacht.GeslachtId));
+            list = DAOTfgsv.fillTfgsvSoort(Convert.ToInt32(selectedGeslacht.GeslachtId));
         else
             // Requesting te list of Soort  with 0 because there is noting selected in the combobox of type.
-            list = _dao.fillTfgsvSoort(0);
+            list = DAOTfgsv.fillTfgsvSoort(0);
 
         // clearing te content of te combobox of Soort
         cmbSoortCollection.Clear();
@@ -202,7 +202,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxVariant(ObservableCollection<TfgsvVariant> cmbVariantCollection) {
         // Requesting te list of Variant  with 0 because there is noting selected in the combobox of type.
-        var list = _dao.fillTfgsvVariant();
+        var list = DAOTfgsv.fillTfgsvVariant();
         // clearing te content of te combobox of Variant
         cmbVariantCollection.Clear();
         // a list to add type that have been added to the combobox. this is used for preventing two of the same type in the combo box

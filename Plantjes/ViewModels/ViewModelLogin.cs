@@ -66,6 +66,7 @@ public class ViewModelLogin : ViewModelBase
         Application.Current.Shutdown();
     }
 
+    //Binding met de textbox en passwordbox op de login GUI -- Kjell, Warre
     private SolidColorBrush _GebruikersNaamColor;
     public SolidColorBrush GebruikersNaamColor
     {
@@ -94,30 +95,88 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
+    //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell 
     private void LoginButtonClick() 
     {
         if (!string.IsNullOrWhiteSpace(userNameInput)) 
         {
             var loginResult = _loginService.CheckCredentials(userNameInput, passwordInput);
 
+            
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
-                //  loggedInMessage = _loginService.LoggedInMessage(userNameInput);
                 var mainWindow = new MainWindow();
                 mainWindow.Show();
                 Application.Current.Windows[0]?.Close();
             }
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
-                errorMessage = loginResult.errorMessage;
-                GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                
+                
+                if(string.IsNullOrWhiteSpace(userNameInput))
+                {
+                    if (string.IsNullOrWhiteSpace(passwordInput))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                        PasswordColor = new SolidColorBrush(Colors.Transparent);
+                    }
+                    else if(!string.IsNullOrWhiteSpace(passwordInput))
+                    {
+                        errorMessage = loginResult.errorMessage;
+                        GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                        PasswordColor = new SolidColorBrush(Colors.Transparent);
+                        
+                    }
+
+                }
+                else if(!string.IsNullOrWhiteSpace(userNameInput))
+                {
+                    if (userNameInput.Contains("@") && userNameInput.Contains("."))
+                    {
+                        if(string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            GebruikersNaamColor = new SolidColorBrush(Colors.Transparent);
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                        else if(!string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                    }
+                    else if(!(userNameInput.Contains("@") && userNameInput.Contains(".")))
+                    {
+                        if(string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+                        }
+                        else if (!string.IsNullOrWhiteSpace(passwordInput))
+                        {
+                            errorMessage = loginResult.errorMessage;
+                            PasswordColor = new SolidColorBrush(Colors.Red);
+
+                            if (!((userNameInput.Contains("@")) && (userNameInput.Contains("."))))
+                            {
+                                errorMessage = loginResult.errorMessage;
+                                GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+                            }
+                        }
+                    }
+                }
             }
+
         }
-        else 
+        else
         {
             errorMessage = "Gebruikersnaam invullen.";
             GebruikersNaamColor = new SolidColorBrush(Colors.Red);
+            PasswordColor = new SolidColorBrush(Colors.Red);
         }
         RaisePropertyChanged("errorMessage");
     }
+    //------------------------------------------------------------------------------------------
 }
