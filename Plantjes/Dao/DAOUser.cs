@@ -1,10 +1,11 @@
-﻿using Plantjes.Models.Db;
+﻿using Microsoft.EntityFrameworkCore;
+using Plantjes.Models.Db;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Plantjes.Dao
 {
@@ -12,7 +13,9 @@ namespace Plantjes.Dao
     {
         public static Gebruiker GetGebruikerWithEmail(string userEmail)
         {
-            return context.Gebruikers.Include(x => x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
+            var x = context.Gebruikers.Include(x => x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
+            //x.Rol = context.Rols.FirstOrDefault(y => y.Id == x.RolId);
+            return x;
         }
 
         //written by kenny
