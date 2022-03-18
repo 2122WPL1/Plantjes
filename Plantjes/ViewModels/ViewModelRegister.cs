@@ -50,7 +50,6 @@ public class ViewModelRegister : ViewModelBase
     private string _emailAdresInput;
     public string _passwordInput;
     public string _passwordRepeatInput;
-    private string _rolInput;
     private string _errorMessage;
 
     public string errorMessage

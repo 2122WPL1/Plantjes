@@ -40,7 +40,7 @@
             </Button>
 
 
-            <Button x:Name="btnCancel" Content="Cancel" Margin="295,142,0,0" VerticalAlignment="Top" Height="26" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
+            <Button x:Name="btnCancel" Content="Annuleren" Margin="295,142,0,0" VerticalAlignment="Top" Height="26" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
                     Command="{Binding Path=cancelCommand}" HorizontalAlignment="Left" Width="87" RenderTransformOrigin="0.479,0.891">
                 <Button.Effect>
                     <DropShadowEffect />

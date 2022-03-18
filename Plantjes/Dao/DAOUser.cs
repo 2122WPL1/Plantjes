@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
@@ -14,7 +14,7 @@ namespace Plantjes.Dao
         //written by kenny
         public Gebruiker GetGebruikerWithEmail(string userEmail)
         {
-            return context.Gebruikers.SingleOrDefault(g => g.Emailadres == userEmail);
+            return context.Gebruikers.Include(x=>x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
         }
 
         //written by kenny
