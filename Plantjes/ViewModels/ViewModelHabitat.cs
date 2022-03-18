@@ -6,7 +6,8 @@ using Plantjes.ViewModels.Interfaces;
 
 namespace Plantjes.ViewModels; 
 
-public class ViewModelHabitat : ViewModelBase {
+public class ViewModelHabitat : ViewModelBase 
+{
     private readonly DAOLogic _dao;
 
     private string _selectedNectarwaarde;
@@ -56,13 +57,13 @@ public class ViewModelHabitat : ViewModelBase {
 
     //geschreven door christophe, op basis van een voorbeeld van owen
     public void fillComboBoxPollenwaarde() {
-        var list = _dao.FillExtraPollenwaardes();
+        var list = DAOExtraPollen.FillExtraPollenwaardes();
 
         foreach (var item in list) cmbPollenWaarde.Add(item);
     }
 
     public void fillComboBoxNectarwaarde() {
-        var list = _dao.FillExtraNectarwaardes();
+        var list = DAOExtraNectar.FillExtraNectarwaardes();
 
         foreach (var item in list) cmbNectarWaarde.Add(item);
     }

@@ -17,13 +17,13 @@ public partial class DAOLogic
 
     //1.een statische private instantie instatieren die enkel kan gelezen worden.
     //deze wordt altijd teruggegeven wanneer de Instance method wordt opgeroepen
-    private static readonly DAOLogic instance = new();
+    private static DAOLogic instance = new();
 
     /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
-    private readonly plantenContext context;
+    public static plantenContext context;
 
     //2. private contructor
-    private DAOLogic()
+    public DAOLogic()
     {
         /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
         context = new plantenContext();

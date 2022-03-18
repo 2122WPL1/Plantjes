@@ -1,24 +1,22 @@
-﻿using System;
+﻿using Plantjes.Models.Db;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
 {
-    public partial class DAOLogic
+    internal class DAOUser : DAOLogic
     {
-        //written by kenny
-        public Gebruiker GetGebruikerWithEmail(string userEmail)
+        public static Gebruiker GetGebruikerWithEmail(string userEmail)
         {
-            return context.Gebruikers.Include(x=>x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
+            return context.Gebruikers.Include(x => x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
         }
 
         //written by kenny
-        public void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password)
+        public static void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password)
         {
             var passwordBytes = Encoding.ASCII.GetBytes(password);
             var md5Hasher = new MD5CryptoServiceProvider();
@@ -42,13 +40,13 @@ namespace Plantjes.Dao
         }
 
         //written by kenny
-        public List<Gebruiker> getAllGebruikers()
+        public static List<Gebruiker> getAllGebruikers()
         {
             return context.Gebruikers.ToList();
         }
 
         //written by kenny
-        public bool CheckIfEmailAlreadyExists(string email)
+        public static bool CheckIfEmailAlreadyExists(string email)
         {
             return context.Gebruikers.Any(x => x.Emailadres == email);
         }
