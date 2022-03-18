@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Plantjes.Views.Beheer
 {
     /// <summary>
-    /// Interaction logic for BeheerGebruikers.xaml
+    /// Interaction logic for BeheerPlantenWindow.xaml
     /// </summary>
-    public partial class BeheerGebruikers : UserControl
+    public partial class BeheerPlantenWindow : Window
     {
-        public BeheerGebruikers()
+        public BeheerPlantenWindow()
         {
             InitializeComponent();
         }
