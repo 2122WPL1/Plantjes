@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              d:DesignHeight="720"
              d:DesignWidth="1200">
+    <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid Margin="10,10,10,0" Height="700" VerticalAlignment="Top">
 
         <!--Zoek filters-->

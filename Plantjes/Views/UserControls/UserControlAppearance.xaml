@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="450" Background="#FFA0A0A0">
+    <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid>
-        <!--Blad/bloem kleur-->
         <GroupBox
                 BorderThickness="0" >
             <Border Style="{StaticResource BorderBox}">
