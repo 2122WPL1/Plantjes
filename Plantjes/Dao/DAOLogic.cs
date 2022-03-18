@@ -21,10 +21,10 @@ public partial class DAOLogic
 
     /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
 
-    internal static plantenContext context;
+    public static plantenContext context;
 
     //2. private contructor
-    internal DAOLogic()
+    public DAOLogic()
 
     {
         /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
