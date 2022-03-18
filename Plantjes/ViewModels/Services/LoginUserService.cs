@@ -49,19 +49,16 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
                     var loginWindow = new LoginWindow();
                     loginWindow.Show();
                 } //foutafhandeling
-                else
-                {
-                    Message = "zorg dat de wachtwoorden overeen komen.";
+                else {
+                    Message = "Zorg dat de wachtwoorden overeenkomen.";
                 }
             }
-            else
-            {
-                Message = $"{emailAdresInput} is geen geldig emailadres,\r\n of het emailadres is al in gebruik.";
+            else {
+                Message = $"Fout! {emailAdresInput} is geen geldig emailadres, " + "\r\n" + " of het eamiladres is al in gebruik.";
             }
         }
-        else
-        {
-            Message = "zorg dat alle velden ingevuld zijn";
+        else {
+            Message = "Zorg dat alle velden ingevuld zijn.";
         } //Message terugsturen om te binden aan een label in de viewModel.
 
         return Message;
@@ -93,7 +90,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
         else
         {
             //indien geen geldig emailadress, errorMessage opvullen
-            loginResult.errorMessage = "Dit is geen geldig Vives emailadres.";
+            loginResult.errorMessage = "FOUT! Dit is geen geldig Vives emailadres.";
             return loginResult;
         }
 
@@ -115,12 +112,12 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
                     loginResult.loginStatus = LoginStatus.LoggedIn;
                 else
                     //indien false errorMessage opvullen
-                    loginResult.errorMessage += "\r\n" + "Het ingegeven wachtwoord is niet juist, probeer opnieuw";
+                    loginResult.errorMessage += "\r\n" + "FOUT! Het ingegeven wachtwoord is niet juist. Gelieve opnieuw te proberen.";
             }
             else
             {
                 // als de gebruiker niet gevonden wordt, errorMessage invullen
-                loginResult.errorMessage = $"Er is geen account gevonden voor {userNameInput} " + "\r\n" + " gelieve eerst te registreren";
+                loginResult.errorMessage = $"FOUT! Er is geen account gevonden voor {userNameInput}" + "\r\n" + "Gelieve eerst te registreren.";
             }
         }
         else
@@ -131,10 +128,8 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
 
         return loginResult;
     }
-
-    //functie om naam weer te geven in loginWindow
-    public string LoggedInMessage()
-    {
+    //Functie om naam weer te geven in loginWindow, als login succesvol is
+    public string LoggedInMessage() {
         var message = string.Empty;
         if (_gebruiker != null)
         {
