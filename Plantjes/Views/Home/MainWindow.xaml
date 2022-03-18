@@ -50,18 +50,14 @@
                 <RowDefinition Height="884.04" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnNaam" Content="Plant opzoeken" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
+            <StackPanel Margin="27,10,442,803" Orientation="Horizontal" Grid.Column="1">
+                <Button x:Name="btnNaam" Content="Plant opzoeken" Margin="0,0,5,0"
                     Command="{Binding mainNavigationCommand}"
-                    CommandParameter="VIEWNAME" Grid.Column="1" Click="btnNaam_Click">
-                <Button.Effect>
-                    <DropShadowEffect />
-                </Button.Effect>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10" />
-                    </Style>
-                </Button.Resources>
-            </Button>
+                    CommandParameter="VIEWNAME" Click="btnNaam_Click" Height="60" Width="200" Style="{StaticResource ButtonUnified}"/>
+                <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="0,0,5,0" Visibility="{Binding ShowEditPlants}"
+                    Command="{Binding mainNavigationCommand}"
+                    CommandParameter="VIEWNAME" Click="btnPlantToevoegen_Click" Height="60" Style="{StaticResource ButtonUnified}"/>
+            </StackPanel>
 
 
             <ListBox x:Name="lstDetails" Visibility="Hidden" Margin="468,176,47,700" Background="#99FFFFFF" Grid.Column="1" />
@@ -73,23 +69,12 @@
             <Grid x:Name="MainContent" HorizontalAlignment="Left" Width="1230" Margin="10,101,0,0" Height="773" VerticalAlignment="Top" Grid.ColumnSpan="2">
                 <ContentControl Content="{Binding currentViewModel}" HorizontalAlignment="Left" Width="1210" Height="754" VerticalAlignment="Center" Margin="10,0,0,0" />
             </Grid>
-            <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Visibility="{Binding ShowEditPlants}" HorizontalAlignment="Left" Margin="288,15,0,0" VerticalAlignment="Top" Height="62" Width="197" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="22" Foreground="White"
-                    Command="{Binding mainNavigationCommand}"
-                    CommandParameter="VIEWNAME" Grid.Column="1" Click="btnPlantToevoegen_Click">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="10" />
-                    </Style>
-                </Button.Resources>
-                <Button.Effect>
-                    <DropShadowEffect />
-                </Button.Effect>
-            </Button>
             <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,14,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Label Content="{Binding rol}" Grid.Column="1" Margin="0,36,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
             <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
-            <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
+            <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Image/Vives_Logo_MainWindow.png"/>
+
         </Grid>
     </Viewbox>
 
