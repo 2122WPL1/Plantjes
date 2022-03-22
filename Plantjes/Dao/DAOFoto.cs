@@ -10,6 +10,7 @@ using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Andang
     public class DAOFoto : DAOLogic
     {
         //private object context;

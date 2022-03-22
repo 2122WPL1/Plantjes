@@ -9,12 +9,12 @@ using System.Security.Cryptography;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Xander, aangepast door Warre
     internal class DAOUser : DAOLogic
     {
         public static Gebruiker GetGebruikerWithEmail(string userEmail)
         {
             var x = context.Gebruikers.Include(x => x.Rol).SingleOrDefault(g => g.Emailadres == userEmail);
-            //x.Rol = context.Rols.FirstOrDefault(y => y.Id == x.RolId);
             return x;
         }
 

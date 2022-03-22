@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Warre
     internal class DAOExtraPollen : DAOLogic
     {
         public static List<ExtraPollenwaarde> FillExtraPollenwaardes()

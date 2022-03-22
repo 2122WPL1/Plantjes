@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Andang
     internal class DAOExtraEigenschap : DAOLogic
     {
         public static List<ExtraEigenschap> GetAllExtraEigenschap()
