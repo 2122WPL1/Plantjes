@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Andang
     internal class DAOFenotype : DAOLogic
     {
         public static List<Fenotype> GetAllFenoTypes()
@@ -16,6 +17,7 @@ namespace Plantjes.Dao
         }
         public static IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
         {
+            //Commentaar van vorige groep.
             // this is NOT part of the cascade function and wil not be added as it is not needed 
             // request List of wanted type
             // distinct to prevrent more than one of each type

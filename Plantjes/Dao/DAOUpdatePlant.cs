@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
+    //Gesplitst door Warre
     internal class DAOUpdatePlant : DAOLogic
     {
         public static List<UpdatePlant> GetAllUpdatePlant()
