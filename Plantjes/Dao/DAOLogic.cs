@@ -11,7 +11,7 @@ using Plantjes.Models.Db;
 
 namespace Plantjes.Dao;
 
-public partial class DAOLogic
+public class DAOLogic
 {
     //Robin: opzetten DAOLogic, singleton pattern
 
