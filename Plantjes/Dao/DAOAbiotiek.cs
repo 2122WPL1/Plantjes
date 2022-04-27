@@ -13,7 +13,6 @@ namespace Plantjes.Dao
         {
             return context.Abiotieks.ToList();
         }
-
         //Get a list of all the AbiotiekMulti types
         public static List<AbiotiekMulti> GetAllAbiotieksMulti()
         {
@@ -21,12 +20,10 @@ namespace Plantjes.Dao
             //The aditional filteren will take place in the ViewModel
             return context.AbiotiekMultis.ToList();
         }
-
         public static IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem)
         {
             return context.Abiotieks.Distinct().Where(s => s.PlantId == selectedItem);
         }
-
         public static IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem)
         {
             return context.AbiotiekMultis.Distinct().Where(s => s.PlantId == selectedItem);

@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Plantjes.Models.Db;
 
-namespace Plantjes.Dao
-{
-    public partial class DAOLogic
-    {
+namespace Plantjes.Dao {
+    public partial class DAOLogic {
         //get a list of all the plants.
         ///Kenny
-        public List<Plant> getAllPlants()
-        {
+        public List<Plant> getAllPlants() {
             // kijken hoeveel er zijn geselecteerd
 
             var plants = context.Plants.ToList();
@@ -21,31 +17,20 @@ namespace Plantjes.Dao
         }
 
         ///Owen
-        public string GetImages(long id, string ImageCategorie)
-        {
+        public string GetImages(long id, string ImageCategorie) {
             var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).SingleOrDefault(s => s.Plant == id);
 
 
-            if (foto != null)
-            {
+            if (foto != null) {
                 var location = foto;
                 return location.UrlLocatie;
             }
 
             return null;
         }
-        
+
         /* 4.gebruik: var example = DAOLogic.Instance();
     }
          */
-
-
-        //search functions
-
-        /* NARROW DOWN FUNCTIONS */
-
-        #endregion
-
-        #endregion
     }
 }
