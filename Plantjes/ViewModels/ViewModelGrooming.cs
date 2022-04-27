@@ -28,7 +28,7 @@ public class ViewModelGrooming : ViewModelBase {
             OnPropertyChanged();
         }
     }
-
+    //Aangepast door Warre
     public void fillComboBoxBeheerdaad() {
         var list = DAOBeheerMaand.FillBeheerdaad().ToList();
 

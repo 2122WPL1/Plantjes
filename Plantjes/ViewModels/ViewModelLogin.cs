@@ -95,7 +95,7 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
-    //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell 
+    //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell & Warre
     private void LoginButtonClick() 
     {
         if (!string.IsNullOrWhiteSpace(userNameInput)) 
