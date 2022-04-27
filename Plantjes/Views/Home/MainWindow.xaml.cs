@@ -21,4 +21,9 @@ public partial class MainWindow : Window {
     {
         img_vives_logo_main.Visibility = Visibility.Hidden;
     }
+
+    private void btnBeheerGebruiker_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
 }
