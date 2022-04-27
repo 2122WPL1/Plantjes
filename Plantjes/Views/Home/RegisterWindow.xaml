@@ -37,7 +37,7 @@
             <PasswordBox x:Name="txtWachtwoordHerhaal"
                          PasswordChanged="txtWachtwoordHerhaal_OnPasswordChanged" Margin="155,217,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="265" />
 
-            <Button x:Name="btnRegister" Content="Registreer" Margin="155,290,0,0" VerticalAlignment="Top" Height="24" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
+            <Button x:Name="btnRegister" Content="Registreer"  IsDefault="True" Margin="155,290,0,0" VerticalAlignment="Top" Height="24" BorderBrush="White" Background="DarkGreen" FontWeight="Bold" FontSize="15" Foreground="White"
                     Command="{Binding registerCommand}" HorizontalAlignment="Left" Width="265">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
