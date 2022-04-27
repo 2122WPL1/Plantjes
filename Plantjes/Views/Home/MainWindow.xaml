@@ -57,6 +57,14 @@
                 <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="0,0,5,0" Visibility="{Binding ShowEditPlants}"
                     Command="{Binding mainNavigationCommand}"
                     CommandParameter="VIEWNAME" Click="btnPlantToevoegen_Click" Height="60" Style="{StaticResource ButtonUnified}"/>
+                <ComboBox x:Name="cmbBeheer" Width="198" Height="49" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}">
+                    <ComboBoxItem Focusable="False">
+                        <Button Content="Gebruiker" Name="btnBeheerGebruiker" Style="{StaticResource ButtonUnified}"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Focusable="False">
+                        <Button Content="Plant" Name="btnBeheerPlant" Style="{StaticResource ButtonUnified}"/>
+                    </ComboBoxItem>
+                </ComboBox>
             </StackPanel>
 
 
