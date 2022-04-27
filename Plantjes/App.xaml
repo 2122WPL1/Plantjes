@@ -24,7 +24,27 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
         
+        <!-- this specific styling written by Warre -->
+        <Style TargetType="ComboBox" x:Key="ComboBoxUnified">
+            <!--Styling van buttons toepassen voor combobox-->
+            <Style.Resources>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="#FFa0a0a0"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Foreground" Value="DarkGreen"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <!--  -->
+        
+
         <Style TargetType="StackPanel" x:Key="StackPanelListCheckBox">
             <Setter Property="Focusable" Value="False"/>
             <Setter Property="Height" Value="50"/>
