@@ -54,7 +54,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
                 }
             }
             else {
-                Message = $"Fout! {emailAdresInput} is geen geldig emailadres, " + "\r\n" + " of het eamiladres is al in gebruik.";
+                Message = $"Fout! Emailadres is ongeldig, of is al in gebruik.";
             }
         }
         else {
