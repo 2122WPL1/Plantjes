@@ -18,7 +18,7 @@
 
     <Viewbox MaxHeight="300" MaxWidth="464">
         <Grid Height="293" Width="473">
-
+            <Image HorizontalAlignment="Left" Height="97" Margin="293,0,0,0" VerticalAlignment="Top" Width="180" Source="../../Image/vives_big.png" Stretch="UniformToFill"/>
             <Label x:Name="lblUserName" Content="Gebruikersnaam:" HorizontalAlignment="Left" Margin="28,77,0,0" VerticalAlignment="Top" Foreground="White" />
             <Label x:Name="lblPasword" Content="Wachtwoord:" HorizontalAlignment="Left" Margin="47,106,0,0" VerticalAlignment="Top" Foreground="White" />
 
@@ -37,7 +37,7 @@
             <Button x:Name="btnRegister" Content="Registreer" Margin="154,193,0,75" Style="{StaticResource ButtonUnified}" Height="25" FontSize="15"
                     Command="{Binding registerCommand}" HorizontalAlignment="Left" Width="236"/>
             <TextBlock x:Name="lblError" Text="{Binding errorMessage}" HorizontalAlignment="Left" Margin="40,16,0,0" VerticalAlignment="Top" Height="56" Width="248" FontWeight="Bold" TextWrapping="WrapWithOverflow" Foreground="White"/>
-            <Image HorizontalAlignment="Left" Height="97" Margin="293,0,0,0" VerticalAlignment="Top" Width="180" Source="../../Image/vives_big.png" Stretch="UniformToFill"/>
+            
         </Grid>
     </Viewbox>
 </Window>

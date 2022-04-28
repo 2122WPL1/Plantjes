@@ -4,11 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="450" Background="#FFA0A0A0">
+             d:DesignHeight="450" d:DesignWidth="450">
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid>
         <GroupBox
-                BorderThickness="0" >
+            BorderThickness="0" Width="430" Height="430" >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="UITERLIJK" Style="{StaticResource LabelBorderTitle}"/>
