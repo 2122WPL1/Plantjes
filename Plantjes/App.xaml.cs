@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
+using Plantjes.Dao;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
@@ -16,6 +17,7 @@ public partial class App : Application {
     public IServiceProvider Services { get; }
 
     public App() {
+        DAOUser.AddUsersFromCsv();
         Services = ConfigureServices();
         this.InitializeComponent();
         //SearchService.CreateInstance();
