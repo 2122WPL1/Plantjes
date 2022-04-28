@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
+using Microsoft.Win32;
 using Plantjes.ViewModels;
 
 namespace Plantjes.Dao {
@@ -54,17 +55,14 @@ namespace Plantjes.Dao {
         /// Add users from CSV
         /// </summary>
         public static void AddUsersFromCsv() {
-            //generate new csv with headings
-            generateCsv();
-            //open in excel
-            openInExcelAndWait("import.csv");
             //import
             importUsersFromCsv();
             //show errors
             openInExcelAndWait("errors.csv");
         }
 
-        private static void generateCsv() {
+        //legacy - object to csv column names
+        /*private static void generateCsv() {
             //generate csv with headings
             //delete if exists
             if (File.Exists("import.csv")) File.Delete("import.csv");
@@ -72,7 +70,7 @@ namespace Plantjes.Dao {
             var fields = typeof(ViewModelRegister).GetProperties().Where(x => x.Name.Contains("Input")).Where(x => !x.Name.Contains("password")).Select(x => x.Name.Replace("Input", ""));
             //write as column headings
             File.WriteAllText("import.csv", String.Join(",", fields));
-        }
+        }*/
 
         private static void openInExcelAndWait(string filename) {
             //search for excel, or fall back to notepad
@@ -100,7 +98,20 @@ namespace Plantjes.Dao {
             //import from csv
             //open files
             if (File.Exists("errors.csv")) File.Delete("errors.csv");
-            var ifs = File.OpenText("import.csv");
+            var ofd = new OpenFileDialog() {
+                Multiselect = false,
+                CheckPathExists = true,
+                CheckFileExists = true,
+                Title = "Selecteer CSV bestand met gebruikers.",
+                Filter = "Leerlingenlijst (*.csv)|*.csv",
+                FileName = "Excel KU-Loket -> save as .csv",
+                AddExtension = true,
+                DefaultExt = "*.csv",
+                ShowReadOnly = false
+            };
+
+            if ((bool)!ofd.ShowDialog()) return;
+            var ifs = File.OpenText(ofd.FileName);
             var log = new List<string>();
             //get fields
             var fields = ifs.ReadLine().Split(",").ToList();
@@ -113,15 +124,15 @@ namespace Plantjes.Dao {
                 //split by fields
                 var infields = line.Split(",");
                 //get password
-                var passwordBytes = Encoding.ASCII.GetBytes(infields[fields.ToList().IndexOf("vivesNr")]);
+                var passwordBytes = Encoding.ASCII.GetBytes(infields[fields.ToList().IndexOf("Studentennummer")]);
                 var md5Hasher = new MD5CryptoServiceProvider();
                 var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
                 //create user object
                 var user = new Gebruiker() {
-                    Vivesnr = infields[fields.IndexOf("vivesNr")],
-                    Voornaam = infields[fields.IndexOf("firstName")],
-                    Achternaam = infields[fields.IndexOf("lastName")],
-                    Emailadres = infields[fields.IndexOf("emailAdres")],
+                    Vivesnr = infields[fields.IndexOf("Studentennummer")],
+                    Voornaam = infields[fields.IndexOf("Voornaam")],
+                    Achternaam = infields[fields.IndexOf("Familienaam")],
+                    Emailadres = infields[fields.IndexOf("Emailadres")],
                     Rol = role,
                     HashPaswoord = passwordHashed,
                     LastLogin = DateTime.UnixEpoch
