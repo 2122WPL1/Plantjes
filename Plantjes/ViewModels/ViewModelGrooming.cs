@@ -33,6 +33,7 @@ public class ViewModelGrooming : ViewModelBase
         }
     }
     //Aangepast door Warre
+    
     public void fillComboBoxBeheerdaad()
     {
         var list = DAOBeheerMaand.FillBeheerdaad().ToList();
