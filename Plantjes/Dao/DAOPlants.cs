@@ -8,40 +8,16 @@ using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
 {
-    public partial class DAOLogic
+    internal class DAOPlants : DAOLogic
     {
         //get a list of all the plants.
         ///Kenny
-        public List<Plant> getAllPlants()
+        public static List<Plant> getAllPlants()
         {
             // kijken hoeveel er zijn geselecteerd
 
             var plants = context.Plants.ToList();
             return plants;
         }
-
-        ///Owen
-        public string GetImages(long id, string ImageCategorie)
-        {
-            var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).SingleOrDefault(s => s.Plant == id);
-
-
-            if (foto != null)
-            {
-                var location = foto;
-                return location.UrlLocatie;
-            }
-
-            return null;
-        }
-        
-        /* 4.gebruik: var example = DAOLogic.Instance();
-    }
-         */
-
-
-        //search functions
-
-        /* NARROW DOWN FUNCTIONS */
     }
 }

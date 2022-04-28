@@ -28,7 +28,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     //Omgezet naar service door kenny
     public List<Plant> ApplyFilter(TfgsvType SelectedtType, TfgsvFamilie SelectedFamilie, TfgsvGeslacht SelectedGeslacht, TfgsvSoort SelectedSoort, TfgsvVariant SelectedVariant, string SelectedNederlandseNaam,
         string SelectedRatioBloeiBlad) {
-        var listPlants = _dao.getAllPlants();
+        var listPlants = DAOPlants.getAllPlants();
 
         if (SelectedtType != null)
             foreach (var item in listPlants.ToList())
@@ -87,7 +87,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     public ImageSource GetImageLocation(string ImageCatogrie, Plant SelectedPlantInResult) {
         // Request location of the image
         var location = "";
-        if (SelectedPlantInResult != null) location = _dao.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
+        if (SelectedPlantInResult != null) location = DAOFoto.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
 
         if (location != null)
             if (location != "") {
