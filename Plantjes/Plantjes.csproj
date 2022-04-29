@@ -5,6 +5,9 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
         <ApplicationIcon>2470011.ico</ApplicationIcon>
+        <Optimize>true</Optimize>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
   <ItemGroup>
