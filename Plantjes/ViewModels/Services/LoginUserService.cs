@@ -68,63 +68,69 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged {
     public event PropertyChangedEventHandler PropertyChanged;
 
     //het eigenlijke loginsysteem
-    public LoginResult CheckCredentials(string userNameInput, string passwordInput) {
+    //Xander - querying users without password entered is pointless and slow, only query when password isnt empty
+    public LoginResult CheckCredentials(string userNameInput, string passwordInput)
+    {
         //Nieuw loginResult om te gebruiken, status op NotLoggedIn zetten
         var loginResult = new LoginResult { loginStatus = LoginStatus.NotLoggedIn };
 
         //check if email is valid email
         if (userNameInput != null) //&& userNameInput.Contains("@student.vives.be")
         {
-            //gebruiker zoeken in de databank
-            gebruiker = DAOUser.GetGebruikerWithEmail(userNameInput);
-            loginResult.gebruiker = gebruiker;
+            //xander - password check
+            if (passwordInput != null)
+            {
+                //gebruiker zoeken in de databank
+                gebruiker = DAOUser.GetGebruikerWithEmail(userNameInput);
+                loginResult.gebruiker = gebruiker;
+
+                //omzetten van het ingegeven passwoord naar een gehashed passwoord
+                var passwordBytes = Encoding.ASCII.GetBytes(passwordInput);
+                var md5Hasher = new MD5CryptoServiceProvider();
+                var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
+
+                if (gebruiker != null)
+                {
+                    _gebruiker = gebruiker;
+                    loginResult.gebruiker = gebruiker;
+                    //passwoord controle
+                    if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
+                        //indien true status naar LoggedIn zetten
+                        loginResult.loginStatus = LoginStatus.LoggedIn;
+                    else
+                        //indien false errorMessage opvullen
+                        loginResult.errorMessage += "\r\n" + "FOUT! Het ingegeven wachtwoord is niet juist. Gelieve opnieuw te proberen.";
+                }
+                else
+                {
+                    // als de gebruiker niet gevonden wordt, errorMessage invullen
+                    loginResult.errorMessage = $"FOUT! Er is geen account gevonden voor {userNameInput}" + "\r\n" + "Gelieve eerst te registreren.";
+                }
+            }
+            else
+            {
+                //xander - password check
+                loginResult.errorMessage = "Gelieve een wachtwoord in te geven.";
+            }
         }
-        else {
+        else
+        {
             //indien geen geldig emailadress, errorMessage opvullen
             loginResult.errorMessage = "FOUT! Dit is geen geldig Vives emailadres.";
             return loginResult;
-        }
-
-        //xander - password check
-        if (passwordInput != null) {
-            //omzetten van het ingegeven passwoord naar een gehashed passwoord
-            var passwordBytes = Encoding.ASCII.GetBytes(passwordInput);
-            var md5Hasher = new MD5CryptoServiceProvider();
-            var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
-
-            if (gebruiker != null) {
-                _gebruiker = gebruiker;
-                loginResult.gebruiker = gebruiker;
-                //passwoord controle
-                if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
-                    //indien true status naar LoggedIn zetten
-                    loginResult.loginStatus = LoginStatus.LoggedIn;
-                else
-                    //indien false errorMessage opvullen
-                    loginResult.errorMessage += "\r\n" + "FOUT! Het ingegeven wachtwoord is niet juist. Gelieve opnieuw te proberen.";
-            }
-            else {
-                // als de gebruiker niet gevonden wordt, errorMessage invullen
-                loginResult.errorMessage = $"FOUT! Er is geen account gevonden voor {userNameInput}" + "\r\n" + "Gelieve eerst te registreren.";
-            }
-        }
-        else {
-            //xander - password check
-            loginResult.errorMessage = "Gelieve een wachtwoord in te geven.";
         }
 
         return loginResult;
     }
 
     //Functie om naam weer te geven in loginWindow, als login succesvol is
+    //Xander - return object directly
     public string LoggedInMessage() {
-        var message = string.Empty;
-        if (_gebruiker != null) {
-            message = $"Ingelogd als: {_gebruiker.Voornaam} {_gebruiker.Achternaam}";
-            return message;
+        if (_gebruiker != null)
+        {
+            return $"Ingelogd als: {_gebruiker.Voornaam} {_gebruiker.Achternaam}";
         }
-
-        return message;
+        return string.Empty;
     }
 
     #endregion
