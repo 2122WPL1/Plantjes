@@ -126,7 +126,7 @@
                     </Button>
                     <Button x:Name="btnFilteren" Style="{StaticResource ButtonUnified}"
                     Content="Meer filters" Margin="0,7,0,0"
-                    Command="{Binding FilterCommand}" FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200">
+                    FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200">
                     </Button>
                 </StackPanel>
             </Border>
@@ -193,7 +193,9 @@
 
         <Border Style="{StaticResource BorderBox}" Margin="704,124,10,6">
             <Canvas x:Name="CvsZoeken_Copy" Visibility="Visible" Background="#FFA0A0A0" HorizontalAlignment="Center" Width="470" VerticalAlignment="Center" Height="564" >
-                <Grid Height="450" Width="450" Canvas.Left="10" Canvas.Top="104"/>
+                <Grid Height="450" Width="450" Canvas.Left="10" Canvas.Top="104">
+                    <ContentControl Content="{Binding currentViewModel}"/>
+                </Grid>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="btnBloei" Content="Bloei" Style="{StaticResource ButtonUnified}"

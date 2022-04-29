@@ -19,5 +19,31 @@ namespace Plantjes.Dao
             var plants = context.Plants.ToList();
             return plants;
         }
+
+
+        ///Owen
+        public static string GetImages(long id, string ImageCategorie)
+        {
+            var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).SingleOrDefault(s => s.Plant == id);
+
+
+            if (foto != null)
+            {
+                var location = foto;
+                return location.UrlLocatie;
+            }
+
+            return null;
+        }
+
+        /* 4.gebruik: var example = DAOLogic.Instance();
+    }
+         */
+
+
+        //search functions
+
+        /* NARROW DOWN FUNCTIONS */
+
     }
 }
