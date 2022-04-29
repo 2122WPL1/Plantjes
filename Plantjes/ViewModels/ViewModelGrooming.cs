@@ -12,7 +12,7 @@ public class ViewModelGrooming : ViewModelBase
     private string _selectedBeheerdaad;
 
 
-    public ViewModelGrooming(IDetailService detailservice)
+    public ViewModelGrooming(DetailService detailservice)
     {
         _dao = DAOLogic.Instance();
 

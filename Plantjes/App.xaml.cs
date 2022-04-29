@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Linq;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
-using Plantjes.Dao;
-using Plantjes.Models.Classes;
-using Plantjes.Models.Enums;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Services;
 // using ServiceProvider = Plantjes.ViewModels.HelpClasses.ServiceProvider;
