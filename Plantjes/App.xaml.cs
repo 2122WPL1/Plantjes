@@ -82,6 +82,7 @@ public partial class App : Application {
         services.AddSingleton(() => new ViewModelUserManagement());
         services.AddSingleton(() => new ViewModelPlantManagement());
 
+
         return services.BuildServiceProvider();
     }
 }

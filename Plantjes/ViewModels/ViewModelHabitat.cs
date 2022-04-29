@@ -55,7 +55,7 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    //geschreven door christophe, op basis van een voorbeeld van owen
+    //aangepast door Warre
     public void fillComboBoxPollenwaarde() {
         var list = DAOExtraPollen.FillExtraPollenwaardes();
 
