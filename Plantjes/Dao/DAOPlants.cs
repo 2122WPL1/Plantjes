@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
@@ -27,8 +26,7 @@ namespace Plantjes.Dao
             var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).SingleOrDefault(s => s.Plant == id);
 
 
-            if (foto != null)
-            {
+            if (foto != null) {
                 var location = foto;
                 return location.UrlLocatie;
             }
@@ -37,13 +35,5 @@ namespace Plantjes.Dao
         }
 
         /* 4.gebruik: var example = DAOLogic.Instance();
-    }
-         */
-
-
-        //search functions
-
-        /* NARROW DOWN FUNCTIONS */
-
     }
 }
