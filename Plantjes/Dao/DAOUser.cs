@@ -150,6 +150,10 @@ namespace Plantjes.Dao {
                     errors++;
                     log.Add($"Emailadres {user.Emailadres} is geen geldig emailadres!");
                 }
+            else if (user.Vivesnr.Length != 7) {
+                errors++;
+                log.Add($"Emailadres {user.Vivesnr} is geen geldig emailadres!");
+            }
                 else {
                     //all checks passed, add to db
                     context.Gebruikers.Add(user);
