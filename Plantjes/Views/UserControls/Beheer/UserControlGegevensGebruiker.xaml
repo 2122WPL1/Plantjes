@@ -67,6 +67,12 @@
                 </StackPanel>
                 <Label Content="Gegevens gebruiker" Margin="10,10,10,256" FontFamily="Rockwell Extra Bold"
                        FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+                <StackPanel Margin="0,10,0,118" Grid.Row="1">
+                    <Grid Height="171" Width="451">
+                        <Button x:Name="btnAddUser" Content="Gebruiker toevoegen" Margin="94,18,94,109" Style="{StaticResource ButtonUnified}" Width="Auto" Height="40"/>
+                    </Grid>
+
+                </StackPanel>
 
             </Grid>
 

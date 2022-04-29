@@ -53,8 +53,7 @@
                     <ComboBoxItem Focusable="False">
                         <Button Content="Gebruiker" Name="btnUserManagement" 
                                 Command="{Binding mainNavigationCommand}"
-                                CommandParameter="VIEWUSERMANAGEMENT"
-                                Click="btn_ClickHideImage"/>
+                                CommandParameter="VIEWUSERMANAGEMENT" Click="btn_ClickHideImage"/>
                     </ComboBoxItem>
                     <ComboBoxItem Focusable="False">
                         <Button Content="Plant" Name="btnBeheerPlant" Style="{StaticResource ButtonUnified}"
