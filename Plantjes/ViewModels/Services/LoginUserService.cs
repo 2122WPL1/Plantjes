@@ -6,12 +6,11 @@ using Plantjes.Dao;
 using Plantjes.Models.Classes;
 using Plantjes.Models.Db;
 using Plantjes.Models.Enums;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.Views.Home;
 
 namespace Plantjes.ViewModels.Services;
 
-public class LoginUserService : IloginUserService, INotifyPropertyChanged {
+public class LoginUserService : INotifyPropertyChanged {
     //dao verklaren om data op te vragen en te setten in de databank
     private readonly DAOLogic _dao;
 

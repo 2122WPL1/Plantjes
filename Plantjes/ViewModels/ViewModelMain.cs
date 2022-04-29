@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using Plantjes.ViewModels.HelpClasses;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
@@ -12,7 +11,7 @@ public class ViewModelMain : ViewModelBase {
     //geschreven door kenny, adhv een voorbeeld van roy
     
 
-    public ViewModelMain(LoginUserService loginUserService, ISearchService searchService) {
+    public ViewModelMain(LoginUserService loginUserService, SearchService searchService) {
         loggedInMessage = loginUserService.LoggedInMessage();
         
         _viewModelRepo = (ViewModelRepo)App.Current.Services.GetService(typeof(ViewModelRepo));

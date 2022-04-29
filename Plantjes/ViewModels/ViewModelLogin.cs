@@ -7,7 +7,6 @@ using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Dao;
 using Plantjes.Models.Classes;
 using Plantjes.Models.Enums;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 

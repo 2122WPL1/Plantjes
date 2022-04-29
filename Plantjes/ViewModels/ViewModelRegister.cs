@@ -3,7 +3,6 @@
 using Microsoft.Toolkit.Mvvm.Input;
 
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 

@@ -8,7 +8,6 @@ using Plantjes.Dao;
 using Plantjes.Models.Classes;
 using Plantjes.Models.Enums;
 using Plantjes.ViewModels;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
 // using ServiceProvider = Plantjes.ViewModels.HelpClasses.ServiceProvider;
 
@@ -22,7 +21,6 @@ public partial class App : Application {
     public IServiceProvider Services { get; }
 
     public App() {
-        DAOUser.AddUsersFromCsv();
         Services = ConfigureServices();
         this.InitializeComponent();
         //SearchService.CreateInstance();
@@ -53,8 +51,8 @@ public partial class App : Application {
         
         //xander - services
         services.AddSingleton<LoginUserService, LoginUserService>();
-        services.AddSingleton<ISearchService, SearchService>();
-        services.AddSingleton<IDetailService, DetailService>();
+        services.AddSingleton<SearchService, SearchService>();
+        services.AddSingleton<DetailService, DetailService>();
 
         //xander - viewmodels
         services.AddTransient<ViewModelAppearance>();
