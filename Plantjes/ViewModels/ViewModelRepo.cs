@@ -14,6 +14,9 @@ public class ViewModelRepo {
     private readonly ViewModelGrooming viewModelGrooming = (ViewModelGrooming)App.Current.Services.GetService(typeof(ViewModelGrooming));
     private readonly ViewModelGrow viewModelGrow = (ViewModelGrow)App.Current.Services.GetService(typeof(ViewModelGrow));
     private readonly ViewModelHabitat viewModelHabitat = (ViewModelHabitat)App.Current.Services.GetService(typeof(ViewModelHabitat));
+    private readonly ViewModelUserManagement viewModelUserManagement = (ViewModelUserManagement)App.Current.Services.GetService(typeof(ViewModelUserManagement)); 
+    private readonly ViewModelPlantManagement viewModelPlantManagement = (ViewModelPlantManagement)App.Current.Services.GetService(typeof(ViewModelPlantManagement));
+
 
     private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
     private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
@@ -27,6 +30,8 @@ public class ViewModelRepo {
         _viewModels.Add("VIEWAPPEARANCE", viewModelAppearance);
         _viewModels.Add("VIEWGROOMING", viewModelGrooming);
         _viewModels.Add("VIEWREGISTER", viewModelRegister);
+        _viewModels.Add("VIEWUSERMANAGEMENT", viewModelUserManagement);
+        _viewModels.Add("VIEWPLANTMANAGEMENT", viewModelPlantManagement);
     }
 
     //

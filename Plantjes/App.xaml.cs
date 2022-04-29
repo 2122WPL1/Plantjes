@@ -60,7 +60,8 @@ public partial class App : Application {
         services.AddTransient<ViewModelNameResult>();
         services.AddTransient<ViewModelRegister>();
         services.AddTransient<ViewModelRepo>();
-        services.AddTransient<ViewModelRepo2>();
+        services.AddTransient<ViewModelUserManagement>();
+        services.AddTransient<ViewModelPlantManagement>();
 
         //xander - viewmodel factories
         var loginService = (LoginUserService)services.BuildServiceProvider().GetService(typeof(LoginUserService));
@@ -78,7 +79,9 @@ public partial class App : Application {
         services.AddSingleton(() => new ViewModelBase());
         services.AddSingleton(() => new ViewModelMain(loginService, searchService));
         services.AddSingleton(() => new ViewModelRepo());
-        services.AddSingleton(() => new ViewModelRepo2());
+        services.AddSingleton(() => new ViewModelUserManagement());
+        services.AddSingleton(() => new ViewModelPlantManagement());
+
 
         return services.BuildServiceProvider();
     }
