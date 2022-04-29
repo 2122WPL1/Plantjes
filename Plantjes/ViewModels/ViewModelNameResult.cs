@@ -2,16 +2,16 @@
 using System.Windows.Media;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.HelpClasses;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
+
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelNameResult : ViewModelBase {
     //private ServiceProvider _serviceProvider;
-    private readonly ISearchService _searchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
+    private readonly SearchService _searchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
-    public ViewModelNameResult(ISearchService searchService) {
+    public ViewModelNameResult(SearchService searchService) {
         _searchService = searchService;
         //_searchService = new SearchService();
 

@@ -19,9 +19,10 @@ namespace Plantjes.Dao
             return context.CommensalismeMultis.ToList();
         }
 
+        //Xander - optimisation: filter first, then select distinct
         public static IQueryable<Commensalisme> FilterCommensalismeFromPlant(int selectedItem)
         {
-            return context.Commensalismes.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.Commensalismes.Where(s => s.PlantId == selectedItem).Distinct();
         }
 
         public static IQueryable<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)

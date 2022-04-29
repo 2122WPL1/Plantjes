@@ -2,7 +2,7 @@
 using System.Windows;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
@@ -16,7 +16,7 @@ public class ViewModelHabitat : ViewModelBase
 
     private string _selectedPollenwaarde;
 
-    public ViewModelHabitat(IDetailService detailservice) {
+    public ViewModelHabitat(DetailService detailservice) {
         _dao = DAOLogic.Instance();
 
 

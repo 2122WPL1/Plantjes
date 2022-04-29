@@ -3,7 +3,7 @@
 using Microsoft.Toolkit.Mvvm.Input;
 
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 
 namespace Plantjes.ViewModels;
@@ -11,14 +11,14 @@ namespace Plantjes.ViewModels;
 //written by kenny
 public class ViewModelRegister : ViewModelBase
 {
-    public ViewModelRegister(IloginUserService loginUserService)
+    public ViewModelRegister(LoginUserService loginUserService)
     {
         _loginService = loginUserService;
         registerCommand = new RelayCommand(RegisterButtonClick);
         backCommand = new RelayCommand(BackButtonClick);
     }
 
-    private IloginUserService _loginService { get; }
+    private LoginUserService _loginService { get; }
 
     public RelayCommand registerCommand { get; set; }
     public RelayCommand backCommand { get; set; }

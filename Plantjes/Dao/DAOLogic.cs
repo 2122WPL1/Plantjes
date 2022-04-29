@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-
-using Plantjes.Models.Db;
+﻿using Plantjes.Models.Db;
 //using Plantjes.DAL.Models;
 
 /*comments kenny*/
@@ -21,15 +16,8 @@ public class DAOLogic
 
     /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
 
-    public static plantenContext context;
-
-    //2. private contructor
-    public DAOLogic()
-
-    {
-        /*Niet noodzakelijk voor de singletonpattern waar wel voor de DAOLogic*/
-        context = new plantenContext();
-    }
+    //Xander - move ctor call to object declaration
+    public static plantenContext context = new();
 
     //3.publieke methode instance die altijd kan aangeroepen worden
     //door zijn statische eigenschappen kan hij altijd aangeroepen worden 
@@ -38,5 +26,4 @@ public class DAOLogic
     {
         return instance;
     }
-    /* HELP FUNCTIONS */
 }
