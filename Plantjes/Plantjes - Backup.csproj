@@ -5,15 +5,10 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
         <ApplicationIcon>2470011.ico</ApplicationIcon>
-        <!--<Optimize>true</Optimize>
-        <WholeProgramOptimization>true</WholeProgramOptimization>-->
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="image\Vives_Logo_MainWindow.png" />
-    <None Remove="image\waterval.jpeg" />
-    <None Remove="image\zuilvormig.png" />
+    <None Remove="Image\waterval.jpeg" />
     <None Remove="Views\Home\Usericon.png" />
     <None Remove="Views\Home\Vives_Logo_MainWindow.png" />
     <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
@@ -50,10 +45,10 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="2470011.ico" />
-      <Resource Include="image\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="EntityFramework" Version="6.4.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
             <PrivateAssets>all</PrivateAssets>
@@ -69,36 +64,35 @@
     </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="image\Unknown.png" />
-    <Resource Include="image\aar.png" />
-    <Resource Include="image\schermbloemig.png" />
-    <Resource Include="image\pluim.png" />
-    <Resource Include="image\bol of knop.png" />
-    <Resource Include="image\margrietachtig.png" />
-    <Resource Include="image\transparant.png" />
-    <Resource Include="image\blad.jpg" />
-    <Resource Include="image\bloem.jpg" />
-    <Resource Include="image\plant.jpg" />
-    <Resource Include="image\%28wortel%29 rozet-planten.png" />
-    <Resource Include="image\arching.png" />
-    <Resource Include="image\kruipend, horizontaal groeiend of  mattenvormend.png" />
-    <Resource Include="image\kussenvormend.png" />
-    <Resource Include="image\mounded.png" />
-    <Resource Include="image\parasolvormig.png" />
-    <Resource Include="image\pollenvormers.png" />
-    <Resource Include="image\rond of waaiervormig.png" />
-    <Resource Include="image\succulenten.png" />
-    <Resource Include="image\tufted.png" />
-    <Resource Include="image\uitbuigend.png" />
-    <Resource Include="image\upright-arching.png" />
-    <Resource Include="image\upright-divergent.png" />
-    <Resource Include="image\upright-erect.png" />
+    <Resource Include="Image\Unknown.png" />
+    <Resource Include="Image\aar.png" />
+    <Resource Include="Image\schermbloemig.png" />
+    <Resource Include="Image\pluim.png" />
+    <Resource Include="Image\bol of knop.png" />
+    <Resource Include="Image\margrietachtig.png" />
+    <Resource Include="Image\transparant.png" />
+    <Resource Include="Image\blad.jpg" />
+    <Resource Include="Image\bloem.jpg" />
+    <Resource Include="Image\plant.jpg" />
+    <Resource Include="Image\%28wortel%29 rozet-planten.png" />
+    <Resource Include="Image\arching.png" />
+    <Resource Include="Image\kruipend, horizontaal groeiend of  mattenvormend.png" />
+    <Resource Include="Image\kussenvormend.png" />
+    <Resource Include="Image\mounded.png" />
+    <Resource Include="Image\parasolvormig.png" />
+    <Resource Include="Image\pollenvormers.png" />
+    <Resource Include="Image\rond of waaiervormig.png" />
+    <Resource Include="Image\succulenten.png" />
+    <Resource Include="Image\tufted.png" />
+    <Resource Include="Image\uitbuigend.png" />
+    <Resource Include="Image\upright-arching.png" />
+    <Resource Include="Image\upright-divergent.png" />
+    <Resource Include="Image\upright-erect.png" />
   </ItemGroup>
     <ItemGroup>
-        <Resource Include="image\user.png" />
-        <Resource Include="image\vives_big.png" />
-        <Resource Include="image\vives.png" />
-        <Resource Include="image\zuilvormig.png" />
+        <Resource Include="Image\user.png" />
+        <Resource Include="Image\vives_big.png" />
+        <Resource Include="Image\vives.png" />
         <Resource Include="Views\Home\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
