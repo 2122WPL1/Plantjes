@@ -20,6 +20,7 @@ namespace Plantjes.Dao
             return plants;
         }
 
+
         ///Owen
         public static string GetImages(long id, string ImageCategorie)
         {
@@ -43,9 +44,6 @@ namespace Plantjes.Dao
         //search functions
 
         /* NARROW DOWN FUNCTIONS */
-
-        
-
 
     }
 }

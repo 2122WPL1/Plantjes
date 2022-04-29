@@ -11,6 +11,7 @@
         Title="Planten" Height="900" Width="1250" Background="#FFA0A0A0">
 
     <Window.Resources>
+
         <!--deze zijn nodig voor de navigatie van de app-->
         <DataTemplate DataType="{x:Type viewModels:ViewModelNameResult}">
             <pages:UserControlName />
@@ -48,8 +49,10 @@
                     CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Width="200" Style="{StaticResource ButtonUnified}"/>
                 <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="0,0,5,0" Visibility="{Binding ShowEditPlants}"
                     Command="{Binding mainNavigationCommand}"
+
                     CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Style="{StaticResource ButtonUnified}"/>
                 <ComboBox x:Name="cmbBeheer" Width="198" Height="49" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}">
+
                     <ComboBoxItem Focusable="False">
                         <Button Content="Gebruiker" Name="btnUserManagement" 
                                 Command="{Binding mainNavigationCommand}"
@@ -84,6 +87,4 @@
 
         </Grid>
     </Viewbox>
-
-
 </Window>

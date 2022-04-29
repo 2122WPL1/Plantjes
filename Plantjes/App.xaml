@@ -5,7 +5,8 @@
     
     <Application.Resources>
         <!--styling written by Marijn-->
-        <Style TargetType="Button" x:Key="ButtonUnified"><!--Styling voor de buttons in 1 stijl te brengen-->
+        <Style TargetType="Button" x:Key="ButtonUnified">
+            <!--Styling voor de buttons in 1 stijl te brengen-->
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -26,22 +27,57 @@
             </Setter>
         </Style>
 
-        
+
         <!-- this specific styling written by Warre -->
-        <Style TargetType="ComboBox" x:Key="ComboBoxUnified">
-            <!--Styling van buttons toepassen voor combobox-->
-            <Style.Resources>
-                <Style TargetType="ComboBoxItem">
-                    <Setter Property="Background" Value="#FFa0a0a0"/>
-                </Style>
-            </Style.Resources>
-            <Setter Property="Height" Value="60"/>
-            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="BorderBrush" Value="White"/>
-            <Setter Property="Foreground" Value="DarkGreen"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+        <Style x:Key="ComboBoxUnified" TargetType="{x:Type ComboBox}">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" >
+                                <ToggleButton.Template>
+                                    <ControlTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="5*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border x:Name="Border"  Grid.ColumnSpan="2" CornerRadius="5" Background="DarkGreen" BorderBrush="Black" BorderThickness="1" />
+                                            <Border Grid.Column="0" CornerRadius="5,0,0,5"  Margin="1"  Background="White"  BorderBrush="Black" BorderThickness="0,0,1,0" />
+                                            <Path x:Name="Arrow" Grid.Column="1"  Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z"/>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="DarkGreen" />
+                                            </Trigger>
+                                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="DarkGreen" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="3"  />
+                            <TextBox x:Name="PART_EditableTextBox" Visibility="Visible" IsReadOnly="{TemplateBinding IsReadOnly}" Width="150" Height="25" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,28,0" Text="Beheer" TextAlignment="Center" FontWeight="Bold" FontSize="20" FontFamily="Rockwell Extra Bold" TextWrapping="WrapWithOverflow"/>
+                            <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True"  Focusable="False" PopupAnimation="Slide">
+                                <Grid  Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border x:Name="DropDownBorder" Visibility="Hidden" />
+                                    <ScrollViewer SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
         </Style>
         <!--  -->
 
@@ -58,7 +94,6 @@
         </Style>
         <!-- -->
 
-
         <Style TargetType="StackPanel" x:Key="StackPanelListCheckBox">
             <Setter Property="Focusable" Value="False"/>
             <Setter Property="Height" Value="50"/>
@@ -69,7 +104,8 @@
             <Setter Property="Height" Value="25"/>
         </Style>
 
-        <Style TargetType="TextBlock" x:Key="BigCheckText"><!--Styling voor de grote checkboxes met een image background.-->
+        <Style TargetType="TextBlock" x:Key="BigCheckText">
+            <!--Styling voor de grote checkboxes met een image background.-->
             <Setter Property="Height" Value="25"/>
             <Setter Property="Width" Value="160"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -82,7 +118,8 @@
             <Setter Property="Width" Value="60"/>
         </Style>
 
-        <Style TargetType="Label" x:Key="LabelBorder"><!--Stijling voor titels van rubrieken in de vensters-->
+        <Style TargetType="Label" x:Key="LabelBorder">
+            <!--Stijling voor titels van rubrieken in de vensters-->
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
@@ -90,9 +127,10 @@
             <Setter Property="Foreground" Value="White"/>
         </Style>
 
-        <Style TargetType="Label" x:Key="LabelBorderTitle" BasedOn="{StaticResource LabelBorder}"><!--Variatie styling voor titel van vensters-->
+        <Style TargetType="Label" x:Key="LabelBorderTitle" BasedOn="{StaticResource LabelBorder}">
+            <!--Variatie styling voor titel van vensters-->
             <Setter Property="BorderThickness" Value="2"/>
-            
+
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="#FF029402"/>
             <Setter Property="BorderBrush">
@@ -105,7 +143,8 @@
             </Setter>
         </Style>
 
-        <Style TargetType="Border" x:Key="BorderBox"><!--Styling voor borders van de vensters-->
+        <Style TargetType="Border" x:Key="BorderBox">
+            <!--Styling voor borders van de vensters-->
             <Setter Property="Background" Value="#FF828282"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
             <Setter Property="BorderThickness" Value="3"/>
