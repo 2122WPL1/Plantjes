@@ -11,6 +11,7 @@
         Title="Planten" Height="900" Width="1250" Background="#FFA0A0A0">
 
     <Window.Resources>
+
         <!--deze zijn nodig voor de navigatie van de app-->
         <DataTemplate DataType="{x:Type viewModels:ViewModelNameResult}">
             <pages:UserControlName />
@@ -21,20 +22,12 @@
         </DataTemplate>
 
 
-        <DataTemplate DataType="{x:Type viewModels:ViewModelBloom}">
-            <pages:UserControlBloom />
-        </DataTemplate>
-
         <DataTemplate DataType="{x:Type viewModels:ViewModelGrow}">
             <pages:UserControlGrow />
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModels:ViewModelGrooming}">
             <pages:UserControlGrooming />
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewModels:ViewModelAppearance}">
-            <pages:UserControlAppearance />
         </DataTemplate>
 
     </Window.Resources>
@@ -53,16 +46,23 @@
             <StackPanel Margin="27,10,442,803" Orientation="Horizontal" Grid.Column="1">
                 <Button x:Name="btnNaam" Content="Plant opzoeken" Margin="0,0,5,0"
                     Command="{Binding mainNavigationCommand}"
-                    CommandParameter="VIEWNAME" Click="btnNaam_Click" Height="60" Width="200" Style="{StaticResource ButtonUnified}"/>
+                    CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Width="200" Style="{StaticResource ButtonUnified}"/>
                 <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="0,0,5,0" Visibility="{Binding ShowEditPlants}"
                     Command="{Binding mainNavigationCommand}"
-                    CommandParameter="VIEWNAME" Click="btnPlantToevoegen_Click" Height="60" Style="{StaticResource ButtonUnified}"/>
+
+                    CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Style="{StaticResource ButtonUnified}"/>
                 <ComboBox x:Name="cmbBeheer" Width="198" Height="49" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}">
+
                     <ComboBoxItem Focusable="False">
-                        <Button Content="Gebruiker" Name="btnBeheerGebruiker" Style="{StaticResource ButtonUnified}"/>
+                        <Button Content="Gebruiker" Name="btnUserManagement" 
+                                Command="{Binding mainNavigationCommand}"
+                                CommandParameter="VIEWUSERMANAGEMENT" Click="btn_ClickHideImage"/>
                     </ComboBoxItem>
                     <ComboBoxItem Focusable="False">
-                        <Button Content="Plant" Name="btnBeheerPlant" Style="{StaticResource ButtonUnified}"/>
+                        <Button Content="Plant" Name="btnBeheerPlant" Style="{StaticResource ButtonUnified}"
+                                Command="{Binding mainNavigationCommand}"
+                                CommandParameter="VIEWPLANTMANAGEMENT"
+                                Click="btn_ClickHideImage"/>
                     </ComboBoxItem>
                 </ComboBox>
             </StackPanel>
@@ -82,8 +82,9 @@
             <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
             <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
             <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
+            <Label x:Name="lblComboboxBeheer" Content="Beheer" Grid.Column="1" Margin="443,23,0,0" FontSize="22" 
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,1,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="127" Height="46"/>
 
         </Grid>
     </Viewbox>
-
 </Window>

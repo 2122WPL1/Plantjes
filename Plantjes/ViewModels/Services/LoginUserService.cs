@@ -30,8 +30,10 @@ public class LoginUserService : INotifyPropertyChanged {
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
+                
                 && !DAOUser.GetEmailInUse(emailAdresInput)) {
                 if ((vivesNrInput != null) & (vivesNrInput.Length != 8)) return "Dit is geen geldig vives nummer!";
+
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput) {
                     //gebruiker registreren.
@@ -46,7 +48,7 @@ public class LoginUserService : INotifyPropertyChanged {
                 }
             }
             else {
-                Message = $"Fout! {emailAdresInput} is geen geldig emailadres, " + "\r\n" + " of het eamiladres is al in gebruik.";
+                Message = $"Fout! Emailadres is ongeldig, of is al in gebruik.";
             }
         }
         else {

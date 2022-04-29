@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Plantjes.Views.UserControls.Beheer.BeheerGebruiker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Plantjes.Views.UserControls.Beheer"
+             mc:Ignorable="d" 
+             d:DesignHeight="720"
+             d:DesignWidth="1200">
+    <Grid>
+        <Border Style="{StaticResource BorderBox}" Margin="10,100,739,10" Name="BorderListbox">
+            <ListBox Name="listBoxGebruikers"
+                     Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold" 
+                     FontSize="14" Width="450" HorizontalAlignment="Center" Height="610" 
+                     VerticalAlignment="Center">
+
+            </ListBox>
+        </Border>
+        <Border Style="{StaticResource BorderBox}" Margin="480,100,480,10">
+            <Canvas>
+                <Grid Height="604" Width="234">
+                    <Button x:Name="btnAddUser" Content="Toevoegen" 
+                            Style="{StaticResource ButtonUnified}" Margin="0,160,0,0" 
+                            HorizontalAlignment="Center" VerticalAlignment="Top">
+                    </Button>
+                    <Button x:Name="btnDeleteUser" Content="Verwijderen" 
+                            Style="{StaticResource ButtonUnified}" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </Button>
+                    <Button x:Name="btnChangeUser" Content="Wijzigen" 
+                            Style="{StaticResource ButtonUnified}" 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160">
+                    </Button>
+                </Grid>
+            </Canvas>
+
+        </Border>
+        <Border Style="{StaticResource BorderBox}" Margin="739,100,10,10">
+
+        </Border>
+        <Label Content="Lijst met gebruikers" FontSize="17" Height="44" Margin="10,0,965,625" VerticalAlignment="Bottom" Style="{StaticResource LabelBorderTitle}">
+        </Label>
+        <Label Content="Gegevens van de gebruiker" FontSize="17" Height="44" Margin="890,0,10,625" VerticalAlignment="Bottom" Style="{StaticResource LabelBorderTitle}"/>
+    </Grid>
+</UserControl>

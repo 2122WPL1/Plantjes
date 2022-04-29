@@ -4,7 +4,7 @@ namespace Plantjes.ViewModels;
 
 //geschreven door kenny adhv een voorbeeld van roy
 //herschreven door kenny voor gebruik met ioc
-public class ViewModelRepo {
+public class ViewModelRepo2 {
     //singleton pattern
     //private static ViewModelRepo instance;
 
@@ -14,27 +14,16 @@ public class ViewModelRepo {
     private readonly ViewModelGrooming viewModelGrooming = (ViewModelGrooming)App.Current.Services.GetService(typeof(ViewModelGrooming));
     private readonly ViewModelGrow viewModelGrow = (ViewModelGrow)App.Current.Services.GetService(typeof(ViewModelGrow));
     private readonly ViewModelHabitat viewModelHabitat = (ViewModelHabitat)App.Current.Services.GetService(typeof(ViewModelHabitat));
-    private readonly ViewModelUserManagement viewModelUserManagement = (ViewModelUserManagement)App.Current.Services.GetService(typeof(ViewModelUserManagement)); 
-    private readonly ViewModelPlantManagement viewModelPlantManagement = (ViewModelPlantManagement)App.Current.Services.GetService(typeof(ViewModelPlantManagement));
 
-
-    private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
-    private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
-
-    public ViewModelRepo() {
+    public ViewModelRepo2() {
         //hier een extra lijn code per user control
-        _viewModels.Add("VIEWNAME", viewModelNameResult);
         _viewModels.Add("VIEWHABITAT", viewModelHabitat);
         _viewModels.Add("VIEWBLOOM", viewModelBloom);
         _viewModels.Add("VIEWGROW", viewModelGrow);
         _viewModels.Add("VIEWAPPEARANCE", viewModelAppearance);
         _viewModels.Add("VIEWGROOMING", viewModelGrooming);
-        _viewModels.Add("VIEWREGISTER", viewModelRegister);
-        _viewModels.Add("VIEWUSERMANAGEMENT", viewModelUserManagement);
-        _viewModels.Add("VIEWPLANTMANAGEMENT", viewModelPlantManagement);
     }
 
-    //
     public ViewModelBase GetViewModel(string modelName) {
         ViewModelBase result;
         var ok = _viewModels.TryGetValue(modelName, out result);

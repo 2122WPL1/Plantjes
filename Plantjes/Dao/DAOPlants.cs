@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
@@ -13,6 +15,7 @@ namespace Plantjes.Dao
         {
             return context.Plants.ToList();
         }
+
 
         ///Owen
         /// Xander - cleanup/optimisation

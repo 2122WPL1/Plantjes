@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Plantjes.Models.Db;
 using System;
 using System.Collections.Generic;
@@ -48,7 +48,9 @@ namespace Plantjes.Dao {
         }
 
         //written by kenny
-        public static bool GetEmailInUse(string email) {
+
+        public static bool GetEmailInUse(string email)
+        {
             return context.Gebruikers.Any(x => x.Emailadres == email);
         }
 

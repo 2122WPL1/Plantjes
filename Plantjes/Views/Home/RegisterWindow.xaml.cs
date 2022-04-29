@@ -11,16 +11,13 @@ namespace Plantjes.Views.Home;
 public partial class RegisterWindow : Window {
     public RegisterWindow() {
         DataContext = App.Current.Services.GetService(typeof(ViewModelRegister));
-        ;
         InitializeComponent();
     }
-
     private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e) {
         // Xander - PasswordBox
         if (DataContext != null) ((dynamic)DataContext)._passwordInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
         // end Xander
     }
-
     private void txtWachtwoordHerhaal_OnPasswordChanged(object sender, RoutedEventArgs e) {
         // Xander - PasswordBox
         if (DataContext != null) ((dynamic)DataContext)._passwordRepeatInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;

@@ -86,7 +86,7 @@ public class SearchService : INotifyPropertyChanged {
     public ImageSource GetImageLocation(string ImageCatogrie, Plant SelectedPlantInResult) {
         // Request location of the image
         var location = "";
-        if (SelectedPlantInResult != null) location = DAOPlants.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
+        if (SelectedPlantInResult != null) location = DAOFoto.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
 
         if (location != null)
             if (location != "") {
