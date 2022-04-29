@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
@@ -9,7 +9,7 @@ public class ViewModelAppearance : ViewModelBase {
 
     private string _selectedBladHoogte;
 
-    public ViewModelAppearance(IDetailService detailservice) {
+    public ViewModelAppearance(DetailService detailservice) {
         _dao = DAOLogic.Instance();
     }
 

@@ -1,14 +1,14 @@
 ﻿using System.Windows;
 using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelGrow : ViewModelBase {
     private DAOLogic _dao;
-    private IDetailService _detailService = (IDetailService)App.Current.Services.GetService(typeof(IDetailService));
+    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
 
-    public ViewModelGrow(IDetailService detailservice) {
+    public ViewModelGrow(DetailService detailservice) {
         _detailService = detailservice;
         _dao = DAOLogic.Instance();
     }

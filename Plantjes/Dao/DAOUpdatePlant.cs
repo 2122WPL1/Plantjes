@@ -1,19 +1,16 @@
 ﻿using Plantjes.Models.Db;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
     //Gesplitst door Warre
     internal class DAOUpdatePlant : DAOLogic
     {
+        //Xander - return object directly
         public static List<UpdatePlant> GetAllUpdatePlant()
         {
-            var updatePlant = context.UpdatePlants.ToList();
-            return updatePlant;
+            return context.UpdatePlants.ToList();
         }
     }
 }

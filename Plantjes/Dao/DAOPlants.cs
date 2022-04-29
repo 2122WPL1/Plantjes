@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Plantjes.Models.Db;
 
 namespace Plantjes.Dao
@@ -13,37 +11,18 @@ namespace Plantjes.Dao
         //get a list of all the plants.
         ///Kenny
         public static List<Plant> getAllPlants()
+        /// Xander - cleanup
         {
-            // kijken hoeveel er zijn geselecteerd
-
-            var plants = context.Plants.ToList();
-            return plants;
+            return context.Plants.ToList();
         }
 
 
         ///Owen
+        /// Xander - cleanup/optimisation
         public static string GetImages(long id, string ImageCategorie)
         {
-            var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).SingleOrDefault(s => s.Plant == id);
-
-
-            if (foto != null)
-            {
-                var location = foto;
-                return location.UrlLocatie;
-            }
-
-            return null;
+            var foto = context.Fotos.Where(s => s.Eigenschap == ImageCategorie).FirstOrDefault(s => s.Plant == id);
+            return foto?.UrlLocatie;
         }
-
-        /* 4.gebruik: var example = DAOLogic.Instance();
-    }
-         */
-
-
-        //search functions
-
-        /* NARROW DOWN FUNCTIONS */
-
     }
 }

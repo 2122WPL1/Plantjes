@@ -1,15 +1,12 @@
 ﻿using Plantjes.Models.Db;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
     //Gesplitst door Warre
     internal class DAOTfgsv : DAOLogic
     {
+        //Xander - return object directly
         public static IQueryable<TfgsvType> fillTfgsvType()
         {
             // request List of wanted type
@@ -17,10 +14,9 @@ namespace Plantjes.Dao
             // Here we use IQueryable<T>, it makes it easier for us to use our search queries and find the objects that we need.
             // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
             // Good way to interact with our datacontext
-            var selection = context.TfgsvTypes.Distinct();
-            return selection;
+            return context.TfgsvTypes.Distinct();
         }
-
+        //Xander - return object directly
         public static IQueryable<TfgsvFamilie> fillTfgsvFamilie(int selectedItem)
         {
             // request List of wanted type
@@ -32,16 +28,14 @@ namespace Plantjes.Dao
 
             if (selectedItem > 0)
             {
-                var selection = context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam).Where(s => s.TypeTypeid == selectedItem);
-                return selection;
+                return context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam).Where(s => s.TypeTypeid == selectedItem);
             }
             else
             {
-                var selection = context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam);
-                return selection;
+                return context.TfgsvFamilies.Distinct().OrderBy(s => s.Familienaam);
             }
         }
-
+        //Xander - return object directly
         public static IQueryable<TfgsvGeslacht> fillTfgsvGeslacht(int selectedItem)
         {
             // request List of wanted type
@@ -52,16 +46,14 @@ namespace Plantjes.Dao
             // Good way to interact with our datacontext
             if (selectedItem > 0)
             {
-                var selection = context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam).Where(s => s.FamilieFamileId == selectedItem);
-                return selection;
+                return context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam).Where(s => s.FamilieFamileId == selectedItem);
             }
             else
             {
-                var selection = context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam);
-                return selection;
+                return context.TfgsvGeslachts.Distinct().OrderBy(s => s.Geslachtnaam);
             }
         }
-
+        //Xander - return object directly
         public static IQueryable<TfgsvSoort> fillTfgsvSoort(int selectedItem)
         {
             // request List of wanted type
@@ -72,16 +64,14 @@ namespace Plantjes.Dao
             // Good way to interact with our datacontext
             if (selectedItem > 0)
             {
-                var selection = context.TfgsvSoorts.Where(s => s.GeslachtGeslachtId == selectedItem).OrderBy(s => s.Soortnaam).Distinct();
-                return selection;
+                return context.TfgsvSoorts.Where(s => s.GeslachtGeslachtId == selectedItem).OrderBy(s => s.Soortnaam).Distinct();
             }
             else
             {
-                var selection = context.TfgsvSoorts.Distinct().OrderBy(s => s.Soortnaam);
-                return selection;
+                return context.TfgsvSoorts.Distinct().OrderBy(s => s.Soortnaam);
             }
         }
-
+        //Xander - return object directly
         public static IQueryable<TfgsvVariant> fillTfgsvVariant()
         {
             // request List of wanted type
@@ -91,8 +81,7 @@ namespace Plantjes.Dao
             // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
             // Good way to interact with our datacontext
 
-            var selection = context.TfgsvVariants.Distinct().OrderBy(s => s.Variantnaam);
-            return selection;
+            return context.TfgsvVariants.Distinct().OrderBy(s => s.Variantnaam);
         }
     }
 }

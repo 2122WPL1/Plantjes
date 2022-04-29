@@ -2,7 +2,6 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Plantjes.ViewModels;
-using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
 // using ServiceProvider = Plantjes.ViewModels.HelpClasses.ServiceProvider;
 
@@ -45,9 +44,9 @@ public partial class App : Application {
         var services = new ServiceCollection();
         
         //xander - services
-        services.AddSingleton<IloginUserService, LoginUserService>();
-        services.AddSingleton<ISearchService, SearchService>();
-        services.AddSingleton<IDetailService, DetailService>();
+        services.AddSingleton<LoginUserService, LoginUserService>();
+        services.AddSingleton<SearchService, SearchService>();
+        services.AddSingleton<DetailService, DetailService>();
 
         //xander - viewmodels
         services.AddTransient<ViewModelAppearance>();
