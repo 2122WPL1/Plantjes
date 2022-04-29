@@ -12,12 +12,12 @@ public class ViewModelMain : ViewModelBase {
     //geschreven door kenny, adhv een voorbeeld van roy
     
 
-    public ViewModelMain(IloginUserService loginUserService, ISearchService searchService) {
+    public ViewModelMain(LoginUserService loginUserService, ISearchService searchService) {
         loggedInMessage = loginUserService.LoggedInMessage();
         
         _viewModelRepo = (ViewModelRepo)App.Current.Services.GetService(typeof(ViewModelRepo));
         this.searchService = (SearchService) searchService;
-        this.loginUserService = (LoginUserService) loginUserService;
+        this.loginUserService = loginUserService;
 
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
     }

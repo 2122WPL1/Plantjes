@@ -126,9 +126,9 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged {
     //Functie om naam weer te geven in loginWindow, als login succesvol is
     //Xander - return object directly
     public string LoggedInMessage() {
-        if (_gebruiker != null)
+        if (gebruiker != null)
         {
-            return $"Ingelogd als: {_gebruiker.Voornaam} {_gebruiker.Achternaam}";
+            return $"Ingelogd als: {gebruiker.Voornaam} {gebruiker.Achternaam}";
         }
         return string.Empty;
     }

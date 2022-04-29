@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Plantjes.Dao;
+using Plantjes.Models.Classes;
+using Plantjes.Models.Enums;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Interfaces;
 using Plantjes.ViewModels.Services;
@@ -47,7 +52,7 @@ public partial class App : Application {
         var services = new ServiceCollection();
         
         //xander - services
-        services.AddSingleton<IloginUserService, LoginUserService>();
+        services.AddSingleton<LoginUserService, LoginUserService>();
         services.AddSingleton<ISearchService, SearchService>();
         services.AddSingleton<IDetailService, DetailService>();
 
