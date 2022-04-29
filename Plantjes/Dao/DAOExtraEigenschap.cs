@@ -1,24 +1,21 @@
 ﻿using Plantjes.Models.Db;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
     //Gesplitst door Andang
     internal class DAOExtraEigenschap : DAOLogic
     {
+        //Xander - return object directly
         public static List<ExtraEigenschap> GetAllExtraEigenschap()
         {
-            var extraEigenschap = context.ExtraEigenschaps.ToList();
-            return extraEigenschap;
+            return context.ExtraEigenschaps.ToList();
         }
+        //Xander - return object directly, filter first, then distinct
         public static IQueryable<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)
         {
-            var selection = context.ExtraEigenschaps.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
+            return context.ExtraEigenschaps.Where(s => s.PlantId == selectedItem).Distinct();
         }
     }
 }
