@@ -37,7 +37,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
-                && DAOUser.CheckIfEmailAlreadyExists(emailAdresInput))
+                && !DAOUser.GetEmailInUse(emailAdresInput))
             {
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput)
@@ -54,7 +54,7 @@ public class LoginUserService : IloginUserService, INotifyPropertyChanged
                 }
             }
             else {
-                Message = $"Fout! {emailAdresInput} is geen geldig emailadres, " + "\r\n" + " of het eamiladres is al in gebruik.";
+                Message = $"Fout! Emailadres is ongeldig, of is al in gebruik.";
             }
         }
         else {

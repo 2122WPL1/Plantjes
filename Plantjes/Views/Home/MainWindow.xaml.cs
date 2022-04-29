@@ -12,12 +12,7 @@ public partial class MainWindow : Window {
         InitializeComponent();
     }
 
-    private void btnNaam_Click(object sender, RoutedEventArgs e)
-    {
-        img_vives_logo_main.Visibility = Visibility.Hidden;
-    }
-
-    private void btnPlantToevoegen_Click(object sender, RoutedEventArgs e)
+    private void btn_ClickHideImage(object sender, RoutedEventArgs e)
     {
         img_vives_logo_main.Visibility = Visibility.Hidden;
     }

@@ -28,7 +28,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     //Omgezet naar service door kenny
     public List<Plant> ApplyFilter(TfgsvType SelectedtType, TfgsvFamilie SelectedFamilie, TfgsvGeslacht SelectedGeslacht, TfgsvSoort SelectedSoort, TfgsvVariant SelectedVariant, string SelectedNederlandseNaam,
         string SelectedRatioBloeiBlad) {
-        var listPlants = _dao.getAllPlants();
+        var listPlants = DAOPlants.getAllPlants();
 
         if (SelectedtType != null)
             foreach (var item in listPlants.ToList())
@@ -87,7 +87,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     public ImageSource GetImageLocation(string ImageCatogrie, Plant SelectedPlantInResult) {
         // Request location of the image
         var location = "";
-        if (SelectedPlantInResult != null) location = _dao.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
+        if (SelectedPlantInResult != null) location = DAOFoto.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
 
         if (location != null)
             if (location != "") {
@@ -116,14 +116,14 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
         answer = string.Concat(answer.Where(c => !char.IsWhiteSpace(c)));
         return answer;
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin voor mvvm en later services
     public void fillComboBoxType(ObservableCollection<TfgsvType> cmbTypeCollection) {
         var list = DAOTfgsv.fillTfgsvType();
 
         foreach (var item in list) cmbTypeCollection.Add(item);
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxFamilie(TfgsvType selectedType, ObservableCollection<TfgsvFamilie> cmbFamilieCollection) {
         var list = new List<TfgsvFamilie>(); /*Enumerable.Empty<TfgsvFamilie>().AsQueryable();*/
@@ -148,7 +148,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
                 ControleList.Add(item.Familienaam);
             }
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxGeslacht(TfgsvFamilie selectedFamilie, ObservableCollection<TfgsvGeslacht> cmbGeslachtCollection) {
         var list = Enumerable.Empty<TfgsvGeslacht>().AsQueryable();
@@ -173,7 +173,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
                 ControleList.Add(item.Geslachtnaam);
             }
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxSoort(TfgsvGeslacht selectedGeslacht, ObservableCollection<TfgsvSoort> cmbSoortCollection) {
         var list = Enumerable.Empty<TfgsvSoort>().AsQueryable();
@@ -198,7 +198,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
                 ControleList.Add(item.Soortnaam);
             }
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxVariant(ObservableCollection<TfgsvVariant> cmbVariantCollection) {
         // Requesting te list of Variant  with 0 because there is noting selected in the combobox of type.
@@ -215,7 +215,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
                 cmbVariantCollection.Add(item);
             }
     }
-
+    //Aangepast door Warre
     //geschreven door owen, aangepast door robin en christophe voor mvvm en later services
     public void fillComboBoxRatioBloeiBlad(ObservableCollection<Fenotype> cmbRatioBladBloeiCollection) {
         //not currently used in the cascade search
@@ -401,7 +401,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
             }
         }
     }
-
+    //Aangepast door Warre
     public void FillExtraEigenschap(ObservableCollection<string> detailsSelectedPlant, Plant SelectedPlantInResult) {
         ////The following property consist of multiple values in a different table
         ////First we need an ExtraEigenschap list, then we'll need to filter that list
@@ -442,7 +442,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
                     detailsSelectedPlant.Add("Vorstgevoelig: Nee");
             }
     }
-
+    //Aangepast door Warre
     public void FillFenotype(ObservableCollection<string> detailsSelectedPlant, Plant SelectedPlantInResult) {
         ////The following property consist of multiple values in a different table
         ////First we need an Fenotype list, then we'll need to filter that list
