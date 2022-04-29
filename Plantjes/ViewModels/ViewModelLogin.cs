@@ -24,22 +24,6 @@ public class ViewModelLogin : ViewModelBase
     public ViewModelLogin(LoginUserService loginUserService) 
     {
         _loginService = loginUserService;
-        //Xander - open mainwindow if debugging
-        if (Debugger.IsAttached) {
-            var loginResult = new LoginResult { loginStatus = LoginStatus.NotLoggedIn };
-            loginResult.gebruiker = DAOUser.context.Gebruikers.Include(x => x.Rol).FirstOrDefault(x => x.Rol.Omschrijving == "Docent");
-            if (loginResult.gebruiker == null) {
-                MessageBox.Show("Er is een debugger gevonden, maar geen docent-account! Gelieve een aan te maken of in te loggen!");
-            }
-            else {
-                
-                loginResult.loginStatus = LoginStatus.LoggedIn;
-                _loginService.gebruiker = loginResult.gebruiker;
-                var mainWindow = new MainWindow();
-                mainWindow.Show();
-                Application.Current.Windows[0]?.Close();
-            }
-        }
         loginCommand = new RelayCommand(LoginButtonClick);
         cancelCommand = new RelayCommand(CancelButton);
         registerCommand = new RelayCommand(RegisterButtonView);
