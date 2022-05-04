@@ -1,18 +1,37 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Documents;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelGrow : ViewModelBase {
     private DAOLogic _dao;
-    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
+    private DetailService _detailService;
 
     public ViewModelGrow(DetailService detailservice) {
         _detailService = detailservice;
         _dao = DAOLogic.Instance();
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            FillGrondSoort();
+        };
     }
 
+    public void FillGrondSoort()
+    {
+        var modeltype = typeof(ViewModelGrow);
+        List<AbiotiekMulti> AbioList =
+            DAOAbiotiek.filterAbiotiekMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        foreach (AbiotiekMulti abimulti in AbioList)
+        {
+            var prop = modeltype.GetProperty($"SelectedCheckBoxGrondsoort{abimulti.Waarde}");
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+    }
     //geschreven door christophe, op basis van een voorbeeld van owen
 
     #region CheckboxGrondsoort
