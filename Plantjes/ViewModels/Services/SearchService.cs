@@ -7,12 +7,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.Interfaces;
 
 namespace Plantjes.ViewModels.Services; 
 
 /*written by kenny and robin from an example of Roy and some help of Killian*/
-public class SearchService : ISearchService, INotifyPropertyChanged {
+public class SearchService : INotifyPropertyChanged {
     private readonly DAOLogic _dao;
 
     public SearchService() {
@@ -87,7 +86,7 @@ public class SearchService : ISearchService, INotifyPropertyChanged {
     public ImageSource GetImageLocation(string ImageCatogrie, Plant SelectedPlantInResult) {
         // Request location of the image
         var location = "";
-        if (SelectedPlantInResult != null) location = DAOPlants.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
+        if (SelectedPlantInResult != null) location = DAOFoto.GetImages(SelectedPlantInResult.PlantId, ImageCatogrie);
 
         if (location != null)
             if (location != "") {

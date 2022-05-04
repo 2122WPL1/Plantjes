@@ -1,16 +1,19 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
-public class ViewModelGrooming : ViewModelBase {
-    private readonly DAOLogic _dao;
+public class ViewModelGrooming : ViewModelBase
+{
+    private DAOLogic _dao;
 
     private string _selectedBeheerdaad;
 
-    public ViewModelGrooming(IDetailService detailservice) {
+
+    public ViewModelGrooming(DetailService detailservice)
+    {
         _dao = DAOLogic.Instance();
 
         cmbBeheerdaad = new ObservableCollection<string>();
@@ -21,15 +24,19 @@ public class ViewModelGrooming : ViewModelBase {
     //geschreven door christophe, op basis van een voorbeeld van owen
     public ObservableCollection<string> cmbBeheerdaad { get; set; }
 
-    public string SelectedBeheer_Maand {
+    public string SelectedBeheer_Maand
+    {
         get => _selectedBeheerdaad;
-        set {
+        set
+        {
             _selectedBeheerdaad = value;
             OnPropertyChanged();
         }
     }
     //Aangepast door Warre
-    public void fillComboBoxBeheerdaad() {
+    
+    public void fillComboBoxBeheerdaad()
+    {
         var list = DAOBeheerMaand.FillBeheerdaad().ToList();
 
 
@@ -44,10 +51,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxJan;
 
-    public bool SelectedCheckBoxJan {
+    public bool SelectedCheckBoxJan
+    {
         get => _selectedCheckBoxJan;
 
-        set {
+        set
+        {
             _selectedCheckBoxJan = value;
             OnPropertyChanged();
         }
@@ -55,10 +64,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxFeb;
 
-    public bool SelectedCheckBoxFeb {
+    public bool SelectedCheckBoxFeb
+    {
         get => _selectedCheckBoxFeb;
 
-        set {
+        set
+        {
             _selectedCheckBoxFeb = value;
             OnPropertyChanged();
         }
@@ -66,10 +77,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxMar;
 
-    public bool SelectedCheckBoxMar {
+    public bool SelectedCheckBoxMar
+    {
         get => _selectedCheckBoxMar;
 
-        set {
+        set
+        {
             _selectedCheckBoxMar = value;
             OnPropertyChanged();
         }
@@ -77,10 +90,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxApr;
 
-    public bool SelectedCheckBoxApr {
+    public bool SelectedCheckBoxApr
+    {
         get => _selectedCheckBoxApr;
 
-        set {
+        set
+        {
             _selectedCheckBoxApr = value;
             OnPropertyChanged();
         }
@@ -88,10 +103,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxMay;
 
-    public bool SelectedCheckBoxFMay {
+    public bool SelectedCheckBoxFMay
+    {
         get => _selectedCheckBoxMay;
 
-        set {
+        set
+        {
             _selectedCheckBoxMay = value;
             OnPropertyChanged();
         }
@@ -99,10 +116,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxJun;
 
-    public bool SelectedCheckBoxJun {
+    public bool SelectedCheckBoxJun
+    {
         get => _selectedCheckBoxJun;
 
-        set {
+        set
+        {
             _selectedCheckBoxJun = value;
             OnPropertyChanged();
         }
@@ -110,10 +129,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxJul;
 
-    public bool SelectedCheckBoxJul {
+    public bool SelectedCheckBoxJul
+    {
         get => _selectedCheckBoxJul;
 
-        set {
+        set
+        {
             _selectedCheckBoxJul = value;
             OnPropertyChanged();
         }
@@ -121,10 +142,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxAug;
 
-    public bool SelectedCheckBoxAug {
+    public bool SelectedCheckBoxAug
+    {
         get => _selectedCheckBoxAug;
 
-        set {
+        set
+        {
             _selectedCheckBoxAug = value;
             OnPropertyChanged();
         }
@@ -132,10 +155,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxSep;
 
-    public bool SelectedCheckBoxSep {
+    public bool SelectedCheckBoxSep
+    {
         get => _selectedCheckBoxSep;
 
-        set {
+        set
+        {
             _selectedCheckBoxSep = value;
             OnPropertyChanged();
         }
@@ -143,10 +168,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxOct;
 
-    public bool SelectedCheckBoxOct {
+    public bool SelectedCheckBoxOct
+    {
         get => _selectedCheckBoxOct;
 
-        set {
+        set
+        {
             _selectedCheckBoxOct = value;
             OnPropertyChanged();
         }
@@ -154,10 +181,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxNov;
 
-    public bool SelectedCheckBoxNov {
+    public bool SelectedCheckBoxNov
+    {
         get => _selectedCheckBoxNov;
 
-        set {
+        set
+        {
             _selectedCheckBoxNov = value;
             OnPropertyChanged();
         }
@@ -165,10 +194,12 @@ public class ViewModelGrooming : ViewModelBase {
 
     private bool _selectedCheckBoxDec;
 
-    public bool SelectedCheckBoxDec {
+    public bool SelectedCheckBoxDec
+    {
         get => _selectedCheckBoxDec;
 
-        set {
+        set
+        {
             _selectedCheckBoxDec = value;
             OnPropertyChanged();
         }

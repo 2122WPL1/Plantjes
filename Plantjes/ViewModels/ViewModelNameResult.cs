@@ -2,15 +2,17 @@
 using System.Windows.Media;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.HelpClasses;
+using Plantjes.ViewModels.Services;
+
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelNameResult : ViewModelBase {
     //private ServiceProvider _serviceProvider;
-    private readonly ISearchService _searchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
+    private readonly SearchService _searchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
-    public ViewModelNameResult(ISearchService searchService) {
+    public ViewModelNameResult(SearchService searchService) {
         _searchService = searchService;
         //_searchService = new SearchService();
 
@@ -34,9 +36,28 @@ public class ViewModelNameResult : ViewModelBase {
 
         //These comboboxes will already be filled with data on startup
         fillComboboxes();
+
+        _viewModelRepo2 = (ViewModelRepo2)App.Current.Services.GetService(typeof(ViewModelRepo2));
+        mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
     }
 
+    #region viewmodel things
+    public MyICommand<string> mainNavigationCommand { get; set; }
+    private ViewModelBase _currentViewModel;
 
+    private readonly ViewModelRepo2 _viewModelRepo2;
+    private void _onNavigationChanged(string userControlName)
+    {
+        currentViewModel = _viewModelRepo2.GetViewModel(userControlName);
+    }
+
+    public ViewModelBase currentViewModel
+    {
+        get => _currentViewModel;
+        set => SetProperty(ref _currentViewModel, value);
+    }
+
+    #endregion
     //Observable collections
     ////Bind to comboboxes
     public ObservableCollection<TfgsvType> cmbTypes { get; set; }
