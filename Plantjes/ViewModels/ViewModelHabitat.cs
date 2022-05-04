@@ -68,110 +68,44 @@ public class ViewModelHabitat : ViewModelBase
         foreach (var item in list) cmbNectarWaarde.Add(item);
     }
 
-    #region Binding checkboxen Habitat
 
-    private string _selectedCheckBoxHabitat1;
+    #region Binding checkboxen Ontwikkelsnelheid
+    //Gemaakt door Warre
+    private string _selectedCheckBoxOntwikkelsnelheidTraag;
 
-    public string SelectedCheckBoxHabitat1 {
-        get => _selectedCheckBoxHabitat1;
+    public string selectedCheckBoxOntwikkelsnelheidTraag
+    {
+        get => _selectedCheckBoxOntwikkelsnelheidTraag;
         set {
-            _selectedCheckBoxHabitat1 = value;
+            _selectedCheckBoxOntwikkelsnelheidTraag = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedCheckBoxHabitat2;
+    private string _selectedCheckBoxOntwikkelsnelheidMatig;
 
-    public string SelectedCheckBoxHabitat2 {
-        get => _selectedCheckBoxHabitat2;
+    public string selectedCheckBoxOntwikkelsnelheidMatig
+    {
+        get => _selectedCheckBoxOntwikkelsnelheidMatig;
         set {
-            _selectedCheckBoxHabitat2 = value;
+            _selectedCheckBoxOntwikkelsnelheidMatig = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedCheckBoxHabitat3;
+    private string _selectedCheckBoxOntwikkelsnelheidSnel;
 
-    public string SelectedCheckBoxHabitat3 {
-        get => _selectedCheckBoxHabitat3;
+    public string selectedCheckBoxOntwikkelsnelheidSnel
+    {
+        get => _selectedCheckBoxOntwikkelsnelheidSnel;
         set {
-            _selectedCheckBoxHabitat3 = value;
+            _selectedCheckBoxOntwikkelsnelheidSnel = value;
             OnPropertyChanged();
         }
     }
+    #endregion
 
-    private string _selectedCheckBoxHabitat4;
-
-    public string SelectedCheckBoxHabitat4 {
-        get => _selectedCheckBoxHabitat4;
-        set {
-            _selectedCheckBoxHabitat4 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedCheckBoxHabitat5;
-
-    public string SelectedCheckBoxHabitat5 {
-        get => _selectedCheckBoxHabitat5;
-        set {
-            _selectedCheckBoxHabitat5 = value;
-            MessageBox.Show(SelectedCheckBoxHabitat5);
-            OnPropertyChanged();
-        }
-    }
-
-
-    private string _selectedCheckBoxBezonningZ;
-
-    public string SelectedCheckBoxBezonningZ {
-        get => _selectedCheckBoxBezonningZ;
-        set {
-            _selectedCheckBoxBezonningZ = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedCheckBoxBezonningZHS;
-
-    public string SelectedCheckBoxBezonningZHS {
-        get => _selectedCheckBoxBezonningZHS;
-        set {
-            _selectedCheckBoxBezonningZHS = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedCheckBoxBezonningHS;
-
-    public string SelectedCheckBoxBezonningHS {
-        get => _selectedCheckBoxBezonningHS;
-        set {
-            _selectedCheckBoxBezonningHS = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedCheckBoxBezonningHSS;
-
-    public string SelectedCheckBoxBezonningHSS {
-        get => _selectedCheckBoxBezonningHSS;
-        set {
-            _selectedCheckBoxBezonningHSS = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedCheckBoxBezonningS;
-
-    public string SelectedCheckBoxBezonningS {
-        get => _selectedCheckBoxBezonningS;
-        set {
-            _selectedCheckBoxBezonningS = value;
-            OnPropertyChanged();
-        }
-    }
-
+    #region Sociabliliteit
 
     private string _selectedCheckBoxSociabiliteitI;
 
@@ -222,7 +156,9 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
+    #endregion
 
+    #region PlantEigenschappen
     private string _selectedCheckBoxBijvriendelijk;
 
     public string SelectedCheckBoxBijvriendelijk {
@@ -272,6 +208,9 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
+    #endregion
+
+    #region Levensvorm
 
     private string _selectedCheckBox1;
 
@@ -360,6 +299,101 @@ public class ViewModelHabitat : ViewModelBase
         set {
             _selectedCheckBox9 = value;
             MessageBox.Show(SelectedCheckBox9);
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #region CheckboxStrategie
+
+    private bool _selectedCheckBoxStrategieC;
+
+    public bool SelectedCheckBoxStrategieC
+    {
+        get => _selectedCheckBoxStrategieC;
+
+        set
+        {
+            _selectedCheckBoxStrategieC = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieCR;
+
+    public bool SelectedCheckBoxStrategieCR
+    {
+        get => _selectedCheckBoxStrategieCR;
+
+        set
+        {
+            _selectedCheckBoxStrategieCR = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieR;
+
+    public bool SelectedCheckBoxStrategieR
+    {
+        get => _selectedCheckBoxStrategieR;
+
+        set
+        {
+            _selectedCheckBoxStrategieR = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieRS;
+
+    public bool SelectedCheckBoxStrategieRS
+    {
+        get => _selectedCheckBoxStrategieRS;
+
+        set
+        {
+            _selectedCheckBoxStrategieRS = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieS;
+
+    public bool SelectedCheckBoxStrategieS
+    {
+        get => _selectedCheckBoxStrategieS;
+
+        set
+        {
+            _selectedCheckBoxStrategieS = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieSC;
+
+    public bool SelectedCheckBoxStrategieSC
+    {
+        get => _selectedCheckBoxStrategieSC;
+
+        set
+        {
+            _selectedCheckBoxStrategieSC = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxStrategieCSR;
+
+    public bool SelectedCheckBoxStrategieCSR
+    {
+        get => _selectedCheckBoxStrategieCSR;
+
+        set
+        {
+            _selectedCheckBoxStrategieCSR = value;
+            MessageBox.Show(SelectedCheckBoxStrategieCSR.ToString());
             OnPropertyChanged();
         }
     }
