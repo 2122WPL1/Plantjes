@@ -74,7 +74,7 @@ public partial class App : Application {
         services.AddSingleton(() => new ViewModelGrow(detailService));
         services.AddSingleton(() => new ViewModelHabitat(detailService));
         services.AddSingleton(() => new ViewModelAppearance(detailService));
-        services.AddSingleton(() => new ViewModelNameResult(searchService));
+        services.AddSingleton(() => new ViewModelNameResult(searchService, detailService));
         services.AddSingleton(() => new ViewModelBase());
         services.AddSingleton(() => new ViewModelMain(loginService, searchService));
         services.AddSingleton(() => new ViewModelRepo());

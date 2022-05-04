@@ -1,10 +1,13 @@
 ﻿using System.ComponentModel;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
 
 namespace Plantjes.ViewModels.Services;
 
 public class DetailService : INotifyPropertyChanged {
     private static DetailService _detailService;
+
+    public Plant SelectedPlant { get; set; }
     //Robin
     //Op dit moment wordt de service niet gebruikt, deze is opgezet om later de plantdetails te kunnen weergeven en te kunnen toevoegen in alle usercontrols
 
