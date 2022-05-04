@@ -14,10 +14,35 @@ public partial class LoginWindow : Window {
         DataContext = App.Current.Services.GetService(typeof(ViewModelLogin));
         InitializeComponent();
     }
-
-    private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e) {
-        // Xander - PasswordBox
+        // Entering password
+    private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e)
+    {
         if (DataContext != null) ((dynamic)DataContext)._passwordInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
-        // end Xander
+        
+    }
+    // Password show/Hide using checkbox in login window <Written by Andang Kloran>
+    
+    private void ckbShowPassword_Checked(object sender, RoutedEventArgs e) => ShowPasswordFunction();
+
+    private void ckbShowPassword_Unchecked(object sender, RoutedEventArgs e) => HidePasswordFunction();
+
+
+    private void ShowPasswordFunction()
+    {
+        if (ckbShowPassword.IsChecked == true)
+        {
+            txbUnmaskPassword.Visibility = Visibility.Visible;
+            txtWachtwoord.Visibility = Visibility.Hidden;
+            txbUnmaskPassword.Text = txtWachtwoord.Password;
+        }
+    }
+    private void HidePasswordFunction()
+    {
+        if (ckbShowPassword.IsChecked != true)
+        {
+            txbUnmaskPassword.Visibility = Visibility.Hidden;
+            txtWachtwoord.Visibility = Visibility.Visible;
+            txbUnmaskPassword.Text = txtWachtwoord.Password;
+        }
     }
 }
