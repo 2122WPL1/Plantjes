@@ -270,61 +270,50 @@
                                         <ComboBoxItem Content="5"/>
                                     </ComboBox>
                                 </StackPanel>
-                            </StackPanel>
 
-                            
-                            <ListBox Height="102" >
-                                <ListBoxItem>
-                                    <Label Content="Maand:" Style="{StaticResource LabelBorder}"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Januari" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Februari" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Maart" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="April" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Mei" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Juni" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Juli" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Augustus" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="September" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Oktober" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="November" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="December" VerticalContentAlignment="Center"/>
-                                </ListBoxItem>
-                            </ListBox>
-                            <StackPanel>
-                                <Label Content="Optimale plantdichtheid" Style="{StaticResource LabelBorder}" FontSize="10"/>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="tussen:"/>
-                                    <TextBox Width="60"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="en:      "/>
-                                    <TextBox Width="60"/>
-                                    <Label Content="Stuks/m²"/>
-                                </StackPanel>
+
+                                <ListBox Height="88" >
+                                    <ListBoxItem>
+                                        <Label Content="Bladgrootte" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="10" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="20" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="50" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="100" VerticalAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="150" VerticalAlignment="Center"/>
+                                    </ListBoxItem>
+                                </ListBox>
+
+
+                                <ListBox Height="88" >
+                                    <ListBoxItem>
+                                        <Label Content="Spruitfenologie" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="Zomergroen" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="Wintergroen" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="Altijd groen" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Margin="30,0,0,0" Content="Voorjaarsgroen" VerticalContentAlignment="Center"/>
+                                    </ListBoxItem>
+                                </ListBox>
                             </StackPanel>
 
                         </StackPanel>
@@ -460,7 +449,7 @@
 
                             <ListBox Height="129">
                                 <ListBoxItem Focusable="False">
-                                    <Label Content="Bladvorm" Style="{StaticResource LabelBorder}"/>
+                                    <Label Content="Levensvorm" Style="{StaticResource LabelBorder}" Width="237" Margin="-8,0,0,0"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <StackPanel Style="{StaticResource StackPanelListCheckBox}">
