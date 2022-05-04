@@ -31,11 +31,11 @@
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModels:ViewModelBloom}">
-            <pages:UserControlGrow />
+            <pages:UserControlBloom />
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModels:ViewModelAppearance}">
-            <pages:UserControlGrooming />
+            <pages:UserControlAppearance />
         </DataTemplate>
 
     </Window.Resources>
