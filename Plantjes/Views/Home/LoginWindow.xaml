@@ -24,8 +24,9 @@
 
             <TextBox Name="txtGebruikersnaam"
                      Text="{Binding Path=userNameInput, UpdateSourceTrigger=PropertyChanged}" BorderThickness="2" BorderBrush="{Binding GebruikersNaamColor}" Margin="154,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236" />
-            <PasswordBox x:Name="txtWachtwoord"
-                         PasswordChanged="txtWachtwoord_PasswordChanged" BorderThickness="2" BorderBrush="{Binding PasswordColor}" Margin="154,104,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236" />
+            <PasswordBox x:Name="txtWachtwoord" 
+                         PasswordChanged="txtWachtwoord_PasswordChanged" PasswordChar="●" BorderThickness="2" BorderBrush="{Binding PasswordColor}" Margin="154,104,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236"/>
+            <TextBox Name="txbUnmaskPassword" Height="24" Width="233.5" Margin="154,104,83,163" Visibility="Hidden" BorderBrush="{Binding PasswordColor}"/>
 
             <Button x:Name="btnLogin" Content="Login"  IsDefault="True" HorizontalAlignment="Left" Margin="154,142,0,126" Style="{StaticResource ButtonUnified}" Height="25" FontSize="15"
                     Command="{Binding Path= loginCommand}" Width="104">
@@ -38,6 +39,8 @@
                     Command="{Binding registerCommand}" HorizontalAlignment="Left" Width="236"/>
             <TextBlock x:Name="lblError" Text="{Binding errorMessage}" HorizontalAlignment="Left" Margin="40,16,0,0" VerticalAlignment="Top" Height="56" Width="248" FontWeight="Bold" TextWrapping="WrapWithOverflow" Foreground="White"/>
             <Image HorizontalAlignment="Left" Height="97" Margin="293,0,0,0" VerticalAlignment="Top" Width="180" Source="../../Image/vives_big.png" Stretch="UniformToFill"/>
+            <CheckBox x:Name="ckbShowPassword" Content="Show" HorizontalAlignment="Left" Margin="395,109,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked"/>
+
         </Grid>
     </Viewbox>
 </Window>
