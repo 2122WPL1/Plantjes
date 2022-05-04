@@ -66,7 +66,7 @@
                 <ComboBox x:Name="cmbBeheer" Width="200" Height="60" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}" Visibility="{Binding ShowUserManagement}">
 
                     <ComboBoxItem Focusable="False">
-                        <Button Content="Gebruiker" Name="btnUserManagement" 
+                        <Button Content="Gebruiker" Name="btnUserManagement" Style="{StaticResource ButtonUnified}"
                                 Command="{Binding mainNavigationCommand}"
                                 CommandParameter="VIEWUSERMANAGEMENT" Click="btn_ClickHideImage"/>
                     </ComboBoxItem>
