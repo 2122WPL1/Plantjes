@@ -12,9 +12,9 @@
     </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="image\Vives_Logo_MainWindow.png" />
-    <None Remove="image\waterval.jpeg" />
-    <None Remove="image\zuilvormig.png" />
+    <None Remove="Image\waterval.jpeg" />
+    <None Remove="Views\Home\download.png" />
+    <None Remove="Views\Home\iconmonstr-eye-9.png" />
     <None Remove="Views\Home\Usericon.png" />
     <None Remove="Views\Home\Vives_Logo_MainWindow.png" />
     <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
@@ -96,10 +96,11 @@
     <Resource Include="image\upright-erect.png" />
   </ItemGroup>
     <ItemGroup>
-        <Resource Include="image\user.png" />
-        <Resource Include="image\vives_big.png" />
-        <Resource Include="image\vives.png" />
-        <Resource Include="image\zuilvormig.png" />
+        <Resource Include="Image\user.png" />
+        <Resource Include="Image\vives_big.png" />
+        <Resource Include="Image\vives.png" />
+        <Resource Include="Image\WachtwoordOog1.png" />
+        <Resource Include="Image\WachtwoordOog.png" />
         <Resource Include="Views\Home\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
