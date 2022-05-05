@@ -1,25 +1,57 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Data;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
+using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelGrow : ViewModelBase {
     private DAOLogic _dao;
-    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
+    private DetailService _detailService;
 
     public ViewModelGrow(DetailService detailservice) {
         _detailService = detailservice;
         _dao = DAOLogic.Instance();
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            ClearAllFields();
+
+            FillGrondSoort();
+        };
     }
 
+
+    #region Filling elements based on plant selection
+    //region written by Marijn with Xander's help
+
+    public void FillGrondSoort()
+    {
+        //het nemen van modeltype van de huidige viewmodel en een lijst van abiotiekmulti gegevens op basis van geselecteerde plant id
+        var modeltype = typeof(ViewModelGrow);
+        List<AbiotiekMulti> AbioList =
+            DAOAbiotiek.filterAbiotiekMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        //checkboxes invullen waar nodig
+        foreach (AbiotiekMulti abimulti in AbioList)
+        {
+            var prop = modeltype.GetProperty($"SelectedCheckBoxGrondsoort{abimulti.Waarde}");
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+    }
+
+    #endregion
     //geschreven door christophe, op basis van een voorbeeld van owen
 
     #region CheckboxGrondsoort
 
     private bool _selectedCheckBoxGrondsoortGB1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortGB1 {
         get => _selectedCheckBoxGrondsoortGB1;
 
@@ -290,6 +322,114 @@ public class ViewModelGrow : ViewModelBase {
 
         set {
             _selectedCheckBoxGrondsoortOB2 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortA1;
+
+    public bool SelectedCheckBoxGrondsoortA1
+    {
+        get => _selectedCheckBoxGrondsoortA1;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortA1 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortA2;
+
+    public bool SelectedCheckBoxGrondsoortA2
+    {
+        get => _selectedCheckBoxGrondsoortA2;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortA2 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortM1;
+
+    public bool SelectedCheckBoxGrondsoortM1
+    {
+        get => _selectedCheckBoxGrondsoortM1;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortM1 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortM2;
+
+    public bool SelectedCheckBoxGrondsoortM2
+    {
+        get => _selectedCheckBoxGrondsoortM2;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortM2 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortO4;
+
+    public bool SelectedCheckBoxGrondsoortO4
+    {
+        get => _selectedCheckBoxGrondsoortO4;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortO4 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortO5;
+
+    public bool SelectedCheckBoxGrondsoortO5
+    {
+        get => _selectedCheckBoxGrondsoortO5;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortO5 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortSV1;
+
+    public bool SelectedCheckBoxGrondsoortSV1
+    {
+        get => _selectedCheckBoxGrondsoortSV1;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortSV1 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortSV2;
+
+    public bool SelectedCheckBoxGrondsoortSV2
+    {
+        get => _selectedCheckBoxGrondsoortSV2;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortSV2 = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool _selectedCheckBoxGrondsoortSV3;
+
+    public bool SelectedCheckBoxGrondsoortSV3
+    {
+        get => _selectedCheckBoxGrondsoortSV3;
+
+        set
+        {
+            _selectedCheckBoxGrondsoortSV3 = value;
             OnPropertyChanged();
         }
     }
@@ -650,7 +790,7 @@ public class ViewModelGrow : ViewModelBase {
 
     public string SelectedCheckBoxGrondSoortK
     {
-        get => SelectedCheckBoxGrondSoortK;
+        get => _selectedCheckBoxGrondSoortK;
         set
         {
             _selectedCheckBoxGrondSoortK = value;

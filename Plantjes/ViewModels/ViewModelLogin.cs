@@ -25,6 +25,7 @@ public class ViewModelLogin : ViewModelBase
     {
         _loginService = loginUserService;
         //Xander - open mainwindow if debugging
+#if DEBUG_AUTO_LOGIN
         if (Debugger.IsAttached) {
             var loginResult = new LoginResult { loginStatus = LoginStatus.NotLoggedIn };
             loginResult.gebruiker = DAOUser.context.Gebruikers.Include(x => x.Rol).FirstOrDefault(x => x.Rol.Omschrijving == "Docent");
@@ -40,6 +41,7 @@ public class ViewModelLogin : ViewModelBase
                 Application.Current.Windows[0]?.Close();
             }
         }
+#endif
         loginCommand = new RelayCommand(LoginButtonClick);
         cancelCommand = new RelayCommand(CancelButton);
         registerCommand = new RelayCommand(RegisterButtonView);

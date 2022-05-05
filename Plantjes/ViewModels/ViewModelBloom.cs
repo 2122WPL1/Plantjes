@@ -560,7 +560,7 @@ public class ViewModelBloom : ViewModelBase {
 
     public string SelectedCheckBoxRatioAster
     {
-        get => SelectedCheckBoxRatioAster;
+        get => _selectedCheckBoxRatioAster;
         set
         {
             _selectedCheckBoxRatioAster = value;
