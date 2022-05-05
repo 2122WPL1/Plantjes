@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="610" 
              d:DesignWidth="451">
+    <!-- Written by Kjell-->
     <Grid>
         <Canvas>
             <Grid Height="610" Width="451">
