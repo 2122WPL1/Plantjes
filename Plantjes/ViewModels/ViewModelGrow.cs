@@ -669,7 +669,7 @@ public class ViewModelGrow : ViewModelBase {
 
     public string SelectedCheckBoxGrondSoortK
     {
-        get => SelectedCheckBoxGrondSoortK;
+        get => _selectedCheckBoxGrondSoortK;
         set
         {
             _selectedCheckBoxGrondSoortK = value;
