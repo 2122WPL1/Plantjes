@@ -63,6 +63,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortGB2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortGB2 {
         get => _selectedCheckBoxGrondsoortGB2;
 
@@ -74,6 +75,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortGB3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortGB3 {
         get => _selectedCheckBoxGrondsoortGB3;
 
@@ -85,6 +87,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOP1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP1 {
         get => _selectedCheckBoxGrondsoortOP1;
 
@@ -96,6 +99,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOP1B;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP1B {
         get => _selectedCheckBoxGrondsoortOP1B;
 
@@ -105,9 +109,9 @@ public class ViewModelGrow : ViewModelBase {
         }
     }
 
-
     private bool _selectedCheckBoxGrondsoortOP2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP2 {
         get => _selectedCheckBoxGrondsoortOP2;
 
@@ -119,6 +123,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOP2B;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP2B {
         get => _selectedCheckBoxGrondsoortOP2B;
 
@@ -130,6 +135,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOP3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP3 {
         get => _selectedCheckBoxGrondsoortOP3;
 
@@ -141,6 +147,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOP3B;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOP3B {
         get => _selectedCheckBoxGrondsoortOP3B;
 
@@ -152,6 +159,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortSH1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortSH1 {
         get => _selectedCheckBoxGrondsoortSH1;
 
@@ -163,6 +171,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortSH2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortSH2 {
         get => _selectedCheckBoxGrondsoortSH2;
 
@@ -174,6 +183,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortB1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortB1 {
         get => _selectedCheckBoxGrondsoortB1;
 
@@ -185,6 +195,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortB2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortB2 {
         get => _selectedCheckBoxGrondsoortB2;
 
@@ -196,6 +207,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortB3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortB3 {
         get => _selectedCheckBoxGrondsoortB3;
 
@@ -207,6 +219,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortGR1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortGR1 {
         get => _selectedCheckBoxGrondsoortGR1;
 
@@ -218,6 +231,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortGR2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortGR2 {
         get => _selectedCheckBoxGrondsoortGR2;
 
@@ -229,6 +243,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortH1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortH1 {
         get => _selectedCheckBoxGrondsoortH1;
 
@@ -240,6 +255,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortH2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortH2 {
         get => _selectedCheckBoxGrondsoortH2;
 
@@ -251,6 +267,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortST1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortST1 {
         get => _selectedCheckBoxGrondsoortST1;
 
@@ -262,6 +279,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortST2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortST2 {
         get => _selectedCheckBoxGrondsoortST2;
 
@@ -273,6 +291,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortBR1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortBR1 {
         get => _selectedCheckBoxGrondsoortBR1;
 
@@ -284,6 +303,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortBR2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortBR2 {
         get => _selectedCheckBoxGrondsoortBR2;
 
@@ -295,6 +315,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortBR3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortBR3 {
         get => _selectedCheckBoxGrondsoortBR3;
 
@@ -306,6 +327,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOB1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOB1 {
         get => _selectedCheckBoxGrondsoortOB1;
 
@@ -317,6 +339,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxGrondsoortOB2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortOB2 {
         get => _selectedCheckBoxGrondsoortOB2;
 
@@ -327,6 +350,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortA1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortA1
     {
         get => _selectedCheckBoxGrondsoortA1;
@@ -339,6 +363,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortA2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortA2
     {
         get => _selectedCheckBoxGrondsoortA2;
@@ -351,6 +376,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortM1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortM1
     {
         get => _selectedCheckBoxGrondsoortM1;
@@ -363,6 +389,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortM2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortM2
     {
         get => _selectedCheckBoxGrondsoortM2;
@@ -375,6 +402,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortO4;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortO4
     {
         get => _selectedCheckBoxGrondsoortO4;
@@ -387,6 +415,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortO5;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortO5
     {
         get => _selectedCheckBoxGrondsoortO5;
@@ -399,6 +428,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortSV1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortSV1
     {
         get => _selectedCheckBoxGrondsoortSV1;
@@ -411,6 +441,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortSV2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortSV2
     {
         get => _selectedCheckBoxGrondsoortSV2;
@@ -423,6 +454,7 @@ public class ViewModelGrow : ViewModelBase {
     }
     private bool _selectedCheckBoxGrondsoortSV3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrondsoortSV3
     {
         get => _selectedCheckBoxGrondsoortSV3;
@@ -439,6 +471,7 @@ public class ViewModelGrow : ViewModelBase {
     #region Bezonning
     private string _selectedCheckBoxBezonningZ;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningZ
     {
         get => _selectedCheckBoxBezonningZ;
@@ -451,6 +484,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningS;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningS
     {
         get => _selectedCheckBoxBezonningS;
@@ -463,6 +497,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningHS;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningHS
     {
         get => _selectedCheckBoxBezonningHS;
@@ -475,6 +510,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningZS;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningZS
     {
         get => _selectedCheckBoxBezonningZS;
@@ -487,6 +523,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningZHS;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningZHS
     {
         get => _selectedCheckBoxBezonningZHS;
@@ -499,6 +536,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningZHSS;
 
+    [Clearable<bool>]
     public string SelectCheckBoxBezonningZHSS
     {
         get => _selectedCheckBoxBezonningZHSS;
@@ -511,6 +549,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxBezonningHSS;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxBezonningHSS
     {
         get => _selectedCheckBoxBezonningHSS;
@@ -526,6 +565,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteArm;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteArm {
         get => _selectedCheckBoxVoedingsbehoefteArm;
 
@@ -537,6 +577,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteArmMatig;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteArmMatig {
         get => _selectedCheckBoxVoedingsbehoefteArmMatig;
 
@@ -548,6 +589,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteMatig;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteMatig {
         get => _selectedCheckBoxVoedingsbehoefteMatig;
 
@@ -559,6 +601,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteMatigVoedselrijk;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteMatigVoedselrijk {
         get => _selectedCheckBoxVoedingsbehoefteMatigVoedselrijk;
 
@@ -570,6 +613,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteVoedselrijk;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteVoedselrijk {
         get => _selectedCheckBoxVoedingsbehoefteVoedselrijk;
 
@@ -581,6 +625,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteVoedselrijkIndifferent;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteVoedselrijkIndifferent {
         get => _selectedCheckBoxVoedingsbehoefteVoedselrijkIndifferent;
 
@@ -592,6 +637,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVoedingsbehoefteIndifferent;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVoedingsbehoefteIndifferent {
         get => _selectedCheckBoxVoedingsbehoefteIndifferent;
 
@@ -607,6 +653,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteDroog;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteDroog {
         get => _selectedCheckBoxVochtbehoefteDroog;
 
@@ -618,6 +665,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteDroogFris;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteDroogFris {
         get => _selectedCheckBoxVochtbehoefteDroogFris;
 
@@ -629,6 +677,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteFris;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteFris {
         get => _selectedCheckBoxVochtbehoefteFris;
 
@@ -640,6 +689,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteFrisVochtig;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteFrisVochtig {
         get => _selectedCheckBoxVochtbehoefteFrisVochtig;
 
@@ -651,6 +701,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteVochtig;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteVochtig {
         get => _selectedCheckBoxVochtbehoefteVochtig;
 
@@ -662,6 +713,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteVochtigNat;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteVochtigNat {
         get => _selectedCheckBoxVochtbehoefteVochtigNat;
 
@@ -673,6 +725,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private bool _selectedCheckBoxVochtbehoefteNat;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxVochtbehoefteNat {
         get => _selectedCheckBoxVochtbehoefteNat;
 
@@ -688,6 +741,7 @@ public class ViewModelGrow : ViewModelBase {
     //Gemaakt door Warre
     private string _selectedCheckBoxAntagonischGeenInvloed;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxAntagonischGeenInvloed
     {
         get => _selectedCheckBoxAntagonischGeenInvloed;
@@ -700,6 +754,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxAntagonischTerugDringen;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxAntagonischTerugDringen
     {
         get => _selectedCheckBoxAntagonischTerugDringen;
@@ -712,6 +767,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxAntagonischGereduceerd;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxAntagonischGereduceerd
     {
         get => _selectedCheckBoxAntagonischGereduceerd;
@@ -724,6 +780,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxAntagonischGroei;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxAntagonischGroei
     {
         get => _selectedCheckBoxAntagonischGroei;
@@ -740,6 +797,7 @@ public class ViewModelGrow : ViewModelBase {
     //Gemaakt door Warre
     private string _selectedCheckBoxGrondSoortZ;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortZ
     {
         get => _selectedCheckBoxGrondSoortZ;
@@ -752,6 +810,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxGrondSoortZL;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortZL
     {
         get => _selectedCheckBoxGrondSoortZL;
@@ -764,6 +823,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxGrondSoortL;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortL
     {
         get => _selectedCheckBoxGrondSoortL;
@@ -776,6 +836,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxGrondSoortLK;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortLK
     {
         get => _selectedCheckBoxGrondSoortLK;
@@ -788,6 +849,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxGrondSoortK;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortK
     {
         get => _selectedCheckBoxGrondSoortK;
@@ -800,6 +862,7 @@ public class ViewModelGrow : ViewModelBase {
 
     private string _selectedCheckBoxGrondSoortZLK;
 
+    [Clearable<bool>]
     public string SelectedCheckBoxGrondSoortZLK
     {
         get => _selectedCheckBoxGrondSoortZLK;
