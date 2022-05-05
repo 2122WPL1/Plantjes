@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Data;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.Services;
@@ -314,86 +315,90 @@ public class ViewModelGrow : ViewModelBase {
 
     #endregion
 
-    #region CheckboxStrategie
+    #region Bezonning
+    private string _selectedCheckBoxBezonningZ;
 
-    private bool _selectedCheckBoxStrategieC;
-
-    public bool SelectedCheckBoxStrategieC {
-        get => _selectedCheckBoxStrategieC;
-
-        set {
-            _selectedCheckBoxStrategieC = value;
+    public string SelectedCheckBoxBezonningZ
+    {
+        get => _selectedCheckBoxBezonningZ;
+        set
+        {
+            _selectedCheckBoxBezonningZ = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieCR;
+    private string _selectedCheckBoxBezonningS;
 
-    public bool SelectedCheckBoxStrategieCR {
-        get => _selectedCheckBoxStrategieCR;
-
-        set {
-            _selectedCheckBoxStrategieCR = value;
+    public string SelectedCheckBoxBezonningS
+    {
+        get => _selectedCheckBoxBezonningS;
+        set
+        {
+            _selectedCheckBoxBezonningS = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieR;
+    private string _selectedCheckBoxBezonningHS;
 
-    public bool SelectedCheckBoxStrategieR {
-        get => _selectedCheckBoxStrategieR;
-
-        set {
-            _selectedCheckBoxStrategieR = value;
+    public string SelectedCheckBoxBezonningHS
+    {
+        get => _selectedCheckBoxBezonningHS;
+        set
+        {
+            _selectedCheckBoxBezonningHS = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieRS;
+    private string _selectedCheckBoxBezonningZS;
 
-    public bool SelectedCheckBoxStrategieRS {
-        get => _selectedCheckBoxStrategieRS;
-
-        set {
-            _selectedCheckBoxStrategieRS = value;
+    public string SelectedCheckBoxBezonningZS
+    {
+        get => _selectedCheckBoxBezonningZS;
+        set
+        {
+            _selectedCheckBoxBezonningZS = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieS;
+    private string _selectedCheckBoxBezonningZHS;
 
-    public bool SelectedCheckBoxStrategieS {
-        get => _selectedCheckBoxStrategieS;
-
-        set {
-            _selectedCheckBoxStrategieS = value;
+    public string SelectedCheckBoxBezonningZHS
+    {
+        get => _selectedCheckBoxBezonningZHS;
+        set
+        {
+            _selectedCheckBoxBezonningZHS = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieSC;
+    private string _selectedCheckBoxBezonningZHSS;
 
-    public bool SelectedCheckBoxStrategieSC {
-        get => _selectedCheckBoxStrategieSC;
-
-        set {
-            _selectedCheckBoxStrategieSC = value;
+    public string SelectCheckBoxBezonningZHSS
+    {
+        get => _selectedCheckBoxBezonningZHSS;
+        set
+        {
+            _selectedCheckBoxBezonningZHSS = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxStrategieCSR;
+    private string _selectedCheckBoxBezonningHSS;
 
-    public bool SelectedCheckBoxStrategieCSR {
-        get => _selectedCheckBoxStrategieCSR;
-
-        set {
-            _selectedCheckBoxStrategieCSR = value;
-            MessageBox.Show(SelectedCheckBoxStrategieCSR.ToString());
+    public string SelectedCheckBoxBezonningHSS
+    {
+        get => _selectedCheckBoxBezonningHSS;
+        set
+        {
+            _selectedCheckBoxBezonningHSS = value;
             OnPropertyChanged();
         }
     }
-
     #endregion
 
     #region CheckboxVoedingsbehoefte
@@ -552,6 +557,134 @@ public class ViewModelGrow : ViewModelBase {
 
         set {
             _selectedCheckBoxVochtbehoefteNat = value;
+            OnPropertyChanged();
+        }
+    }
+
+    #endregion
+
+    #region Antagonische omgeving
+    //Gemaakt door Warre
+    private string _selectedCheckBoxAntagonischGeenInvloed;
+
+    public string SelectedCheckBoxAntagonischGeenInvloed
+    {
+        get => _selectedCheckBoxAntagonischGeenInvloed;
+        set
+        {
+            _selectedCheckBoxAntagonischGeenInvloed = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxAntagonischTerugDringen;
+
+    public string SelectedCheckBoxAntagonischTerugDringen
+    {
+        get => _selectedCheckBoxAntagonischTerugDringen;
+        set
+        {
+            _selectedCheckBoxAntagonischTerugDringen = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxAntagonischGereduceerd;
+
+    public string SelectedCheckBoxAntagonischGereduceerd
+    {
+        get => _selectedCheckBoxAntagonischGereduceerd;
+        set
+        {
+            _selectedCheckBoxAntagonischGereduceerd = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxAntagonischGroei;
+
+    public string SelectedCheckBoxAntagonischGroei
+    {
+        get => _selectedCheckBoxAntagonischGroei;
+        set
+        {
+            _selectedCheckBoxAntagonischGroei = value;
+            OnPropertyChanged();
+        }
+    }
+
+    #endregion
+
+    #region Grondsoort
+    //Gemaakt door Warre
+    private string _selectedCheckBoxGrondSoortZ;
+
+    public string SelectedCheckBoxGrondSoortZ
+    {
+        get => _selectedCheckBoxGrondSoortZ;
+        set
+        {
+            _selectedCheckBoxGrondSoortZ = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrondSoortZL;
+
+    public string SelectedCheckBoxGrondSoortZL
+    {
+        get => _selectedCheckBoxGrondSoortZL;
+        set
+        {
+            _selectedCheckBoxGrondSoortZL = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrondSoortL;
+
+    public string SelectedCheckBoxGrondSoortL
+    {
+        get => _selectedCheckBoxGrondSoortL;
+        set
+        {
+            _selectedCheckBoxGrondSoortL = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrondSoortLK;
+
+    public string SelectedCheckBoxGrondSoortLK
+    {
+        get => _selectedCheckBoxGrondSoortLK;
+        set
+        {
+            _selectedCheckBoxGrondSoortLK = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrondSoortK;
+
+    public string SelectedCheckBoxGrondSoortK
+    {
+        get => SelectedCheckBoxGrondSoortK;
+        set
+        {
+            _selectedCheckBoxGrondSoortK = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrondSoortZLK;
+
+    public string SelectedCheckBoxGrondSoortZLK
+    {
+        get => _selectedCheckBoxGrondSoortZLK;
+        set
+        {
+            _selectedCheckBoxGrondSoortZLK = value;
             OnPropertyChanged();
         }
     }

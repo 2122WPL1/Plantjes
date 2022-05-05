@@ -306,6 +306,12 @@ public class ViewModelAppearance : ViewModelBase {
 
     #endregion
 
+    #region Binding checkboxen Bladgrootte
+
+    
+
+    #endregion
+
     #region Binding checkboxen Bladvormen
 
     private bool _selectedCheckBoxBladvormenVorm1;

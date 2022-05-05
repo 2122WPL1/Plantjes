@@ -11,7 +11,7 @@
                 BorderThickness="0" Margin="10,10,10,10" >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
-                    <Label Content="HABITAT" Style="{StaticResource LabelBorderTitle}"/>
+                    <Label Content="COMMENSALISME" Style="{StaticResource LabelBorderTitle}"/>
                     <Grid Height="369">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="105*"/>
@@ -21,6 +21,7 @@
                             <RowDefinition Height="188*"/>
                             <RowDefinition Height="181*"/>
                         </Grid.RowDefinitions>
+                        <!--Planteigenschappen-->
                         <StackPanel Grid.ColumnSpan="2" Margin="0,0,168,2">
                             <Label Content="Plant eigenschappen" Style="{StaticResource LabelBorder}"/>
                             <CheckBox Content="Eetbaar/kruidgebruik" x:Name="cmbEetbaarKruidbaar" 
@@ -37,90 +38,87 @@
                                 <CheckBox Content="Vorstgevoelig" Margin="15,0,0,0" x:Name="Vorstgevoelig" 
                                           IsChecked="{Binding Path=SelectedCheckBoxVorstgevoelig, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Ontwikkelsnelheid"/>
-                                <ComboBox Width="80" x:Name="cmbOntwikkelsnelheid" 
-                                          SelectedItem="{Binding Path=SelectedOntwikkelsnelheid}" IsEditable="True">
-                                    <ComboBoxItem Content="traag"/>
-                                    <ComboBoxItem Content="matig"/>
-                                    <ComboBoxItem Content="snel"/>
-                                </ComboBox>
-                            </StackPanel>
-                            <ListBox Height="91">
+                            
+                            <!--Socialbiliteit-->
+                            <ListBox Height="109" Margin="0,8,0,0">
                                 <ListBoxItem Focusable="False">
                                     <Label Content="Sociabiliteit:" Style="{StaticResource LabelBorder}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="1" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="1 Alleen of in kleine toefen." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="2" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="2 In kleine groepen van 3-10 stuks." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitII, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="3" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="3 Groepen van 10-24 stuks." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitIII, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="4" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="4 Grotere kolonies in lage beplanting." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitIV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="5 Zeer grote vlakken" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>
                         </StackPanel>
+                        <!--Ontwikkelsnelheid Warre-->
                         <StackPanel Grid.Column="1" Margin="0,0,0,2">
                             <ListBox Height="94" >
                                 <ListBoxItem Focusable="False">
-                                    <Label Content="Bezonning:" Style="{StaticResource LabelBorder}"/>
+                                    <Label Content="Ontwikkelsnelheid:" Style="{StaticResource LabelBorder}" Width="152" Margin="-1,0,0,0"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Z" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="Traag" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxBezonningZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Z-HS" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="Matig" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxBezonningZHS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="HS" VerticalContentAlignment="Center"
+                                    <CheckBox Margin="30,0,0,0" Content="Snel" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBoxBezonningHS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
+                            </ListBox>
+                            <!--Strategie Warre-->
+                            <ListBox Height="93">
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="HS-S" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxBezonningHSS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Content="Strategie:" Style="{StaticResource LabelBorder}"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox Margin="30,0,0,0" Content="C" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox Margin="30,0,0,0" Content="SC" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieCR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Margin="30,0,0,0" Content="S" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxBezonningS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                </ListBoxItem>
-                            </ListBox>
-                            <ListBox Height="93">
-                                <ListBoxItem Focusable="False">
-                                    <Label Content="Habitat:" Style="{StaticResource LabelBorder}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="1" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxHabitat1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <CheckBox Margin="30,0,0,0" Content="SR" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieRS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="2" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxHabitat2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <CheckBox Margin="30,0,0,0" Content="R" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
+
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="3" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxHabitat3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <CheckBox Margin="30,0,0,0" Content="CR" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieSC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
+
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="4" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxHabitat4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                </ListBoxItem>
-                                <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxHabitat5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <CheckBox Margin="30,0,0,0" Content="CSR" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieCSR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>
                         </StackPanel>
@@ -177,8 +175,9 @@
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
+                        <!--Levensvorm-->
                         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,168,0">
-                            <Label Content="Plant waardes" Style="{StaticResource LabelBorder}"/>
+                            <Label Content="Levensvorm" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="157" >
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="Zogenaamde bodembedekker,&#xD;&#xA; weinig verdraagzaam &#xD;&#xA; met andere planten" VerticalContentAlignment="Center"
