@@ -307,8 +307,135 @@ public class ViewModelAppearance : ViewModelBase {
     #endregion
 
     #region Binding checkboxen Bladgrootte
-
+    // Gemaakt door Warre
     
+    private string _selectedCheckBoxGrootte5;
+
+    public string SelectedCheckBoxGrootte5
+    {
+        get => _selectedCheckBoxGrootte5;
+        set
+        {
+            _selectedCheckBoxGrootte5 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrootte10;
+
+    public string SelectedCheckBoxGrootte10
+    {
+        get => _selectedCheckBoxGrootte10;
+        set
+        {
+            _selectedCheckBoxGrootte10 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrootte20;
+
+    public string SelectedCheckBoxGrootte20
+    {
+        get => _selectedCheckBoxGrootte20;
+        set
+        {
+            _selectedCheckBoxGrootte20 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrootte50;
+
+    public string SelectedCheckBoxGrootte50
+    {
+        get => _selectedCheckBoxGrootte50;
+        set
+        {
+            _selectedCheckBoxGrootte50 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrootte100;
+
+    public string SelectedCheckBoxGrootte100
+    {
+        get => _selectedCheckBoxGrootte100;
+        set
+        {
+            _selectedCheckBoxGrootte100 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxGrootte150;
+
+    public string SelectedCheckBoxGrootte150
+    {
+        get=> _selectedCheckBoxGrootte150;
+        set
+        {
+            _selectedCheckBoxGrootte150 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    #endregion
+
+    #region Binding checkboxen Spruitfenelogie
+    //Gemaakt door Warre
+
+    private string _selectedCheckBoxSpruitZomergroen;
+
+    public string SelectedCheckBoxSpruitZomergroen
+    {
+        get => _selectedCheckBoxSpruitZomergroen;
+        set
+        {
+            _selectedCheckBoxSpruitZomergroen = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxSpruitWintergroen;
+
+    public string SelectCheckBoxSpruitWintergroen
+    {
+        get => SelectCheckBoxSpruitWintergroen;
+        set
+        {
+            _selectedCheckBoxSpruitWintergroen = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxSpruitAltijdGroen;
+
+    public string SelectedCheckBoxSpruitAltijdGroen
+    {
+        get => _selectedCheckBoxSpruitAltijdGroen;
+        set
+        {
+            _selectedCheckBoxSpruitAltijdGroen = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedCheckBoxSpruitVoorjaarsgroen;
+
+    public string SelectedCheckBoxSpruitVoorjaarsgroen
+    {
+        get => _selectedCheckBoxSpruitVoorjaarsgroen;
+        set
+        {
+            _selectedCheckBoxSpruitVoorjaarsgroen = value;
+            OnPropertyChanged();
+        }
+    }
+
+
+
 
     #endregion
 
