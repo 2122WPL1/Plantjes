@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
+using Newtonsoft.Json.Bson;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.Services;
@@ -9,12 +10,24 @@ namespace Plantjes.ViewModels;
 
 public class ViewModelAppearance : ViewModelBase {
     private DAOLogic _dao;
+    private DetailService _detailService;
 
     private string _selectedBladHoogte;
 
     public ViewModelAppearance(DetailService detailservice)
     {
         _dao = DAOLogic.Instance();
+        _detailService = detailservice;
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            ClearAllFields();
+
+            FillBladKleur();
+            FillStengelvormBladvorm();
+            FillBladgrootte();
+            FillLevensvormen();
+            FillSpruitFene();
+        };
     }
 
     public string SelectedBladHoogte {
@@ -27,7 +40,222 @@ public class ViewModelAppearance : ViewModelBase {
 
     //geschreven door christophe op basis van owens code
 
+    #region Filling elements based on plant selection
+    //region written by Warre based on FillGrondSoort by Marijn & Xander
+
+    public void FillBladKleur()
+    {
+        var modeltype = typeof(ViewModelAppearance);
+        List<FenotypeMulti> FenoListKleur =
+            DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (FenotypeMulti fnmulti in FenoListKleur)
+        {
+            var prop = modeltype.GetProperty($"SelectedCheckBoxBladkleur{fnmulti.Waarde}");
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
+    }
+
+    public void FillBladgrootte()
+    {
+        var modeltype = typeof(ViewModelAppearance);
+        List<Fenotype> FenoListBladGrootte =
+            DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (Fenotype Feno in FenoListBladGrootte)
+        {
+            string field = "";
+
+            switch (Feno.Bladgrootte)
+            {
+                case 5:
+                    field = "SelectedCheckBoxGrootte5";
+                    break;
+                case 10:
+                    field = "SelectedCheckBoxGrootte10";
+                    break;
+                case 20:
+                    field = "SelectedCheckBoxGrootte20";
+                    break;
+                case 50:
+                    field = "SelectedCheckBoxGrootte50";
+                    break;
+                case 100:
+                    field = "SelectedCheckBoxGrootte100";
+                    break;
+                case 150:
+                    field = "SelectedCheckBoxGrootte150";
+                    break;
+                case null:
+                    field = "SelectedCheckBoxGrootteNietGekend";
+                    break;
+
+
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+    }
+
+    public void FillSpruitFene()
+    {
+        var modeltype = typeof(ViewModelAppearance);
+        List<Fenotype> FenoListSpruit =
+            DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (Fenotype Feno in FenoListSpruit)
+        {
+            string field = "";
+
+            switch (Feno.Spruitfenologie)
+            {
+                case "zomergroen" :
+                    field = "SelectedCheckBoxSpruitZomergroen";
+                    break;
+                case "wintergroen":
+                    field = "SelectedCheckBoxSpruitWintergroen";
+                    break;
+                case "altijd groen":
+                    field = "SelectedCheckBoxSpruitAltijdGroen";
+                    break;
+                case "voorjaarsgroen":
+                    field = "SelectedCheckBoxSpruitVoorjaarsgroen";
+                    break;
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+
+    }
+
+    public void FillStengelvormBladvorm()
+    {
+        var modeltype = typeof(ViewModelAppearance);
+        List<Fenotype> FenoListStengelBlad =
+            DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (Fenotype feno in FenoListStengelBlad)
+        {
+            string field = "";
+            switch (feno.Spruitfenologie)
+            {
+                case "tuffed":
+                    field = "SelectedCheckBoxStengelvormenVorm1";
+                    break;
+                case "upright arching":
+                    field = "SelectedCheckBoxStengelvormenVorm2";
+                    break;
+                case "arching":
+                    field = "SelectedCheckBoxStengelvormenVorm3";
+                    break;
+                case "upright divergent":
+                    field = "SelectedCheckBoxStengelvormenVorm4";
+                    break;
+                case "upright erect":
+                    field = "SelectedCheckBoxStengelvormenVorm5";
+                    break;
+                case "mounted":
+                    field = "SelectedCheckBoxStengelvormenVorm6";
+                    break;
+                case "kruipend, horizontaal groeiend":
+                    field = "SelectedCheckBoxBladvormenVorm1";
+                    break;
+                case "rond/waaiervormig":
+                    field = "SelectedCheckBoxBladvormenVorm2";
+                    break;
+                case "kussenvormend":
+                    field = "SelectedCheckBoxBladvormenVorm3";
+                    break;
+                case "uitbuigend":
+                    field = "SelectedCheckBoxBladvormenVorm4";
+                    break;
+                case "wortelrozetplant":
+                    field = "SelectedCheckBoxBladvormenVorm5";
+                    break;
+                case "secculenten":
+                    field = "SelectedCheckBoxBladvormenVorm6";
+                    break;
+                case "polvormers":
+                    field = "SelectedCheckBoxBladvormenVorm7";
+                    break;
+                case "parasolvormig":
+                    field = "SelectedCheckBoxBladvormenVorm8";
+                    break;
+                case null:
+                    field = "SelectedCheckBoxBladvormenNietGekend";
+                    break;
+            }
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+    }
+
+    public void FillLevensvormen()
+    {
+        var modeltype = typeof(ViewModelAppearance);
+        List<Fenotype> FenoListLeven =
+            DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (Fenotype Feno in FenoListLeven)
+        {
+            string field = "";
+
+            switch (Feno.Levensvorm)
+            {
+                case "1. Hydrofyten - waterplanten":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case "3. Helofyten - winterknoppen onder water, bloeiende planten boven water":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case "4.Cryptofyten of Geofyten -winterknoppen onder de grond":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case "6. HemiCryptofyten - winterknoppen op of iets onder de grond":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case "7. Chamaefyten - winterknoppen tot 50 cm boven de grond":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case "9. P¨hanerofyten - winterknoppen minstens 50 cm boven de grond":
+                    field = "SelectedCheckBoxLevensvormenVorm1";
+                    break;
+                case null:
+                    field = "SelectedCheckBoxLevensvormenNietGekend";
+                    break;
+
+
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { true });
+        }
+    }
+
+    #endregion
+
+
+
     #region Binding checkboxen Bladkleur
+
+    private bool _selectedCheckBoxBladkleurNietGekend;
+
+    public bool SelectedCheckBoxBladkleurNietGekend
+    {
+        get => _selectedCheckBoxBladkleurNietGekend;
+        set
+        {
+            _selectedCheckBoxBladkleurNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
 
     private bool _selectedCheckBoxBladkleurZwart;
 
@@ -176,6 +404,20 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen BladHoogte
 
+
+
+    private bool _selectedCheckBoxBladHoogteNietGekend;
+
+    public bool SelectedCheckBoxBladHoogteNietGekend
+    {
+        get => _selectedCheckBoxBladHoogteNietGekend;
+        set
+        {
+            _selectedCheckBoxBladHoogteNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxBladHoogteJan;
 
     public bool SelectedCheckBoxBladHoogteJan {
@@ -312,7 +554,19 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen Bladgrootte
     // Gemaakt door Warre
-    
+
+    private bool _selectedCheckBoxGrootteNietGekend;
+
+    public bool SelectedCheckBoxGrootteNietGekend
+    {
+        get => _selectedCheckBoxGrootteNietGekend;
+        set
+        {
+            _selectedCheckBoxGrootteNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxGrootte5;
 
     public bool SelectedCheckBoxGrootte5
@@ -390,6 +644,18 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Spruitfenelogie
     //Gemaakt door Warre
 
+    private bool _selectedCheckBoxSpruitNietGekend;
+
+    public bool SelectedCheckBoxSpruitNietGekend
+    {
+        get => _selectedCheckBoxSpruitNietGekend;
+        set
+        {
+            _selectedCheckBoxSpruitNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxSpruitZomergroen;
 
     public bool SelectedCheckBoxSpruitZomergroen
@@ -444,6 +710,18 @@ public class ViewModelAppearance : ViewModelBase {
     #endregion
 
     #region Binding checkboxen Bladvormen
+
+    private bool _selectedCheckBoxBladvormenNietGekend;
+
+    public bool SelectedCheckBoxBladvormenNietGekend
+    {
+        get => _selectedCheckBoxBladvormenNietGekend;
+        set
+        {
+            _selectedCheckBoxBladvormenNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
 
     private bool _selectedCheckBoxBladvormenVorm1;
 
@@ -619,6 +897,19 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen Levensvormen
 
+    private bool _selectedCheckBoxLevensvormenNietGekend;
+
+    public bool SelectedCheckBoxLevensvormenNietGekend
+    {
+        get => _selectedCheckBoxLevensvormenNietGekend;
+
+        set
+        {
+            _selectedCheckBoxLevensvormenNietGekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxLevensvormenVorm1;
 
     public bool SelectedCheckBoxLevensvormenVorm1 {
@@ -630,16 +921,17 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private bool _selectedCheckBoxLevensvormenVorm2;
+    //dubbel
+    //private bool _selectedCheckBoxLevensvormenVorm2;
 
-    public bool SelectedCheckBoxLevensvormenVorm2 {
-        get => _selectedCheckBoxLevensvormenVorm2;
+    //public bool SelectedCheckBoxLevensvormenVorm2 {
+    //    get => _selectedCheckBoxLevensvormenVorm2;
 
-        set {
-            _selectedCheckBoxLevensvormenVorm2 = value;
-            OnPropertyChanged();
-        }
-    }
+    //    set {
+    //        _selectedCheckBoxLevensvormenVorm2 = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
 
     private bool _selectedCheckBoxLevensvormenVorm3;
 
@@ -663,16 +955,17 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private bool _selectedCheckBoxLevensvormenVorm5;
+    //dubbel
+    //private bool _selectedCheckBoxLevensvormenVorm5;
 
-    public bool SelectedCheckBoxLevensvormenVorm5 {
-        get => _selectedCheckBoxLevensvormenVorm5;
+    //public bool SelectedCheckBoxLevensvormenVorm5 {
+    //    get => _selectedCheckBoxLevensvormenVorm5;
 
-        set {
-            _selectedCheckBoxLevensvormenVorm5 = value;
-            OnPropertyChanged();
-        }
-    }
+    //    set {
+    //        _selectedCheckBoxLevensvormenVorm5 = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
 
     private bool _selectedCheckBoxLevensvormenVorm6;
 
@@ -696,16 +989,17 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private bool _selectedCheckBoxLevensvormenVorm8;
+    //dubbel
+    //private bool _selectedCheckBoxLevensvormenVorm8;
 
-    public bool SelectedCheckBoxLevensvormenVorm8 {
-        get => _selectedCheckBoxLevensvormenVorm8;
+    //public bool SelectedCheckBoxLevensvormenVorm8 {
+    //    get => _selectedCheckBoxLevensvormenVorm8;
 
-        set {
-            _selectedCheckBoxLevensvormenVorm8 = value;
-            OnPropertyChanged();
-        }
-    }
+    //    set {
+    //        _selectedCheckBoxLevensvormenVorm8 = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
 
     private bool _selectedCheckBoxLevensvormenVorm9;
 
