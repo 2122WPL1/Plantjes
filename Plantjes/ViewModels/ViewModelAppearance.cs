@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Documents;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
@@ -9,7 +12,8 @@ public class ViewModelAppearance : ViewModelBase {
 
     private string _selectedBladHoogte;
 
-    public ViewModelAppearance(DetailService detailservice) {
+    public ViewModelAppearance(DetailService detailservice)
+    {
         _dao = DAOLogic.Instance();
     }
 
@@ -309,9 +313,9 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Bladgrootte
     // Gemaakt door Warre
     
-    private string _selectedCheckBoxGrootte5;
+    private bool _selectedCheckBoxGrootte5;
 
-    public string SelectedCheckBoxGrootte5
+    public bool SelectedCheckBoxGrootte5
     {
         get => _selectedCheckBoxGrootte5;
         set
@@ -321,9 +325,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxGrootte10;
+    private bool _selectedCheckBoxGrootte10;
 
-    public string SelectedCheckBoxGrootte10
+    public bool SelectedCheckBoxGrootte10
     {
         get => _selectedCheckBoxGrootte10;
         set
@@ -333,9 +337,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxGrootte20;
+    private bool _selectedCheckBoxGrootte20;
 
-    public string SelectedCheckBoxGrootte20
+    public bool SelectedCheckBoxGrootte20
     {
         get => _selectedCheckBoxGrootte20;
         set
@@ -345,9 +349,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxGrootte50;
+    private bool _selectedCheckBoxGrootte50;
 
-    public string SelectedCheckBoxGrootte50
+    public bool SelectedCheckBoxGrootte50
     {
         get => _selectedCheckBoxGrootte50;
         set
@@ -357,9 +361,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxGrootte100;
+    private bool _selectedCheckBoxGrootte100;
 
-    public string SelectedCheckBoxGrootte100
+    public bool SelectedCheckBoxGrootte100
     {
         get => _selectedCheckBoxGrootte100;
         set
@@ -369,9 +373,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxGrootte150;
+    private bool _selectedCheckBoxGrootte150;
 
-    public string SelectedCheckBoxGrootte150
+    public bool SelectedCheckBoxGrootte150
     {
         get=> _selectedCheckBoxGrootte150;
         set
@@ -386,9 +390,9 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Spruitfenelogie
     //Gemaakt door Warre
 
-    private string _selectedCheckBoxSpruitZomergroen;
+    private bool _selectedCheckBoxSpruitZomergroen;
 
-    public string SelectedCheckBoxSpruitZomergroen
+    public bool SelectedCheckBoxSpruitZomergroen
     {
         get => _selectedCheckBoxSpruitZomergroen;
         set
@@ -398,11 +402,11 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxSpruitWintergroen;
+    private bool _selectedCheckBoxSpruitWintergroen;
 
-    public string SelectCheckBoxSpruitWintergroen
+    public bool SelectCheckBoxSpruitWintergroen
     {
-        get => SelectCheckBoxSpruitWintergroen;
+        get => _selectedCheckBoxSpruitWintergroen;
         set
         {
             _selectedCheckBoxSpruitWintergroen = value;
@@ -410,9 +414,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxSpruitAltijdGroen;
+    private bool _selectedCheckBoxSpruitAltijdGroen;
 
-    public string SelectedCheckBoxSpruitAltijdGroen
+    public bool SelectedCheckBoxSpruitAltijdGroen
     {
         get => _selectedCheckBoxSpruitAltijdGroen;
         set
@@ -422,9 +426,9 @@ public class ViewModelAppearance : ViewModelBase {
         }
     }
 
-    private string _selectedCheckBoxSpruitVoorjaarsgroen;
+    private bool _selectedCheckBoxSpruitVoorjaarsgroen;
 
-    public string SelectedCheckBoxSpruitVoorjaarsgroen
+    public bool SelectedCheckBoxSpruitVoorjaarsgroen
     {
         get => _selectedCheckBoxSpruitVoorjaarsgroen;
         set
