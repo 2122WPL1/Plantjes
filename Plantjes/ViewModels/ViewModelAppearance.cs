@@ -245,14 +245,14 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen Bladkleur
 
-    private bool _selectedCheckBoxBladkleurNietGekend;
+    private bool _selectedCheckBoxBladkleurOnbekend;
 
-    public bool SelectedCheckBoxBladkleurNietGekend
+    public bool SelectedCheckBoxBladkleurOnbekend
     {
-        get => _selectedCheckBoxBladkleurNietGekend;
+        get => _selectedCheckBoxBladkleurOnbekend;
         set
         {
-            _selectedCheckBoxBladkleurNietGekend = value;
+            _selectedCheckBoxBladkleurOnbekend = value;
             OnPropertyChanged();
         }
     }
@@ -406,14 +406,14 @@ public class ViewModelAppearance : ViewModelBase {
 
 
 
-    private bool _selectedCheckBoxBladHoogteNietGekend;
+    private bool _selectedCheckBoxBladHoogteOnbekend;
 
-    public bool SelectedCheckBoxBladHoogteNietGekend
+    public bool SelectedCheckBoxBladHoogteOnbekend
     {
-        get => _selectedCheckBoxBladHoogteNietGekend;
+        get => _selectedCheckBoxBladHoogteOnbekend;
         set
         {
-            _selectedCheckBoxBladHoogteNietGekend = value;
+            _selectedCheckBoxBladHoogteOnbekend = value;
             OnPropertyChanged();
         }
     }
@@ -555,14 +555,14 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Bladgrootte
     // Gemaakt door Warre
 
-    private bool _selectedCheckBoxGrootteNietGekend;
+    private bool _selectedCheckBoxGrootteOnbekend;
 
-    public bool SelectedCheckBoxGrootteNietGekend
+    public bool SelectedCheckBoxGrootteOnbekend
     {
-        get => _selectedCheckBoxGrootteNietGekend;
+        get => _selectedCheckBoxGrootteOnbekend;
         set
         {
-            _selectedCheckBoxGrootteNietGekend = value;
+            _selectedCheckBoxGrootteOnbekend = value;
             OnPropertyChanged();
         }
     }
@@ -644,14 +644,14 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Spruitfenelogie
     //Gemaakt door Warre
 
-    private bool _selectedCheckBoxSpruitNietGekend;
+    private bool _selectedCheckBoxSpruitOnbekend;
 
-    public bool SelectedCheckBoxSpruitNietGekend
+    public bool SelectedCheckBoxSpruitOnbekend
     {
-        get => _selectedCheckBoxSpruitNietGekend;
+        get => _selectedCheckBoxSpruitOnbekend;
         set
         {
-            _selectedCheckBoxSpruitNietGekend = value;
+            _selectedCheckBoxSpruitOnbekend = value;
             OnPropertyChanged();
         }
     }
@@ -711,14 +711,14 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen Bladvormen
 
-    private bool _selectedCheckBoxBladvormenNietGekend;
+    private bool _selectedCheckBoxBladvormenOnbekend;
 
-    public bool SelectedCheckBoxBladvormenNietGekend
+    public bool SelectedCheckBoxBladvormenOnbekend
     {
-        get => _selectedCheckBoxBladvormenNietGekend;
+        get => _selectedCheckBoxBladvormenOnbekend;
         set
         {
-            _selectedCheckBoxBladvormenNietGekend = value;
+            _selectedCheckBoxBladvormenOnbekend = value;
             OnPropertyChanged();
         }
     }
@@ -897,15 +897,15 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen Levensvormen
 
-    private bool _selectedCheckBoxLevensvormenNietGekend;
+    private bool _selectedCheckBoxLevensvormenOnbekend;
 
-    public bool SelectedCheckBoxLevensvormenNietGekend
+    public bool SelectedCheckBoxLevensvormenOnbekend
     {
-        get => _selectedCheckBoxLevensvormenNietGekend;
+        get => _selectedCheckBoxLevensvormenOnbekend;
 
         set
         {
-            _selectedCheckBoxLevensvormenNietGekend = value;
+            _selectedCheckBoxLevensvormenOnbekend = value;
             OnPropertyChanged();
         }
     }

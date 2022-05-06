@@ -31,14 +31,14 @@
                                             <ListBoxItem Focusable="False">
                                                 <StackPanel Style="{StaticResource StackPanelListCheckBox}" >
                                                     <Viewbox>
-                                                        <CheckBox x:Name="CbxStengelvormenNietGekend" 
-                                                                  IsChecked="{Binding Path=SelectedCheckBoxBladkleurNietGekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <CheckBox x:Name="CbxStengelvormenOnbekend" 
+                                                                  IsChecked="{Binding Path=SelectedCheckBoxBladkleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
                                                                 <ImageBrush  Stretch="Uniform" ImageSource="/Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
-                                                    <TextBlock Text="Ongekend" Style="{StaticResource BigCheckText}"/>
+                                                    <TextBlock Text="Onbekend" Style="{StaticResource BigCheckText}"/>
                                                 </StackPanel>
                                             </ListBoxItem>
                                             <ListBoxItem Focusable="False">
@@ -264,10 +264,10 @@
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelColour}">
                                         <Viewbox>
-                                            <CheckBox Background="Transparent" x:Name="CbxBloeikleurOngekend" 
-                                                      IsChecked="{Binding Path=SelectedCheckBoxBladkleurNietGekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <CheckBox Background="Transparent" x:Name="CbxBloeikleurOnbekend" 
+                                                      IsChecked="{Binding Path=SelectedCheckBoxBladkleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         </Viewbox>
-                                        <TextBlock Text="Ongekend" Style="{StaticResource BigCheckTextColour}"/>
+                                        <TextBlock Text="Onbekend" Style="{StaticResource BigCheckTextColour}"/>
                                     </StackPanel>
                                 </ListBoxItem>
 
@@ -409,7 +409,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
                                     <ComboBox Width="80">
-                                        <ComboBoxItem Content="Ongekend"/>
+                                        <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -420,7 +420,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:"/>
                                     <ComboBox Width="80">
-                                        <ComboBoxItem Content="Ongekend"/>
+                                        <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -435,8 +435,8 @@
                                         <Label Content="Bladgrootte" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Ongekend" VerticalContentAlignment="Center"
-                                                  IsChecked="{Binding Path=SelectedCheckBoxGrootte5 , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        <CheckBox Margin="30,0,0,0" Content="Onbekend" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrootteOnbekend , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
                                         <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"
@@ -470,8 +470,8 @@
                                         <Label Content="Spruitfenologie" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Ongekend" VerticalContentAlignment="Center"
-                                                  IsChecked="{Binding Path=SelectedCheckBoxSpruitNietGekend , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <CheckBox Margin="30,0,0,0" Content="Onbekend" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrootteOnbekend , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
                                         <CheckBox Margin="30,0,0,0" Content="Zomergroen" VerticalContentAlignment="Center"
@@ -504,14 +504,14 @@
                                     <ListBoxItem Focusable="False">
                                         <StackPanel Style="{StaticResource StackPanelListCheckBox}" >
                                             <Viewbox>
-                                                <CheckBox x:Name="CbxLevenvormenNietGekend" 
-                                                          IsChecked="{Binding Path=SelectedCheckBoxBladkleurNietGekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                <CheckBox x:Name="CbxLevenvormenOnbekend" 
+                                                          IsChecked="{Binding Path=SelectedCheckBoxBladkleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
                                                         <ImageBrush  Stretch="Uniform" ImageSource="/Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
-                                            <TextBlock Text="Ongekend" Style="{StaticResource BigCheckText}"/>
+                                            <TextBlock Text="Onbekend" Style="{StaticResource BigCheckText}"/>
                                         </StackPanel>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
