@@ -113,11 +113,20 @@ public class ViewModelGrow : ViewModelBase {
                 case "arm":
                     field += "Arm";
                     break;
+                case "arm matig":
+                    field += "ArmMatig";
+                    break;
                 case "matig":
                     field += "Matig";
                     break;
+                case "matig voedselrijk":
+                    field += "MatigVoedselrijk";
+                    break;
                 case "voedselrijk":
                     field += "Voedselrijk";
+                    break;
+                case "voedselrijk indifferent":
+                    field += "VoedselrijkIndifferent";
                     break;
                 case "indifferent":
                     field += "Indifferent";
@@ -173,7 +182,7 @@ public class ViewModelGrow : ViewModelBase {
 
         foreach (Abiotiek abio in AbioList)
         {
-            string field = "SelectedCheckBoxGrondsoort";
+            string field = "SelectedCheckBoxGrondSoort";
             switch (abio.Grondsoort)
             {
                 case "Z":

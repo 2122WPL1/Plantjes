@@ -336,19 +336,19 @@
                                     <Label Content="Ratio bloei/blad" Style="{StaticResource LabelBorder}" Width="135" Margin="-8,0,0,0"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Pachysandra sp." VerticalContentAlignment="Center"
+                                    <CheckBox  Content="Pachysandra sp." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioPachysandra,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Geranium nodosum" VerticalContentAlignment="Center"
+                                    <CheckBox Content="Geranium nodosum" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioGeranium,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Salvia nemorosa" VerticalContentAlignment="Center"
+                                    <CheckBox Content="Salvia nemorosa" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioSalvia,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Aster sp." VerticalContentAlignment="Center"
+                                    <CheckBox Content="Aster sp." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioAster,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>
