@@ -87,8 +87,8 @@ public class ViewModelAppearance : ViewModelBase {
                 case 150:
                     field = "SelectedCheckBoxGrootte150";
                     break;
-                case null:
-                    field = "SelectedCheckBoxGrootteNietGekend";
+                default:
+                    field = "SelectedCheckBoxGrootteOnbekend";
                     break;
 
 
@@ -123,6 +123,9 @@ public class ViewModelAppearance : ViewModelBase {
                     break;
                 case "voorjaarsgroen":
                     field = "SelectedCheckBoxSpruitVoorjaarsgroen";
+                    break;
+                default:
+                    field = "SelectedCheckBoxSpruitOnbekend";
                     break;
             }
 
@@ -186,8 +189,8 @@ public class ViewModelAppearance : ViewModelBase {
                 case "parasolvormig":
                     field = "SelectedCheckBoxBladvormenVorm8";
                     break;
-                case null:
-                    field = "SelectedCheckBoxBladvormenNietGekend";
+                default:
+                    field = "SelectedCheckBoxBladvormenOnbekend";
                     break;
             }
             var prop = modeltype.GetProperty(field);
@@ -226,8 +229,8 @@ public class ViewModelAppearance : ViewModelBase {
                 case "9. P¨hanerofyten - winterknoppen minstens 50 cm boven de grond":
                     field = "SelectedCheckBoxLevensvormenVorm1";
                     break;
-                case null:
-                    field = "SelectedCheckBoxLevensvormenNietGekend";
+                default:
+                    field = "SelectedCheckBoxLevensvormenOnbekend";
                     break;
 
 
