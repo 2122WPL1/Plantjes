@@ -15,6 +15,8 @@ namespace Plantjes.ViewModels;
 
 public class ViewModelBase : INotifyPropertyChanged
 {
+    //function written by Marijn & Xander
+    //function clears all fields with binding within the usercontrols
     public void ClearAllFields()
     {
         var type = this.GetType();

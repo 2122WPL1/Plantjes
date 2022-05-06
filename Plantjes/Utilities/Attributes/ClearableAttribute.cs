@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plantjes.Utilities.Attributes
 {
-    class ClearableAttribute<T> : AttributeTester
+    class ClearableAttribute<T> : Attribute
     {
         public T Value { get; set; }
 
