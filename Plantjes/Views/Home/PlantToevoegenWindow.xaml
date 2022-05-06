@@ -3,33 +3,49 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Plantjes.Views.Home"
+        xmlns:pages="clr-namespace:Plantjes.Views.UserControls"
+        xmlns:local="clr-namespace:Plantjes.Views.UserControls"
         mc:Ignorable="d"
-        Title="Plant Toevoegen" Height="1200" Width="1550" Background="#FFA0A0A0">
+        Title="Plant Toevoegen" Height="900" Width="1150" Background="#FFA0A0A0">
 
-    <Viewbox MaxHeight="1200" MaxWidth="1550">
-        <StackPanel Opacity="0.9" Height="1200" Width="1550">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="150" Margin="10,10,10,10">
+   <!-- Written by Andang Kloran -->
+    <!-- Bigger window for adding plants that contains the necessary user controls -->
+
+    <Viewbox MaxHeight="900" MaxWidth="1150">
+        <StackPanel Opacity="0.9" Height="1060" Width="1359">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="150" Margin="0,0,0,0">
                 <Image  Margin="20,15,20,0" Height="93" Source="/Image/vives.png" Width="100" />
-                <Button x:Name="btnToevoegen" Height="90" Width="266" FontSize="30" Margin="0,0,10,0" Content="Plant Toevoegen" Click="btnToevoegen_Click" Style="{StaticResource ButtonUnified}"/>
-                <Button x:Name="btnCancel" Height="90" Width="266" FontSize="30" Content="Annuleren" Click="btnCancel_Click" Style="{StaticResource ButtonUnified}"/>
+                <Button x:Name="btnToevoegen" Height="90" Width="315" FontSize="30" Margin="0,0,10,0" Content="Plant Toevoegen" Click="btnToevoegen_Click" Style="{StaticResource ButtonUnified}"/>
+                <Button x:Name="btnCancel" Height="90" Width="315" FontSize="30" Content="Annuleren" Click="btnCancel_Click" Style="{StaticResource ButtonUnified}"/>
             </StackPanel>
-            <Grid Height="1000">
+            <Grid Height="900" Width="1350">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="450"/>
+                    <ColumnDefinition Width="450"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="450"/>
                 </Grid.RowDefinitions>
-                <Grid Width="450" Height="450" Grid.Column="0" Grid.Row="0"/>
-                <Grid Width="450" Height="450" Grid.Column="1" Grid.Row="0"/>
-                <Grid Width="450" Height="450" Grid.Column="2" Grid.Row="0"/>
-                <Grid Width="450" Height="450" Grid.Column="0" Grid.Row="1"/>
-                <Grid Width="450" Height="450" Grid.Column="1" Grid.Row="1"/>
-                <Grid Width="450" Height="450" Grid.Column="2" Grid.Row="1"/>
+                <Grid Width="450" Height="450" Grid.Column="0" Grid.Row="0">
+                    <local:UserControlNameAdd/>
+                </Grid>
+                <Grid Width="450" Height="450" Grid.Column="1" Grid.Row="0">
+                    <local:UserControlBloom/>
+                </Grid>
+                <Grid Width="450" Height="450" Grid.Column="2" Grid.Row="0">
+                    <local:UserControlGrow/>
+                </Grid>
+                <Grid Width="450" Height="450" Grid.Column="0" Grid.Row="1">
+                    <local:UserControlGrooming/>
+                </Grid>
+                <Grid Width="450" Height="450" Grid.Column="1" Grid.Row="1">
+                    <local:UserControlAppearance/>
+                </Grid>
+                <Grid Width="450" Height="450" Grid.Column="2" Grid.Row="1">
+                    <local:UserControlHabitat/>
+                </Grid>
             </Grid>
         </StackPanel>
     </Viewbox>

@@ -1,5 +1,4 @@
-﻿using Plantjes.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plantjes.Views.Home
+namespace Plantjes.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for PlantToevoegenWindow.xaml
+    /// Interaction logic for trial1.xaml
     /// </summary>
-    public partial class PlantToevoegenWindow : Window
+    public partial class trial1 : UserControl
     {
-       
-        private void btnToevoegen_Click(object sender, RoutedEventArgs e)
+        public trial1()
         {
-
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-
+            InitializeComponent();
         }
     }
 }

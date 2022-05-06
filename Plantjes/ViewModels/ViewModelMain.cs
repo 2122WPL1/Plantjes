@@ -21,7 +21,7 @@ public class ViewModelMain : ViewModelBase {
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
     }
 
-    public MyICommand<string> mainNavigationCommand { get; set; }
+    public MyICommand<string> mainNavigationCommand { get; set; } 
 
     public ViewModelBase currentViewModel {
         get => _currentViewModel;
