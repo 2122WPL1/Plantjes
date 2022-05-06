@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Plantjes.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,7 +23,18 @@ namespace Plantjes.Views.Home
     {
         public NieuwWachtwoordWindow()
         {
+            DataContext = App.Current.Services.GetService(typeof(ViewModelRegister));
             InitializeComponent();
+        }
+        private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Kjell - code van Xander van andere password boxen
+            if (DataContext != null) ((dynamic)DataContext)._passwordInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
+        }
+        private void txtWachtwoordHerhaal_OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Kjell - code van Xander van andere password boxen
+            if (DataContext != null) ((dynamic)DataContext)._passwordRepeatInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
         }
     }
 }
