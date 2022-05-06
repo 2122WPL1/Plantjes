@@ -30,6 +30,14 @@
             <pages:UserControlGrooming />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModels:ViewModelBloom}">
+            <pages:UserControlBloom />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:ViewModelAppearance}">
+            <pages:UserControlAppearance />
+        </DataTemplate>
+
     </Window.Resources>
 
     <Viewbox MaxHeight="900" MaxWidth="1250">

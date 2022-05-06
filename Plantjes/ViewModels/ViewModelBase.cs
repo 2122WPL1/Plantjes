@@ -11,6 +11,18 @@ namespace Plantjes.ViewModels;
 
 public class ViewModelBase : INotifyPropertyChanged
 {
+    public void ClearAllFields()
+    {
+        var type = this.GetType();
+        var props = type.GetProperties();
+
+        
+
+    }
+
+
+
+
     //xander - global services
     public LoginUserService loginUserService;
     public SearchService searchService;

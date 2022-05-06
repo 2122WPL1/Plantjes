@@ -13,8 +13,10 @@
         <DataTemplate DataType="{x:Type vm:ViewModelLogin}">
             <uc:UserControlName />
         </DataTemplate>
-
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Return" Command="{Binding Path= loginCommand}"/>
+    </Window.InputBindings>
 
     <Viewbox MaxHeight="300" MaxWidth="464">
         <Grid Height="293" Width="473">
@@ -27,7 +29,7 @@
             <PasswordBox x:Name="txtWachtwoord"
                          PasswordChanged="txtWachtwoord_PasswordChanged" BorderThickness="2" BorderBrush="{Binding PasswordColor}" Margin="154,104,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="236" />
 
-            <Button x:Name="btnLogin" Content="Login"  IsDefault="True" HorizontalAlignment="Left" Margin="154,142,0,126" Style="{StaticResource ButtonUnified}" Height="25" FontSize="15"
+            <Button x:Name="btnLogin" Content="Login"  HorizontalAlignment="Left" Margin="154,142,0,126" Style="{StaticResource ButtonUnified}" Height="25" FontSize="15"
                     Command="{Binding Path= loginCommand}" Width="104">
             </Button>
 

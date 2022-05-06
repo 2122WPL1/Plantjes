@@ -8,6 +8,8 @@
         <!--<Optimize>true</Optimize>
         <WholeProgramOptimization>true</WholeProgramOptimization>-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Configurations>Debug;Release;Debug Auto Login</Configurations>
+		<LangVersion>preview</LangVersion>
     </PropertyGroup>
 
   <ItemGroup>

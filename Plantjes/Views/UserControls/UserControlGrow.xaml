@@ -142,6 +142,48 @@
                                         <CheckBox Content="frisse bodem OB2" Margin="30,0,0,0" x:Name="CbxGrondsoortOB2" 
                                                   IsChecked="{Binding Path=SelectedCheckBoxGrondsoortOB2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
+
+                                    <ListBoxItem Content="Rotstuin met:" Focusable="False"/>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="droge bodem A1" Margin="30,0,0,0" x:Name="CbxGrondsoortA1"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortA1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="frisse bodem A2" Margin="30,0,0,0" x:Name="CbxGrondsoortA2"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortA2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Content="Muurbeplanting met:" Focusable="False"/>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="droge bodem" Margin="30,0,0,0" x:Name="CbxGrondsoortM1"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortM1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="frisse bodem" Margin="30,0,0,0" x:Name="CbxGrondsoortM2"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortM2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Content="Oever:" Focusable="False"/>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="moeraszone" Margin="30,0,0,0" x:Name="CbxGrondsoortO4"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortO4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="ondiep water" Margin="30,0,0,0" x:Name="CbxGrondsoortO5"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortO5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Content="Steenvoegen met:" Focusable="False"/>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="droge bodem SV1" Margin="30,0,0,0" x:Name="CbxGrondsoortSV1"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortSV1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="frisse bodem SV2" Margin="30,0,0,0" x:Name="CbxGrondsoortSV2"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortSV2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+                                    <ListBoxItem Focusable="False">
+                                        <CheckBox Content="vochtige bodem SV3" Margin="30,0,0,0" x:Name="CbxGrondsoortSV3"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrondsoortSV3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </ListBoxItem>
+
                                 </ListBox>
                             </Canvas>
                         </StackPanel>

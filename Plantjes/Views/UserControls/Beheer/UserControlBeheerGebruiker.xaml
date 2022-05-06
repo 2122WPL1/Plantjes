@@ -32,7 +32,7 @@
                             HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160">
                     </Button>
                     <Button x:Name="btnCSVImport" Content="CSV Importeren" 
-                        Style="{StaticResource ButtonUnified}" 
+                        Style="{StaticResource ButtonUnified}" Command="{Binding ImportCsvCommand}"
                         HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,560,0,0" Height="34"/>
                 </Grid>
             </Canvas>
