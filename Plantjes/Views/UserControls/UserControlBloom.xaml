@@ -7,29 +7,29 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="450">
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
-    
+
     <Grid>
         <GroupBox
             BorderThickness="0" Width="450" Height="450"  >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
-                    <Grid Height="369">
+                    <Grid Height="409">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="247*"/>
                             <ColumnDefinition Width="145*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="199*"/>
+                            <RowDefinition Height="210*"/>
                         </Grid.RowDefinitions>
                         <!--Bloeimaand & Bloeihoogte per maand-->
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Bloeit in:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="124"/>
-                                <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Center" Width="124"/>
+                                <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="146"/>
                             </StackPanel>
-                            <ListBox Height="158">
+                            <ListBox Height="175">
                                 <ListBoxItem Focusable="False">
                                     <StackPanel Orientation="Horizontal">
                                         <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInOnbekend"
@@ -151,10 +151,9 @@
 
                         </StackPanel>
                         <!--Kleuren-->
-                        <StackPanel 
-                                Grid.Column="1">
+                        <StackPanel Grid.ColumnSpan="2" Margin="272,0,0,0">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
-                            <ListBox Height="159">
+                            <ListBox Height="175">
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelColour}">
                                         <Viewbox>
@@ -282,7 +281,7 @@
                             </ListBox>
                         </StackPanel>
                         <!--Bloeihoogte-->
-                        <StackPanel Grid.Column="1" Margin="0,184,0,0" Grid.RowSpan="2">
+                        <StackPanel Margin="272,0,0,0" Grid.ColumnSpan="2" Grid.Row="1">
                             <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}"/>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Min:"/>
@@ -352,7 +351,7 @@
                             </StackPanel>
 
                             <!--Ratio bloei/blad Warre-->
-                            <ListBox Height="110" >
+                            <ListBox Height="132" >
                                 <ListBoxItem>
                                     <Label Content="Ratio bloei/blad" Style="{StaticResource LabelBorder}" Width="135" Margin="-8,0,0,0"/>
                                 </ListBoxItem>
@@ -379,13 +378,13 @@
                             </ListBox>
                         </StackPanel>
                         <!--Bloeiwijze-->
-                        <StackPanel Margin="0,184,0,0" Grid.RowSpan="2">
+                        <StackPanel Grid.Row="1">
                             <Label Content="Bloeiwijze:" Style="{StaticResource LabelBorder}"/>
-                            <ListBox Height="160">
+                            <ListBox Height="184">
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelListCheckBox}">
                                         <Viewbox>
-                                            <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                            <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVormOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
                                                     <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
                                                 </CheckBox.Background>

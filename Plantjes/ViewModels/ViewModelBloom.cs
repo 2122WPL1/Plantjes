@@ -58,6 +58,7 @@ public class ViewModelBloom : ViewModelBase {
 
     }
     #endregion
+
     private string _selectedBloeiHoogteMin;
     public string SelectedBloeiHoogteMin
     {
@@ -80,6 +81,19 @@ public class ViewModelBloom : ViewModelBase {
     }
 
     #region Checkbox Bloeikleur
+
+    private bool _selectedCheckBoxBloeikleurOnbekend;
+
+    public bool SelectedCheckBoxBloeikleurOnbekend
+    {
+        get => _selectedCheckBoxBloeikleurOnbekend;
+
+        set
+        {
+            _selectedCheckBoxBloeikleurOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
 
     private bool _selectedCheckBoxBloeikleurZwart;
 
@@ -229,6 +243,19 @@ public class ViewModelBloom : ViewModelBase {
 
     #region Binding Checkbox BloeiHoogte
 
+    private bool _selectedCheckBoxBloeiHoogteOnbekend;
+
+    public bool SelectedCheckBoxBloeiHoogteOnbekend
+    {
+        get => _selectedCheckBoxBloeiHoogteOnbekend;
+
+        set
+        {
+            _selectedCheckBoxBloeiHoogteOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxBloeiHoogteJan;
 
     public bool SelectedCheckBoxBloeiHoogteJan {
@@ -364,6 +391,19 @@ public class ViewModelBloom : ViewModelBase {
     #endregion
 
     #region Binding Checkbox Bloeit In
+
+    private bool _selectedCheckBoxBloeitInOnbekend;
+
+    public bool SelectedCheckBoxBloeitInOnbekend
+    {
+        get => _selectedCheckBoxBloeitInOnbekend;
+
+        set
+        {
+            _selectedCheckBoxBloeitInOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
 
     private bool _selectedCheckBoxBloeitInJan;
 
@@ -501,6 +541,19 @@ public class ViewModelBloom : ViewModelBase {
 
     #region Binding checkboxes Bloeiwijzevorm
 
+    private bool _selectedCheckBoxBloeiwijzeVormOnbekend;
+
+    public bool SelectedCheckBoxBloeiwijzeVormOnbekend
+    {
+        get => _selectedCheckBoxBloeiwijzeVormOnbekend;
+
+        set
+        {
+            _selectedCheckBoxBloeiwijzeVormOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
+
     private bool _selectedCheckBoxBloeiwijzeVorm1;
 
     public bool SelectedCheckBoxBloeiwijzeVorm1 {
@@ -570,6 +623,18 @@ public class ViewModelBloom : ViewModelBase {
     #endregion
 
     #region Ratio Bloei/Blad
+
+    private bool _selectedCheckBoxRatioOnbekend;
+
+    public bool SelectedCheckBoxRatioOnbekend
+    {
+        get => _selectedCheckBoxRatioOnbekend;
+        set
+        {
+            _selectedCheckBoxRatioOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
     // Gemaakt door Warre
     private bool _selectedCheckBoxRatioPachysandra;
 

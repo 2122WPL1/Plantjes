@@ -7,6 +7,6 @@ namespace Plantjes.Views.UserControls;
 /// </summary>
 public partial class UserControlAppearance : UserControl {
     public UserControlAppearance() {
-        InitializeComponent();
+         InitializeComponent();
     }
 }
