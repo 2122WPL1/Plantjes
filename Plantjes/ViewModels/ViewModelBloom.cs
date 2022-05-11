@@ -9,7 +9,7 @@ public class ViewModelBloom : ViewModelBase {
     //IsCheckBoxChecked.  This enables animation, styling, binding, etc...
 
     private DAOLogic _dao;
-    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
+    private DetailService _detailService;
 
     private SearchService _SearchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
@@ -17,13 +17,64 @@ public class ViewModelBloom : ViewModelBase {
     private string _selectedBloeiHoogte;
 
     public ViewModelBloom(DetailService detailservice) {
+        _detailService = detailservice;
         _dao = DAOLogic.Instance();
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            ClearAllFields();
+
+            FillBloeikleur();
+            FillBloeihoogte();
+            FillBloeitIn();
+            FillBloeiwijzevorm();
+            FillBloeiBlad();
+        };
     }
 
-    public string SelectedBloeiHoogte {
-        get => _selectedBloeiHoogte;
-        set {
-            _selectedBloeiHoogte = value;
+    #region Filling elements based on plant selection
+    //region written by MarijnCo
+    public void FillBloeikleur()
+    {
+
+    }
+
+    public void FillBloeihoogte()
+    {
+
+    }
+
+    public void FillBloeitIn()
+    {
+
+    }
+
+    public void FillBloeiwijzevorm()
+    {
+
+    }
+
+    public void FillBloeiBlad()
+    {
+
+    }
+    #endregion
+    private string _selectedBloeiHoogteMin;
+    public string SelectedBloeiHoogteMin
+    {
+        get => _selectedBloeiHoogteMin;
+        set
+        {
+            _selectedBloeiHoogteMin = value;
+            OnPropertyChanged();
+        }
+    }
+    private string _selectedBloeiHoogteMax;
+    public string SelectedBloeiHoogteMax
+    {
+        get => _selectedBloeiHoogteMax;
+        set
+        {
+            _selectedBloeiHoogteMax = value;
             OnPropertyChanged();
         }
     }
