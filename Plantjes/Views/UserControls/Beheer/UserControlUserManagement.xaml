@@ -76,15 +76,15 @@
                     </Label>
                 </StackPanel>
                 <StackPanel Margin="231,60,4,10" Width="216">
-                    <TextBox x:Name="btnGebruikerVivesNr" TextWrapping="Wrap" Text="{Binding currentUser.Vivesnr}" Width="216" Height="40" FontSize="20"
+                    <TextBox TextWrapping="Wrap" Text="{Binding currentUser.Vivesnr}" Width="216" Height="40" FontSize="20"
                              HorizontalAlignment="Center" BorderThickness="0" />
-                    <TextBox x:Name="btnGebruikerVoornaam" TextWrapping="Wrap" Text="{Binding currentUser.Voornaam}" Width="216" Height="40" FontSize="20"
+                    <TextBox TextWrapping="Wrap" Text="{Binding currentUser.Voornaam}" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
-                    <TextBox x:Name="btnGebruikerAchternaam" TextWrapping="Wrap" Text="{Binding currentUser.Achternaam}" Width="216" Height="40" FontSize="20"
+                    <TextBox TextWrapping="Wrap" Text="{Binding currentUser.Achternaam}" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
-                    <TextBox x:Name="btnGebruikerE_mailadres" TextWrapping="Wrap" Text="{Binding currentUser.Emailadres}" Width="216" Height="40" FontSize="20"
+                    <TextBox TextWrapping="Wrap" Text="{Binding currentUser.Emailadres}" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
-                    <TextBox x:Name="btnGebruikerWachtwoord" TextWrapping="Wrap" Text="" Width="216" Height="40" FontSize="20"
+                    <TextBox TextWrapping="Wrap" Text="" IsEnabled="false" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
                 </StackPanel>
             </Grid>
