@@ -8,9 +8,9 @@ namespace Plantjes.Dao
     public class DAOBeheerMaand : DAOLogic
     {
         //Xander - optimisation: filter first then select distinct
-        public static IQueryable<BeheerMaand> FilterBeheerMaandFromPlant(int selectedItem)
+        public static List<BeheerMaand> FilterBeheerMaandFromPlant(int selectedItem)
         {
-            return context.BeheerMaands.Where(s => s.PlantId == selectedItem).Distinct();
+            return context.BeheerMaands.Where(s => s.PlantId == selectedItem).Distinct().ToList();
         }
 
         public static List<BeheerMaand> FillBeheerdaad()
