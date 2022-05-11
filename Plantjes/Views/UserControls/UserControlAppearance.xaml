@@ -113,6 +113,7 @@
                                 </Grid>
                             </StackPanel>
                         </StackPanel>
+                        <!--Kleur-->
                         <StackPanel Grid.Column="1" Margin="0,0,0,175" Grid.RowSpan="2">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="112">
@@ -247,6 +248,7 @@
                                 </ListBoxItem>
                             </ListBox>
                         </StackPanel>
+                        <!--Bladhoogte-->
                         <StackPanel Grid.Row="1" Grid.Column="1">
                             <Label Content="Bladhoogte" Style="{StaticResource LabelBorder}"/>
                             <StackPanel>
@@ -271,52 +273,63 @@
                                     </ComboBox>
                                 </StackPanel>
 
-
+                                <!--Bladgrootte Warre-->
                                 <ListBox Height="88" >
                                     <ListBoxItem>
                                         <Label Content="Bladgrootte" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="5" VerticalContentAlignment="Center"
+                                                 IsChecked="{Binding Path=SelectedCheckBoxGrootte5 , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="10" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="10" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectedCheckBoxGrootte10, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="20" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="20" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxGrootte20 , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="50" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="50" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectedCheckBoxGrootte50, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="100" VerticalAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="100" VerticalAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectedCheckBoxGrootte100, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="150" VerticalAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="150" VerticalAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectedCheckBoxGrootte150, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                 </ListBox>
 
-
+                                <!--Spruitfenelogie Warre-->
                                 <ListBox Height="88" >
                                     <ListBoxItem>
                                         <Label Content="Spruitfenologie" Style="{StaticResource LabelBorder}" Width="155" Margin="-8,0,0,0"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Zomergroen" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="Zomergroen" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxSpruitZomergroen , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Wintergroen" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="Wintergroen" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectCheckBoxSpruitWintergroen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Altijd groen" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="Altijd groen" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxSpruitAltijdGroen , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
-                                        <CheckBox Margin="30,0,0,0" Content="Voorjaarsgroen" VerticalContentAlignment="Center"/>
+                                        <CheckBox Margin="30,0,0,0" Content="Voorjaarsgroen" VerticalContentAlignment="Center"
+                                                  IsChecked="{Binding Path= SelectedCheckBoxSpruitVoorjaarsgroen , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                 </ListBox>
                             </StackPanel>
 
                         </StackPanel>
+                        <!--Bladvorm-->
                         <StackPanel Grid.Row="1">
                             <Label Content="Bladvorm" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="99">
@@ -447,6 +460,7 @@
                                 </ListBoxItem>
                             </ListBox>
 
+                            <!--Levensvorm-->
                             <ListBox Height="129">
                                 <ListBoxItem Focusable="False">
                                     <Label Content="Levensvorm" Style="{StaticResource LabelBorder}" Width="237" Margin="-8,0,0,0"/>

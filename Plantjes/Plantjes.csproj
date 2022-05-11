@@ -9,6 +9,7 @@
         <WholeProgramOptimization>true</WholeProgramOptimization>-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Configurations>Debug;Release;Debug Auto Login</Configurations>
+		<LangVersion>preview</LangVersion>
     </PropertyGroup>
 
   <ItemGroup>
@@ -68,6 +69,7 @@
         </PackageReference>
         <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />
     </ItemGroup>
 
   <ItemGroup>
