@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Dao;
 using Plantjes.Models.Classes;
+using Plantjes.Models.Db;
 using Plantjes.Models.Enums;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
@@ -131,9 +132,21 @@ public class ViewModelLogin : ViewModelBase
             
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
-                var mainWindow = new MainWindow();
-                mainWindow.Show();
-                Application.Current.Windows[0]?.Close();
+                if(_loginService.gebruiker.LastLogin == null)
+                {
+                    var niewWachtwoordWindow = new NieuwWachtwoordWindow();
+                    niewWachtwoordWindow.Show();
+                    Application.Current.Windows[0]?.Close();
+                }
+                else
+                {
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Application.Current.Windows[0]?.Close();
+
+                    _loginService.gebruiker.LastLogin = DateTime.Now;
+                    DAOLogic.context.SaveChanges();
+                }
             }
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
@@ -203,4 +216,5 @@ public class ViewModelLogin : ViewModelBase
         RaisePropertyChanged("errorMessage");
     }
     //------------------------------------------------------------------------------------------
+
 }

@@ -30,14 +30,14 @@ public class LoginUserService : INotifyPropertyChanged {
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
-                
+
                 && !DAOUser.GetEmailInUse(emailAdresInput)) {
                 if ((vivesNrInput != null) & (vivesNrInput.Length != 8)) return "Dit is geen geldig vives nummer!";
 
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput) {
                     //gebruiker registreren.
-                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput, last_login:System.DateTime.Today);
+                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput, last_login: System.DateTime.Today);
                     //Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
                     // "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
                     var loginWindow = new LoginWindow();

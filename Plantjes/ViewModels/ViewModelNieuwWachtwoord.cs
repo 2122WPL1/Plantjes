@@ -19,7 +19,7 @@ namespace Plantjes.ViewModels
         private LoginUserService _loginService { get; }
         public RelayCommand changePasswordCommand { get; set; }
 
-        //Written by Kjell -- Based on Xander
+        //Kjell -- Based on Xander
         public void ChangePasswordButtonClick()
         {
             errorMessage = _loginService.ChangePasswordButton(passwordInput, _passwordRepeatInput);
