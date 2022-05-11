@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Toolkit.Mvvm.Input;
+using Plantjes.Dao;
+using Plantjes.Models.Db;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
@@ -10,28 +12,30 @@ namespace Plantjes.ViewModels
 {
     internal class ViewModelNieuwWachtwoord : ViewModelBase
     {
-        public ViewModelNieuwWachtwoord(LoginUserService loginUserService)
+
+        public ViewModelNieuwWachtwoord(LoginUserService loginUserService, Gebruiker gebruiker)
         {
             _loginService = loginUserService;
             changePasswordCommand = new RelayCommand(ChangePasswordButtonClick);
+            _gebruiker = gebruiker;
         }
 
+        private Gebruiker _gebruiker;
         private LoginUserService _loginService { get; }
         public RelayCommand changePasswordCommand { get; set; }
 
         //Kjell -- Based on Xander
         public void ChangePasswordButtonClick()
         {
-            errorMessage = _loginService.ChangePasswordButton(passwordInput, _passwordRepeatInput);
-            //Close register window if no error
-            if (errorMessage == null || errorMessage == string.Empty)
+            if (passwordInput == passwordRepeatInput)
             {
-                //Clear input on register
-                passwordInput = string.Empty;
-                Application.Current.Windows[0]?.Close();
+                _loginService.ChangePasswordButton(passwordInput, passwordRepeatInput);
+                //_loginService.ChangePasswordButton(passwordInput, passwordRepeatInput);
+                DAOLogic.context.SaveChanges();
 
-                var loginWindow = new LoginWindow();
-                loginWindow.Show();
+                var niewWachtwoordWindow = new NieuwWachtwoordWindow();
+                niewWachtwoordWindow.Show();
+                Application.Current.Windows[0]?.Close();
             }
         }
 

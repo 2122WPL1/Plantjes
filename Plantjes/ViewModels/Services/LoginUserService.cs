@@ -60,22 +60,16 @@ public class LoginUserService : INotifyPropertyChanged {
 
     //Written by Kjell
     //Controle dat bijde wachtwoorden overeenkomen
-    public string ChangePasswordButton(string passwordInput, string passwordRepeatInput)
+    public void ChangePasswordButton(string passwordInput, string passwordRepeatInput)
     {
-        var Message = string.Empty;
-
         if (passwordInput == passwordRepeatInput)
         {
             DAOUser.ChangePassword(passwordInput);
 
+
             var loginWindow = new LoginWindow();
             loginWindow.Show();
         }
-        else
-        {
-            Message = "Zorg dat de wachtwoorden overeenkomen.";
-        }
-        return Message;
     }
         
 
