@@ -37,7 +37,7 @@ public class LoginUserService : INotifyPropertyChanged {
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput) {
                     //gebruiker registreren.
-                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput);
+                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput, last_login:System.DateTime.Today);
                     //Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
                     // "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
                     var loginWindow = new LoginWindow();
@@ -120,8 +120,10 @@ public class LoginUserService : INotifyPropertyChanged {
                     loginResult.gebruiker = gebruiker;
                     //passwoord controle
                     if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
+                    {
                         //indien true status naar LoggedIn zetten
                         loginResult.loginStatus = LoginStatus.LoggedIn;
+                    }
                     else
                         //indien false errorMessage opvullen
                         loginResult.errorMessage += "\r\n" + "FOUT! Het ingegeven wachtwoord is niet juist. Gelieve opnieuw te proberen.";

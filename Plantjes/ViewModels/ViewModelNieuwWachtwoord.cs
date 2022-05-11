@@ -5,8 +5,6 @@ using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
-using Xunit;
-using Xunit.Sdk;
 
 namespace Plantjes.ViewModels
 {
