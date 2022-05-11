@@ -13,9 +13,9 @@ namespace Plantjes.Dao
             return context.ExtraEigenschaps.ToList();
         }
         //Xander - return object directly, filter first, then distinct
-        public static IQueryable<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)
+        public static List<ExtraEigenschap> FilterExtraEigenschapFromPlant(int selectedItem)
         {
-            return context.ExtraEigenschaps.Where(s => s.PlantId == selectedItem).Distinct();
+            return context.ExtraEigenschaps.Where(s => s.PlantId == selectedItem).Distinct().ToList();
         }
     }
 }
