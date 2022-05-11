@@ -21,7 +21,7 @@
                 x:Name="txtWachtwoord"
                          PasswordChanged="txtWachtwoord_PasswordChanged" BorderBrush="{Binding PasswordColor}"/>
             <Button x:Name="btnBevestig" Content="Bevestigen" Margin="121,195,121,63" 
-                    Style="{StaticResource ButtonUnified}" Command="{Binding confirmCommand}" Height="25" FontSize="15"/>
+                    Style="{StaticResource ButtonUnified}" Command="{Binding ChangePasswordCommand}" Height="25" FontSize="15"/>
         </Grid>
     </Viewbox>
 </Window>

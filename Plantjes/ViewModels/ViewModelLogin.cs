@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -20,6 +21,8 @@ public class ViewModelLogin : ViewModelBase
     public string _passwordInput;
 
     private string _userNameInput;
+
+    private DateTime _lastLogin;
 
     public ViewModelLogin(LoginUserService loginUserService) 
     {
@@ -77,6 +80,16 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
+    public DateTime lastLogin
+    {
+        get => _lastLogin;
+        set
+        {
+            _lastLogin = value;
+            OnPropertyChanged();
+        }
+    }
+
     public void RegisterButtonView() 
     {
         var registerWindow = new RegisterWindow();
@@ -118,6 +131,8 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
+
+    
     //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell & Warre
     private void LoginButtonClick() 
     {

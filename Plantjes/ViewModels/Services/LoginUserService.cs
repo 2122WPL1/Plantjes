@@ -58,6 +58,30 @@ public class LoginUserService : INotifyPropertyChanged {
         return Message;
     }
 
+    //Written by Kjell
+    //Controle dat bijde wachtwoorden overeenkomen
+    public string ChangePasswordButton(string passwordInput, string passwordRepeatInput)
+    {
+        var Message = string.Empty;
+
+        if (passwordInput == passwordRepeatInput)
+        {
+            DAOUser.ChangePassword(passwordInput);
+
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
+        }
+        else
+        {
+            Message = "Zorg dat de wachtwoorden overeenkomen.";
+        }
+        return Message;
+    }
+        
+
+
+        
+
     #endregion
 
     #region Login Region
