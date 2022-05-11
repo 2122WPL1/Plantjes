@@ -8,7 +8,7 @@
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid>
         <GroupBox
-            BorderThickness="0" Width="430" Height="430" >
+            BorderThickness="0" Width="450" Height="450" >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="UITERLIJK" Style="{StaticResource LabelBorderTitle}"/>
@@ -32,7 +32,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm1" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -46,7 +46,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm2" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -60,7 +60,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm3" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -74,7 +74,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm4" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -88,7 +88,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm5" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -102,7 +102,7 @@
                                                     <CheckBox x:Name="CbxStengelvormenVorm6" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="/image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>

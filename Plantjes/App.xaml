@@ -146,7 +146,7 @@
         <Style TargetType="Border" x:Key="BorderBox">
             <!--Styling voor borders van de vensters-->
             <Setter Property="Background" Value="#FF828282"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="0,0,0,0"/> 
             <Setter Property="BorderThickness" Value="3"/>
             <Setter Property="BorderBrush">
                 <Setter.Value>
