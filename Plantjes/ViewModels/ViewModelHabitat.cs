@@ -71,9 +71,9 @@ public class ViewModelHabitat : ViewModelBase
 
     #region Binding checkboxen Ontwikkelsnelheid
     //Gemaakt door Warre
-    private string _selectedCheckBoxOntwikkelsnelheidTraag;
+    private bool _selectedCheckBoxOntwikkelsnelheidTraag;
 
-    public string selectedCheckBoxOntwikkelsnelheidTraag
+    public bool selectedCheckBoxOntwikkelsnelheidTraag
     {
         get => _selectedCheckBoxOntwikkelsnelheidTraag;
         set {
@@ -82,9 +82,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxOntwikkelsnelheidMatig;
+    private bool _selectedCheckBoxOntwikkelsnelheidMatig;
 
-    public string selectedCheckBoxOntwikkelsnelheidMatig
+    public bool selectedCheckBoxOntwikkelsnelheidMatig
     {
         get => _selectedCheckBoxOntwikkelsnelheidMatig;
         set {
@@ -93,9 +93,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxOntwikkelsnelheidSnel;
+    private bool _selectedCheckBoxOntwikkelsnelheidSnel;
 
-    public string selectedCheckBoxOntwikkelsnelheidSnel
+    public bool selectedCheckBoxOntwikkelsnelheidSnel
     {
         get => _selectedCheckBoxOntwikkelsnelheidSnel;
         set {
@@ -107,9 +107,9 @@ public class ViewModelHabitat : ViewModelBase
 
     #region Sociabliliteit
 
-    private string _selectedCheckBoxSociabiliteitI;
+    private bool _selectedCheckBoxSociabiliteitI;
 
-    public string SelectedCheckBoxSociabiliteitI {
+    public bool SelectedCheckBoxSociabiliteitI {
         get => _selectedCheckBoxSociabiliteitI;
         set {
             _selectedCheckBoxSociabiliteitI = value;
@@ -117,9 +117,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxSociabiliteitII;
+    private bool _selectedCheckBoxSociabiliteitII;
 
-    public string SelectedCheckBoxSociabiliteitII {
+    public bool SelectedCheckBoxSociabiliteitII {
         get => _selectedCheckBoxSociabiliteitII;
         set {
             _selectedCheckBoxSociabiliteitII = value;
@@ -127,9 +127,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxSociabiliteitIII;
+    private bool _selectedCheckBoxSociabiliteitIII;
 
-    public string SelectedCheckBoxSociabiliteitIII {
+    public bool SelectedCheckBoxSociabiliteitIII {
         get => _selectedCheckBoxSociabiliteitIII;
         set {
             _selectedCheckBoxSociabiliteitIII = value;
@@ -137,9 +137,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxSociabiliteitIV;
+    private bool _selectedCheckBoxSociabiliteitIV;
 
-    public string SelectedCheckBoxSociabiliteitIV {
+    public bool SelectedCheckBoxSociabiliteitIV {
         get => _selectedCheckBoxSociabiliteitIV;
         set {
             _selectedCheckBoxSociabiliteitIV = value;
@@ -147,9 +147,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxSociabiliteitV;
+    private bool _selectedCheckBoxSociabiliteitV;
 
-    public string SelectedCheckBoxSociabiliteitV {
+    public bool SelectedCheckBoxSociabiliteitV {
         get => _selectedCheckBoxSociabiliteitV;
         set {
             _selectedCheckBoxSociabiliteitV = value;
@@ -159,9 +159,9 @@ public class ViewModelHabitat : ViewModelBase
     #endregion
 
     #region PlantEigenschappen
-    private string _selectedCheckBoxBijvriendelijk;
+    private bool _selectedCheckBoxBijvriendelijk;
 
-    public string SelectedCheckBoxBijvriendelijk {
+    public bool SelectedCheckBoxBijvriendelijk {
         get => _selectedCheckBoxBijvriendelijk;
         set {
             _selectedCheckBoxBijvriendelijk = value;
@@ -169,9 +169,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxEetbaarKruidbaar;
+    private bool _selectedCheckBoxEetbaarKruidbaar;
 
-    public string SelectedCheckBoxEetbaarKruidbaar {
+    public bool SelectedCheckBoxEetbaarKruidbaar {
         get => _selectedCheckBoxEetbaarKruidbaar;
         set {
             _selectedCheckBoxEetbaarKruidbaar = value;
@@ -179,9 +179,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxGeurend;
+    private bool _selectedCheckBoxGeurend;
 
-    public string SelectedCheckBoxGeurend {
+    public bool SelectedCheckBoxGeurend {
         get => _selectedCheckBoxGeurend;
         set {
             _selectedCheckBoxGeurend = value;
@@ -189,9 +189,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxVlindervriendelijk;
+    private bool _selectedCheckBoxVlindervriendelijk;
 
-    public string SelectedCheckBoxVlindervriendelijk {
+    public bool SelectedCheckBoxVlindervriendelijk {
         get => _selectedCheckBoxVlindervriendelijk;
         set {
             _selectedCheckBoxVlindervriendelijk = value;
@@ -199,9 +199,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBoxVorstgevoelig;
+    private bool _selectedCheckBoxVorstgevoelig;
 
-    public string SelectedCheckBoxVorstgevoelig {
+    public bool SelectedCheckBoxVorstgevoelig {
         get => _selectedCheckBoxVorstgevoelig;
         set {
             _selectedCheckBoxVorstgevoelig = value;
@@ -212,9 +212,9 @@ public class ViewModelHabitat : ViewModelBase
 
     #region Levensvorm
 
-    private string _selectedCheckBox1;
+    private bool _selectedCheckBox1;
 
-    public string SelectedCheckBox1 {
+    public bool SelectedCheckBox1 {
         get => _selectedCheckBox1;
         set {
             _selectedCheckBox1 = value;
@@ -222,9 +222,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox2;
+    private bool _selectedCheckBox2;
 
-    public string SelectedCheckBox2 {
+    public bool SelectedCheckBox2 {
         get => _selectedCheckBox2;
         set {
             _selectedCheckBox2 = value;
@@ -232,9 +232,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox3;
+    private bool _selectedCheckBox3;
 
-    public string SelectedCheckBox3 {
+    public bool SelectedCheckBox3 {
         get => _selectedCheckBox3;
         set {
             _selectedCheckBox3 = value;
@@ -242,9 +242,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox4;
+    private bool _selectedCheckBox4;
 
-    public string SelectedCheckBox4 {
+    public bool SelectedCheckBox4 {
         get => _selectedCheckBox4;
         set {
             _selectedCheckBox4 = value;
@@ -252,9 +252,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox5;
+    private bool _selectedCheckBox5;
 
-    public string SelectedCheckBox5 {
+    public bool SelectedCheckBox5 {
         get => _selectedCheckBox5;
         set {
             _selectedCheckBox5 = value;
@@ -262,9 +262,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox6;
+    private bool _selectedCheckBox6;
 
-    public string SelectedCheckBox6 {
+    public bool SelectedCheckBox6 {
         get => _selectedCheckBox6;
         set {
             _selectedCheckBox6 = value;
@@ -272,9 +272,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox7;
+    private bool _selectedCheckBox7;
 
-    public string SelectedCheckBox7 {
+    public bool SelectedCheckBox7 {
         get => _selectedCheckBox7;
         set {
             _selectedCheckBox7 = value;
@@ -282,9 +282,9 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox8;
+    private bool _selectedCheckBox8;
 
-    public string SelectedCheckBox8 {
+    public bool SelectedCheckBox8 {
         get => _selectedCheckBox8;
         set {
             _selectedCheckBox8 = value;
@@ -292,13 +292,12 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private string _selectedCheckBox9;
+    private bool _selectedCheckBox9;
 
-    public string SelectedCheckBox9 {
+    public bool SelectedCheckBox9 {
         get => _selectedCheckBox9;
         set {
             _selectedCheckBox9 = value;
-            MessageBox.Show(SelectedCheckBox9);
             OnPropertyChanged();
         }
     }
