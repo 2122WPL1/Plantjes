@@ -12,21 +12,18 @@
         <Border Style="{StaticResource BorderBox}" Margin="10,100,739,10" Name="BorderListbox">
             <ListBox
                 Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold"
-                     FontSize="14" Width="450" HorizontalAlignment="Center" Height="610"
-                     VerticalAlignment="Center" ItemsSource="{Binding users}" SelectedItem="{Binding currentUser}" DisplayMemberPath="DisplayNameWithNr" />
+                FontSize="14" Width="450" HorizontalAlignment="Center" Height="610"
+                VerticalAlignment="Center" ItemsSource="{Binding users}" SelectedItem="{Binding currentUser}" DisplayMemberPath="DisplayNameWithNr" />
         </Border>
         <Border Style="{StaticResource BorderBox}" Margin="480,100,480,10">
             <Canvas>
                 <Grid Height="604" Width="234">
-                    <Button Content="Toevoegen"
+                    <Button Content="Nieuw"
                             Style="{StaticResource ButtonUnified}" Margin="0,160,0,0"
-                            HorizontalAlignment="Center" VerticalAlignment="Top" />
+                            HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding NewUserCommand}" />
                     <Button Content="Verwijderen"
                             Style="{StaticResource ButtonUnified}"
                             HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DeleteCommand}" />
-                    <Button Content="Wijzigen"
-                            Style="{StaticResource ButtonUnified}"
-                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160" />
                     <Button Content="CSV Importeren"
                             Style="{StaticResource ButtonUnified}" Command="{Binding ImportCsvCommand}"
                             HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,560,0,0" Height="34" />
@@ -54,8 +51,8 @@
                              BorderThickness="0" Margin="0,10,0,0" />
                     <TextBox TextWrapping="Wrap" Text="" IsEnabled="false" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
-                    
-                    
+
+
                     <Button Content="Opslaan"
                             Style="{StaticResource ButtonUnified}" Command="{Binding SaveUserCommand}" Height="34" Margin="0,10,0,0" />
                 </StackPanel>
