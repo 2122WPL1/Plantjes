@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
+using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
@@ -35,7 +38,77 @@ public class ViewModelBloom : ViewModelBase {
     //region written by MarijnCo
     public void FillBloeikleur()
     {
+        var modeltype = typeof(ViewModelBloom);
+        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        bool exists = false;
 
+        string field = "SelectedCheckBoxBloeikleur";
+        for (int i = 0; i < fenoList.Count; i++)
+        {
+            exists = fenoList[i].Eigenschap.Contains("bloemkleur");
+        }
+        if (exists)
+        {
+            foreach (FenotypeMulti feno in fenoList)
+            {
+                if (feno.Eigenschap == "bloemkleur")
+                {
+                    switch (feno.Waarde)
+                    {
+                        case "zwart":
+                            field += "Zwart";
+                            break;
+                        case "wit":
+                            field += "Wit";
+                            break;
+                        case "roze":
+                            field += "Roze";
+                            break;
+                        case "rood":
+                            field += "Rood";
+                            break;
+                        case "oranje":
+                            field += "Oranje";
+                            break;
+                        case "lila":
+                            field += "Lila";
+                            break;
+                        case "grijs":
+                            field += "Grijs";
+                            break;
+                        case "groen":
+                            field += "Groen";
+                            break;
+                        case "geel":
+                            field += "Geel";
+                            break;
+                        case "blauw":
+                            field += "Blauw";
+                            break;
+                        case "violet":
+                            field += "Violet";
+                            break;
+                        case "paars":
+                            field += "Paars";
+                            break;
+                        case "bruin":
+                            field += "Bruin";
+                            break;
+                        default:
+                            field += "Onbekend";
+                            break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            field += "Onbekend";
+        }
+        
+        var prop = modeltype.GetProperty(field);
+        var propsetter = prop.GetSetMethod();
+        propsetter.Invoke(this, new object[] { true });
     }
 
     public void FillBloeihoogte()
@@ -59,7 +132,11 @@ public class ViewModelBloom : ViewModelBase {
     }
     #endregion
 
+    #region combobox bloeihoogte
+
     private string _selectedBloeiHoogteMin;
+
+    [Clearable<string>]
     public string SelectedBloeiHoogteMin
     {
         get => _selectedBloeiHoogteMin;
@@ -69,7 +146,10 @@ public class ViewModelBloom : ViewModelBase {
             OnPropertyChanged();
         }
     }
+
     private string _selectedBloeiHoogteMax;
+
+    [Clearable<string>]
     public string SelectedBloeiHoogteMax
     {
         get => _selectedBloeiHoogteMax;
@@ -79,11 +159,13 @@ public class ViewModelBloom : ViewModelBase {
             OnPropertyChanged();
         }
     }
+    #endregion
 
     #region Checkbox Bloeikleur
 
     private bool _selectedCheckBoxBloeikleurOnbekend;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurOnbekend
     {
         get => _selectedCheckBoxBloeikleurOnbekend;
@@ -97,6 +179,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurZwart;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurZwart {
         get => _selectedCheckBoxBloeikleurZwart;
 
@@ -108,18 +191,19 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurWit;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurWit {
         get => _selectedCheckBoxBloeikleurWit;
 
         set {
             _selectedCheckBoxBloeikleurWit = value;
-            MessageBox.Show(SelectedCheckBoxBloeikleurZwart.ToString());
             OnPropertyChanged();
         }
     }
 
     private bool _selectedCheckBoxBloeikleurRosé;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurRosé {
         get => _selectedCheckBoxBloeikleurRosé;
 
@@ -131,6 +215,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurRood;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurRood {
         get => _selectedCheckBoxBloeikleurRood;
 
@@ -142,6 +227,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurOranje;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurOranje {
         get => _selectedCheckBoxBloeikleurOranje;
 
@@ -153,6 +239,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurLila;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurLila {
         get => _selectedCheckBoxBloeikleurLila;
 
@@ -164,6 +251,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurGrijs;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurGrijs {
         get => _selectedCheckBoxBloeikleurGrijs;
 
@@ -175,6 +263,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurGroen;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurGroen {
         get => _selectedCheckBoxBloeikleurGroen;
 
@@ -186,6 +275,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurGeel;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurGeel {
         get => _selectedCheckBoxBloeikleurGeel;
 
@@ -197,6 +287,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurBlauw;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurBlauw {
         get => _selectedCheckBoxBloeikleurBlauw;
 
@@ -208,6 +299,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurViolet;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurViolet {
         get => _selectedCheckBoxBloeikleurViolet;
 
@@ -219,6 +311,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurPaars;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurPaars {
         get => _selectedCheckBoxBloeikleurPaars;
 
@@ -230,6 +323,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeikleurBruin;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeikleurBruin {
         get => _selectedCheckBoxBloeikleurBruin;
 
@@ -245,6 +339,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteOnbekend;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteOnbekend
     {
         get => _selectedCheckBoxBloeiHoogteOnbekend;
@@ -258,6 +353,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteJan;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteJan {
         get => _selectedCheckBoxBloeiHoogteJan;
 
@@ -269,6 +365,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteFeb;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteFeb {
         get => _selectedCheckBoxBloeiHoogteFeb;
 
@@ -280,6 +377,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteMar;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteMar {
         get => _selectedCheckBoxBloeiHoogteMar;
 
@@ -291,6 +389,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteApr;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteApr {
         get => _selectedCheckBoxBloeiHoogteApr;
 
@@ -302,6 +401,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteMay;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteMay {
         get => _selectedCheckBoxBloeiHoogteMay;
 
@@ -313,6 +413,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteJun;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteJun {
         get => _selectedCheckBoxBloeiHoogteJun;
 
@@ -324,6 +425,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteJul;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteJul {
         get => _selectedCheckBoxBloeiHoogteJul;
 
@@ -335,6 +437,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteAug;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteAug {
         get => _selectedCheckBoxBloeiHoogteAug;
 
@@ -346,6 +449,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteSep;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteSep {
         get => _selectedCheckBoxBloeiHoogteSep;
 
@@ -357,6 +461,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteOct;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteOct {
         get => _selectedCheckBoxBloeiHoogteOct;
 
@@ -368,6 +473,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteNov;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteNov {
         get => _selectedCheckBoxBloeiHoogteNov;
 
@@ -379,6 +485,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiHoogteDec;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiHoogteDec {
         get => _selectedCheckBoxBloeiHoogteDec;
 
@@ -394,6 +501,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInOnbekend;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInOnbekend
     {
         get => _selectedCheckBoxBloeitInOnbekend;
@@ -407,6 +515,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInJan;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInJan {
         get => _selectedCheckBoxBloeitInJan;
 
@@ -418,6 +527,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInFeb;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInFeb {
         get => _selectedCheckBoxBloeitInFeb;
 
@@ -429,6 +539,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInMar;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInMar {
         get => _selectedCheckBoxBloeitInMar;
 
@@ -440,6 +551,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInApr;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInApr {
         get => _selectedCheckBoxBloeitInApr;
 
@@ -451,6 +563,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInMay;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInMay {
         get => _selectedCheckBoxBloeitInMay;
 
@@ -462,6 +575,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInJun;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInJun {
         get => _selectedCheckBoxBloeitInJun;
 
@@ -473,6 +587,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInJul;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInJul {
         get => _selectedCheckBoxBloeitInJul;
 
@@ -484,6 +599,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInAug;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInAug {
         get => _selectedCheckBoxBloeitInAug;
 
@@ -495,6 +611,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInSep;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInSep {
         get => _selectedCheckBoxBloeitInSep;
 
@@ -506,6 +623,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInOct;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInOct {
         get => _selectedCheckBoxBloeitInOct;
 
@@ -517,6 +635,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInNov;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInNov {
         get => _selectedCheckBoxBloeitInNov;
 
@@ -528,6 +647,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeitInDec;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInDec {
         get => _selectedCheckBoxBloeiHoogteDec;
 
@@ -543,6 +663,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVormOnbekend;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVormOnbekend
     {
         get => _selectedCheckBoxBloeiwijzeVormOnbekend;
@@ -556,6 +677,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm1;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm1 {
         get => _selectedCheckBoxBloeiwijzeVorm1;
 
@@ -567,6 +689,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm2;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm2 {
         get => _selectedCheckBoxBloeiwijzeVorm2;
 
@@ -578,6 +701,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm3;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm3 {
         get => _selectedCheckBoxBloeiwijzeVorm3;
 
@@ -589,6 +713,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm4;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm4 {
         get => _selectedCheckBoxBloeiwijzeVorm4;
 
@@ -600,6 +725,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm5;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm5 {
         get => _selectedCheckBoxBloeiwijzeVorm5;
 
@@ -611,6 +737,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxBloeiwijzeVorm6;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxBloeiwijzeVorm6 {
         get => _selectedCheckBoxBloeiwijzeVorm6;
 
@@ -626,6 +753,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioOnbekend;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxRatioOnbekend
     {
         get => _selectedCheckBoxRatioOnbekend;
@@ -638,6 +766,7 @@ public class ViewModelBloom : ViewModelBase {
     // Gemaakt door Warre
     private bool _selectedCheckBoxRatioPachysandra;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxRatioPachysandra
     {
         get => _selectedCheckBoxRatioPachysandra;
@@ -650,6 +779,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioGeranium;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxRatioGeranium
     {
         get => _selectedCheckBoxRatioGeranium;
@@ -662,6 +792,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioSalvia;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxRatioSalvia
     {
         get => _selectedCheckBoxRatioSalvia;
@@ -674,6 +805,7 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioAster;
 
+    [Clearable<bool>]
     public bool SelectedCheckBoxRatioAster
     {
         get => _selectedCheckBoxRatioAster;
