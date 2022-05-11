@@ -92,9 +92,7 @@ namespace Plantjes.Dao {
             //write as column headings
             File.WriteAllText("import.csv", String.Join(",", fields));
         }
-
-
-
+        
         private static void openInExcelAndWait(string filename) {
             //search for excel, or fall back to notepad
             string executable = "notepad";
@@ -137,7 +135,10 @@ namespace Plantjes.Dao {
             var ifs = File.OpenText(ofd.FileName);
             var log = new List<string>();
             //get fields
-            var fields = ifs.ReadLine().Split(";").ToList();
+            var firstline = ifs.ReadLine();
+            var separator = ",";
+            if (!firstline.Contains(separator)) separator = ";";
+            var fields = firstline.Split(separator).ToList();
             //get student role
             var role = context.Rols.First(x => x.Omschrijving == "Student");
             int errors = 0, added = 0;
@@ -145,7 +146,7 @@ namespace Plantjes.Dao {
             string line = "";
             while ((line = ifs.ReadLine()) != null && line != "") {
                 //split by fields
-                var infields = line.Split(",");
+                var infields = line.Split(separator);
                 //get password
                 var passwordBytes = Encoding.ASCII.GetBytes(infields[fields.ToList().IndexOf("Studentennummer")]);
                 var md5Hasher = new MD5CryptoServiceProvider();
@@ -158,7 +159,6 @@ namespace Plantjes.Dao {
                     Emailadres = infields[fields.IndexOf("Emailadres")],
                     Rol = role,
                     HashPaswoord = passwordHashed,
-                    LastLogin = DateTime.UnixEpoch
                 };
                 //duplicate/data checks
                 if (context.Gebruikers.Any(x => x.Emailadres == user.Emailadres)) {

@@ -301,17 +301,17 @@
                                 <StackPanel Orientation="Horizontal">
                                     <StackPanel Margin="5,0,5,0">
                                         <Label Content="Blad" Width="100" HorizontalContentAlignment="Center"/>
-                                        <Image HorizontalAlignment="Left" Height="100" Width="100" Source="/Image/blad.jpg" Stretch="Fill"/>
+                                        <Image HorizontalAlignment="Left" Height="100" Width="100" Source="../../Image/blad.jpg" Stretch="Fill"/>
                                     </StackPanel>
                                     <StackPanel Width="30"/>
                                     <StackPanel Margin="0,0,5,0">
                                         <Label Content="Bloei" Width="100" HorizontalContentAlignment="Center"/>
-                                        <Image Height="100" Width="100" Source="/Image/bloem.jpg" Stretch="Fill"/>
+                                        <Image Height="100" Width="100" Source="../../Image/bloem.jpg" Stretch="Fill"/>
                                     </StackPanel>
                                     <StackPanel Width="30"/>
                                     <StackPanel Margin="0,0,5,0">
                                         <Label Content="Habitus" Width="100" HorizontalContentAlignment="Center"/>
-                                        <Image Height="100" Width="100" Source="/Image/plant.jpg" Stretch="Fill"/>
+                                        <Image Height="100" Width="100" Source="../../Image/plant.jpg" Stretch="Fill"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
@@ -502,7 +502,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -515,7 +515,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -528,7 +528,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -541,7 +541,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -554,7 +554,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -567,7 +567,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -658,7 +658,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/kruipend, horizontaal groeiend of  mattenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/kruipend, horizontaal groeiend of  mattenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -671,7 +671,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/rond of waaiervormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/rond of waaiervormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -684,7 +684,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/kussenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/kussenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -697,7 +697,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/zuilvormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/zuilvormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -710,7 +710,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/uitbuigend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/uitbuigend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -723,11 +723,11 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/(wortel) rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/wortel rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
-                                                <TextBlock Text="(wortel) rozet-planten" Style="{StaticResource BigCheckText}"/>
+                                                <TextBlock Text="wortel rozet-planten" Style="{StaticResource BigCheckText}"/>
                                             </StackPanel>
                                         </ListBoxItem>
 
@@ -736,7 +736,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/succulenten.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/succulenten.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -749,7 +749,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/pollenvormers.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/pollenvormers.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -762,7 +762,7 @@
                                                 <Viewbox>
                                                     <CheckBox>
                                                         <CheckBox.Background>
-                                                            <ImageBrush  Stretch="Uniform" ImageSource="/Image/parasolvormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                            <ImageBrush  Stretch="Uniform" ImageSource="../../Image/parasolvormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                         </CheckBox.Background>
                                                     </CheckBox>
                                                 </Viewbox>
@@ -889,7 +889,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/aar.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/aar.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -902,7 +902,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Schermbloemig.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Schermbloemig.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -915,7 +915,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Pluim.png"/>
+                                                        <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Pluim.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -928,7 +928,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Bol of Knop.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Bol of Knop.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -941,7 +941,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Margrietachtig.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Margrietachtig.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -954,7 +954,7 @@
                                             <Viewbox>
                                                 <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Transparant.png"/>
+                                                        <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Transparant.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -980,7 +980,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -993,7 +993,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1006,7 +1006,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1019,7 +1019,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png" />
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png" />
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1032,7 +1032,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1045,7 +1045,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1058,7 +1058,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1071,7 +1071,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -1084,7 +1084,7 @@
                                             <Viewbox>
                                                 <CheckBox>
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>

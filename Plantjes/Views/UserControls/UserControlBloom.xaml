@@ -364,7 +364,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/aar.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/aar.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -377,7 +377,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Schermbloemig.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Schermbloemig.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -390,7 +390,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Pluim.png"/>
+                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Pluim.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -403,7 +403,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Bol of Knop.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Bol of Knop.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -416,7 +416,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Margrietachtig.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Margrietachtig.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -429,7 +429,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Transparant.png"/>
+                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Transparant.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
