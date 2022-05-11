@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Services;
+using Plantjes.Views.Home;
 using Xunit;
 using Xunit.Sdk;
 
@@ -20,16 +21,19 @@ namespace Plantjes.ViewModels
         private LoginUserService _loginService { get; }
         public RelayCommand changePasswordCommand { get; set; }
 
+        //Written by Kjell -- Based on Xander
         public void ChangePasswordButtonClick()
         {
             errorMessage = _loginService.ChangePasswordButton(passwordInput, _passwordRepeatInput);
-            //xander - close register window if no error
+            //Close register window if no error
             if (errorMessage == null || errorMessage == string.Empty)
             {
-                //xander - clear input on register
+                //Clear input on register
                 passwordInput = string.Empty;
                 Application.Current.Windows[0]?.Close();
-                Window.
+
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
             }
         }
 

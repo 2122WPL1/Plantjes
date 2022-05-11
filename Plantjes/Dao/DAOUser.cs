@@ -137,7 +137,7 @@ namespace Plantjes.Dao {
             var ifs = File.OpenText(ofd.FileName);
             var log = new List<string>();
             //get fields
-            var fields = ifs.ReadLine().Split(",").ToList();
+            var fields = ifs.ReadLine().Split(";").ToList();
             //get student role
             var role = context.Rols.First(x => x.Omschrijving == "Student");
             int errors = 0, added = 0;
