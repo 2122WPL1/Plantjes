@@ -5,6 +5,6 @@ namespace Plantjes.ViewModels
 {
     internal class ViewModelUserManagement: ViewModelBase
     {
-        private RelayCommand ImportCsvCommand { get; } = new(DAOUser.AddUsersFromCsv);
+        public RelayCommand ImportCsvCommand { get; } = new(DAOUser.AddUsersFromCsv);
     }
 }

@@ -18,9 +18,9 @@ namespace Plantjes.Views.UserControls.Beheer
     /// <summary>
     /// Interaction logic for BeheerGebruiker.xaml
     /// </summary>
-    public partial class BeheerGebruiker : UserControl
+    public partial class UserControlUserManagement : UserControl
     {
-        public BeheerGebruiker()
+        public UserControlUserManagement()
         {
             InitializeComponent();
         }

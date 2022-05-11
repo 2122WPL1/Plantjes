@@ -3,12 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Plantjes.Views.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="450">
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
+    
     <Grid>
         <GroupBox
-            BorderThickness="0" Width="430" Height="430"  >
+            BorderThickness="0" Width="450" Height="450"  >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
@@ -336,19 +338,19 @@
                                     <Label Content="Ratio bloei/blad" Style="{StaticResource LabelBorder}" Width="135" Margin="-8,0,0,0"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Pachysandra sp." VerticalContentAlignment="Center"
+                                    <CheckBox  Content="Pachysandra sp." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioPachysandra,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Geranium nodosum" VerticalContentAlignment="Center"
+                                    <CheckBox Content="Geranium nodosum" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioGeranium,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Salvia nemorosa" VerticalContentAlignment="Center"
+                                    <CheckBox Content="Salvia nemorosa" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioSalvia,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Aster sp." VerticalContentAlignment="Center"
+                                    <CheckBox Content="Aster sp." VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path= SelectedCheckBoxRatioAster,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>

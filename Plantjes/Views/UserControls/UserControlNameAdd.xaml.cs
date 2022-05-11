@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plantjes.Views.UserControls.Beheer
+namespace Plantjes.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for UserControlGegevensGebruiker.xaml
+    /// Interaction logic for UserControlNameAdd.xaml
     /// </summary>
-    public partial class UserControlGegevensGebruiker : UserControl
+    public partial class UserControlNameAdd : UserControl
     {
-        public UserControlGegevensGebruiker()
+        public UserControlNameAdd()
         {
             InitializeComponent();
         }
