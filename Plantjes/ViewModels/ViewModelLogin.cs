@@ -22,8 +22,6 @@ public class ViewModelLogin : ViewModelBase
 
     private string _userNameInput;
 
-    private DateTime _lastLogin;
-
     public ViewModelLogin(LoginUserService loginUserService) 
     {
         _loginService = loginUserService;
@@ -76,16 +74,6 @@ public class ViewModelLogin : ViewModelBase
         get => _passwordInput;
         set {
             _passwordInput = value;
-            OnPropertyChanged();
-        }
-    }
-
-    public DateTime lastLogin
-    {
-        get => _lastLogin;
-        set
-        {
-            _lastLogin = value;
             OnPropertyChanged();
         }
     }
