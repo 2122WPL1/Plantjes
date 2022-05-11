@@ -6,9 +6,7 @@
              xmlns:local="clr-namespace:Plantjes.Views.UserControls.Beheer"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             
-             Background="#FFA0A0A0"
-             >
+             Background="#FFA0A0A0">
     <Grid>
             
     </Grid>

@@ -10,29 +10,24 @@
     <!-- Written by Kjell-->
     <Grid>
         <Border Style="{StaticResource BorderBox}" Margin="10,100,739,10" Name="BorderListbox">
-            <ListBox Name="listBoxGebruikers"
-                     Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold"
+            <ListBox
+                Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold"
                      FontSize="14" Width="450" HorizontalAlignment="Center" Height="610"
-                     VerticalAlignment="Center" ItemsSource="{Binding users}" SelectedItem="{Binding currentUser}" DisplayMemberPath="DisplayNameWithNr">
-
-            </ListBox>
+                     VerticalAlignment="Center" ItemsSource="{Binding users}" SelectedItem="{Binding currentUser}" DisplayMemberPath="DisplayNameWithNr" />
         </Border>
         <Border Style="{StaticResource BorderBox}" Margin="480,100,480,10">
             <Canvas>
                 <Grid Height="604" Width="234">
-                    <Button x:Name="btnAddUser" Content="Toevoegen"
+                    <Button Content="Toevoegen"
                             Style="{StaticResource ButtonUnified}" Margin="0,160,0,0"
-                            HorizontalAlignment="Center" VerticalAlignment="Top">
-                    </Button>
-                    <Button x:Name="btnDeleteUser" Content="Verwijderen"
+                            HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    <Button Content="Verwijderen"
                             Style="{StaticResource ButtonUnified}"
-                            HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DeleteCommand}">
-                    </Button>
-                    <Button x:Name="btnChangeUser" Content="Wijzigen"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DeleteCommand}" />
+                    <Button Content="Wijzigen"
                             Style="{StaticResource ButtonUnified}"
-                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160">
-                    </Button>
-                    <Button x:Name="btnCSVImport" Content="CSV Importeren"
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160" />
+                    <Button Content="CSV Importeren"
                             Style="{StaticResource ButtonUnified}" Command="{Binding ImportCsvCommand}"
                             HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,560,0,0" Height="34" />
                 </Grid>
@@ -44,36 +39,9 @@
                 <StackPanel Margin="10,60,225,6">
                     <Label Content="Vives Nr:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" />
                     <Label Content="Voornaam:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" Margin="0,10,0,0" />
-                    <Label Content="Achternaam:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0">
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform />
-                                <SkewTransform AngleX="4.712" />
-                                <RotateTransform />
-                                <TranslateTransform X="-1.648" />
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
-                    <Label Content="E-mailadres:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0">
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform />
-                                <SkewTransform AngleX="4.712" />
-                                <RotateTransform />
-                                <TranslateTransform X="-1.648" />
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
-                    <Label Content="Wachtwoord:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0">
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform />
-                                <SkewTransform AngleX="4.712" />
-                                <RotateTransform />
-                                <TranslateTransform X="-1.648" />
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
+                    <Label Content="Achternaam:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0" />
+                    <Label Content="E-mailadres:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0" />
+                    <Label Content="Wachtwoord:" Height="40" Style="{StaticResource LabelGegevensGebruiker}" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,0" />
                 </StackPanel>
                 <StackPanel Margin="231,60,4,10" Width="216">
                     <TextBox TextWrapping="Wrap" Text="{Binding currentUser.Vivesnr}" Width="216" Height="40" FontSize="20"
@@ -86,11 +54,14 @@
                              BorderThickness="0" Margin="0,10,0,0" />
                     <TextBox TextWrapping="Wrap" Text="" IsEnabled="false" Width="216" Height="40" FontSize="20"
                              BorderThickness="0" Margin="0,10,0,0" />
+                    
+                    
+                    <Button Content="Opslaan"
+                            Style="{StaticResource ButtonUnified}" Command="{Binding SaveUserCommand}" Height="34" Margin="0,10,0,0" />
                 </StackPanel>
             </Grid>
         </Border>
-        <Label Content="Lijst met gebruikers" FontSize="17" Height="44" Margin="10,0,965,625" VerticalAlignment="Bottom" Style="{StaticResource LabelBorderTitle}">
-        </Label>
+        <Label Content="Lijst met gebruikers" FontSize="17" Height="44" Margin="10,0,965,625" VerticalAlignment="Bottom" Style="{StaticResource LabelBorderTitle}" />
         <Label Content="Gegevens van de gebruiker" FontSize="17" Height="44" Margin="890,0,10,625" VerticalAlignment="Bottom" Style="{StaticResource LabelBorderTitle}" />
     </Grid>
 </UserControl>

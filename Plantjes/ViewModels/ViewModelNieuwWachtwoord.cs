@@ -1,8 +1,4 @@
-﻿using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using Plantjes.ViewModels;
-using Plantjes.ViewModels.Services;
+﻿using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels
 {
