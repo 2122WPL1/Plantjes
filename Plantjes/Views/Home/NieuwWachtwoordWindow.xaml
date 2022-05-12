@@ -32,8 +32,6 @@
                     <AccessText TextWrapping="Wrap" Text="{Binding errorMessage}"/>
                 </Label.Content>
             </Label>
-            <CheckBox x:Name="ckbShowPassword" Content="Show" HorizontalAlignment="Left" Margin="363,114,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked" RenderTransformOrigin="-0.018,1.165"/>
-            <CheckBox x:Name="ckbShowRepeatPassword" Content="Show" HorizontalAlignment="Left" Margin="363,164,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked"/>
         </Grid>
     </Viewbox>
 </Window>
