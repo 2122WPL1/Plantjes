@@ -21,8 +21,10 @@ public class ViewModelHabitat : ViewModelBase
         {
             ClearAllFields();
 
-            FillPollen();
-            FillNectar();
+            FillPollenMin();
+            FillPollenMax();
+            FillNectarMin();
+            FillNectarMax();
             FillOntwikkelsnelheid();
             FillSociabiliteit();
             FillPlantEigenschappen();
@@ -37,16 +39,102 @@ public class ViewModelHabitat : ViewModelBase
     #region Filling elements based on plant selection
     //region written by Warre based FillGrondSoort by Marijn & Xander
 
-    public void FillNectar()
+    public void FillPollenMin()
     {
+        var modeltype = typeof(ViewModelHabitat);
+        List<ExtraEigenschap> ListPollenMin =
+            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
 
+        foreach (ExtraEigenschap pollmin in ListPollenMin)
+        {
+            string field = "SelectedPollenwaarde";
+            if (pollmin != null)
+            {
+                field += "Min" + pollmin.Pollenwaarde;
+            }
+            else
+            {
+                field += "Onbekend";
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
     }
 
-    public void FillPollen()
+    public void FillPollenMax()
     {
+        var modeltype = typeof(ViewModelHabitat);
+        List<ExtraEigenschap> ListPollenMax =
+            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
 
+        foreach (ExtraEigenschap pollmax in ListPollenMax)
+        {
+            string field = "SelectedPollenwaarde";
+            if (pollmax != null)
+            {
+                field += "Max" + pollmax.Pollenwaarde;
+            }
+            else
+            {
+                field += "Onbekend";
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
     }
-    
+
+    public void FillNectarMin()
+    {
+        var modeltype = typeof(ViewModelHabitat);
+        List<ExtraEigenschap> ListNectarMin =
+            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (ExtraEigenschap necmin in ListNectarMin)
+        {
+            string field = "SelectedNectarwaarde";
+            if (necmin != null)
+            {
+                field += "Min" + necmin.Pollenwaarde;
+            }
+            else
+            {
+                field += "Onbekend";
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
+    }
+
+    public void FillNectarMax()
+    {
+        var modeltype = typeof(ViewModelHabitat);
+        List<ExtraEigenschap> ListNectarMax =
+            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (ExtraEigenschap necmax in ListNectarMax)
+        {
+            string field = "SelectedNectarwaarde";
+            if (necmax != null)
+            {
+                field += "Max" + necmax.Pollenwaarde;
+            }
+            else
+            {
+                field += "Onbekend";
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
+    }
+
     public void FillOntwikkelsnelheid()
     {
         var modeltype = typeof(ViewModelHabitat);
@@ -235,33 +323,290 @@ public class ViewModelHabitat : ViewModelBase
     #endregion
 
 
-    #region Pollen&Nectar
 
-    
-    private string _selectedPollenwaarde;
+    #region Binding Pollen
+
+    private string _selectedPollenwaardeOnbekend;
     [Clearable<string>]
-    public string SelectedPollenwaarde
+    public string SelectedPollenwaardeOnbekend
     {
-        get => _selectedPollenwaarde;
+        get => _selectedPollenwaardeOnbekend;
         set
         {
-            _selectedPollenwaarde = value;
+            _selectedPollenwaardeOnbekend = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedNectarwaarde;
+    #region PollenMin
+
+    private string _selectedPollenwaardeMin1;
     [Clearable<string>]
-    public string SelectedNectarwaarde
+    public string SelectedPollenwaardeMin1
     {
-        get => _selectedNectarwaarde;
+        get => _selectedPollenwaardeMin1;
         set
         {
-            _selectedNectarwaarde = value;
+            _selectedPollenwaardeMin1 = value;
             OnPropertyChanged();
         }
     }
-#endregion
+
+    private string _selectedPollenwaardeMin2;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMin2
+    {
+        get => _selectedPollenwaardeMin2;
+        set
+        {
+            _selectedPollenwaardeMin2 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMin3;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMin3
+    {
+        get => _selectedPollenwaardeMin3;
+        set
+        {
+            _selectedPollenwaardeMin3 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMin4;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMin4
+    {
+        get => _selectedPollenwaardeMin4;
+        set
+        {
+            _selectedPollenwaardeMin4 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMin5;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMin5
+    {
+        get => _selectedPollenwaardeMin5;
+        set
+        {
+            _selectedPollenwaardeMin5 = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #region PollenMax
+
+    private string _selectedPollenwaardeMax1;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMax1
+    {
+        get => _selectedPollenwaardeMax1;
+        set
+        {
+            _selectedPollenwaardeMax1 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMax2;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMax2
+    {
+        get => _selectedPollenwaardeMax2;
+        set
+        {
+            _selectedPollenwaardeMax2 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMax3;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMax3
+    {
+        get => _selectedPollenwaardeMax3;
+        set
+        {
+            _selectedPollenwaardeMax3 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMax4;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMax4
+    {
+        get => _selectedPollenwaardeMax4;
+        set
+        {
+            _selectedPollenwaardeMax4 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedPollenwaardeMax5;
+    [Clearable<string>]
+    public string SelectedPollenwaardeMax5
+    {
+        get => _selectedPollenwaardeMax5;
+        set
+        {
+            _selectedPollenwaardeMax5 = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #endregion
+
+    #region Binding Nectar
+
+    private string _selectedNectarwaardeOnbekend;
+    [Clearable<string>]
+    public string SelectedNectarwaardeOnbekend
+    {
+        get => _selectedNectarwaardeOnbekend;
+        set
+        {
+            _selectedNectarwaardeOnbekend = value;
+            OnPropertyChanged();
+        }
+    }
+
+    #region NectarMin
+
+    private string _selectedNectarwaardeMin1;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMin1
+    {
+        get => _selectedNectarwaardeMin1;
+        set
+        {
+            _selectedNectarwaardeMin1 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMin2;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMin2
+    {
+        get => _selectedNectarwaardeMin2;
+        set
+        {
+            _selectedNectarwaardeMin2 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMin3;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMin3
+    {
+        get => _selectedNectarwaardeMin3;
+        set
+        {
+            _selectedNectarwaardeMin3 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMin4;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMin4
+    {
+        get => _selectedNectarwaardeMin4;
+        set
+        {
+            _selectedNectarwaardeMin4 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMin5;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMin5
+    {
+        get => _selectedNectarwaardeMin5;
+        set
+        {
+            _selectedNectarwaardeMin5 = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #region NectarMax
+
+    private string _selectedNectarwaardeMax1;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMax1
+    {
+        get => _selectedNectarwaardeMax1;
+        set
+        {
+            _selectedNectarwaardeMax1 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMax2;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMax2
+    {
+        get => _selectedNectarwaardeMax2;
+        set
+        {
+            _selectedNectarwaardeMax2 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMax3;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMax3
+    {
+        get => _selectedNectarwaardeMax3;
+        set
+        {
+            _selectedNectarwaardeMax3 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMax4;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMax4
+    {
+        get => _selectedNectarwaardeMax4;
+        set
+        {
+            _selectedNectarwaardeMax4 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _selectedNectarwaardeMax5;
+    [Clearable<string>]
+    public string SelectedNectarwaardeMax5
+    {
+        get => _selectedNectarwaardeMax5;
+        set
+        {
+            _selectedNectarwaardeMax5 = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #endregion
 
     #region Binding Ontwikkelsnelheid
     //Gemaakt door Warre
