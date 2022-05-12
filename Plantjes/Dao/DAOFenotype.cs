@@ -13,7 +13,7 @@ namespace Plantjes.Dao
             return context.Fenotypes.ToList();
         }
         //Xander - return object directly
-        public static IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
+        public static List<Fenotype> fillFenoTypeRatioBloeiBlad()
         {
             //Commentaar van vorige groep.
             // this is NOT part of the cascade function and wil not be added as it is not needed 
@@ -24,17 +24,17 @@ namespace Plantjes.Dao
             // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
             // Good way to interact with our datacontext
 
-            return context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
+            return context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad).ToList();
         }
         //Xander - return object directly
-        public static IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
+        public static List<Fenotype> filterFenoTypeFromPlant(int selectedItem)
         {
-            return context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem).ToList();
         }
         //Xander - return object directly
-        public static IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
+        public static List<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
         {
-            return context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem).ToList();
         }
     }
 }

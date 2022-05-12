@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Media;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Dao;
 using Plantjes.Models.Classes;
+using Plantjes.Models.Db;
 using Plantjes.Models.Enums;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
+using XSystem.Security.Cryptography;
 
 //written by kenny
 namespace Plantjes.ViewModels; 
@@ -18,6 +22,7 @@ public class ViewModelLogin : ViewModelBase
     private string _errorMessage;
     private string _loggedInMessage;
     public string _passwordInput;
+    public string _passwordRepeatInput;
 
     private string _userNameInput;
 
@@ -45,12 +50,15 @@ public class ViewModelLogin : ViewModelBase
         loginCommand = new RelayCommand(LoginButtonClick);
         cancelCommand = new RelayCommand(CancelButton);
         registerCommand = new RelayCommand(RegisterButtonView);
+
+
     }
 
     private LoginUserService _loginService { get; }
     public RelayCommand loginCommand { get; set; }
     public RelayCommand cancelCommand { get; set; }
     public RelayCommand registerCommand { get; set; }
+
 
     public string errorMessage 
     {
@@ -118,6 +126,8 @@ public class ViewModelLogin : ViewModelBase
         }
     }
 
+
+    
     //Code voor textboxen in loginscherm rood kleuren als het foutieve ingave is -- Kjell & Warre
     private void LoginButtonClick() 
     {
@@ -128,9 +138,21 @@ public class ViewModelLogin : ViewModelBase
             
             if (loginResult.loginStatus == LoginStatus.LoggedIn) 
             {
-                var mainWindow = new MainWindow();
-                mainWindow.Show();
-                Application.Current.Windows[0]?.Close();
+                if(_loginService.gebruiker.LastLogin == null)
+                {
+                    var niewWachtwoordWindow = new NieuwWachtwoordWindow();
+                    niewWachtwoordWindow.Show();
+                    Application.Current.Windows[0]?.Close();
+                }
+                else
+                {
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Application.Current.Windows[0]?.Close();
+
+                    _loginService.gebruiker.LastLogin = DateTime.Now;
+                    DAOLogic.context.SaveChanges();
+                }
             }
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
@@ -200,4 +222,6 @@ public class ViewModelLogin : ViewModelBase
         RaisePropertyChanged("errorMessage");
     }
     //------------------------------------------------------------------------------------------
+
+    
 }

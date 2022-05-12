@@ -517,4 +517,55 @@ public class ViewModelBloom : ViewModelBase {
     }
 
     #endregion
+
+    #region Ratio Bloei/Blad
+    // Gemaakt door Warre
+    private bool _selectedCheckBoxRatioPachysandra;
+
+    public bool SelectedCheckBoxRatioPachysandra
+    {
+        get => _selectedCheckBoxRatioPachysandra;
+        set
+        {
+            _selectedCheckBoxRatioPachysandra = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioGeranium;
+
+    public bool SelectedCheckBoxRatioGeranium
+    {
+        get => _selectedCheckBoxRatioGeranium;
+        set
+        {
+            _selectedCheckBoxRatioGeranium = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioSalvia;
+
+    public bool SelectedCheckBoxRatioSalvia
+    {
+        get => _selectedCheckBoxRatioSalvia;
+        set
+        {
+            _selectedCheckBoxRatioSalvia = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioAster;
+
+    public bool SelectedCheckBoxRatioAster
+    {
+        get => _selectedCheckBoxRatioAster;
+        set
+        {
+            _selectedCheckBoxRatioAster = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
 }

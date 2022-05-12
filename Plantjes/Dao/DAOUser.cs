@@ -20,8 +20,8 @@ namespace Plantjes.Dao {
             return context.Gebruikers.Include(x => x.Rol).FirstOrDefault(g => g.Emailadres == userEmail);
         }
 
-        //written by kenny
-        public static void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password) {
+        //written by kenny -- changed by Kjell
+        public static void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password, DateTime last_login) {
             var passwordBytes = Encoding.ASCII.GetBytes(password);
             var md5Hasher = new MD5CryptoServiceProvider();
             var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
@@ -36,11 +36,29 @@ namespace Plantjes.Dao {
                 Achternaam = lastName,
                 Emailadres = emailadres,
                 HashPaswoord = passwordHashed,
-                Rol = role
+                Rol = role,
+                LastLogin = last_login
             };
             context.Gebruikers.Add(gebruiker);
             context.SaveChanges();
         }
+
+        //Written by Kjell
+        //Save new password in database
+        public static void ChangePassword(string password, Gebruiker gebruiker)
+        {
+            var passwordBytes = Encoding.ASCII.GetBytes(password);
+            var md5Hasher = new MD5CryptoServiceProvider();
+            var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
+
+            gebruiker.HashPaswoord = passwordHashed;
+            gebruiker.LastLogin = DateTime.Now;
+
+            context.Gebruikers.Update(gebruiker);
+            context.SaveChanges();
+        }
+
+
 
         //written by kenny
         public static List<Gebruiker> getAllGebruikers() {
@@ -66,7 +84,7 @@ namespace Plantjes.Dao {
         }
 
         //legacy - object to csv column names
-        /*private static void generateCsv() {
+        private static void generateCsv() {
             //generate csv with headings
             //delete if exists
             if (File.Exists("import.csv")) File.Delete("import.csv");
@@ -74,8 +92,8 @@ namespace Plantjes.Dao {
             var fields = typeof(ViewModelRegister).GetProperties().Where(x => x.Name.Contains("Input")).Where(x => !x.Name.Contains("password")).Select(x => x.Name.Replace("Input", ""));
             //write as column headings
             File.WriteAllText("import.csv", String.Join(",", fields));
-        }*/
-
+        }
+        
         private static void openInExcelAndWait(string filename) {
             //search for excel, or fall back to notepad
             string executable = "notepad";
@@ -118,7 +136,10 @@ namespace Plantjes.Dao {
             var ifs = File.OpenText(ofd.FileName);
             var log = new List<string>();
             //get fields
-            var fields = ifs.ReadLine().Split(",").ToList();
+            var firstline = ifs.ReadLine();
+            var separator = ",";
+            if (!firstline.Contains(separator)) separator = ";";
+            var fields = firstline.Split(separator).ToList();
             //get student role
             var role = context.Rols.First(x => x.Omschrijving == "Student");
             int errors = 0, added = 0;
@@ -126,7 +147,7 @@ namespace Plantjes.Dao {
             string line = "";
             while ((line = ifs.ReadLine()) != null && line != "") {
                 //split by fields
-                var infields = line.Split(",");
+                var infields = line.Split(separator);
                 //get password
                 var passwordBytes = Encoding.ASCII.GetBytes(infields[fields.ToList().IndexOf("Studentennummer")]);
                 var md5Hasher = new MD5CryptoServiceProvider();
@@ -139,7 +160,6 @@ namespace Plantjes.Dao {
                     Emailadres = infields[fields.IndexOf("Emailadres")],
                     Rol = role,
                     HashPaswoord = passwordHashed,
-                    LastLogin = DateTime.UnixEpoch
                 };
                 //duplicate/data checks
                 if (context.Gebruikers.Any(x => x.Emailadres == user.Emailadres)) {

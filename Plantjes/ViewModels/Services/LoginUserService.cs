@@ -30,14 +30,14 @@ public class LoginUserService : INotifyPropertyChanged {
             //checken als het emailadres een geldig vives email is.
             if (emailAdresInput != null && emailAdresInput.Contains(".") && emailAdresInput.Contains("@")
                 //checken als het email adres al bestaat of niet.
-                
+
                 && !DAOUser.GetEmailInUse(emailAdresInput)) {
                 if ((vivesNrInput != null) & (vivesNrInput.Length != 8)) return "Dit is geen geldig vives nummer!";
 
                 //checken als het herhaalde wachtwoord klopt of niet.
                 if (passwordInput == passwordRepeatInput) {
                     //gebruiker registreren.
-                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput);
+                    DAOUser.RegisterUser(vivesNrInput, firstNameInput, lastNameInput, emailAdresInput, passwordInput, last_login: System.DateTime.Today);
                     //Message = $"{firstNameInput}, je bent succevol geregistreerd,"+"\r\n"+$" uw gebruikersnaam is {emailAdresInput}." + 
                     // "\r\n" + $" {firstNameInput}, je kan dit venster wegklikken en inloggen.";
                     var loginWindow = new LoginWindow();
@@ -57,6 +57,24 @@ public class LoginUserService : INotifyPropertyChanged {
 
         return Message;
     }
+
+    //Written by Kjell
+    //Controle dat bijde wachtwoorden overeenkomen
+    public void ChangePasswordButton(string passwordInput, string passwordRepeatInput)
+    {
+        if (passwordInput == passwordRepeatInput)
+        {
+            
+
+
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
+        }
+    }
+        
+
+
+        
 
     #endregion
 
@@ -96,8 +114,10 @@ public class LoginUserService : INotifyPropertyChanged {
                     loginResult.gebruiker = gebruiker;
                     //passwoord controle
                     if (gebruiker.HashPaswoord != null && passwordHashed.SequenceEqual(gebruiker.HashPaswoord))
+                    {
                         //indien true status naar LoggedIn zetten
                         loginResult.loginStatus = LoginStatus.LoggedIn;
+                    }
                     else
                         //indien false errorMessage opvullen
                         loginResult.errorMessage += "\r\n" + "FOUT! Het ingegeven wachtwoord is niet juist. Gelieve opnieuw te proberen.";
