@@ -45,19 +45,19 @@ namespace Plantjes.Dao {
 
         //Written by Kjell
         //Save new password in database
-        public static void ChangePassword(string password)
+        public static void ChangePassword(string password, Gebruiker gebruiker)
         {
             var passwordBytes = Encoding.ASCII.GetBytes(password);
             var md5Hasher = new MD5CryptoServiceProvider();
             var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
 
-            var gebruiker = new Gebruiker
-            {
-                HashPaswoord = passwordHashed
-            };
+            gebruiker.HashPaswoord = passwordHashed;
+            gebruiker.LastLogin = DateTime.Now;
+
             context.Gebruikers.Update(gebruiker);
             context.SaveChanges();
         }
+
 
 
         //written by kenny
