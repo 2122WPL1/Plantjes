@@ -34,7 +34,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenOnbekend" 
                                                                   IsChecked="{Binding Path=SelectedCheckBoxBladkleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -47,7 +47,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm1" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/tufted.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -61,7 +61,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm2" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -75,7 +75,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm3" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/arching.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -89,7 +89,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm4" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-divergent.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -103,7 +103,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm5" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/upright-erect.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -117,7 +117,7 @@
                                                         <CheckBox x:Name="CbxStengelvormenVorm6" 
                                                               IsChecked="{Binding Path=SelectedCheckBoxStengelvormenVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/mounded.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -131,7 +131,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm1"
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/kruipend, horizontaal groeiend of  mattenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/kruipend, horizontaal groeiend of  mattenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -145,7 +145,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm2" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/rond of waaiervormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/rond of waaiervormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -159,7 +159,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm3" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/kussenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/kussenvormend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -173,7 +173,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm4" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/zuilvormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/zuilvormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -187,7 +187,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm5" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/uitbuigend.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/uitbuigend.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -201,11 +201,11 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm6" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/(wortel) rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/wortel rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
-                                                    <TextBlock Text="(wortel) rozet-planten" Style="{StaticResource BigCheckText}"/>
+                                                    <TextBlock Text="wortel rozet-planten" Style="{StaticResource BigCheckText}"/>
                                                 </StackPanel>
                                             </ListBoxItem>
 
@@ -215,7 +215,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm7" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm7, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/succulenten.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/succulenten.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -229,7 +229,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm8" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm8, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/pollenvormers.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/pollenvormers.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -243,7 +243,7 @@
                                                         <CheckBox x:Name="CbxBladvormenVorm9" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm9, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                             <CheckBox.Background>
-                                                                <ImageBrush  Stretch="Uniform" ImageSource="/Image/parasolvormig.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                                <ImageBrush  Stretch="Uniform" ImageSource="../../Image/parasolvormig.png" AlignmentX="Center" AlignmentY="Center"/>
                                                             </CheckBox.Background>
                                                         </CheckBox>
                                                     </Viewbox>
@@ -506,7 +506,7 @@
                                                 <CheckBox x:Name="CbxLevenvormenOnbekend" 
                                                           IsChecked="{Binding Path=SelectedCheckBoxBladkleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="../../Image/Unknown.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -519,7 +519,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm1"
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -534,7 +534,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm2" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -548,7 +548,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm3"
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -562,7 +562,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm4" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png" />
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png" />
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -576,7 +576,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm5" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -590,7 +590,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm6"
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -604,7 +604,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm7" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm7, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -618,7 +618,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm8" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm8, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
@@ -632,7 +632,7 @@
                                                 <CheckBox x:Name="CbxLevensvormenVorm9" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxLevensvormenVorm9, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                        <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Unknown.png"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>

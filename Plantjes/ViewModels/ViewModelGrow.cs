@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Data;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
 using Plantjes.Utilities.Attributes;
