@@ -86,7 +86,7 @@ public class ViewModelGrow : ViewModelBase {
                 case "half schaduw - schaduw":
                     field += "HSS";
                     break;
-                case null:
+                default:
                     field += "Onbekend";
                     break;
             }
@@ -128,7 +128,7 @@ public class ViewModelGrow : ViewModelBase {
                 case "indifferent":
                     field += "Indifferent";
                     break;
-                case null:
+                default:
                     field += "Onbekend";
                     break;
             }
@@ -161,7 +161,7 @@ public class ViewModelGrow : ViewModelBase {
                 case "toename groei - bladmassa":
                     field += "Groei";
                     break;
-                case null:
+                default:
                     field += "Onbekend";
                     break;
             }
@@ -200,7 +200,7 @@ public class ViewModelGrow : ViewModelBase {
                 case "ZLK":
                     field += "ZLK";
                     break;
-                case null:
+                default:
                     field += "Onbekend";
                     break;
             }
@@ -242,7 +242,7 @@ public class ViewModelGrow : ViewModelBase {
                 case "nat":
                     field += "Nat";
                     break;
-                case null:
+                default:
                     field += "Onbekend";
                     break;
             }
