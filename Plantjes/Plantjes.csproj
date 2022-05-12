@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -9,108 +9,59 @@
         <WholeProgramOptimization>true</WholeProgramOptimization>-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Configurations>Debug;Release;Debug Auto Login</Configurations>
-		<LangVersion>preview</LangVersion>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Image\waterval.jpeg" />
-    <None Remove="Image\zuilvormig.png" />
-    <None Remove="Views\Home\download.png" />
-    <None Remove="Views\Home\iconmonstr-eye-9.png" />
-    <None Remove="Views\Home\Usericon.png" />
-    <None Remove="Views\Home\Vives_Logo_MainWindow.png" />
-    <None Remove="Views\UserControls\%28wortel%29 rozet-planten.png" />
-    <None Remove="Views\UserControls\aar.png" />
-    <None Remove="Views\UserControls\arching.png" />
-    <None Remove="Views\UserControls\blad.jpg" />
-    <None Remove="Views\UserControls\bloem.jpg" />
-    <None Remove="Views\UserControls\bol of knop.png" />
-    <None Remove="Views\UserControls\kruipend, horizontaal groeiend of  mattenvormend.png" />
-    <None Remove="Views\UserControls\kussenvormend.png" />
-    <None Remove="Views\UserControls\margrietachtig.png" />
-    <None Remove="Views\UserControls\mounded.png" />
-    <None Remove="Views\UserControls\parasolvormig.png" />
-    <None Remove="Views\UserControls\plant.jpg" />
-    <None Remove="Views\UserControls\pluim.png" />
-    <None Remove="Views\UserControls\pollenvormers.png" />
-    <None Remove="Views\UserControls\rond of waaiervormig.png" />
-    <None Remove="Views\UserControls\schermbloemig.png" />
-    <None Remove="Views\UserControls\succulenten.png" />
-    <None Remove="Views\UserControls\transparant.png" />
-    <None Remove="Views\UserControls\tufted.png" />
-    <None Remove="Views\UserControls\uitbuigend.png" />
-    <None Remove="Views\UserControls\Unknown.png" />
-    <None Remove="Views\UserControls\upright-arching.png" />
-    <None Remove="Views\UserControls\upright-divergent.png" />
-    <None Remove="Views\UserControls\upright-erect.png" />
-    <None Remove="Views\UserControls\zuilvormig.png" />
-  </ItemGroup>
+    
     <ItemGroup>
-        <None Remove="Views\Home\Usericon.png" />
-        <None Remove="Views\Home\VivesLogo.png" />
-        <None Remove="Views\Home\vives_-_groen.png" />
-        <None Remove="Views\Home\vives_-_groen_-_geen_tekst.png" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="2470011.ico" />
-      <Resource Include="Image\zuilvormig.png" />
-      <Resource Include="image\Vives_Logo_MainWindow.png" />
+        <Content Include="2470011.ico"/>
+        <Resource Include="Image/aar.png"/>
+        <Resource Include="Image/arching.png"/>
+        <Resource Include="Image/blad.jpg"/>
+        <Resource Include="Image/bloem.jpg"/>
+        <Resource Include="Image/bol of knop.png"/>
+        <Resource Include="Image/kruipend, horizontaal groeiend of  mattenvormend.png"/>
+        <Resource Include="Image/kussenvormend.png"/>
+        <Resource Include="Image/margrietachtig.png"/>
+        <Resource Include="Image/mounded.png"/>
+        <Resource Include="Image/parasolvormig.png"/>
+        <Resource Include="Image/plant.jpg"/>
+        <Resource Include="Image/pluim.png"/>
+        <Resource Include="Image/pollenvormers.png"/>
+        <Resource Include="Image/rond of waaiervormig.png"/>
+        <Resource Include="Image/schermbloemig.png"/>
+        <Resource Include="Image/succulenten.png"/>
+        <Resource Include="Image/transparant.png"/>
+        <Resource Include="Image/tufted.png"/>
+        <Resource Include="Image/uitbuigend.png"/>
+        <Resource Include="Image/Unknown.png"/>
+        <Resource Include="Image/upright-arching.png"/>
+        <Resource Include="Image/upright-divergent.png"/>
+        <Resource Include="Image/upright-erect.png"/>
+        <Resource Include="Image/user.png"/>
+        <Resource Include="Image/vives.png"/>
+        <Resource Include="Image/vives_big.png"/>
+        <Resource Include="Image/Vives_Logo_MainWindow.png"/>
+        <Resource Include="Image/WachtwoordOog.png"/>
+        <Resource Include="Image/WachtwoordOog1.png"/>
+        <Resource Include="Image/wortel rozet-planten.png"/>
+        <Resource Include="Image/zuilvormig.png"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="DevExpress.Data" Version="21.2.7" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+        <PackageReference Include="DevExpress.Data" Version="21.2.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />
-    </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="image\Unknown.png" />
-    <Resource Include="image\aar.png" />
-    <Resource Include="image\schermbloemig.png" />
-    <Resource Include="image\pluim.png" />
-    <Resource Include="image\bol of knop.png" />
-    <Resource Include="image\margrietachtig.png" />
-    <Resource Include="image\transparant.png" />
-    <Resource Include="image\blad.jpg" />
-    <Resource Include="image\bloem.jpg" />
-    <Resource Include="image\plant.jpg" />
-    <Resource Include="image\%28wortel%29 rozet-planten.png" />
-    <Resource Include="image\arching.png" />
-    <Resource Include="image\kruipend, horizontaal groeiend of  mattenvormend.png" />
-    <Resource Include="image\kussenvormend.png" />
-    <Resource Include="image\mounded.png" />
-    <Resource Include="image\parasolvormig.png" />
-    <Resource Include="image\pollenvormers.png" />
-    <Resource Include="image\rond of waaiervormig.png" />
-    <Resource Include="image\succulenten.png" />
-    <Resource Include="image\tufted.png" />
-    <Resource Include="image\uitbuigend.png" />
-    <Resource Include="image\upright-arching.png" />
-    <Resource Include="image\upright-divergent.png" />
-    <Resource Include="image\upright-erect.png" />
-  </ItemGroup>
-    <ItemGroup>
-        <Resource Include="Image\user.png" />
-        <Resource Include="Image\vives_big.png" />
-        <Resource Include="Image\vives.png" />
-        <Resource Include="Image\WachtwoordOog1.png" />
-        <Resource Include="Image\WachtwoordOog.png" />
-        <Resource Include="Views\Home\Vives_Logo_MainWindow.png" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Models\Db\" />
+        <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1"/>
     </ItemGroup>
 
 </Project>

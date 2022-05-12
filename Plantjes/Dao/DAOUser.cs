@@ -75,9 +75,7 @@ namespace Plantjes.Dao {
             //write as column headings
             File.WriteAllText("import.csv", String.Join(",", fields));
         }
-
-
-
+        
         private static void openInExcelAndWait(string filename) {
             //search for excel, or fall back to notepad
             string executable = "notepad";
@@ -120,7 +118,10 @@ namespace Plantjes.Dao {
             var ifs = File.OpenText(ofd.FileName);
             var log = new List<string>();
             //get fields
-            var fields = ifs.ReadLine().Split(",").ToList();
+            var firstline = ifs.ReadLine();
+            var separator = ",";
+            if (!firstline.Contains(separator)) separator = ";";
+            var fields = firstline.Split(separator).ToList();
             //get student role
             var role = context.Rols.First(x => x.Omschrijving == "Student");
             int errors = 0, added = 0;
@@ -128,7 +129,7 @@ namespace Plantjes.Dao {
             string line = "";
             while ((line = ifs.ReadLine()) != null && line != "") {
                 //split by fields
-                var infields = line.Split(",");
+                var infields = line.Split(separator);
                 //get password
                 var passwordBytes = Encoding.ASCII.GetBytes(infields[fields.ToList().IndexOf("Studentennummer")]);
                 var md5Hasher = new MD5CryptoServiceProvider();
@@ -141,7 +142,6 @@ namespace Plantjes.Dao {
                     Emailadres = infields[fields.IndexOf("Emailadres")],
                     Rol = role,
                     HashPaswoord = passwordHashed,
-                    LastLogin = DateTime.UnixEpoch
                 };
                 //duplicate/data checks
                 if (context.Gebruikers.Any(x => x.Emailadres == user.Emailadres)) {
@@ -173,6 +173,29 @@ namespace Plantjes.Dao {
             File.WriteAllLines("errors.csv", log);
             //close files
             ifs.Close();
+        }
+
+        public static List<Gebruiker> GetAllUsersNoTracking() => context.Gebruikers.AsNoTracking().ToList();
+
+        public static Gebruiker GetUser(int id) => context.Gebruikers.First(x => x.Id == id);
+        public static Gebruiker GetUserNoTracking(int id) => context.Gebruikers.AsNoTracking().First(x => x.Id == id);
+
+        public static void DeleteUser(int id) {
+            context.Gebruikers.Remove(GetUser(id));
+            context.SaveChanges();
+        }
+
+        public static void AddOrUpdate(Gebruiker user) {
+            var dbuser = context.Gebruikers.FirstOrDefault(x => x.Id == user.Id);
+            if (dbuser != null) {
+                dbuser.Emailadres = user.Emailadres;
+                dbuser.Vivesnr = user.Vivesnr;
+                dbuser.Voornaam = user.Voornaam;
+                dbuser.Achternaam = user.Achternaam;
+            }
+            else context.Gebruikers.Add(user);
+
+            context.SaveChanges();
         }
         //</Xander Baes>
     }
