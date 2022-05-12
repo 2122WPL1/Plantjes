@@ -178,7 +178,7 @@ namespace Plantjes.Dao {
                 }
             else if (user.Vivesnr.Length != 7) {
                 errors++;
-                log.Add($"Emailadres {user.Vivesnr} is geen geldig emailadres!");
+                log.Add($"R-nummer {user.Vivesnr} is geen geldig nummer!");
             }
                 else {
                     //all checks passed, add to db

@@ -22,11 +22,7 @@ public class ViewModelHabitat : ViewModelBase
         {
             ClearAllFields();
 
-
-            FillPollenMin();
-            FillPollenMax();
-            FillNectarMin();
-            FillNectarMax();
+            FillPollenNectar();
             FillOntwikkelsnelheid();
             FillSociabiliteit();
             FillPlantEigenschappen();
@@ -383,10 +379,10 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-    private bool _selectedCheckBoxSociabiliteitA;
 
+    private bool _selectedCheckBoxSociabiliteitA;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitI {
+    public bool SelectedCheckBoxSociabiliteitA {
         get => _selectedCheckBoxSociabiliteitA;
         set {
             _selectedCheckBoxSociabiliteitA = value;
@@ -395,8 +391,9 @@ public class ViewModelHabitat : ViewModelBase
     }
     private bool _selectedCheckBoxSociabiliteitB;
 
+    private bool _selectedCheckBoxSociabiliteitB;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitII {
+    public bool SelectedCheckBoxSociabiliteitB {
         get => _selectedCheckBoxSociabiliteitB;
         set {
             _selectedCheckBoxSociabiliteitB = value;
@@ -405,8 +402,9 @@ public class ViewModelHabitat : ViewModelBase
     }
     private bool _selectedCheckBoxSociabiliteitC;
 
+    private bool _selectedCheckBoxSociabiliteitC;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitIII {
+    public bool SelectedCheckBoxSociabiliteitC {
         get => _selectedCheckBoxSociabiliteitC;
         set {
             _selectedCheckBoxSociabiliteitC = value;
@@ -415,8 +413,9 @@ public class ViewModelHabitat : ViewModelBase
     }
     private bool _selectedCheckBoxSociabiliteitD;
 
+    private bool _selectedCheckBoxSociabiliteitD;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitIV {
+    public bool SelectedCheckBoxSociabiliteitD {
         get => _selectedCheckBoxSociabiliteitD;
         set {
             _selectedCheckBoxSociabiliteitD = value;
@@ -425,8 +424,9 @@ public class ViewModelHabitat : ViewModelBase
     }
     private bool _selectedCheckBoxSociabiliteitE;
 
+    private bool _selectedCheckBoxSociabiliteitE;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitV {
+    public bool SelectedCheckBoxSociabiliteitE {
         get => _selectedCheckBoxSociabiliteitE;
         set {
             _selectedCheckBoxSociabiliteitE = value;
@@ -727,7 +727,6 @@ public class ViewModelHabitat : ViewModelBase
         set
         {
             _selectedCheckBoxStrategieCSR = value;
-            MessageBox.Show(SelectedCheckBoxStrategieCSR.ToString());
             OnPropertyChanged();
         }
     }
