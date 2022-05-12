@@ -20,14 +20,14 @@ namespace Plantjes.Dao
         }
 
         //Xander - optimisation: filter first, then select distinct
-        public static IQueryable<Commensalisme> FilterCommensalismeFromPlant(int selectedItem)
+        public static List<Commensalisme> FilterCommensalismeFromPlant(int selectedItem)
         {
-            return context.Commensalismes.Where(s => s.PlantId == selectedItem).Distinct();
+            return context.Commensalismes.Where(s => s.PlantId == selectedItem).Distinct().ToList();
         }
 
-        public static IQueryable<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)
+        public static List<CommensalismeMulti> FilterCommensalismeMulti(int selectedItem)
         {
-            return context.CommensalismeMultis.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.CommensalismeMultis.Distinct().Where(s => s.PlantId == selectedItem).ToList();
         }
     }
 }

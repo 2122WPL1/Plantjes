@@ -33,7 +33,6 @@
                     <AccessText TextWrapping="Wrap" Text="{Binding errorMessage}"/>
                 </Label.Content>
             </Label>
-
         </Grid>
     </Viewbox>
 </Window>
