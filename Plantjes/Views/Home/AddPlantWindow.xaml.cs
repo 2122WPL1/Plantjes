@@ -1,5 +1,4 @@
-﻿using Plantjes.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Plantjes.Views.Home
 {

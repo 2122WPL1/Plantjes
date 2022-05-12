@@ -3,8 +3,6 @@ using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 using Plantjes.ViewModels.HelpClasses;
 using System;
-using Microsoft.Toolkit.Mvvm.Input;
-using System.Windows;
 
 namespace Plantjes.ViewModels; 
 
