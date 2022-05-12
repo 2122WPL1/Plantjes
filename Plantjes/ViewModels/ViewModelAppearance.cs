@@ -156,8 +156,6 @@ public class ViewModelAppearance : ViewModelBase {
                 default:
                     field = "SelectedCheckBoxGrootteOnbekend";
                     break;
-
-
             }
 
             var prop = modeltype.GetProperty(field);

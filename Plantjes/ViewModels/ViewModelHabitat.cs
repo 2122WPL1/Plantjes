@@ -41,12 +41,14 @@ public class ViewModelHabitat : ViewModelBase
     {
         List<ExtraEigenschap> ListPolNec =
             DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-        SelectedPollenwaardeMin = ListPolNec.Min(x => x.Pollenwaarde);
-        SelectedPollenwaardeMax = ListPolNec.Max(x => x.Pollenwaarde);
-
-        SelectedNectarwaardeMin = ListPolNec.Min(x => x.Nectarwaarde);
-        SelectedNectarwaardeMax = ListPolNec.Max(x => x.Nectarwaarde);
-
+        if (ListPolNec.Any(x => x.Pollenwaarde != null)) {
+            SelectedPollenwaardeMin = ListPolNec.Min(x => x.Pollenwaarde);
+            SelectedPollenwaardeMax = ListPolNec.Max(x => x.Pollenwaarde);
+        }
+        if (ListPolNec.Any(x => x.Nectarwaarde != null)) {
+            SelectedNectarwaardeMin = ListPolNec.Min(x => x.Nectarwaarde);
+            SelectedNectarwaardeMax = ListPolNec.Max(x => x.Nectarwaarde);
+        }
 
     }
 
