@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using Plantjes.ViewModels;
 
 namespace Plantjes.Views.UserControls; 
 

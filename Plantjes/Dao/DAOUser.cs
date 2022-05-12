@@ -192,6 +192,29 @@ namespace Plantjes.Dao {
             //close files
             ifs.Close();
         }
+
+        public static List<Gebruiker> GetAllUsersNoTracking() => context.Gebruikers.AsNoTracking().ToList();
+
+        public static Gebruiker GetUser(int id) => context.Gebruikers.First(x => x.Id == id);
+        public static Gebruiker GetUserNoTracking(int id) => context.Gebruikers.AsNoTracking().First(x => x.Id == id);
+
+        public static void DeleteUser(int id) {
+            context.Gebruikers.Remove(GetUser(id));
+            context.SaveChanges();
+        }
+
+        public static void AddOrUpdate(Gebruiker user) {
+            var dbuser = context.Gebruikers.FirstOrDefault(x => x.Id == user.Id);
+            if (dbuser != null) {
+                dbuser.Emailadres = user.Emailadres;
+                dbuser.Vivesnr = user.Vivesnr;
+                dbuser.Voornaam = user.Voornaam;
+                dbuser.Achternaam = user.Achternaam;
+            }
+            else context.Gebruikers.Add(user);
+
+            context.SaveChanges();
+        }
         //</Xander Baes>
     }
 }

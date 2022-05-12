@@ -11,40 +11,40 @@
         <Configurations>Debug;Release;Debug Auto Login</Configurations>
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
-
+    
     <ItemGroup>
-        <Content Include="2470011.ico" />
-<Resource Include="Image/aar.png" />
-<Resource Include="Image/arching.png" />
-<Resource Include="Image/blad.jpg" />
-<Resource Include="Image/bloem.jpg" />
-<Resource Include="Image/bol of knop.png" />
-<Resource Include="Image/kruipend, horizontaal groeiend of  mattenvormend.png" />
-<Resource Include="Image/kussenvormend.png" />
-<Resource Include="Image/margrietachtig.png" />
-<Resource Include="Image/mounded.png" />
-<Resource Include="Image/parasolvormig.png" />
-<Resource Include="Image/plant.jpg" />
-<Resource Include="Image/pluim.png" />
-<Resource Include="Image/pollenvormers.png" />
-<Resource Include="Image/rond of waaiervormig.png" />
-<Resource Include="Image/schermbloemig.png" />
-<Resource Include="Image/succulenten.png" />
-<Resource Include="Image/transparant.png" />
-<Resource Include="Image/tufted.png" />
-<Resource Include="Image/uitbuigend.png" />
-<Resource Include="Image/Unknown.png" />
-<Resource Include="Image/upright-arching.png" />
-<Resource Include="Image/upright-divergent.png" />
-<Resource Include="Image/upright-erect.png" />
-<Resource Include="Image/user.png" />
-<Resource Include="Image/vives.png" />
-<Resource Include="Image/vives_big.png" />
-<Resource Include="Image/Vives_Logo_MainWindow.png" />
-<Resource Include="Image/WachtwoordOog.png" />
-<Resource Include="Image/WachtwoordOog1.png" />
-<Resource Include="Image/wortel rozet-planten.png" />
-<Resource Include="Image/zuilvormig.png" />
+        <Content Include="2470011.ico"/>
+        <Resource Include="Image/aar.png"/>
+        <Resource Include="Image/arching.png"/>
+        <Resource Include="Image/blad.jpg"/>
+        <Resource Include="Image/bloem.jpg"/>
+        <Resource Include="Image/bol of knop.png"/>
+        <Resource Include="Image/kruipend, horizontaal groeiend of  mattenvormend.png"/>
+        <Resource Include="Image/kussenvormend.png"/>
+        <Resource Include="Image/margrietachtig.png"/>
+        <Resource Include="Image/mounded.png"/>
+        <Resource Include="Image/parasolvormig.png"/>
+        <Resource Include="Image/plant.jpg"/>
+        <Resource Include="Image/pluim.png"/>
+        <Resource Include="Image/pollenvormers.png"/>
+        <Resource Include="Image/rond of waaiervormig.png"/>
+        <Resource Include="Image/schermbloemig.png"/>
+        <Resource Include="Image/succulenten.png"/>
+        <Resource Include="Image/transparant.png"/>
+        <Resource Include="Image/tufted.png"/>
+        <Resource Include="Image/uitbuigend.png"/>
+        <Resource Include="Image/Unknown.png"/>
+        <Resource Include="Image/upright-arching.png"/>
+        <Resource Include="Image/upright-divergent.png"/>
+        <Resource Include="Image/upright-erect.png"/>
+        <Resource Include="Image/user.png"/>
+        <Resource Include="Image/vives.png"/>
+        <Resource Include="Image/vives_big.png"/>
+        <Resource Include="Image/Vives_Logo_MainWindow.png"/>
+        <Resource Include="Image/WachtwoordOog.png"/>
+        <Resource Include="Image/WachtwoordOog1.png"/>
+        <Resource Include="Image/wortel rozet-planten.png"/>
+        <Resource Include="Image/zuilvormig.png"/>
     </ItemGroup>
 
     <ItemGroup>
