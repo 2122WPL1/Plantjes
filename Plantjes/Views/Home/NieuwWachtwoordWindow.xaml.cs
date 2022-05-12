@@ -26,4 +26,6 @@ namespace Plantjes.Views.Home
             if (DataContext != null) ((dynamic)DataContext)._passwordRepeatInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
         }
     }
+
+
 }
