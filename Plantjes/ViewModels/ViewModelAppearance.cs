@@ -4,6 +4,7 @@ using System.Windows.Documents;
 using Newtonsoft.Json.Bson;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
+using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
@@ -23,10 +24,11 @@ public class ViewModelAppearance : ViewModelBase {
             ClearAllFields();
 
             FillBladKleur();
-            FillStengelvormBladvorm();
-            FillBladgrootte();
-            FillLevensvormen();
             FillSpruitFene();
+            FillBladgrootte();
+            FillStengelvormBladvorm();
+            FillLevensvormen();
+            
         };
     }
 
@@ -48,13 +50,77 @@ public class ViewModelAppearance : ViewModelBase {
         var modeltype = typeof(ViewModelAppearance);
         List<FenotypeMulti> FenoListKleur =
             DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        bool exists = false;
 
-        foreach (FenotypeMulti fnmulti in FenoListKleur)
+        string field = "SelectedCheckBoxBladkleur";
+        for (int i = 0; i < FenoListKleur.Count; i++)
         {
-            var prop = modeltype.GetProperty($"SelectedCheckBoxBladkleur{fnmulti.Waarde}");
-            var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
+            exists = FenoListKleur[i].Eigenschap.Contains("bladkleur");
         }
+
+        if (exists)
+        {
+            foreach (FenotypeMulti fnmulti in FenoListKleur)
+            {
+                if (fnmulti.Eigenschap == "bladkleur")
+                {
+                    switch (fnmulti.Waarde)
+                    {
+                        case "zwart":
+                            field += "Zwart";
+                            break;
+                        case "wit":
+                            field += "Wit";
+                            break;
+                        case "roze":
+                            field += "Roze";
+                            break;
+                        case "rood":
+                            field += "Rood";
+                            break;
+                        case "oranje":
+                            field += "Oranje";
+                            break;
+                        case "lila":
+                            field += "Lila";
+                            break;
+                        case "grijs":
+                            field += "Grijs";
+                            break;
+                        case "groen":
+                            field += "Groen";
+                            break;
+                        case "geel":
+                            field += "Geel";
+                            break;
+                        case "blauw":
+                            field += "Blauw";
+                            break;
+                        case "violet":
+                            field += "Violet";
+                            break;
+                        case "paars":
+                            field += "Paars";
+                            break;
+                        case "bruin":
+                            field += "Bruin";
+                            break;
+                        default:
+                            field += "Onbekend";
+                            break;
+                    }
+                }
+            }
+        }
+        else
+        {
+                field += "Onbekend";
+        }
+
+        var prop = modeltype.GetProperty(field);
+        var propsetter = prop.GetSetMethod();
+        propsetter.Invoke(this, new object?[] { true });
+        
     }
 
     public void FillBladgrootte()
@@ -247,9 +313,9 @@ public class ViewModelAppearance : ViewModelBase {
 
 
     #region Binding checkboxen Bladkleur
-
+    
     private bool _selectedCheckBoxBladkleurOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurOnbekend
     {
         get => _selectedCheckBoxBladkleurOnbekend;
@@ -261,7 +327,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurZwart;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurZwart {
         get => _selectedCheckBoxBladkleurZwart;
 
@@ -272,7 +338,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurWit;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurWit {
         get => _selectedCheckBoxBladkleurWit;
 
@@ -283,7 +349,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurRosé;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurRosé {
         get => _selectedCheckBoxBladkleurRosé;
 
@@ -294,7 +360,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurRood;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurRood {
         get => _selectedCheckBoxBladkleurRood;
 
@@ -305,7 +371,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurOranje;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurOranje {
         get => _selectedCheckBoxBladkleurOranje;
 
@@ -316,7 +382,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurLila;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurLila {
         get => _selectedCheckBoxBladkleurLila;
 
@@ -327,7 +393,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurGrijs;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurGrijs {
         get => _selectedCheckBoxBladkleurGrijs;
 
@@ -338,7 +404,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurGroen;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurGroen {
         get => _selectedCheckBoxBladkleurGroen;
 
@@ -349,7 +415,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurGeel;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurGeel {
         get => _selectedCheckBoxBladkleurGeel;
 
@@ -360,7 +426,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurBlauw;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurBlauw {
         get => _selectedCheckBoxBladkleurBlauw;
 
@@ -371,7 +437,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurViolet;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurViolet {
         get => _selectedCheckBoxBladkleurViolet;
 
@@ -382,7 +448,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurPaars;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurPaars {
         get => _selectedCheckBoxBladkleurPaars;
 
@@ -393,7 +459,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladkleurBruin;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladkleurBruin {
         get => _selectedCheckBoxBladkleurBruin;
 
@@ -407,10 +473,8 @@ public class ViewModelAppearance : ViewModelBase {
 
     #region Binding checkboxen BladHoogte
 
-
-
     private bool _selectedCheckBoxBladHoogteOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteOnbekend
     {
         get => _selectedCheckBoxBladHoogteOnbekend;
@@ -422,7 +486,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteJan;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteJan {
         get => _selectedCheckBoxBladHoogteJan;
 
@@ -433,7 +497,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteFeb;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteFeb {
         get => _selectedCheckBoxBladHoogteFeb;
 
@@ -444,7 +508,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteMar;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteMar {
         get => _selectedCheckBoxBladHoogteMar;
 
@@ -455,7 +519,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteApr;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteApr {
         get => _selectedCheckBoxBladHoogteApr;
 
@@ -466,7 +530,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteMay;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteMay {
         get => _selectedCheckBoxBladHoogteMay;
 
@@ -477,7 +541,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteJun;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteJun {
         get => _selectedCheckBoxBladHoogteJun;
 
@@ -488,7 +552,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteJul;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteJul {
         get => _selectedCheckBoxBladHoogteJul;
 
@@ -499,7 +563,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteAug;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteAug {
         get => _selectedCheckBoxBladHoogteAug;
 
@@ -510,7 +574,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteSep;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteSep {
         get => _selectedCheckBoxBladHoogteSep;
 
@@ -521,7 +585,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteOct;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteOct {
         get => _selectedCheckBoxBladHoogteOct;
 
@@ -532,7 +596,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteNov;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteNov {
         get => _selectedCheckBoxBladHoogteNov;
 
@@ -543,7 +607,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladHoogteDec;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladHoogteDec {
         get => _selectedCheckBoxBladHoogteDec;
 
@@ -559,7 +623,7 @@ public class ViewModelAppearance : ViewModelBase {
     // Gemaakt door Warre
 
     private bool _selectedCheckBoxGrootteOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootteOnbekend
     {
         get => _selectedCheckBoxGrootteOnbekend;
@@ -571,7 +635,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte5;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte5
     {
         get => _selectedCheckBoxGrootte5;
@@ -583,7 +647,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte10;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte10
     {
         get => _selectedCheckBoxGrootte10;
@@ -595,7 +659,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte20;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte20
     {
         get => _selectedCheckBoxGrootte20;
@@ -607,7 +671,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte50;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte50
     {
         get => _selectedCheckBoxGrootte50;
@@ -619,7 +683,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte100;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte100
     {
         get => _selectedCheckBoxGrootte100;
@@ -631,7 +695,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxGrootte150;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxGrootte150
     {
         get=> _selectedCheckBoxGrootte150;
@@ -648,7 +712,7 @@ public class ViewModelAppearance : ViewModelBase {
     //Gemaakt door Warre
 
     private bool _selectedCheckBoxSpruitOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxSpruitOnbekend
     {
         get => _selectedCheckBoxSpruitOnbekend;
@@ -660,7 +724,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxSpruitZomergroen;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxSpruitZomergroen
     {
         get => _selectedCheckBoxSpruitZomergroen;
@@ -672,7 +736,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxSpruitWintergroen;
-
+    [Clearable<bool>]
     public bool SelectCheckBoxSpruitWintergroen
     {
         get => _selectedCheckBoxSpruitWintergroen;
@@ -684,7 +748,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxSpruitAltijdGroen;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxSpruitAltijdGroen
     {
         get => _selectedCheckBoxSpruitAltijdGroen;
@@ -696,7 +760,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxSpruitVoorjaarsgroen;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxSpruitVoorjaarsgroen
     {
         get => _selectedCheckBoxSpruitVoorjaarsgroen;
@@ -715,7 +779,7 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Bladvormen
 
     private bool _selectedCheckBoxBladvormenOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenOnbekend
     {
         get => _selectedCheckBoxBladvormenOnbekend;
@@ -727,7 +791,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm1;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm1 {
         get => _selectedCheckBoxBladvormenVorm1;
 
@@ -738,7 +802,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm2;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm2 {
         get => _selectedCheckBoxBladvormenVorm2;
 
@@ -749,7 +813,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm3;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm3 {
         get => _selectedCheckBoxBladvormenVorm3;
 
@@ -760,7 +824,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm4;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm4 {
         get => _selectedCheckBoxBladvormenVorm4;
 
@@ -771,7 +835,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm5;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm5 {
         get => _selectedCheckBoxBladvormenVorm5;
 
@@ -782,7 +846,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm6;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm6 {
         get => _selectedCheckBoxBladvormenVorm6;
 
@@ -793,7 +857,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm7;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm7 {
         get => _selectedCheckBoxBladvormenVorm7;
 
@@ -805,7 +869,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm8;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm8 {
         get => _selectedCheckBoxBladvormenVorm8;
 
@@ -816,7 +880,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxBladvormenVorm9;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxBladvormenVorm9 {
         get => _selectedCheckBoxBladvormenVorm9;
 
@@ -831,7 +895,7 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Stengelvormen
 
     private bool _selectedCheckBoxStengelvormenVorm1;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm1 {
         get => _selectedCheckBoxStengelvormenVorm1;
 
@@ -842,7 +906,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxStengelvormenVorm2;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm2 {
         get => _selectedCheckBoxStengelvormenVorm2;
 
@@ -853,7 +917,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxStengelvormenVorm3;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm3 {
         get => _selectedCheckBoxStengelvormenVorm3;
 
@@ -864,7 +928,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxStengelvormenVorm4;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm4 {
         get => _selectedCheckBoxStengelvormenVorm4;
 
@@ -875,7 +939,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxStengelvormenVorm5;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm5 {
         get => _selectedCheckBoxStengelvormenVorm5;
 
@@ -886,7 +950,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxStengelvormenVorm6;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxStengelvormenVorm6 {
         get => _selectedCheckBoxStengelvormenVorm6;
 
@@ -901,7 +965,7 @@ public class ViewModelAppearance : ViewModelBase {
     #region Binding checkboxen Levensvormen
 
     private bool _selectedCheckBoxLevensvormenOnbekend;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenOnbekend
     {
         get => _selectedCheckBoxLevensvormenOnbekend;
@@ -914,7 +978,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxLevensvormenVorm1;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm1 {
         get => _selectedCheckBoxLevensvormenVorm1;
 
@@ -937,7 +1001,7 @@ public class ViewModelAppearance : ViewModelBase {
     //}
 
     private bool _selectedCheckBoxLevensvormenVorm3;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm3 {
         get => _selectedCheckBoxLevensvormenVorm3;
 
@@ -948,7 +1012,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxLevensvormenVorm4;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm4 {
         get => _selectedCheckBoxLevensvormenVorm4;
 
@@ -971,7 +1035,7 @@ public class ViewModelAppearance : ViewModelBase {
     //}
 
     private bool _selectedCheckBoxLevensvormenVorm6;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm6 {
         get => _selectedCheckBoxLevensvormenVorm6;
 
@@ -982,7 +1046,7 @@ public class ViewModelAppearance : ViewModelBase {
     }
 
     private bool _selectedCheckBoxLevensvormenVorm7;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm7 {
         get => _selectedCheckBoxLevensvormenVorm7;
 
@@ -1005,7 +1069,7 @@ public class ViewModelAppearance : ViewModelBase {
     //}
 
     private bool _selectedCheckBoxLevensvormenVorm9;
-
+    [Clearable<bool>]
     public bool SelectedCheckBoxLevensvormenVorm9 {
         get => _selectedCheckBoxLevensvormenVorm9;
 
