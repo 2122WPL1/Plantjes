@@ -12,7 +12,7 @@ namespace Plantjes.Views.Home
     {
         public NieuwWachtwoordWindow()
         {
-            DataContext = App.Current.Services.GetService(typeof(ViewModelRegister));
+            DataContext = App.Current.Services.GetService(typeof(ViewModelNieuwWachtwoord));
             InitializeComponent();
         }
         private void txtWachtwoord_PasswordChanged(object sender, RoutedEventArgs e)

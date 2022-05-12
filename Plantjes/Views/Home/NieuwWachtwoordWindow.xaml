@@ -4,24 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Plantjes.Views.Home"
+        xmlns:vm="clr-namespace:Plantjes.ViewModels"
         mc:Ignorable="d"
         Title="NieuwWachtwoordWindow" Height="300" Width="464" Background="#FFA0A0A0">
     <!-- Written by Kjell-->
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:ViewModelNieuwWachtwoord}">
+            
+        </DataTemplate>
+    </Window.Resources>
+    
     <Viewbox>
         <Grid>
-
-            <Label Content="Mail: " Margin="0,41,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Width="212"/>
             <Label x:Name="lblWachtwoord" Content="Wachtwoord:" Margin="87,99,232,158" Foreground="White"/>
-            <Label Content="Nieuw wachtwoord instellen" Margin="103,11,102,235" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17" Foreground="White"/>
+            <Label Content="Nieuw wachtwoord instellen" Margin="102,31,102,215" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17" Foreground="White"/>
             <Label x:Name="lblHerhaalWachtwoord" Content="Herhaal wachtwoord:" Margin="87,142,232,115" Foreground="White"/>
             <PasswordBox Margin="221,141,0,115" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
                          x:Name="txtWachtwoordHerhaal"
-                         PasswordChanged="txtWachtwoordHerhaal_OnPasswordChanged" BorderBrush="{Binding PasswordColor}"></PasswordBox>
+                         PasswordChanged="txtWachtwoordHerhaal_OnPasswordChanged"></PasswordBox>
             <PasswordBox Margin="221,99,0,157" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
                 x:Name="txtWachtwoord"
-                         PasswordChanged="txtWachtwoord_PasswordChanged" BorderBrush="{Binding PasswordColor}"/>
+                         PasswordChanged="txtWachtwoord_PasswordChanged"/>
             <Button x:Name="btnBevestig" Content="Bevestigen" Margin="121,195,121,63" 
-                    Style="{StaticResource ButtonUnified}" Command="{Binding confirmCommand}" Height="25" FontSize="15"/>
+                    Style="{StaticResource ButtonUnified}" Command="{Binding changePasswordCommand}" Height="25" FontSize="15"/>
         </Grid>
     </Viewbox>
 </Window>
