@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plantjes.Views.UserControls
+namespace Plantjes.Views.Home
 {
     /// <summary>
-    /// Interaction logic for trial1.xaml
+    /// Interaction logic for FilterWindow.xaml
     /// </summary>
-    public partial class trial1 : UserControl
+    public partial class FilterWindow : Window
     {
-        public trial1()
+        public FilterWindow()
         {
             InitializeComponent();
         }

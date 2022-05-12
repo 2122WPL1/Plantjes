@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <None Remove="Image\waterval.jpeg" />
+    <None Remove="Image\zuilvormig.png" />
     <None Remove="Views\Home\download.png" />
     <None Remove="Views\Home\iconmonstr-eye-9.png" />
     <None Remove="Views\Home\Usericon.png" />
@@ -51,6 +52,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="2470011.ico" />
+      <Resource Include="Image\zuilvormig.png" />
       <Resource Include="image\Vives_Logo_MainWindow.png" />
     </ItemGroup>
 
