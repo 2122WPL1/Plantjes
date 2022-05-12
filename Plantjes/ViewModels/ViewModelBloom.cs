@@ -10,7 +10,7 @@ public class ViewModelBloom : ViewModelBase {
     //IsCheckBoxChecked.  This enables animation, styling, binding, etc...
 
     private DAOLogic _dao;
-    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
+    private DetailService _detailService;
 
     private SearchService _SearchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
@@ -19,12 +19,17 @@ public class ViewModelBloom : ViewModelBase {
 
     public ViewModelBloom(DetailService detailservice) {
         _dao = DAOLogic.Instance();
+        _detailService = detailservice;
         detailservice.SelectedPlantChanged += (sender, plant) => {
-            var fm = DAOFenotype.FilterFenotypeMultiFromPlant((int)plant.PlantId);
-            var bh = fm.FirstOrDefault(x => x.Eigenschap == "Bloeihoogte");
-            if (bh != null) SelectedBloeiHoogte = bh.Waarde;
-            else SelectedBloeiHoogte = "Onbekend";
+            fillHoogte();
         };
+    }
+
+    private void fillHoogte() {
+        var fm = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        var bh = fm.FirstOrDefault(x => x.Eigenschap == "Bloeihoogte");
+        if (bh != null) SelectedBloeiHoogte = bh.Waarde;
+        else SelectedBloeiHoogte = "Onbekend";
     }
 
     public string SelectedBloeiHoogte {

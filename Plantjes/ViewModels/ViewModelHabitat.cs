@@ -84,9 +84,14 @@ public class ViewModelHabitat : ViewModelBase
         foreach (CommensalismeMulti commmulti in CommListSocia)
         {
             string field = "SelectedCheckBoxSociabiliteit";
-            if (commmulti.Waarde != null)
-            {
-                field += commmulti.Waarde;
+            if (commmulti.Waarde != null) {
+                field += commmulti.Waarde switch {
+                    "A" => "I",
+                    "B" => "II",
+                    "C" => "III",
+                    "D" => "IV",
+                    "E" => "V"
+                };
             }
             else
             {
