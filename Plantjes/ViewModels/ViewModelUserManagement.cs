@@ -21,54 +21,25 @@ namespace Plantjes.ViewModels {
         }
 
         public ObservableCollection<Gebruiker> users {
-            get => new(DAOLogic.context.Gebruikers.AsNoTracking());
+            get => new(DAOUser.GetAllUsersNoTracking());
         }
 
         public Gebruiker currentUser {
             get => _currentUser;
             set {
-                if (value == null) {
-                    Debug.WriteLine("User was null:");
-
-                    foreach (var sf in new StackTrace().GetFrames()) {
-                        Debug.WriteLine(sf.ToString());
-                    }
-                }
-                else {
-                    //detach if not null
-                    DAOLogic.context.Entry(value).State = EntityState.Detached;
-                    //set current user
-                    _currentUser = value;
-                }
+                _currentUser = value;
                 OnPropertyChanged();
             }
         }
 
 
         public RelayCommand DeleteCommand { get; } = new(() => {
-            //remove user from db
-            if (_currentUser.Id != null && _currentUser.Id != 0) DAOLogic.context.Gebruikers.Remove(_currentUser);
-            //save
-            DAOLogic.context.SaveChanges();
+            if (_currentUser != null) DAOUser.DeleteUser(_currentUser.Id);
             instance.OnPropertyChanged("users");
         });
 
         public RelayCommand SaveUserCommand { get; } = new(() => {
-            //check if new user
-            if (_currentUser != null && _currentUser.Id != 0) {
-                //detach, if not detached
-                if(DAOLogic.context.Entry(_currentUser).State != EntityState.Detached) DAOLogic.context.Entry(_currentUser).State = EntityState.Detached;
-                //attach current instance if not detached
-                DAOLogic.context.Attach(_currentUser);
-            }
-            else if(_currentUser != null)
-                //add if not null, and is new user
-                DAOLogic.context.Gebruikers.Add(_currentUser);
-            //save
-            DAOLogic.context.SaveChanges();
-
-            //detach again
-            if(DAOLogic.context.Entry(_currentUser).State != EntityState.Detached) DAOLogic.context.Entry(_currentUser).State = EntityState.Detached;
+            DAOUser.AddOrUpdate(_currentUser);
             instance.OnPropertyChanged("users");
         });
 
