@@ -64,7 +64,7 @@ public class LoginUserService : INotifyPropertyChanged {
     {
         if (passwordInput == passwordRepeatInput)
         {
-            DAOUser.ChangePassword(passwordInput);
+            
 
 
             var loginWindow = new LoginWindow();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Media;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Plantjes.Models.Db;
 using Plantjes.Models.Enums;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
+using XSystem.Security.Cryptography;
 
 //written by kenny
 namespace Plantjes.ViewModels; 
@@ -20,6 +22,7 @@ public class ViewModelLogin : ViewModelBase
     private string _errorMessage;
     private string _loggedInMessage;
     public string _passwordInput;
+    public string _passwordRepeatInput;
 
     private string _userNameInput;
 
@@ -47,12 +50,15 @@ public class ViewModelLogin : ViewModelBase
         loginCommand = new RelayCommand(LoginButtonClick);
         cancelCommand = new RelayCommand(CancelButton);
         registerCommand = new RelayCommand(RegisterButtonView);
+
+
     }
 
     private LoginUserService _loginService { get; }
     public RelayCommand loginCommand { get; set; }
     public RelayCommand cancelCommand { get; set; }
     public RelayCommand registerCommand { get; set; }
+
 
     public string errorMessage 
     {
@@ -217,4 +223,5 @@ public class ViewModelLogin : ViewModelBase
     }
     //------------------------------------------------------------------------------------------
 
+    
 }

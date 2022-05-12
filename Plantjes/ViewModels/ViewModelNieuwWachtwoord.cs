@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -7,37 +9,44 @@ using Plantjes.Models.Db;
 using Plantjes.ViewModels;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
+using XSystem.Security.Cryptography;
 
 namespace Plantjes.ViewModels
 {
     internal class ViewModelNieuwWachtwoord : ViewModelBase
     {
 
-        public ViewModelNieuwWachtwoord(LoginUserService loginUserService, Gebruiker gebruiker)
+        public ViewModelNieuwWachtwoord(LoginUserService loginUserService)
         {
             _loginService = loginUserService;
+
             changePasswordCommand = new RelayCommand(ChangePasswordButtonClick);
-            _gebruiker = gebruiker;
         }
 
-        private Gebruiker _gebruiker;
-        private LoginUserService _loginService { get; }
+        public LoginUserService _loginService { get; }
         public RelayCommand changePasswordCommand { get; set; }
 
-        //Kjell -- Based on Xander
         public void ChangePasswordButtonClick()
         {
+            //Als de 2 wachtwoorden overeenkomen dan kan het wachtwoord opgeslaan worden terug naar login window gegaan worden
             if (passwordInput == passwordRepeatInput)
             {
-                _loginService.ChangePasswordButton(passwordInput, passwordRepeatInput);
-                //_loginService.ChangePasswordButton(passwordInput, passwordRepeatInput);
-                DAOLogic.context.SaveChanges();
+                var passwordBytes = Encoding.ASCII.GetBytes(passwordInput);
+                var md5Hasher = new MD5CryptoServiceProvider();
+                var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
 
-                var niewWachtwoordWindow = new NieuwWachtwoordWindow();
-                niewWachtwoordWindow.Show();
+                _loginService.gebruiker.HashPaswoord = passwordHashed;
+                _loginService.gebruiker.LastLogin = DateTime.Now;
+                DAOUser.context.SaveChanges();
+
+
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.Show();
                 Application.Current.Windows[0]?.Close();
             }
         }
+
+
 
         #region MVVM TextFieldsBinding
 
