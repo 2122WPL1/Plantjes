@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows;
 using Plantjes.Dao;
 using Plantjes.Models.Classes;
 using Plantjes.Models.Db;
@@ -56,20 +57,6 @@ public class LoginUserService : INotifyPropertyChanged {
         } //Message terugsturen om te binden aan een label in de viewModel.
 
         return Message;
-    }
-
-    //Written by Kjell
-    //Controle dat bijde wachtwoorden overeenkomen
-    public void ChangePasswordButton(string passwordInput, string passwordRepeatInput)
-    {
-        if (passwordInput == passwordRepeatInput)
-        {
-            
-
-
-            var loginWindow = new LoginWindow();
-            loginWindow.Show();
-        }
     }
         
 
@@ -152,6 +139,28 @@ public class LoginUserService : INotifyPropertyChanged {
             return $"Ingelogd als: {gebruiker.Voornaam} {gebruiker.Achternaam}";
         }
         return string.Empty;
+    }
+
+
+    //Kjell
+    public string NewPasswordButton(string passwordInput, string passwordRepeatInput)
+    {
+        var Message = string.Empty;
+
+        //If password and repeat password are equal
+        //Then password can be saved in database
+        if (passwordInput == passwordRepeatInput)
+        {
+            //Calling DAOUser to save password and date in database
+            DAOUser.ChangePassword(passwordInput, _gebruiker);
+        }
+        //If password and repeat password are not equal
+        //Error message appears
+        else if(passwordInput != passwordRepeatInput)
+        {
+            Message = "Wachtwoorden komen niet overeen!";
+        }
+        return Message;
     }
 
     #endregion

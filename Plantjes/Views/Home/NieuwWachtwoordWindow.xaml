@@ -10,23 +10,30 @@
     <!-- Written by Kjell-->
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:ViewModelNieuwWachtwoord}">
-            
+
         </DataTemplate>
     </Window.Resources>
-    
+
     <Viewbox>
         <Grid>
-            <Label x:Name="lblWachtwoord" Content="Wachtwoord:" Margin="87,99,232,158" Foreground="White"/>
-            <Label Content="Nieuw wachtwoord instellen" Margin="102,31,102,215" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17" Foreground="White"/>
-            <Label x:Name="lblHerhaalWachtwoord" Content="Herhaal wachtwoord:" Margin="87,142,232,115" Foreground="White"/>
-            <PasswordBox Margin="221,141,0,115" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
+            <Label x:Name="lblWachtwoord" Content="Wachtwoord:" Margin="51,108,268,149" Foreground="White" RenderTransformOrigin="0.504,-0.246"/>
+            <Label Content="Nieuw wachtwoord instellen" Margin="102,50,102,196" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17" Foreground="White"/>
+            <Label x:Name="lblHerhaalWachtwoord" Content="Herhaal wachtwoord:" Margin="51,158,268,99" Foreground="White"/>
+            <PasswordBox Margin="202,158,0,98" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
                          x:Name="txtWachtwoordHerhaal"
                          PasswordChanged="txtWachtwoordHerhaal_OnPasswordChanged"></PasswordBox>
-            <PasswordBox Margin="221,99,0,157" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
+            <PasswordBox Margin="202,108,0,148" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="156"
                 x:Name="txtWachtwoord"
                          PasswordChanged="txtWachtwoord_PasswordChanged"/>
-            <Button x:Name="btnBevestig" Content="Bevestigen" Margin="121,195,121,63" 
+            <Button x:Name="btnBevestig" Content="Bevestigen" Margin="121,220,121,38" 
                     Style="{StaticResource ButtonUnified}" Command="{Binding changePasswordCommand}" Height="25" FontSize="15"/>
+            <Label x:Name="lblError" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="WhiteSmoke" Height="35" Width="340" FontWeight="Bold" HorizontalContentAlignment="Center" >
+                <Label.Content>
+                    <AccessText TextWrapping="Wrap" Text="{Binding errorMessage}"/>
+                </Label.Content>
+            </Label>
+            <CheckBox x:Name="ckbShowPassword" Content="Show" HorizontalAlignment="Left" Margin="363,114,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked" RenderTransformOrigin="-0.018,1.165"/>
+            <CheckBox x:Name="ckbShowRepeatPassword" Content="Show" HorizontalAlignment="Left" Margin="363,164,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked"/>
         </Grid>
     </Viewbox>
 </Window>

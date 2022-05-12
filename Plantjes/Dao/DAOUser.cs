@@ -45,6 +45,7 @@ namespace Plantjes.Dao {
 
         //Written by Kjell
         //Save new password in database
+        //
         public static void ChangePassword(string password, Gebruiker gebruiker)
         {
             var passwordBytes = Encoding.ASCII.GetBytes(password);
@@ -52,6 +53,7 @@ namespace Plantjes.Dao {
             var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
 
             gebruiker.HashPaswoord = passwordHashed;
+            //Also saving date to the date of today
             gebruiker.LastLogin = DateTime.Now;
 
             context.Gebruikers.Update(gebruiker);
