@@ -26,13 +26,13 @@ public class ViewModelBloom : ViewModelBase {
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
             ClearAllFields();
-
+            /*
             FillBloeikleur();
             FillBloeiHoogte();
             FillBloeitIn();
             FillBloeiwijzevorm();
             FillBloeiBlad();
-            
+            */
             fillHoogte();
         };
     }
@@ -64,8 +64,7 @@ public class ViewModelBloom : ViewModelBase {
             OnPropertyChanged();
         }
     }
-    #endregion
-
+    
     #region Checkbox Bloeikleur
 
     private bool _selectedCheckBoxBloeikleurOnbekend;
@@ -655,9 +654,6 @@ public class ViewModelBloom : ViewModelBase {
     #endregion
 
     #region Ratio Bloei/Blad
-<<<<<<<
-
-=======
 
     private bool _selectedCheckBoxRatioOnbekend;
 
@@ -671,17 +667,12 @@ public class ViewModelBloom : ViewModelBase {
             OnPropertyChanged();
         }
     }
->>>>>>>
     // Gemaakt door Warre
     private bool _selectedCheckBoxRatioPachysandra;
 
-<<<<<<<
-    public bool SelectedCheckBoxRatioPachysandra {
-=======
     [Clearable<bool>]
     public bool SelectedCheckBoxRatioPachysandra
     {
->>>>>>>
         get => _selectedCheckBoxRatioPachysandra;
         set {
             _selectedCheckBoxRatioPachysandra = value;
@@ -691,13 +682,9 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioGeranium;
 
-<<<<<<<
-    public bool SelectedCheckBoxRatioGeranium {
-=======
     [Clearable<bool>]
     public bool SelectedCheckBoxRatioGeranium
     {
->>>>>>>
         get => _selectedCheckBoxRatioGeranium;
         set {
             _selectedCheckBoxRatioGeranium = value;
@@ -707,13 +694,9 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioSalvia;
 
-<<<<<<<
-    public bool SelectedCheckBoxRatioSalvia {
-=======
     [Clearable<bool>]
     public bool SelectedCheckBoxRatioSalvia
     {
->>>>>>>
         get => _selectedCheckBoxRatioSalvia;
         set {
             _selectedCheckBoxRatioSalvia = value;
@@ -723,13 +706,9 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioAster;
 
-<<<<<<<
-    public bool SelectedCheckBoxRatioAster {
-=======
     [Clearable<bool>]
     public bool SelectedCheckBoxRatioAster
     {
->>>>>>>
         get => _selectedCheckBoxRatioAster;
         set {
             _selectedCheckBoxRatioAster = value;
