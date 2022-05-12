@@ -1,15 +1,16 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using Plantjes.Dao;
 using Plantjes.ViewModels.Services;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 public class ViewModelBloom : ViewModelBase {
     // Using a DependencyProperty as the backing store for 
     //IsCheckBoxChecked.  This enables animation, styling, binding, etc...
 
     private DAOLogic _dao;
-    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
+    private DetailService _detailService;
 
     private SearchService _SearchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
@@ -18,6 +19,17 @@ public class ViewModelBloom : ViewModelBase {
 
     public ViewModelBloom(DetailService detailservice) {
         _dao = DAOLogic.Instance();
+        _detailService = detailservice;
+        detailservice.SelectedPlantChanged += (sender, plant) => {
+            fillHoogte();
+        };
+    }
+
+    private void fillHoogte() {
+        var fm = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        var bh = fm.FirstOrDefault(x => x.Eigenschap == "Bloeihoogte");
+        if (bh != null) SelectedBloeiHoogte = bh.Waarde;
+        else SelectedBloeiHoogte = "Onbekend";
     }
 
     public string SelectedBloeiHoogte {
@@ -519,14 +531,13 @@ public class ViewModelBloom : ViewModelBase {
     #endregion
 
     #region Ratio Bloei/Blad
+
     // Gemaakt door Warre
     private bool _selectedCheckBoxRatioPachysandra;
 
-    public bool SelectedCheckBoxRatioPachysandra
-    {
+    public bool SelectedCheckBoxRatioPachysandra {
         get => _selectedCheckBoxRatioPachysandra;
-        set
-        {
+        set {
             _selectedCheckBoxRatioPachysandra = value;
             OnPropertyChanged();
         }
@@ -534,11 +545,9 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioGeranium;
 
-    public bool SelectedCheckBoxRatioGeranium
-    {
+    public bool SelectedCheckBoxRatioGeranium {
         get => _selectedCheckBoxRatioGeranium;
-        set
-        {
+        set {
             _selectedCheckBoxRatioGeranium = value;
             OnPropertyChanged();
         }
@@ -546,11 +555,9 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioSalvia;
 
-    public bool SelectedCheckBoxRatioSalvia
-    {
+    public bool SelectedCheckBoxRatioSalvia {
         get => _selectedCheckBoxRatioSalvia;
-        set
-        {
+        set {
             _selectedCheckBoxRatioSalvia = value;
             OnPropertyChanged();
         }
@@ -558,14 +565,13 @@ public class ViewModelBloom : ViewModelBase {
 
     private bool _selectedCheckBoxRatioAster;
 
-    public bool SelectedCheckBoxRatioAster
-    {
+    public bool SelectedCheckBoxRatioAster {
         get => _selectedCheckBoxRatioAster;
-        set
-        {
+        set {
             _selectedCheckBoxRatioAster = value;
             OnPropertyChanged();
         }
     }
+
     #endregion
 }
