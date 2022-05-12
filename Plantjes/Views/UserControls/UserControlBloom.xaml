@@ -23,7 +23,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <!--Kleurselectie-->
+                        <!--Bloeimaand & Bloeihoogte per maand-->
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Bloeit in:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="124"/>
@@ -141,7 +141,7 @@
                             </ListBox>
 
                         </StackPanel>
-                        <!--Maandselectie-->
+                        <!--Kleuren-->
                         <StackPanel 
                                 Grid.Column="1">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
@@ -331,24 +331,31 @@
                                     <ComboBoxItem Content="0/9"/>
                                 </ComboBox>
                             </StackPanel>
+
+                            <!--Ratio bloei/blad Warre-->
                             <ListBox Height="110" >
                                 <ListBoxItem>
                                     <Label Content="Ratio bloei/blad" Style="{StaticResource LabelBorder}" Width="135" Margin="-8,0,0,0"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="" VerticalContentAlignment="Center"/>
+                                    <CheckBox  Content="Pachysandra sp." VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path= SelectedCheckBoxRatioPachysandra,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="" VerticalContentAlignment="Center"/>
+                                    <CheckBox Content="Geranium nodosum" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path= SelectedCheckBoxRatioGeranium,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="" VerticalContentAlignment="Center"/>
+                                    <CheckBox Content="Salvia nemorosa" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path= SelectedCheckBoxRatioSalvia,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
-                                    <CheckBox Margin="30,0,0,0" Content="Voorjaarsgroen" VerticalContentAlignment="Center"/>
+                                    <CheckBox Content="Aster sp." VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path= SelectedCheckBoxRatioAster,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>
                         </StackPanel>
+                        <!--Bloeiwijze-->
                         <StackPanel Margin="0,184,0,0" Grid.RowSpan="2">
                             <Label Content="Bloeiwijze:" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="160">

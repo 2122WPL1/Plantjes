@@ -66,7 +66,7 @@ namespace Plantjes.Dao {
         }
 
         //legacy - object to csv column names
-        /*private static void generateCsv() {
+        private static void generateCsv() {
             //generate csv with headings
             //delete if exists
             if (File.Exists("import.csv")) File.Delete("import.csv");
@@ -74,7 +74,9 @@ namespace Plantjes.Dao {
             var fields = typeof(ViewModelRegister).GetProperties().Where(x => x.Name.Contains("Input")).Where(x => !x.Name.Contains("password")).Select(x => x.Name.Replace("Input", ""));
             //write as column headings
             File.WriteAllText("import.csv", String.Join(",", fields));
-        }*/
+        }
+
+
 
         private static void openInExcelAndWait(string filename) {
             //search for excel, or fall back to notepad
