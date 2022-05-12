@@ -1,10 +1,12 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Media;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Services;
-
+using Plantjes.Views.Home;
 
 namespace Plantjes.ViewModels; 
 
@@ -36,11 +38,22 @@ public class ViewModelNameResult : ViewModelBase {
         SearchCommand = new RelayCommand(ApplyFilterClick);
         ResetCommand = new RelayCommand(ResetClick);
 
+        FilterCommand = new RelayCommand(FilterButtonClick);
+
         //These comboboxes will already be filled with data on startup
         fillComboboxes();
 
         _viewModelRepo2 = (ViewModelRepo2)App.Current.Services.GetService(typeof(ViewModelRepo2));
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
+    }
+
+    // <Written by Andang Kloran> This method opens up the FilterWindow when the "Meer Filters" button is clicked on the window for PlantOpzoeken.
+    ////An instance of the relay command called FilterCommand is made in line 41, and the constructor in line 141
+    private void FilterButtonClick()
+    {
+        var filterWindow = new FilterWindow();
+        filterWindow.Show();
+        Application.Current.Windows[0]?.Close();
     }
 
     #region viewmodel things
@@ -124,6 +137,8 @@ public class ViewModelNameResult : ViewModelBase {
     //RelayCommands
     public RelayCommand SearchCommand { get; set; }
     public RelayCommand ResetCommand { get; set; }
+
+    public RelayCommand FilterCommand { get; set; }
 
     #endregion
 
