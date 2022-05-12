@@ -1,21 +1,19 @@
 ﻿using Plantjes.Models.Db;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plantjes.Dao
 {
     //Gesplitst door Andang
     internal class DAOFenotype : DAOLogic
     {
+        //Xander - return object directly
         public static List<Fenotype> GetAllFenoTypes()
         {
-            var fenoTypes = context.Fenotypes.ToList();
-            return fenoTypes;
+            return context.Fenotypes.ToList();
         }
-        public static IQueryable<Fenotype> fillFenoTypeRatioBloeiBlad()
+        //Xander - return object directly
+        public static List<Fenotype> fillFenoTypeRatioBloeiBlad()
         {
             //Commentaar van vorige groep.
             // this is NOT part of the cascade function and wil not be added as it is not needed 
@@ -26,18 +24,17 @@ namespace Plantjes.Dao
             // This will also make it possible for us to use all the properties instead of only a selection of an object in our ViewModels.
             // Good way to interact with our datacontext
 
-            var selection = context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad);
-            return selection;
+            return context.Fenotypes.Distinct().OrderBy(s => s.RatioBloeiBlad).ToList();
         }
-        public static IQueryable<Fenotype> filterFenoTypeFromPlant(int selectedItem)
+        //Xander - return object directly
+        public static List<Fenotype> filterFenoTypeFromPlant(int selectedItem)
         {
-            var selection = context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
+            return context.Fenotypes.Distinct().Where(s => s.PlantId == selectedItem).ToList();
         }
-        public static IQueryable<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
+        //Xander - return object directly
+        public static List<FenotypeMulti> FilterFenotypeMultiFromPlant(int selectedItem)
         {
-            var selection = context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem);
-            return selection;
+            return context.FenotypeMultis.Distinct().Where(s => s.PlantId == selectedItem).ToList();
         }
     }
 }

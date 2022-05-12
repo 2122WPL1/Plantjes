@@ -1,16 +1,34 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using Newtonsoft.Json;
+using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Plantjes.ViewModels;
 
 public class ViewModelBase : INotifyPropertyChanged
 {
+    //function written by Marijn & Xander
+    //function clears all fields with binding within the usercontrols
+    public void ClearAllFields()
+    {
+        var type = this.GetType();
+        var props = type.GetProperties();
+        //var filteredprops = props.Where(x => x.HasAttribute(typeof(ClearableAttribute<>)));
+
+
+    }
+
+
+
+
     //xander - global services
     public LoginUserService loginUserService;
     public SearchService searchService;

@@ -8,7 +8,7 @@
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
     <Grid>
         <GroupBox
-            BorderThickness="0" Width="430" Height="430">
+            BorderThickness="0" Width="450" Height="450">
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="Beheersdaad" Style="{StaticResource LabelBorderTitle}"/>

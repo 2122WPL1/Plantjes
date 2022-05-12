@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Plantjes.Views.UserControls.Beheer.BeheerGebruiker"
+﻿<UserControl x:Class="Plantjes.Views.UserControls.Beheer.UserControlUserManagement"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="720"
              d:DesignWidth="1200">
+    <!-- Written by Kjell-->
     <Grid>
         <Border Style="{StaticResource BorderBox}" Margin="10,100,739,10" Name="BorderListbox">
             <ListBox Name="listBoxGebruikers"
@@ -31,6 +32,9 @@
                             Style="{StaticResource ButtonUnified}" 
                             HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,160">
                     </Button>
+                    <Button x:Name="btnCSVImport" Content="CSV Importeren" 
+                        Style="{StaticResource ButtonUnified}" Command="{Binding ImportCsvCommand}"
+                        HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,560,0,0" Height="34"/>
                 </Grid>
             </Canvas>
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 
 
@@ -9,14 +9,14 @@ public class ViewModelBloom : ViewModelBase {
     //IsCheckBoxChecked.  This enables animation, styling, binding, etc...
 
     private DAOLogic _dao;
-    private IDetailService _detailService = (IDetailService)App.Current.Services.GetService(typeof(IDetailService));
+    private DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
 
-    private ISearchService _SearchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
+    private SearchService _SearchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
 
     //geschreven door christophe, op basis van een voorbeeld van owen
     private string _selectedBloeiHoogte;
 
-    public ViewModelBloom(IDetailService detailservice) {
+    public ViewModelBloom(DetailService detailservice) {
         _dao = DAOLogic.Instance();
     }
 
@@ -516,5 +516,56 @@ public class ViewModelBloom : ViewModelBase {
         }
     }
 
+    #endregion
+
+    #region Ratio Bloei/Blad
+    // Gemaakt door Warre
+    private bool _selectedCheckBoxRatioPachysandra;
+
+    public bool SelectedCheckBoxRatioPachysandra
+    {
+        get => _selectedCheckBoxRatioPachysandra;
+        set
+        {
+            _selectedCheckBoxRatioPachysandra = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioGeranium;
+
+    public bool SelectedCheckBoxRatioGeranium
+    {
+        get => _selectedCheckBoxRatioGeranium;
+        set
+        {
+            _selectedCheckBoxRatioGeranium = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioSalvia;
+
+    public bool SelectedCheckBoxRatioSalvia
+    {
+        get => _selectedCheckBoxRatioSalvia;
+        set
+        {
+            _selectedCheckBoxRatioSalvia = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private bool _selectedCheckBoxRatioAster;
+
+    public bool SelectedCheckBoxRatioAster
+    {
+        get => _selectedCheckBoxRatioAster;
+        set
+        {
+            _selectedCheckBoxRatioAster = value;
+            OnPropertyChanged();
+        }
+    }
     #endregion
 }

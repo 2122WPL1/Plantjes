@@ -20,13 +20,19 @@ namespace Plantjes.Dao
             //The aditional filteren will take place in the ViewModel
             return context.AbiotiekMultis.ToList();
         }
-        public static IQueryable<Abiotiek> filterAbiotiekFromPlant(int selectedItem)
+
+        //Xander - optimisation: filter first, then select distinct
+
+        public static List<Abiotiek> filterAbiotiekFromPlant(int selectedItem)
         {
-            return context.Abiotieks.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.Abiotieks.Where(s => s.PlantId == selectedItem).Distinct().ToList();
         }
-        public static IQueryable<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem)
+
+        //Xander - optimisation: filter, then select distinct
+
+        public static List<AbiotiekMulti> filterAbiotiekMultiFromPlant(int selectedItem)
         {
-            return context.AbiotiekMultis.Distinct().Where(s => s.PlantId == selectedItem);
+            return context.AbiotiekMultis.Where(s => s.PlantId == selectedItem).Distinct().ToList();
         }
     }
 }

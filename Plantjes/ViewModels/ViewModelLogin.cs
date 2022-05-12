@@ -1,8 +1,13 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Linq;
+using System.Windows;
 using System.Windows.Media;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.Input;
+using Plantjes.Dao;
+using Plantjes.Models.Classes;
 using Plantjes.Models.Enums;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 
 //written by kenny
@@ -16,15 +21,33 @@ public class ViewModelLogin : ViewModelBase
 
     private string _userNameInput;
 
-    public ViewModelLogin(IloginUserService loginUserService) 
+    public ViewModelLogin(LoginUserService loginUserService) 
     {
         _loginService = loginUserService;
+        //Xander - open mainwindow if debugging
+#if DEBUG_AUTO_LOGIN
+        if (Debugger.IsAttached) {
+            var loginResult = new LoginResult { loginStatus = LoginStatus.NotLoggedIn };
+            loginResult.gebruiker = DAOUser.context.Gebruikers.Include(x => x.Rol).FirstOrDefault(x => x.Rol.Omschrijving == "Docent");
+            if (loginResult.gebruiker == null) {
+                MessageBox.Show("Er is een debugger gevonden, maar geen docent-account! Gelieve een aan te maken of in te loggen!");
+            }
+            else {
+                
+                loginResult.loginStatus = LoginStatus.LoggedIn;
+                _loginService.gebruiker = loginResult.gebruiker;
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+                Application.Current.Windows[0]?.Close();
+            }
+        }
+#endif
         loginCommand = new RelayCommand(LoginButtonClick);
         cancelCommand = new RelayCommand(CancelButton);
         registerCommand = new RelayCommand(RegisterButtonView);
     }
 
-    private IloginUserService _loginService { get; }
+    private LoginUserService _loginService { get; }
     public RelayCommand loginCommand { get; set; }
     public RelayCommand cancelCommand { get; set; }
     public RelayCommand registerCommand { get; set; }
@@ -111,8 +134,6 @@ public class ViewModelLogin : ViewModelBase
             }
             else if (loginResult.loginStatus == LoginStatus.NotLoggedIn)
             {
-                
-                
                 if(string.IsNullOrWhiteSpace(userNameInput))
                 {
                     if (string.IsNullOrWhiteSpace(passwordInput))

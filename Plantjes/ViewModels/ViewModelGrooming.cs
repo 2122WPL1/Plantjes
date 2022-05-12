@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Plantjes.Dao;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels;
 
@@ -11,7 +11,8 @@ public class ViewModelGrooming : ViewModelBase
 
     private string _selectedBeheerdaad;
 
-    public ViewModelGrooming(IDetailService detailservice)
+
+    public ViewModelGrooming(DetailService detailservice)
     {
         _dao = DAOLogic.Instance();
 

@@ -3,17 +3,20 @@ using System.Windows.Media;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.HelpClasses;
-using Plantjes.ViewModels.Interfaces;
+using Plantjes.ViewModels.Services;
+
 
 namespace Plantjes.ViewModels; 
 
 public class ViewModelNameResult : ViewModelBase {
     //private ServiceProvider _serviceProvider;
-    private readonly ISearchService _searchService = (ISearchService)App.Current.Services.GetService(typeof(ISearchService));
+    private readonly SearchService _searchService = (SearchService)App.Current.Services.GetService(typeof(SearchService));
+    private readonly DetailService _detailService = (DetailService)App.Current.Services.GetService(typeof(DetailService));
 
-    public ViewModelNameResult(ISearchService searchService) {
+    public ViewModelNameResult(SearchService searchService, DetailService detailservice) {
         _searchService = searchService;
         //_searchService = new SearchService();
+        _detailService = detailservice;
 
         //Observable Collections 
         ////Obserbable collections to fill with the necessary objects to show in the comboboxes
@@ -236,6 +239,7 @@ public class ViewModelNameResult : ViewModelBase {
             FillAllImages();
             OnPropertyChanged();
             _searchService.FillDetailPlantResult(detailsSelectedPlant, SelectedPlantInResult);
+            _detailService.SelectedPlant = SelectedPlantInResult;
 
             //Make the currently selected plant in the Result list available in the SearchService
         }

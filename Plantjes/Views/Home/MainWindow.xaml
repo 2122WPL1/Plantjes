@@ -5,7 +5,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:pages="clr-namespace:Plantjes.Views.UserControls"
+        xmlns:mgmtpages="clr-namespace:Plantjes.Views.UserControls.Beheer"
         xmlns:viewModels="clr-namespace:Plantjes.ViewModels"
+        xmlns:plantjes="clr-namespace:Plantjes"
 
         mc:Ignorable="d"
         Title="Planten" Height="900" Width="1250" Background="#FFA0A0A0">
@@ -29,6 +31,24 @@
         <DataTemplate DataType="{x:Type viewModels:ViewModelGrooming}">
             <pages:UserControlGrooming />
         </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewModels:ViewModelUserManagement}">
+            <mgmtpages:UserControlUserManagement />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelPlantManagement}">
+            <mgmtpages:UserControlPlantManagement />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ViewModelUserDetails}">
+            <mgmtpages:UserControlUserDetails />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:ViewModelBloom}">
+            <pages:UserControlBloom />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:ViewModelAppearance}">
+            <pages:UserControlAppearance />
+        </DataTemplate>
 
     </Window.Resources>
 
@@ -51,10 +71,10 @@
                     Command="{Binding mainNavigationCommand}"
 
                     CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Style="{StaticResource ButtonUnified}"/>
-                <ComboBox x:Name="cmbBeheer" Width="198" Height="49" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}">
+                <ComboBox x:Name="cmbBeheer" Width="200" Height="60" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}" Visibility="{Binding ShowUserManagement}">
 
                     <ComboBoxItem Focusable="False">
-                        <Button Content="Gebruiker" Name="btnUserManagement" 
+                        <Button Content="Gebruiker" Name="btnUserManagement" Style="{StaticResource ButtonUnified}"
                                 Command="{Binding mainNavigationCommand}"
                                 CommandParameter="VIEWUSERMANAGEMENT" Click="btn_ClickHideImage"/>
                     </ComboBoxItem>
@@ -79,12 +99,9 @@
             </Grid>
             <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,14,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Label Content="{Binding rol}" Grid.Column="1" Margin="0,36,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
-            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
-            <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
+            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="../../Image/user.png" />
+            <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="../../Image/vives.png" />
             <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
-            <Label x:Name="lblComboboxBeheer" Content="Beheer" Grid.Column="1" Margin="443,23,0,0" FontSize="22" 
-                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,1,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="127" Height="46"/>
-
         </Grid>
     </Viewbox>
 </Window>
