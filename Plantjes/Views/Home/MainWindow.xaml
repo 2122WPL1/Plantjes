@@ -95,8 +95,8 @@
             </Grid>
             <Label x:Name="lblLogin" Content="{Binding loggedInMessage}" Grid.Column="1" Margin="0,14,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
             <Label Content="{Binding rol}" Grid.Column="1" Margin="0,36,95,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="40" Width="Auto" Foreground="Black" FontStretch="UltraExpanded" FontSize="19" />
-            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="/Image/user.png" />
-            <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="/Image/vives.png" />
+            <Image x:Name="imgUser" Grid.Column="1" Margin="1087,23,-4,815" Source="../../Image/user.png" />
+            <Image Margin="13,17,1155,803" Grid.ColumnSpan="2" Source="../../Image/vives.png" />
             <Image x:Name="img_vives_logo_main" Grid.Column="1" Margin="140,298,140,207" Source="/Views/Home/Vives_Logo_MainWindow.png"/>
         </Grid>
     </Viewbox>
