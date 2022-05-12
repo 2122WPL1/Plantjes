@@ -160,6 +160,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:"/>
                                     <ComboBox Width="100" x:Name="cmbNectarwaardeMax" SelectedItem="{Binding Path= SelectedNectarwaardeMax}" IsEditable="True">
+
                                         <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
@@ -173,6 +174,7 @@
                                 <Label Content="Pollenwaarde:"/>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:"/>
+
                                     <ComboBox Width="100" x:Name="cmbPollenwaardeMin" SelectedItem="{Binding Path=SelectedPollenwaardeMin}" IsEditable="True">
                                         <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
@@ -185,6 +187,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:"/>
                                     <ComboBox Width="100" x:Name="cmbPollenwaardeMax" SelectedItem="SelectedPollenwaardeMax" IsEditable="True">
+
                                         <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>

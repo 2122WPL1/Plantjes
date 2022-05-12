@@ -22,7 +22,11 @@ public class ViewModelHabitat : ViewModelBase
         {
             ClearAllFields();
 
-            FillPollenNectar();
+
+            FillPollenMin();
+            FillPollenMax();
+            FillNectarMin();
+            FillNectarMax();
             FillOntwikkelsnelheid();
             FillSociabiliteit();
             FillPlantEigenschappen();
@@ -32,6 +36,9 @@ public class ViewModelHabitat : ViewModelBase
 
     }
 
+
+    #region Filling elements based on plant selection
+    //region written by Warre based FillGrondSoort by Marijn & Xander
 
 
     #region Filling elements based on plant selection
@@ -268,11 +275,10 @@ public class ViewModelHabitat : ViewModelBase
         set
         {
             _selectedPollenwaardeMin = value;
+
             OnPropertyChanged();
         }
     }
-
-
     private string _selectedPollenwaardeMax;
     [Clearable<string>]
     public string SelectedPollenwaardeMax
@@ -281,9 +287,11 @@ public class ViewModelHabitat : ViewModelBase
         set
         {
             _selectedPollenwaardeMax = value;
+
             OnPropertyChanged();
         }
     }
+    #endregion
 
     private string _selectedNectarwaardeMin;
     [Clearable<string>]
@@ -305,11 +313,12 @@ public class ViewModelHabitat : ViewModelBase
         set
         {
             _selectedNectarwaardeMax = value;
+
             OnPropertyChanged();
         }
     }
-
     #endregion
+
 
     #region Binding Ontwikkelsnelheid
     //Gemaakt door Warre
@@ -374,8 +383,8 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     private bool _selectedCheckBoxSociabiliteitA;
+
     [Clearable<bool>]
     public bool SelectedCheckBoxSociabiliteitI {
         get => _selectedCheckBoxSociabiliteitA;
@@ -384,8 +393,8 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     private bool _selectedCheckBoxSociabiliteitB;
+
     [Clearable<bool>]
     public bool SelectedCheckBoxSociabiliteitII {
         get => _selectedCheckBoxSociabiliteitB;
@@ -394,8 +403,8 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     private bool _selectedCheckBoxSociabiliteitC;
+
     [Clearable<bool>]
     public bool SelectedCheckBoxSociabiliteitIII {
         get => _selectedCheckBoxSociabiliteitC;
@@ -404,8 +413,8 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     private bool _selectedCheckBoxSociabiliteitD;
+
     [Clearable<bool>]
     public bool SelectedCheckBoxSociabiliteitIV {
         get => _selectedCheckBoxSociabiliteitD;
@@ -414,8 +423,8 @@ public class ViewModelHabitat : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     private bool _selectedCheckBoxSociabiliteitE;
+
     [Clearable<bool>]
     public bool SelectedCheckBoxSociabiliteitV {
         get => _selectedCheckBoxSociabiliteitE;
@@ -624,7 +633,6 @@ public class ViewModelHabitat : ViewModelBase
     public bool SelectedCheckBoxStrategieOnbekend
     {
         get => _selectedCheckBoxStrategieOnbekend;
-
         set
         {
             _selectedCheckBoxStrategieOnbekend = value;
