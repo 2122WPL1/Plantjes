@@ -32,7 +32,11 @@
                         </StackPanel>
                         <StackPanel Grid.Column="1">
                             <Label Content="Uit te voeren in:" Style="{StaticResource LabelBorder}"/>
-                            <ListBox Height="345" >
+                            <ListBox Height="384" >
+                                <ListBoxItem Focusable="False">
+                                <CheckBox Content="Onbekend" VerticalContentAlignment="Center" x:Name="cbxOnbekend"
+                                          IsChecked="{Binding Path= SelectedCheckBoxOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="Januari" VerticalContentAlignment="Center" x:Name="CbxJan" 
                                               IsChecked="{Binding Path=SelectedCheckBoxJan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
