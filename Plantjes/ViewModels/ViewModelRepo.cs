@@ -20,6 +20,7 @@ public class ViewModelRepo {
 
     private readonly ViewModelNameResult viewModelNameResult = (ViewModelNameResult)App.Current.Services.GetService(typeof(ViewModelNameResult));
     private readonly ViewModelRegister viewModelRegister = (ViewModelRegister)App.Current.Services.GetService(typeof(ViewModelRegister));
+    //private readonly ViewModelAddPlant viewModelAddPlant = (ViewModelAddPlant)App.Current.Services.GetService(typeof(ViewModelAddPlant));
 
     public ViewModelRepo() {
         //hier een extra lijn code per user control
@@ -32,9 +33,9 @@ public class ViewModelRepo {
         _viewModels.Add("VIEWREGISTER", viewModelRegister);
         _viewModels.Add("VIEWUSERMANAGEMENT", viewModelUserManagement);
         _viewModels.Add("VIEWPLANTMANAGEMENT", viewModelPlantManagement);
+       // _viewModels.Add("VIEWADDPLANT", viewModelAddPlant);
     }
 
-    //
     public ViewModelBase GetViewModel(string modelName) {
         ViewModelBase result;
         var ok = _viewModels.TryGetValue(modelName, out result);
