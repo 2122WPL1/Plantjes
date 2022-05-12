@@ -1,16 +1,10 @@
-﻿using System.Diagnostics;
-using System.Linq;
-using System.Windows;
-using System.Windows.Media;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Toolkit.Mvvm.Input;
-using Plantjes.Dao;
-using Plantjes.Models.Classes;
-using Plantjes.Models.Enums;
+﻿using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
 using Plantjes.ViewModels.HelpClasses;
 using System;
+using Microsoft.Toolkit.Mvvm.Input;
+using System.Windows;
 
 namespace Plantjes.ViewModels; 
 

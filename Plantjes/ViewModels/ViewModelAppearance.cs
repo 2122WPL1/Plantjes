@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
-using Newtonsoft.Json.Bson;
 using Plantjes.Dao;
 using Plantjes.Models.Db;
 using Plantjes.Utilities.Attributes;

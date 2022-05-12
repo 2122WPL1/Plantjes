@@ -20,8 +20,8 @@ namespace Plantjes.Dao {
             return context.Gebruikers.Include(x => x.Rol).FirstOrDefault(g => g.Emailadres == userEmail);
         }
 
-        //written by kenny
-        public static void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password) {
+        //written by kenny -- changed by Kjell
+        public static void RegisterUser(string vivesNr, string firstName, string lastName, string emailadres, string password, DateTime last_login) {
             var passwordBytes = Encoding.ASCII.GetBytes(password);
             var md5Hasher = new MD5CryptoServiceProvider();
             var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
@@ -36,11 +36,31 @@ namespace Plantjes.Dao {
                 Achternaam = lastName,
                 Emailadres = emailadres,
                 HashPaswoord = passwordHashed,
-                Rol = role
+                Rol = role,
+                LastLogin = last_login
             };
             context.Gebruikers.Add(gebruiker);
             context.SaveChanges();
         }
+
+        //Written by Kjell
+        //Save new password in database
+        //
+        public static void ChangePassword(string password, Gebruiker gebruiker)
+        {
+            var passwordBytes = Encoding.ASCII.GetBytes(password);
+            var md5Hasher = new MD5CryptoServiceProvider();
+            var passwordHashed = md5Hasher.ComputeHash(passwordBytes);
+
+            gebruiker.HashPaswoord = passwordHashed;
+            //Also saving date to the date of today
+            gebruiker.LastLogin = DateTime.Now;
+
+            context.Gebruikers.Update(gebruiker);
+            context.SaveChanges();
+        }
+
+
 
         //written by kenny
         public static List<Gebruiker> getAllGebruikers() {
@@ -173,6 +193,29 @@ namespace Plantjes.Dao {
             File.WriteAllLines("errors.csv", log);
             //close files
             ifs.Close();
+        }
+
+        public static List<Gebruiker> GetAllUsersNoTracking() => context.Gebruikers.AsNoTracking().ToList();
+
+        public static Gebruiker GetUser(int id) => context.Gebruikers.First(x => x.Id == id);
+        public static Gebruiker GetUserNoTracking(int id) => context.Gebruikers.AsNoTracking().First(x => x.Id == id);
+
+        public static void DeleteUser(int id) {
+            context.Gebruikers.Remove(GetUser(id));
+            context.SaveChanges();
+        }
+
+        public static void AddOrUpdate(Gebruiker user) {
+            var dbuser = context.Gebruikers.FirstOrDefault(x => x.Id == user.Id);
+            if (dbuser != null) {
+                dbuser.Emailadres = user.Emailadres;
+                dbuser.Vivesnr = user.Vivesnr;
+                dbuser.Voornaam = user.Voornaam;
+                dbuser.Achternaam = user.Achternaam;
+            }
+            else context.Gebruikers.Add(user);
+
+            context.SaveChanges();
         }
         //</Xander Baes>
     }
