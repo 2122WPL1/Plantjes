@@ -712,7 +712,6 @@ public class ViewModelHabitat : ViewModelBase
         set
         {
             _selectedCheckBoxStrategieCSR = value;
-            MessageBox.Show(SelectedCheckBoxStrategieCSR.ToString());
             OnPropertyChanged();
         }
     }
