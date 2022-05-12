@@ -47,15 +47,6 @@ public class ViewModelNameResult : ViewModelBase {
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
     }
 
-    // <Written by Andang Kloran> This method opens up the FilterWindow when the "Meer Filters" button is clicked on the window for PlantOpzoeken.
-    ////An instance of the relay command called FilterCommand is made in line 41, and the constructor in line 141
-    private void FilterButtonClick()
-    {
-        var filterWindow = new FilterWindow();
-        filterWindow.Show();
-        Application.Current.Windows[0]?.Close();
-    }
-
     #region viewmodel things
     public MyICommand<string> mainNavigationCommand { get; set; }
     private ViewModelBase _currentViewModel;
@@ -126,6 +117,16 @@ public class ViewModelNameResult : ViewModelBase {
         filteredPlantResults.Clear();
         var listPlants = _searchService.ApplyFilter(SelectedType, SelectedFamilie, SelectedGeslacht, SelectedSoort, SelectedVariant, SelectedNederlandseNaam, SelectedRatioBloeiBlad);
         foreach (var item in listPlants) filteredPlantResults.Add(item);
+    }
+
+    // <Written by Andang Kloran> This method opens up the FilterWindow when the "Meer Filters" button is clicked on the window for PlantOpzoeken.
+    ////An instance of the relay command called FilterCommand is made in line 41, and the constructor in line 141
+    private void FilterButtonClick()
+    {
+        var filterWindow = new FilterWindow();
+        filterWindow.Show();
+        //Application.Current.Windows[0]?.Close();   
+
     }
 
     #endregion

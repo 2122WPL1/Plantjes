@@ -17,7 +17,7 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="150" Margin="0,0,0,0">
                 <Image  Margin="0,15,20,0" Height="93" Source="/Image/vives.png" Width="100" />
                 <Button x:Name="btnToevoegen" Height="90" Width="315" FontSize="30" Margin="0,0,10,0" Content="Toepassen" Style="{StaticResource ButtonUnified}"/>
-                <Button x:Name="btnAnnuleren" Height="90" Width="315" FontSize="30" Content="Annuleren" Command="{Binding filterCommand}" Style="{StaticResource ButtonUnified}"/>
+                <Button x:Name="btnAnnuleren" Height="90" Width="315" FontSize="30" Content="Annuleren" Command="{Binding annulerenCommand}" Style="{StaticResource ButtonUnified}"/>
             </StackPanel>
             <Grid Height="1000" Width="1000">
                 <Grid.ColumnDefinitions>

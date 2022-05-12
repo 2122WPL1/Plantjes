@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plantjes.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace Plantjes.Views.Home
     {
         public FilterWindow()
         {
+            DataContext = App.Current.Services.GetService(typeof(ViewModelFilter));
             InitializeComponent();
         }
     }
