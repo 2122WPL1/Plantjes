@@ -25,9 +25,9 @@
     <Viewbox MaxHeight="900" MaxWidth="1150">
         <StackPanel Opacity="0.9" Height="1060" Width="1359">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="150" Margin="0,0,0,0">
-                <Image  Margin="20,15,20,0" Height="93" Source="/Image/vives.png" Width="100" />
-                <Button x:Name="btnToevoegen" Height="90" Width="315" FontSize="30" Margin="0,0,10,0" Content="Plant Toevoegen" Style="{StaticResource ButtonUnified}"/>
-                <Button x:Name="btnAnnuleren" Height="90" Width="315" FontSize="30" Content="Annuleren" Command="{Binding annulerenCommand}" Style="{StaticResource ButtonUnified}"/>
+                <Image  Margin="20,15,20,0" Height="93" Source="../../Image/vives.png" Width="100" />
+                <Button x:Name="btnToevoegen" Height="90" Width="315" FontSize="30" Margin="0,0,10,0" Content="Plant Toevoegen" Click="btnToevoegen_Click" Style="{StaticResource ButtonUnified}"/>
+                <Button x:Name="btnCancel" Height="90" Width="315" FontSize="30" Content="Annuleren" Click="btnCancel_Click" Style="{StaticResource ButtonUnified}"/>
             </StackPanel>
             <Grid Height="900" Width="1350">
                 <Grid.ColumnDefinitions>
