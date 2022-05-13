@@ -14,13 +14,15 @@ public class ViewModelBase : INotifyPropertyChanged
     {
         var type = this.GetType();
         var props = type.GetProperties();
-        //var filteredprops = props.Where(x => x.HasAttribute(typeof(ClearableAttribute<>)));
-
-
+        var filteredprops =
+            props.Where(x => x.CustomAttributes.Any(y => y.AttributeType.Name.Contains("ClearableAttribute"))).ToList();
+        foreach (var prop in filteredprops)
+        {
+            var attr = prop.GetCustomAttributes().First(y => y.GetType().Name.Contains("ClearableAttribute"));
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object[] { ((dynamic)attr).Value });
+        }
     }
-
-
-
 
     //xander - global services
     public LoginUserService loginUserService;
