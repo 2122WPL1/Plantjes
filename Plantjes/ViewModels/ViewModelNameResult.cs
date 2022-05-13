@@ -6,6 +6,7 @@ using Plantjes.Models.Db;
 using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Services;
 using Plantjes.Views.Home;
+using Plantjes.Views.UserControls;
 
 namespace Plantjes.ViewModels; 
 
@@ -119,12 +120,14 @@ public class ViewModelNameResult : ViewModelBase {
         foreach (var item in listPlants) filteredPlantResults.Add(item);
     }
 
-    //Written by Kjell
+    //Written by Kjell on code of Andang
+
+
     public void MoreFiltersClick()
     {
         FilterWindow filterWindow = new FilterWindow();
         filterWindow.Show();
-        Application.Current.Windows[0]?.Close();
+        Application.Current.Windows[0]?.Hide();
     }
 
     #endregion

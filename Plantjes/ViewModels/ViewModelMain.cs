@@ -65,7 +65,7 @@ public class ViewModelMain : ViewModelBase {
         get => loginUserService.gebruiker.Rol.Omschrijving;
     }
 
-    private void _onNavigationChanged(string userControlName)
+    public void _onNavigationChanged(string userControlName)
     {
         currentViewModel = _viewModelRepo.GetViewModel(userControlName);
     }
