@@ -126,7 +126,8 @@
                     </Button>
                     <Button x:Name="btnFilteren" Style="{StaticResource ButtonUnified}"
                     Content="Meer filters" Margin="0,7,0,0"
-                    FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200">
+                    FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200"
+                            Command="{Binding MoreFiltersCommand}">
                     </Button>
                 </StackPanel>
             </Border>
