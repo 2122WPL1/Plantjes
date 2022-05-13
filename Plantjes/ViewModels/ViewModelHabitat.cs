@@ -15,22 +15,11 @@ public class ViewModelHabitat : ViewModelBase
     private readonly DAOLogic _dao;
     private DetailService _detailService;
 
-    public ViewModelHabitat(DetailService detailservice) {
-        _dao = DAOLogic.Instance();
-        _detailService = detailservice;
-        _detailService.SelectedPlantChanged += (sender, plant) =>
-        {
-            ClearAllFields();
+    private string _selectedNectarwaarde;
 
-            FillPollenNectar();
-            FillOntwikkelsnelheid();
-            FillSociabiliteit();
-            FillPlantEigenschappen();
-            FillLevensvorm();
-            FillStrategie();
-        };
+    private string _selectedOntwikkelsnelheid;
 
-    }
+    private string _selectedPollenwaarde;
 
 
 
@@ -41,13 +30,17 @@ public class ViewModelHabitat : ViewModelBase
     {
         List<ExtraEigenschap> ListPolNec =
             DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-        SelectedPollenwaardeMin = ListPolNec.Min(x => x.Pollenwaarde);
-        SelectedPollenwaardeMax = ListPolNec.Max(x => x.Pollenwaarde);
+        if (ListPolNec.Any(x => x.Pollenwaarde != null)) {
+            SelectedPollenwaardeMin = ListPolNec.Min(x => x.Pollenwaarde);
+            SelectedPollenwaardeMax = ListPolNec.Max(x => x.Pollenwaarde);
+        }
+        if (ListPolNec.Any(x => x.Nectarwaarde != null)) {
+            SelectedNectarwaardeMin = ListPolNec.Min(x => x.Nectarwaarde);
+            SelectedNectarwaardeMax = ListPolNec.Max(x => x.Nectarwaarde);
+        }
 
-        SelectedNectarwaardeMin = ListPolNec.Min(x => x.Nectarwaarde);
-        SelectedNectarwaardeMax = ListPolNec.Max(x => x.Nectarwaarde);
-
-
+        fillComboBoxPollenwaarde();
+        fillComboBoxNectarwaarde();
     }
 
     public void FillOntwikkelsnelheid()

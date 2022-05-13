@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Plantjes.Dao;
@@ -421,7 +422,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("image")
+                    .HasColumnType("../../Image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Naam)
@@ -440,7 +441,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("image")
+                    .HasColumnType("../../Image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Naam)
@@ -474,7 +475,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("image")
+                    .HasColumnType("../../Image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Levensvorm)
@@ -580,7 +581,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Plant).HasColumnName("plant");
 
                 entity.Property(e => e.Tumbnail)
-                    .HasColumnType("image")
+                    .HasColumnType("../../Image")
                     .HasColumnName("tumbnail");
 
                 entity.Property(e => e.UrlLocatie)

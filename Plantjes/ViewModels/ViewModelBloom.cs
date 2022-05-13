@@ -5,7 +5,7 @@ using Plantjes.Models.Db;
 using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 public class ViewModelBloom : ViewModelBase {
     // Using a DependencyProperty as the backing store for 
@@ -971,8 +971,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioPachysandra
     {
         get => _selectedCheckBoxRatioPachysandra;
-        set
-        {
+        set {
             _selectedCheckBoxRatioPachysandra = value;
             OnPropertyChanged();
         }
@@ -984,8 +983,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioGeranium
     {
         get => _selectedCheckBoxRatioGeranium;
-        set
-        {
+        set {
             _selectedCheckBoxRatioGeranium = value;
             OnPropertyChanged();
         }
@@ -997,8 +995,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioSalvia
     {
         get => _selectedCheckBoxRatioSalvia;
-        set
-        {
+        set {
             _selectedCheckBoxRatioSalvia = value;
             OnPropertyChanged();
         }
@@ -1010,11 +1007,11 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioAster
     {
         get => _selectedCheckBoxRatioAster;
-        set
-        {
+        set {
             _selectedCheckBoxRatioAster = value;
             OnPropertyChanged();
         }
     }
+
     #endregion
 }

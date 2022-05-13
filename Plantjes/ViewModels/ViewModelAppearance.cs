@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using Newtonsoft.Json.Bson;
@@ -163,14 +164,14 @@ public class ViewModelAppearance : ViewModelBase {
                 default:
                     field = "SelectedCheckBoxGrootteOnbekend";
                     break;
-
-
             }
 
             var prop = modeltype.GetProperty(field);
             var propsetter = prop.GetSetMethod();
             propsetter.Invoke(this, new object[] { true });
         }
+
+        SelectedBladHoogte = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId).FirstOrDefault(x => x.Eigenschap == "bladhoogte")?.Waarde ?? "Onbekend";
     }
 
     public void FillSpruitFene()
