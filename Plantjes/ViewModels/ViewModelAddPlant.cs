@@ -6,6 +6,7 @@ namespace Plantjes.ViewModels
 {
     public class ViewModelAddPlant : ViewModelBase
     {
+        // <-- Written by ANDANG KLORAN--> Code for displaying the MainWindow when the "Annuleren" button is clicked on the AddPlantWindow
         public ViewModelAddPlant()
         {
             annulerenCommand = new RelayCommand(AnnulerenButtonClick);
@@ -23,3 +24,4 @@ namespace Plantjes.ViewModels
         }
     }
 }
+//End----------------------------------------------------------------------------------------------
