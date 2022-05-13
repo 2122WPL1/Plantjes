@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Plantjes.Views.Home"
         mc:Ignorable="d"
         Title="Add plant" Height="900" Width="1250" Background="#FFA0A0A0">
+    <!-- Started by Andang - Changed by Kjell-->
     <Grid>
         <Viewbox MaxHeight="900" MaxWidth="1250" Margin="0,0,-11,0">
             <Grid Height="900" Width="1250">
