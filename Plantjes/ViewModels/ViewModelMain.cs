@@ -25,12 +25,12 @@ public class ViewModelMain : ViewModelBase {
 
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
 
-     // <-- Written by ANDANG KLORAN--> Code for displaying the AddPlantWindow when the "Plant Toevoegen" button is clicked on the MainWindow
-        addPlantCommand = new RelayCommand(AddPlantButtonView);
+        // <-- Written by ANDANG KLORAN--> Code for displaying the AddPlantWindow when the "Plant Toevoegen" button is clicked on the MainWindow
+        AddPlantCommand = new RelayCommand(AddPlantButtonView);
 
     }
 
-    public RelayCommand addPlantCommand { get; set; }
+    public RelayCommand AddPlantCommand { get; set; }
     private void AddPlantButtonView()
     {
         var addPlantWindow = new AddPlantWindow();
