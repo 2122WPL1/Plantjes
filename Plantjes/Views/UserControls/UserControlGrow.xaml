@@ -14,9 +14,9 @@
                     <Label Content="GROEI" Style="{StaticResource LabelBorderTitle}"/>
                     <Grid Height="409">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="158*"/>
-                            <ColumnDefinition Width="119*"/>
-                            <ColumnDefinition Width="155*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="59*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="105*"/>
@@ -260,7 +260,7 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel Grid.Row="1" Grid.Column="2">
+                        <StackPanel Margin="0,233,0,0" Grid.RowSpan="2">
                             <!--Grondsoort Warre -->
                             <StackPanel>
                                 <Label Content="Grondsoort" Style="{StaticResource LabelBorder}"/>
@@ -303,7 +303,7 @@
                         </StackPanel>
 
                         <!--Vochtbehoefte-->
-                        <StackPanel Grid.Row="1" Grid.Column="1">
+                        <StackPanel Grid.Column="1" Margin="0,233,0,0" Grid.RowSpan="2">
                             <Label Content="Vochtbehoefte" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="151">
                                 <ListBoxItem Focusable="False">
@@ -341,7 +341,11 @@
                             </ListBox>
                         </StackPanel>
                         <!--Voedingsbehoefte-->
-                        <StackPanel Grid.Row="1">
+
+
+
+
+                        <StackPanel Grid.Column="2" Margin="0,233,0,0" Grid.RowSpan="2">
                             <Label Content="Voedingsbehoefte" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="151">
                                 <ListBoxItem Focusable="False">

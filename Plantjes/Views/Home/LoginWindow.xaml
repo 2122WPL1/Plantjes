@@ -40,7 +40,7 @@
             <Button x:Name="btnRegister" Content="Registreer" Margin="154,193,0,75" Style="{StaticResource ButtonUnified}" Height="25" FontSize="15"
                     Command="{Binding registerCommand}" HorizontalAlignment="Left" Width="236"/>
             <TextBlock x:Name="lblError" Text="{Binding errorMessage}" HorizontalAlignment="Left" Margin="40,16,0,0" VerticalAlignment="Top" Height="56" Width="248" FontWeight="Bold" TextWrapping="WrapWithOverflow" Foreground="White"/>
-            <CheckBox x:Name="ckbShowPassword" Content="Show" HorizontalAlignment="Left" Margin="395,109,0,0" VerticalAlignment="Top" Foreground="White" Checked="ckbShowPassword_Checked" Unchecked="ckbShowPassword_Unchecked"/>
+            <CheckBox x:Name="ckbShowPassword" Content="Show" HorizontalAlignment="Left" Margin="395,109,0,0" VerticalAlignment="Top" Foreground="White" Checked="showPassword" Unchecked="showPassword"/>
 
         </Grid>
     </Viewbox>

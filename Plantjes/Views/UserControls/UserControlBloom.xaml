@@ -16,8 +16,8 @@
                     <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
                     <Grid Height="409">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="247*"/>
-                            <ColumnDefinition Width="145*"/>
+                            <ColumnDefinition Width="245*"/>
+                            <ColumnDefinition Width="187*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="199*"/>
@@ -151,7 +151,7 @@
 
                         </StackPanel>
                         <!--Kleuren-->
-                        <StackPanel Grid.ColumnSpan="2" Margin="272,0,0,0">
+                        <StackPanel Grid.Column="1">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="175">
                                 <ListBoxItem Focusable="False" >
@@ -281,10 +281,10 @@
                             </ListBox>
                         </StackPanel>
                         <!--Bloeihoogte-->
-                        <StackPanel Margin="272,0,0,0" Grid.ColumnSpan="2" Grid.Row="1">
+                        <StackPanel Grid.Row="1" Grid.Column="1">
                             <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}"/>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Min:"/>
+                                <Label Content="Min:" Width="40"/>
                                 <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMin}" 
                                               SelectedItem="{Binding Path=SelectedBloeiHoogteMin}" IsEditable="True">
@@ -317,7 +317,7 @@
                                 </ComboBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Max:"/>
+                                <Label Content="Max:" Width="40"/>
                                 <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMax}"
                                               SelectedItem="{Binding Path=SelectedBloeiHoogteMax}">

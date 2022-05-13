@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Media;
 using Microsoft.Toolkit.Mvvm.Input;
 using Plantjes.Models.Db;
 using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Services;
-
+using Plantjes.Views.Home;
 
 namespace Plantjes.ViewModels; 
 
@@ -36,6 +37,8 @@ public class ViewModelNameResult : ViewModelBase {
         SearchCommand = new RelayCommand(ApplyFilterClick);
         ResetCommand = new RelayCommand(ResetClick);
 
+        MoreFiltersCommand = new RelayCommand(MoreFiltersClick); //Written by Kjell
+
         //These comboboxes will already be filled with data on startup
         fillComboboxes();
 
@@ -43,6 +46,7 @@ public class ViewModelNameResult : ViewModelBase {
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
     }
 
+   
     #region viewmodel things
     public MyICommand<string> mainNavigationCommand { get; set; }
     private ViewModelBase _currentViewModel;
@@ -115,6 +119,14 @@ public class ViewModelNameResult : ViewModelBase {
         foreach (var item in listPlants) filteredPlantResults.Add(item);
     }
 
+    //Written by Kjell
+    public void MoreFiltersClick()
+    {
+        FilterWindow filterWindow = new FilterWindow();
+        filterWindow.Show();
+        Application.Current.Windows[0]?.Close();
+    }
+
     #endregion
 
     ////
@@ -124,6 +136,7 @@ public class ViewModelNameResult : ViewModelBase {
     //RelayCommands
     public RelayCommand SearchCommand { get; set; }
     public RelayCommand ResetCommand { get; set; }
+    public RelayCommand MoreFiltersCommand { get; set; } //Written by Kjell
 
     #endregion
 

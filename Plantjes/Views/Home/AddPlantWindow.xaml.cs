@@ -16,19 +16,14 @@ using System.Windows.Shapes;
 namespace Plantjes.Views.Home
 {
     /// <summary>
-    /// Interaction logic for PlantToevoegenWindow.xaml
+    /// Interaction logic for AddPlantWindow.xaml
     /// </summary>
-    public partial class PlantToevoegenWindow : Window
+    public partial class AddPlantWindow : Window
     {
-       
-        private void btnToevoegen_Click(object sender, RoutedEventArgs e)
+        public AddPlantWindow()
         {
-
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = App.Current.Services.GetService(typeof(ViewModelAddPlant));
+            InitializeComponent();
         }
     }
 }

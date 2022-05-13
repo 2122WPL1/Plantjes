@@ -20,12 +20,10 @@ public partial class LoginWindow : Window {
         if (DataContext != null) ((dynamic)DataContext)._passwordInput = new NetworkCredential(string.Empty, ((PasswordBox)sender).SecurePassword).Password;
         
     }
-    // Password show/Hide using checkbox in login window <Written by Andang Kloran>
+    // Password show/Hide using checkbox in login window <Written by Andang Kloran> 
+    // Edited by Kjell => made 1 function of it
     
-    private void ckbShowPassword_Checked(object sender, RoutedEventArgs e) => ShowPasswordFunction();
-
-    private void ckbShowPassword_Unchecked(object sender, RoutedEventArgs e) => HidePasswordFunction();
-
+    private void showPassword(object sender, RoutedEventArgs e) => ShowPasswordFunction();
 
     private void ShowPasswordFunction()
     {
@@ -35,10 +33,7 @@ public partial class LoginWindow : Window {
             txtWachtwoord.Visibility = Visibility.Hidden;
             txbUnmaskPassword.Text = txtWachtwoord.Password;
         }
-    }
-    private void HidePasswordFunction()
-    {
-        if (ckbShowPassword.IsChecked != true)
+        else if (ckbShowPassword.IsChecked == false)
         {
             txbUnmaskPassword.Visibility = Visibility.Hidden;
             txtWachtwoord.Visibility = Visibility.Visible;

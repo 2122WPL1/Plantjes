@@ -14,8 +14,8 @@
                     <Label Content="UITERLIJK" Style="{StaticResource LabelBorderTitle}"/>
                     <Grid Height="409">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="237*"/>
-                            <ColumnDefinition Width="155*"/>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="89*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -252,7 +252,7 @@
                             </StackPanel>
                         </StackPanel>
                         <!--Kleur-->
-                        <StackPanel Grid.RowSpan="2" Grid.Column="2">
+                        <StackPanel Grid.RowSpan="2" Grid.Column="1">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="106">
                                 <ListBoxItem Focusable="False" >
@@ -399,7 +399,7 @@
                             <Label Content="Bladhoogte" Style="{StaticResource LabelBorder}"/>
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Min:"/>
+                                    <Label Content="Min:" Width="40"/>
                                     <ComboBox Width="80">
                                         <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
@@ -410,7 +410,7 @@
                                     </ComboBox>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Max:"/>
+                                    <Label Content="Max:" Width="40"/>
                                     <ComboBox Width="80">
                                         <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
@@ -486,11 +486,11 @@
                         </StackPanel>
                         <!--Bladhoogte-->
                         <StackPanel>
-                            
+
 
                         </StackPanel>
 
-                        <StackPanel Grid.Row="1">
+                        <StackPanel Margin="0,204,0,0" Grid.RowSpan="2">
                             <!--Levensvorm-->
                             <Label Content="Levensvorm" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="183">

@@ -5,8 +5,10 @@ namespace Plantjes.Views.UserControls;
 /// <summary>
 ///     Interaction logic for UserControlAppearance.xaml
 /// </summary>
-public partial class UserControlAppearance : UserControl {
-    public UserControlAppearance() {
-         InitializeComponent();
+public partial class UserControlAppearance : UserControl 
+{
+    public UserControlAppearance()
+    {
+        InitializeComponent();
     }
 }

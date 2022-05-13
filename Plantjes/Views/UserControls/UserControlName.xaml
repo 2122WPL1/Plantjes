@@ -126,7 +126,8 @@
                     </Button>
                     <Button x:Name="btnFilteren" Style="{StaticResource ButtonUnified}"
                     Content="Meer filters" Margin="0,7,0,0"
-                    FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200">
+                    FontSize="27" Canvas.Left="7" Canvas.Top="484" Height="35" Width="200"
+                            Command="{Binding MoreFiltersCommand}">
                     </Button>
                 </StackPanel>
             </Border>
@@ -136,7 +137,7 @@
             <ListBox x:Name="lstResultSearch"
                  ItemsSource="{Binding filteredPlantResults}"
                  SelectedItem="{Binding Path= SelectedPlantInResult, Mode=TwoWay}"
-                 Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold" FontSize="14" Width="430" HorizontalAlignment="Center" Height="564" VerticalAlignment="Center">
+                 Visibility="Visible" Background="#99FFFFFF" FontWeight="Bold" FontSize="14" Width="435" HorizontalAlignment="Center" Height="564" VerticalAlignment="Center">
                 <ListBox.ItemTemplate>
                     <!--Robin: Met deze template wordt het mogelijk om veschillende properties van een plant te binden aan de listbox-->
                     <DataTemplate>
