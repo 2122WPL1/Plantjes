@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Plantjes.ViewModels.HelpClasses;
+﻿using Plantjes.ViewModels.HelpClasses;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels; 

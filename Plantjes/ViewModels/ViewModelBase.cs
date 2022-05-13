@@ -1,15 +1,8 @@
 ﻿using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
-using Newtonsoft.Json;
-using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Plantjes.ViewModels;
 
