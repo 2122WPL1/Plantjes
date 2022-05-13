@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using Plantjes.Dao;
@@ -21,10 +22,7 @@ public class ViewModelHabitat : ViewModelBase
         {
             ClearAllFields();
 
-            FillPollenMin();
-            FillPollenMax();
-            FillNectarMin();
-            FillNectarMax();
+            FillPollenNectar();
             FillOntwikkelsnelheid();
             FillSociabiliteit();
             FillPlantEigenschappen();
@@ -39,99 +37,19 @@ public class ViewModelHabitat : ViewModelBase
     #region Filling elements based on plant selection
     //region written by Warre based FillGrondSoort by Marijn & Xander
 
-    public void FillPollenMin()
+    public void FillPollenNectar()
     {
-        var modeltype = typeof(ViewModelHabitat);
-        List<ExtraEigenschap> ListPollenMin =
+        List<ExtraEigenschap> ListPolNec =
             DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-
-        foreach (ExtraEigenschap pollmin in ListPollenMin)
+        if (ListPolNec.Any(x => x.Pollenwaarde != null))
         {
-            string field = "SelectedPollenwaarde";
-            if (pollmin != null)
-            {
-                field += "Min" + pollmin.Pollenwaarde;
-            }
-            else
-            {
-                field += "Onbekend";
-            }
-
-            var prop = modeltype.GetProperty(field);
-            var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
+            SelectedPollenwaardeMin = ListPolNec.Min(x => x.Pollenwaarde);
+            SelectedPollenwaardeMax = ListPolNec.Max(x => x.Pollenwaarde);
         }
-    }
-
-    public void FillPollenMax()
-    {
-        var modeltype = typeof(ViewModelHabitat);
-        List<ExtraEigenschap> ListPollenMax =
-            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-
-        foreach (ExtraEigenschap pollmax in ListPollenMax)
+        if (ListPolNec.Any(x => x.Nectarwaarde != null))
         {
-            string field = "SelectedPollenwaarde";
-            if (pollmax != null)
-            {
-                field += "Max" + pollmax.Pollenwaarde;
-            }
-            else
-            {
-                field += "Onbekend";
-            }
-
-            var prop = modeltype.GetProperty(field);
-            var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
-        }
-    }
-
-    public void FillNectarMin()
-    {
-        var modeltype = typeof(ViewModelHabitat);
-        List<ExtraEigenschap> ListNectarMin =
-            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-
-        foreach (ExtraEigenschap necmin in ListNectarMin)
-        {
-            string field = "SelectedNectarwaarde";
-            if (necmin != null)
-            {
-                field += "Min" + necmin.Pollenwaarde;
-            }
-            else
-            {
-                field += "Onbekend";
-            }
-
-            var prop = modeltype.GetProperty(field);
-            var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
-        }
-    }
-
-    public void FillNectarMax()
-    {
-        var modeltype = typeof(ViewModelHabitat);
-        List<ExtraEigenschap> ListNectarMax =
-            DAOExtraEigenschap.FilterExtraEigenschapFromPlant((int)_detailService.SelectedPlant.PlantId);
-
-        foreach (ExtraEigenschap necmax in ListNectarMax)
-        {
-            string field = "SelectedNectarwaarde";
-            if (necmax != null)
-            {
-                field += "Max" + necmax.Pollenwaarde;
-            }
-            else
-            {
-                field += "Onbekend";
-            }
-
-            var prop = modeltype.GetProperty(field);
-            var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
+            SelectedNectarwaardeMin = ListPolNec.Min(x => x.Nectarwaarde);
+            SelectedNectarwaardeMax = ListPolNec.Max(x => x.Nectarwaarde);
         }
     }
 
@@ -324,7 +242,7 @@ public class ViewModelHabitat : ViewModelBase
 
 
 
-    #region Binding Pollen
+    #region Binding Pollen & Nectar
 
     private string _selectedPollenwaardeOnbekend;
     [Clearable<string>]
@@ -338,273 +256,54 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    #region PollenMin
-
-    private string _selectedPollenwaardeMin1;
+    private string _selectedPollenwaardeMin;
     [Clearable<string>]
-    public string SelectedPollenwaardeMin1
+    public string SelectedPollenwaardeMin
     {
-        get => _selectedPollenwaardeMin1;
+        get => _selectedPollenwaardeMin;
         set
         {
-            _selectedPollenwaardeMin1 = value;
+            _selectedPollenwaardeMin = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedPollenwaardeMin2;
+
+    private string _selectedPollenwaardeMax;
     [Clearable<string>]
-    public string SelectedPollenwaardeMin2
+    public string SelectedPollenwaardeMax
     {
-        get => _selectedPollenwaardeMin2;
+        get => _selectedPollenwaardeMax;
         set
         {
-            _selectedPollenwaardeMin2 = value;
+            _selectedPollenwaardeMax = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedPollenwaardeMin3;
+    private string _selectedNectarwaardeMin;
     [Clearable<string>]
-    public string SelectedPollenwaardeMin3
+    public string SelectedNectarwaardeMin
     {
-        get => _selectedPollenwaardeMin3;
+        get => _selectedNectarwaardeMin;
         set
         {
-            _selectedPollenwaardeMin3 = value;
+            _selectedNectarwaardeMin = value;
             OnPropertyChanged();
         }
     }
 
-    private string _selectedPollenwaardeMin4;
+    private string _selectedNectarwaardeMax;
     [Clearable<string>]
-    public string SelectedPollenwaardeMin4
+    public string SelectedNectarwaardeMax
     {
-        get => _selectedPollenwaardeMin4;
+        get => _selectedNectarwaardeMax;
         set
         {
-            _selectedPollenwaardeMin4 = value;
+            _selectedNectarwaardeMax = value;
             OnPropertyChanged();
         }
     }
-
-    private string _selectedPollenwaardeMin5;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMin5
-    {
-        get => _selectedPollenwaardeMin5;
-        set
-        {
-            _selectedPollenwaardeMin5 = value;
-            OnPropertyChanged();
-        }
-    }
-    #endregion
-
-    #region PollenMax
-
-    private string _selectedPollenwaardeMax1;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMax1
-    {
-        get => _selectedPollenwaardeMax1;
-        set
-        {
-            _selectedPollenwaardeMax1 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedPollenwaardeMax2;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMax2
-    {
-        get => _selectedPollenwaardeMax2;
-        set
-        {
-            _selectedPollenwaardeMax2 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedPollenwaardeMax3;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMax3
-    {
-        get => _selectedPollenwaardeMax3;
-        set
-        {
-            _selectedPollenwaardeMax3 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedPollenwaardeMax4;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMax4
-    {
-        get => _selectedPollenwaardeMax4;
-        set
-        {
-            _selectedPollenwaardeMax4 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedPollenwaardeMax5;
-    [Clearable<string>]
-    public string SelectedPollenwaardeMax5
-    {
-        get => _selectedPollenwaardeMax5;
-        set
-        {
-            _selectedPollenwaardeMax5 = value;
-            OnPropertyChanged();
-        }
-    }
-    #endregion
-
-    #endregion
-
-    #region Binding Nectar
-
-    private string _selectedNectarwaardeOnbekend;
-    [Clearable<string>]
-    public string SelectedNectarwaardeOnbekend
-    {
-        get => _selectedNectarwaardeOnbekend;
-        set
-        {
-            _selectedNectarwaardeOnbekend = value;
-            OnPropertyChanged();
-        }
-    }
-
-    #region NectarMin
-
-    private string _selectedNectarwaardeMin1;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMin1
-    {
-        get => _selectedNectarwaardeMin1;
-        set
-        {
-            _selectedNectarwaardeMin1 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMin2;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMin2
-    {
-        get => _selectedNectarwaardeMin2;
-        set
-        {
-            _selectedNectarwaardeMin2 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMin3;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMin3
-    {
-        get => _selectedNectarwaardeMin3;
-        set
-        {
-            _selectedNectarwaardeMin3 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMin4;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMin4
-    {
-        get => _selectedNectarwaardeMin4;
-        set
-        {
-            _selectedNectarwaardeMin4 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMin5;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMin5
-    {
-        get => _selectedNectarwaardeMin5;
-        set
-        {
-            _selectedNectarwaardeMin5 = value;
-            OnPropertyChanged();
-        }
-    }
-    #endregion
-
-    #region NectarMax
-
-    private string _selectedNectarwaardeMax1;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMax1
-    {
-        get => _selectedNectarwaardeMax1;
-        set
-        {
-            _selectedNectarwaardeMax1 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMax2;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMax2
-    {
-        get => _selectedNectarwaardeMax2;
-        set
-        {
-            _selectedNectarwaardeMax2 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMax3;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMax3
-    {
-        get => _selectedNectarwaardeMax3;
-        set
-        {
-            _selectedNectarwaardeMax3 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMax4;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMax4
-    {
-        get => _selectedNectarwaardeMax4;
-        set
-        {
-            _selectedNectarwaardeMax4 = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private string _selectedNectarwaardeMax5;
-    [Clearable<string>]
-    public string SelectedNectarwaardeMax5
-    {
-        get => _selectedNectarwaardeMax5;
-        set
-        {
-            _selectedNectarwaardeMax5 = value;
-            OnPropertyChanged();
-        }
-    }
-    #endregion
 
     #endregion
 
@@ -672,52 +371,62 @@ public class ViewModelHabitat : ViewModelBase
         }
     }
 
-    private bool _selectedCheckBoxSociabiliteitI;
+    private bool _selectedCheckBoxSociabiliteitA;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitI {
-        get => _selectedCheckBoxSociabiliteitI;
-        set {
-            _selectedCheckBoxSociabiliteitI = value;
+    public bool SelectedCheckBoxSociabiliteitA
+    {
+        get => _selectedCheckBoxSociabiliteitA;
+        set
+        {
+            _selectedCheckBoxSociabiliteitA = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxSociabiliteitII;
+    private bool _selectedCheckBoxSociabiliteitB;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitII {
-        get => _selectedCheckBoxSociabiliteitII;
-        set {
-            _selectedCheckBoxSociabiliteitII = value;
+    public bool SelectedCheckBoxSociabiliteitB
+    {
+        get => _selectedCheckBoxSociabiliteitB;
+        set
+        {
+            _selectedCheckBoxSociabiliteitB = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxSociabiliteitIII;
+    private bool _selectedCheckBoxSociabiliteitC;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitIII {
-        get => _selectedCheckBoxSociabiliteitIII;
-        set {
-            _selectedCheckBoxSociabiliteitIII = value;
+    public bool SelectedCheckBoxSociabiliteitC
+    {
+        get => _selectedCheckBoxSociabiliteitC;
+        set
+        {
+            _selectedCheckBoxSociabiliteitC = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxSociabiliteitIV;
+    private bool _selectedCheckBoxSociabiliteitD;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitIV {
-        get => _selectedCheckBoxSociabiliteitIV;
-        set {
-            _selectedCheckBoxSociabiliteitIV = value;
+    public bool SelectedCheckBoxSociabiliteitD
+    {
+        get => _selectedCheckBoxSociabiliteitD;
+        set
+        {
+            _selectedCheckBoxSociabiliteitD = value;
             OnPropertyChanged();
         }
     }
 
-    private bool _selectedCheckBoxSociabiliteitV;
+    private bool _selectedCheckBoxSociabiliteitE;
     [Clearable<bool>]
-    public bool SelectedCheckBoxSociabiliteitV {
-        get => _selectedCheckBoxSociabiliteitV;
-        set {
-            _selectedCheckBoxSociabiliteitV = value;
+    public bool SelectedCheckBoxSociabiliteitE
+    {
+        get => _selectedCheckBoxSociabiliteitE;
+        set
+        {
+            _selectedCheckBoxSociabiliteitE = value;
             OnPropertyChanged();
         }
     }

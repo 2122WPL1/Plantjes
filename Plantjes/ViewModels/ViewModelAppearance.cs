@@ -861,7 +861,6 @@ public class ViewModelAppearance : ViewModelBase {
 
         set {
             _selectedCheckBoxBladvormenVorm7 = value;
-            MessageBox.Show(SelectedCheckBoxBladvormenVorm7.ToString());
             OnPropertyChanged();
         }
     }

@@ -199,11 +199,11 @@
                                                 <CheckBox x:Name="CbxBladvormenVorm6" 
                                                       IsChecked="{Binding Path=SelectedCheckBoxBladvormenVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                     <CheckBox.Background>
-                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/(wortel) rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
+                                                        <ImageBrush  Stretch="Uniform" ImageSource="/Image/wortel rozet-planten.png" AlignmentX="Center" AlignmentY="Center"/>
                                                     </CheckBox.Background>
                                                 </CheckBox>
                                             </Viewbox>
-                                            <TextBlock Text="(wortel) rozet-planten" Style="{StaticResource BigCheckText}"/>
+                                            <TextBlock Text="wortel rozet-planten" Style="{StaticResource BigCheckText}"/>
                                         </StackPanel>
                                     </ListBoxItem>
 

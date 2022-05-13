@@ -45,24 +45,28 @@
                                     <Label Content="Sociabiliteit:" Style="{StaticResource LabelBorder}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
+                                    <CheckBox Content="Onbekend" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
                                     <CheckBox Content="1 Alleen of in kleine toefen." VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="2 In kleine groepen van 3-10 stuks." VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitII, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="3 Groepen van 10-24 stuks." VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitIII, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="4 Grotere kolonies in lage beplanting." VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitIV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="5 Zeer grote vlakken" VerticalContentAlignment="Center"
-                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                              IsChecked="{Binding Path=SelectedCheckBoxSociabiliteitE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                             </ListBox>
                         </StackPanel>
@@ -72,6 +76,10 @@
                             <ListBox Height="94" >
                                 <ListBoxItem Focusable="False">
                                     <Label Content="Ontwikkelsnelheid:" Style="{StaticResource LabelBorder}"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox Margin="30,0,0,0" Content="Onbekend" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxBezonningOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Margin="30,0,0,0" Content="Traag" VerticalContentAlignment="Center"
@@ -90,6 +98,10 @@
                             <ListBox Height="94">
                                 <ListBoxItem Focusable="False">
                                     <Label Content="Strategie:" Style="{StaticResource LabelBorder}"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox Margin="30,0,0,0" Content="Onbekend" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxStrategieOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Margin="30,0,0,0" Content="C" VerticalContentAlignment="Center"
@@ -130,7 +142,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:" Width="40"/>
                                     <ComboBox Width="100" x:Name="cmbNectarwaardeMin" 
-                                              SelectedItem="{Binding Path=SelectedNectarwaarde}" IsEditable="True">
+                                              SelectedItem="{Binding Path=SelectedNectarwaardeMin}" IsEditable="True">
+                                        <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -141,7 +154,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:" Width="40"/>
                                     <ComboBox Width="100" x:Name="cmbNectarwaardeMax" 
-                                              SelectedItem="{Binding Path=SelectedNectarwaarde}" IsEditable="True">
+                                              SelectedItem="{Binding Path=SelectedNectarwaardeMax}" IsEditable="True">
+                                        <ComboBoxItem Content="Onbekend"/>
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -155,7 +169,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Min:" Width="40"/>
                                     <ComboBox Width="100" x:Name="cmbPollenwaardeMin"
-                                              SelectedItem="{Binding Path=SelectedPollenwaarde}" IsEditable="True">
+                                              SelectedItem="{Binding Path=SelectedPollenwaardeMin}" IsEditable="True">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -166,7 +180,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Max:" Width="40"/>
                                     <ComboBox Width="100" x:Name="cmbPollenwaardeMax" 
-                                              SelectedItem="{Binding Path=SelectedPollenwaarde}" IsEditable="True">
+                                              SelectedItem="{Binding Path=SelectedPollenwaardeMax}" IsEditable="True">
                                         <ComboBoxItem Content="1"/>
                                         <ComboBoxItem Content="2"/>
                                         <ComboBoxItem Content="3"/>
@@ -180,6 +194,10 @@
                         <StackPanel Grid.Row="1" Margin="0,0,0,-40">
                             <Label Content="Levensvorm" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="197" >
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox Content="Onbekend" VerticalContentAlignment="Center"
+                                              IsChecked="{Binding Path=SelectedCheckBoxOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox Content="Zogenaamde bodembedekker,&#xD;&#xA; weinig verdraagzaam &#xD;&#xA; met andere planten" VerticalContentAlignment="Center"
                                               IsChecked="{Binding Path=SelectedCheckBox1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
