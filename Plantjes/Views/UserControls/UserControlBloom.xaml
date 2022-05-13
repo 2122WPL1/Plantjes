@@ -7,29 +7,38 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="450">
     <!--UserControl herschreven door MarijnCo met Binding werk van voorgangers, StaticResources staan in App.xaml voor aanpassingen-->
-    
+
     <Grid>
         <GroupBox
             BorderThickness="0" Width="450" Height="450"  >
             <Border Style="{StaticResource BorderBox}">
                 <StackPanel >
                     <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
-                    <Grid Height="369">
+                    <Grid Height="409">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="247*"/>
-                            <ColumnDefinition Width="145*"/>
+                            <ColumnDefinition Width="245*"/>
+                            <ColumnDefinition Width="187*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="199*"/>
+                            <RowDefinition Height="210*"/>
                         </Grid.RowDefinitions>
                         <!--Bloeimaand & Bloeihoogte per maand-->
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Bloeit in:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="124"/>
-                                <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Center" Width="124"/>
+                                <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}" HorizontalContentAlignment="Left" Width="146"/>
                             </StackPanel>
-                            <ListBox Height="158">
+                            <ListBox Height="175">
+                                <ListBoxItem Focusable="False">
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInOnbekend"
+                                                  IsChecked="{Binding Path=SelectedCheckBoxBloeitInOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        <Label Content="Onbekend" Width="150" HorizontalContentAlignment="Center"/>
+                                        <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeihoogteOnbekend" 
+                                                  IsChecked="{Binding Path=SelectedCheckBoxBloeiHoogteOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </StackPanel>
+                                </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <StackPanel Orientation="Horizontal">
                                         <CheckBox VerticalContentAlignment="Center" x:Name="CbxBloeitInJan"
@@ -142,10 +151,17 @@
 
                         </StackPanel>
                         <!--Kleuren-->
-                        <StackPanel 
-                                Grid.Column="1">
+                        <StackPanel Grid.Column="1">
                             <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
-                            <ListBox Height="159">
+                            <ListBox Height="175">
+                                <ListBoxItem Focusable="False" >
+                                    <StackPanel Style="{StaticResource StackPanelColour}">
+                                        <Viewbox>
+                                            <CheckBox Background="#00000000" IsChecked="{Binding Path=SelectedCheckBoxBloeikleurOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </Viewbox>
+                                        <TextBlock Text="Onbekend" Style="{StaticResource BigCheckTextColour}"/>
+                                    </StackPanel>
+                                </ListBoxItem>
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelColour}">
                                         <Viewbox>
@@ -265,13 +281,13 @@
                             </ListBox>
                         </StackPanel>
                         <!--Bloeihoogte-->
-                        <StackPanel Grid.Column="1" Margin="0,184,0,0" Grid.RowSpan="2">
+                        <StackPanel Grid.Row="1" Grid.Column="1">
                             <Label Content="Bloeihoogte:" Style="{StaticResource LabelBorder}"/>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Min:"/>
+                                <Label Content="Min:" Width="40"/>
                                 <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMin}" 
-                                              SelectedItem="{Binding Path=SelectedBloeiHoogte}" IsEditable="True">
+                                              SelectedItem="{Binding Path=SelectedBloeiHoogteMin}" IsEditable="True">
                                     <ComboBoxItem Content="240/250"/>
                                     <ComboBoxItem Content="230/239"/>
                                     <ComboBoxItem Content="220/229"/>
@@ -297,13 +313,14 @@
                                     <ComboBoxItem Content="20/29"/>
                                     <ComboBoxItem Content="10/19"/>
                                     <ComboBoxItem Content="0/9"/>
+                                    <ComboBoxItem Content="Onbekend"/>
                                 </ComboBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Max:"/>
+                                <Label Content="Max:" Width="40"/>
                                 <ComboBox Width="100"
                                               ItemsSource="{Binding cmbBloeiHoogteMax}"
-                                              SelectedItem="{Binding Path=SelectedBloeiHoogte}">
+                                              SelectedItem="{Binding Path=SelectedBloeiHoogteMax}">
                                     <ComboBoxItem Content="240/250"/>
                                     <ComboBoxItem Content="230/239"/>
                                     <ComboBoxItem Content="220/229"/>
@@ -329,13 +346,18 @@
                                     <ComboBoxItem Content="20/29"/>
                                     <ComboBoxItem Content="10/19"/>
                                     <ComboBoxItem Content="0/9"/>
+                                    <ComboBoxItem Content="Onbekend"/>
                                 </ComboBox>
                             </StackPanel>
 
                             <!--Ratio bloei/blad Warre-->
-                            <ListBox Height="110" >
+                            <ListBox Height="132" >
                                 <ListBoxItem>
                                     <Label Content="Ratio bloei/blad" Style="{StaticResource LabelBorder}" Width="135" Margin="-8,0,0,0"/>
+                                </ListBoxItem>
+                                <ListBoxItem Focusable="False">
+                                    <CheckBox  Content="Onbekend" VerticalContentAlignment="Center"
+                                               IsChecked="{Binding Path= SelectedCheckBoxRatioOnbekend,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </ListBoxItem>
                                 <ListBoxItem Focusable="False">
                                     <CheckBox  Content="Pachysandra sp." VerticalContentAlignment="Center"
@@ -356,15 +378,27 @@
                             </ListBox>
                         </StackPanel>
                         <!--Bloeiwijze-->
-                        <StackPanel Margin="0,184,0,0" Grid.RowSpan="2">
+                        <StackPanel Grid.Row="1">
                             <Label Content="Bloeiwijze:" Style="{StaticResource LabelBorder}"/>
-                            <ListBox Height="160">
+                            <ListBox Height="184">
+                                <ListBoxItem Focusable="False" >
+                                    <StackPanel Style="{StaticResource StackPanelListCheckBox}">
+                                        <Viewbox>
+                                            <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVormOnbekend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                <CheckBox.Background>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Unknown.png"/>
+                                                </CheckBox.Background>
+                                            </CheckBox>
+                                        </Viewbox>
+                                        <TextBlock Text="Onbekend" Style="{StaticResource BigCheckText}"/>
+                                    </StackPanel>
+                                </ListBoxItem>
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelListCheckBox}">
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/aar.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/aar.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -377,7 +411,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Schermbloemig.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Schermbloemig.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -390,7 +424,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Pluim.png"/>
+                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Pluim.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -403,7 +437,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Bol of Knop.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Bol of Knop.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -416,7 +450,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Margrietachtig.png"/>
+                                                    <ImageBrush  Stretch="Uniform"  AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Margrietachtig.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>
@@ -429,7 +463,7 @@
                                         <Viewbox>
                                             <CheckBox IsChecked="{Binding Path=SelectedCheckBoxBloeiwijzeVorm6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                 <CheckBox.Background>
-                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="../../Image/Transparant.png"/>
+                                                    <ImageBrush  Stretch="Uniform" AlignmentX="Center" AlignmentY="Center" ImageSource="/Image/Transparant.png"/>
                                                 </CheckBox.Background>
                                             </CheckBox>
                                         </Viewbox>

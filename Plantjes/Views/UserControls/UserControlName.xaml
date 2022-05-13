@@ -92,7 +92,7 @@
                             <DropShadowEffect/>
                         </Label.Effect>
                     </Label>
-                    <ComboBox x:Name="cmbVariant" Width="198" Height="28"
+                    <ComboBox x:Name="cmbVariant" Width="200" Height="28"
                       ItemsSource="{Binding cmbVariant}"
                       DisplayMemberPath="Variantnaam"
                       SelectedValuePath="VariantId"
