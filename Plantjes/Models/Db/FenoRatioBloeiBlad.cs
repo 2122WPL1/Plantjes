@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Plantjes.Models.Db
 {
-    public partial class AbioVoedingsbehoefte
+    public partial class FenoRatioBloeiBlad
     {
         public int Id { get; set; }
-        public string Voedingsbehoefte { get; set; }
+        public string RatioBloeiBlad { get; set; }
     }
 }

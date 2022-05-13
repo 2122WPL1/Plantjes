@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plantjes.Dao;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Plantjes.Models.Db
 {
@@ -38,6 +40,7 @@ namespace Plantjes.Models.Db
         public virtual DbSet<FenoHabitu> FenoHabitus { get; set; }
         public virtual DbSet<FenoKleur> FenoKleurs { get; set; }
         public virtual DbSet<FenoLevensvorm> FenoLevensvorms { get; set; }
+        public virtual DbSet<FenoRatioBloeiBlad> FenoRatioBloeiBlads { get; set; }
         public virtual DbSet<FenoSpruitfenologie> FenoSpruitfenologies { get; set; }
         public virtual DbSet<Fenotype> Fenotypes { get; set; }
         public virtual DbSet<FenotypeMulti> FenotypeMultis { get; set; }
@@ -57,7 +60,7 @@ namespace Plantjes.Models.Db
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer(SQLConnection.connectionstring);
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-O3S5TOS1\\VIVES;Initial Catalog=planten;Integrated Security=True");
             }
         }
 
@@ -418,7 +421,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("../../Image")
+                    .HasColumnType("image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Naam)
@@ -437,7 +440,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("../../Image")
+                    .HasColumnType("image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Naam)
@@ -471,7 +474,7 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Figuur)
-                    .HasColumnType("../../Image")
+                    .HasColumnType("image")
                     .HasColumnName("figuur");
 
                 entity.Property(e => e.Levensvorm)
@@ -481,6 +484,17 @@ namespace Plantjes.Models.Db
                 entity.Property(e => e.UrlLocatie)
                     .HasMaxLength(500)
                     .HasColumnName("url/locatie");
+            });
+
+            modelBuilder.Entity<FenoRatioBloeiBlad>(entity =>
+            {
+                entity.ToTable("Feno_RatioBloeiBlad");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.RatioBloeiBlad)
+                    .HasMaxLength(50)
+                    .HasColumnName("ratioBloeiBlad");
             });
 
             modelBuilder.Entity<FenoSpruitfenologie>(entity =>
@@ -539,9 +553,7 @@ namespace Plantjes.Models.Db
             {
                 entity.ToTable("Fenotype_Multi");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Eigenschap)
                     .HasMaxLength(50)
@@ -576,9 +588,7 @@ namespace Plantjes.Models.Db
 
                 entity.Property(e => e.Plant).HasColumnName("plant");
 
-                entity.Property(e => e.Tumbnail)
-                    .HasColumnType("../../Image")
-                    .HasColumnName("tumbnail");
+                entity.Property(e => e.Tumbnail).HasColumnName("tumbnail");
 
                 entity.Property(e => e.UrlLocatie)
                     .HasMaxLength(500)
