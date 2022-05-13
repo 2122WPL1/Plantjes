@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="Add plant" Height="900" Width="1250" Background="#FFA0A0A0">
     <Grid>
-        <Viewbox MaxHeight="900" MaxWidth="1250">
+        <Viewbox MaxHeight="900" MaxWidth="1250" Margin="0,0,-11,0">
             <Grid Height="900" Width="1250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="147*"/>
+                    <ColumnDefinition Width="478*"/>
+                </Grid.ColumnDefinitions>
                 <!-- Appearance -->
                 <GroupBox
-            BorderThickness="0" Margin="0,0,777,450" >
+            BorderThickness="0" Margin="483,0,0,450" Grid.Column="1" >
                     <Border Style="{StaticResource BorderBox}">
                         <StackPanel >
                             <Label Content="UITERLIJK" Style="{StaticResource LabelBorderTitle}"/>
@@ -644,7 +648,7 @@
                 </GroupBox>
                 <!-- Bloom -->
                 <GroupBox
-            BorderThickness="0" Width="450" Height="450" Margin="473,0,327,450"  >
+            BorderThickness="0" Width="450" Height="450" Margin="33,0,473,450" Grid.Column="1"  >
                     <Border Style="{StaticResource BorderBox}">
                         <StackPanel >
                             <Label Content="BLOEI" Style="{StaticResource LabelBorderTitle}"/>
@@ -1112,7 +1116,7 @@
                 </GroupBox>
                 <!-- Grooming -->
                 <GroupBox
-            BorderThickness="0" Height="450" Margin="923,0,0,450">
+            BorderThickness="0" Margin="-5,595,928,0" Grid.ColumnSpan="2">
                     <Border Style="{StaticResource BorderBox}">
                         <StackPanel >
                             <Label Content="Beheersdaad" Style="{StaticResource LabelBorderTitle}"/>
@@ -1126,7 +1130,7 @@
                                     <ComboBox x:Name="CmbBeheerdaad" ItemsSource="{Binding cmbBeheerdaad}" />
                                     <StackPanel>
                                         <Label Content="Opmerking:"/>
-                                        <TextBox Height="200" TextWrapping="WrapWithOverflow"/>
+                                        <TextBox Height="136" TextWrapping="WrapWithOverflow"/>
                                     </StackPanel>
                                     <StackPanel>
                                         <Label Content="Frequentie per jaar:"/>
@@ -1193,7 +1197,7 @@
                 </GroupBox>
                 <!-- Grow -->
                 <GroupBox
-                BorderThickness="0" Width="450" Height="450" Margin="10,450,790,0" >
+                BorderThickness="0" Width="450" Height="450" Margin="33,455,473,-5" Grid.Column="1" >
                     <Border Style="{StaticResource BorderBox}">
                         <StackPanel >
                             <Label Content="GROEI" Style="{StaticResource LabelBorderTitle}"/>
@@ -1573,7 +1577,7 @@
                 </GroupBox>
                 <!-- Habitat -->
                 <GroupBox
-                BorderThickness="0" Width="450" Height="450" Margin="473,450,327,0">
+                BorderThickness="0" Width="450" Height="450" Margin="494,450,12,0" Grid.Column="1">
                     <Border Style="{StaticResource BorderBox}">
                         <StackPanel >
                             <Label Content="COMMENSALISME" Style="{StaticResource LabelBorderTitle}"/>
@@ -1789,7 +1793,7 @@
                 </GroupBox>
                 <!-- Name add -->
                 <GroupBox
-            BorderThickness="0" Height="450" Margin="923,450,0,0"  >
+            BorderThickness="0" Height="450" Margin="-5,140,928,310" Grid.ColumnSpan="2"  >
                     <Border Style="{StaticResource BorderBox}" Margin="0,0,0,0">
                         <StackPanel>
                             <Label Content="NAAM" Style="{StaticResource LabelBorderTitle}"/>
@@ -1959,6 +1963,11 @@
                         </StackPanel>
                     </Border>
                 </GroupBox>
+                <Button x:Name="btnAddPlant" Content="Plant toevoegen"  HorizontalAlignment="Left" Margin="0,10,0,848" Style="{StaticResource ButtonUnified}" Height="Auto" FontSize="15"
+                     Width="322" Grid.ColumnSpan="2"/>
+                <Button x:Name="btnCancer" Content="Annuleer"  HorizontalAlignment="Left" Margin="0,76,0,782" Style="{StaticResource ButtonUnified}" Height="Auto" FontSize="15"
+                        Width="322" Grid.ColumnSpan="2"
+                        Command="{Binding cancelCommand}" />
             </Grid>
 
         </Viewbox>
