@@ -1,11 +1,12 @@
 ﻿using Plantjes.ViewModels;
+using System.Net;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Plantjes.Views.Home
 {
     /// <summary>
-    /// Interaction logic for AddPlantWindow.xaml 
-    /// Written by Andang Kloran
+    /// Interaction logic for NieuwWachtwoordWindow.xaml
     /// </summary>
     public partial class AddPlantWindow : Window
     {
@@ -13,6 +14,10 @@ namespace Plantjes.Views.Home
         {
             DataContext = App.Current.Services.GetService(typeof(ViewModelAddPlant));
             InitializeComponent();
+
+            
         }
     }
+
+
 }

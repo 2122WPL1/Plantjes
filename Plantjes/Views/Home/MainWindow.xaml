@@ -7,6 +7,7 @@
         xmlns:pages="clr-namespace:Plantjes.Views.UserControls"
         xmlns:mgmtpages="clr-namespace:Plantjes.Views.UserControls.Beheer"
         xmlns:viewModels="clr-namespace:Plantjes.ViewModels"
+
         xmlns:plantjes="clr-namespace:Plantjes"
 
         mc:Ignorable="d"
@@ -64,9 +65,9 @@
                         Command="{Binding mainNavigationCommand}"
                         CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Width="200" Style="{StaticResource ButtonUnified}" />
                 <Button x:Name="btnPlantToevoegen" Content="Plant toevoegen" Margin="0,0,5,0" Visibility="{Binding ShowEditPlants}"
-                        Command="{Binding mainNavigationCommand}"
+                        Command="{Binding addPlantWindowCommand}" 
 
-                        CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Style="{StaticResource ButtonUnified}" />
+                    CommandParameter="VIEWNAME" Click="btn_ClickHideImage" Height="60" Style="{StaticResource ButtonUnified}" />
                 <ComboBox x:Name="cmbBeheer" Width="200" Height="60" Margin="4,2,0,0" Style="{StaticResource ComboBoxUnified}" Visibility="{Binding ShowUserManagement}">
 
                     <ComboBoxItem Focusable="False">

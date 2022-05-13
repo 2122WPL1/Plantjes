@@ -25,21 +25,17 @@ public class ViewModelMain : ViewModelBase {
 
         mainNavigationCommand = new MyICommand<string>(_onNavigationChanged);
 
-     // <-- Written by ANDANG KLORAN--> Code for displaying the AddPlantWindow when the "Plant Toevoegen" button is clicked on the MainWindow
-        addPlantCommand = new RelayCommand(AddPlantButtonView);
-
+        addPlantWindowCommand = new RelayCommand(LoginButtonClick);
     }
+    public RelayCommand addPlantWindowCommand { get; set; }
 
-    public RelayCommand addPlantCommand { get; set; }
-    private void AddPlantButtonView()
+    //Kjell - Window add plant show and other window close
+    public void LoginButtonClick()
     {
         var addPlantWindow = new AddPlantWindow();
         addPlantWindow.Show();
-        Application.Current.Windows[0]?.Close();
-       
     }
-
-    //End----------------------------------------------------------------------------------------------
+    //---------------------------
 
     public MyICommand<string> mainNavigationCommand { get; set; }
 

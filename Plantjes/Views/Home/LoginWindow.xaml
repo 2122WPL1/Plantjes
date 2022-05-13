@@ -9,11 +9,6 @@
         Title="Login" Height="300" Width="464" Background="#FFA0A0A0">
     <!--Written by Kenny-->
 
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:ViewModelLogin}">
-            <uc:UserControlName />
-        </DataTemplate>
-    </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="Return" Command="{Binding Path= loginCommand}"/>
     </Window.InputBindings>
