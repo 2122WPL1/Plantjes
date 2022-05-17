@@ -1,6 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Documents;
 using Plantjes.Dao;
+using Plantjes.Models.Db;
 using Plantjes.ViewModels.Services;
 
 namespace Plantjes.ViewModels;
@@ -8,6 +11,7 @@ namespace Plantjes.ViewModels;
 public class ViewModelGrooming : ViewModelBase
 {
     private DAOLogic _dao;
+    private DetailService _detailService;
 
     private string _selectedBeheerdaad;
 
@@ -15,37 +19,93 @@ public class ViewModelGrooming : ViewModelBase
     public ViewModelGrooming(DetailService detailservice)
     {
         _dao = DAOLogic.Instance();
+        _detailService = detailservice;
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            ClearAllFields();
+
+            FillBeheerdaadMaand();
+        };
 
         cmbBeheerdaad = new ObservableCollection<string>();
 
-        fillComboBoxBeheerdaad();
+        
     }
 
     //geschreven door christophe, op basis van een voorbeeld van owen
     public ObservableCollection<string> cmbBeheerdaad { get; set; }
 
-    public string SelectedBeheer_Maand
+    //Aangepast door Warre
+
+    #region Filling elements based on plant selection
+    //region written by Warre based on FillGrondSoort by Marijn & Xander
+
+    private void FillBeheerdaadMaand()
     {
-        get => _selectedBeheerdaad;
-        set
+        var modeltype = typeof(ViewModelGrooming);
+        List<BeheerMaand> BeheerList =
+            DAOBeheerMaand.FilterBeheerMaandFromPlant((int)_detailService.SelectedPlant.PlantId);
+
+        foreach (BeheerMaand beheer in BeheerList)
         {
-            _selectedBeheerdaad = value;
-            OnPropertyChanged();
+            string field = "";
+            if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if(beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else if (beheer.Jan.HasValue && beheer.Jan.Value)
+            {
+                field = "SelectedCheckBoxJan";
+            }
+            else
+            {
+                
+            }
+
         }
     }
-    //Aangepast door Warre
-    
-    public void fillComboBoxBeheerdaad()
-    {
-        var list = DAOBeheerMaand.FillBeheerdaad().ToList();
+    #endregion
 
-
-        foreach (var item in list)
-            //if (item != null)
-            //{
-            cmbBeheerdaad.Add(item.Beheerdaad);
-        //}
-    }
 
     #region Binding checkboxen Beheerdaad maand
 

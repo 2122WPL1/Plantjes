@@ -5,7 +5,7 @@ using Plantjes.Models.Db;
 using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 public class ViewModelBloom : ViewModelBase {
     // Using a DependencyProperty as the backing store for 
@@ -27,7 +27,7 @@ public class ViewModelBloom : ViewModelBase {
             ClearAllFields();
 
             FillBloeikleur();
-            FillBloeihoogte();
+            FillBloeiHoogte();
             FillBloeitIn();
             FillBloeiwijzevorm();
             FillBloeiBlad();
@@ -111,24 +111,225 @@ public class ViewModelBloom : ViewModelBase {
         propsetter.Invoke(this, new object[] { true });
     }
 
-    public void FillBloeihoogte()
+    public void FillBloeiHoogte()
     {
+        var modeltype = typeof(ViewModelBloom);
+        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        bool exists = false;
 
+        string field = "SelectedCheckBoxBloeiHoogte";
+        for (int i = 0; i < fenoList.Count; i++)
+        {
+            exists = fenoList[i].Eigenschap.Contains("bloeihoogte");
+        }
+        if (exists)
+        {
+            foreach (FenotypeMulti feno in fenoList)
+            {
+                if (feno.Eigenschap == "bloeihoogte")
+                {
+                    switch (feno.Waarde)
+                    {
+                        case "jan":
+                            field += "Jan";
+                            break;
+                        case "feb":
+                            field += "Feb";
+                            break;
+                        case "mar":
+                            field += "Mar";
+                            break;
+                        case "apr":
+                            field += "Apr";
+                            break;
+                        case "may":
+                            field += "May";
+                            break;
+                        case "jun":
+                            field += "Jun";
+                            break;
+                        case "jul":
+                            field += "Jul";
+                            break;
+                        case "aug":
+                            field += "Aug";
+                            break;
+                        case "sep":
+                            field += "Sep";
+                            break;
+                        case "oct":
+                            field += "Oct";
+                            break;
+                        case "nov":
+                            field += "Nov";
+                            break;
+                        case "dec":
+                            field += "Dec";
+                            break;
+                        default:
+                            field += "Onbekend";
+                            break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            field += "Onbekend";
+        }
+
+        var prop = modeltype.GetProperty(field);
+        var propsetter = prop.GetSetMethod();
+        propsetter.Invoke(this, new object[] { true });
     }
 
     public void FillBloeitIn()
     {
+        var modeltype = typeof(ViewModelBloom);
+        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        bool exists = false;
 
+        string field = "SelectedCheckBoxBloeitIn";
+        for (int i = 0; i < fenoList.Count; i++)
+        {
+            exists = fenoList[i].Eigenschap.Contains("bloeit in");
+        }
+        if (exists)
+        {
+            foreach (FenotypeMulti feno in fenoList)
+            {
+                if (feno.Eigenschap == "bloeit in")
+                {
+                    switch (feno.Waarde)
+                    {
+                        case "jan":
+                            field += "Jan";
+                            break;
+                        case "feb":
+                            field += "Feb";
+                            break;
+                        case "mar":
+                            field += "Mar";
+                            break;
+                        case "apr":
+                            field += "Apr";
+                            break;
+                        case "may":
+                            field += "May";
+                            break;
+                        case "jun":
+                            field += "Jun";
+                            break;
+                        case "jul":
+                            field += "Jul";
+                            break;
+                        case "aug":
+                            field += "Aug";
+                            break;
+                        case "sep":
+                            field += "Sep";
+                            break;
+                        case "oct":
+                            field += "Oct";
+                            break;
+                        case "nov":
+                            field += "Nov";
+                            break;
+                        case "dec":
+                            field += "Dec";
+                            break;
+                        default:
+                            field += "Onbekend";
+                            break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            field += "Onbekend";
+        }
+
+        var prop = modeltype.GetProperty(field);
+        var propsetter = prop.GetSetMethod();
+        propsetter.Invoke(this, new object[] { true });
     }
 
     public void FillBloeiwijzevorm()
     {
+        var modeltype = typeof(ViewModelBloom);
+        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
+        bool exists = false;
 
+        string field = "SelectedCheckBoxBloeiwijzeVorm";
+        for (int i = 0; i < fenoList.Count; i++)
+        {
+            exists = fenoList[i].Eigenschap.Contains("bloeiwijze");
+        }
+        if (exists)
+        {
+            foreach (FenotypeMulti feno in fenoList)
+            {
+                if (feno.Eigenschap == "bloeiwijze")
+                {
+                    switch (feno.Waarde)
+                    {
+                        case "aar":
+                            field += "1";
+                            break;
+                        case "schermbloemig":
+                            field += "2";
+                            break;
+                        case "pluim":
+                            field += "3";
+                            break;
+                        case "bol of knop":
+                            field += "4";
+                            break;
+                        case "margrietachtig":
+                            field += "5";
+                            break;
+                        case "transparant":
+                            field += "6";
+                            break;
+                        default:
+                            field += "Onbekend";
+                            break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            field += "Onbekend";
+        }
+
+        var prop = modeltype.GetProperty(field);
+        var propsetter = prop.GetSetMethod();
+        propsetter.Invoke(this, new object[] { true });
     }
 
     public void FillBloeiBlad()
     {
+        var modeltype = typeof(ViewModelBloom);
+        List<Fenotype> fenoList = DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
 
+        foreach (Fenotype feno in fenoList)
+        {
+            string field = "SelectedCheckBoxRatio";
+            if (feno.RatioBloeiBlad != null)
+            {
+                field += feno.RatioBloeiBlad;
+            }
+            else
+            {
+                field += "Onbekend";
+            }
+
+            var prop = modeltype.GetProperty(field);
+            var propsetter = prop.GetSetMethod();
+            propsetter.Invoke(this, new object?[] { true });
+        }
     }
     #endregion
 
@@ -770,8 +971,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioPachysandra
     {
         get => _selectedCheckBoxRatioPachysandra;
-        set
-        {
+        set {
             _selectedCheckBoxRatioPachysandra = value;
             OnPropertyChanged();
         }
@@ -783,8 +983,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioGeranium
     {
         get => _selectedCheckBoxRatioGeranium;
-        set
-        {
+        set {
             _selectedCheckBoxRatioGeranium = value;
             OnPropertyChanged();
         }
@@ -796,8 +995,7 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioSalvia
     {
         get => _selectedCheckBoxRatioSalvia;
-        set
-        {
+        set {
             _selectedCheckBoxRatioSalvia = value;
             OnPropertyChanged();
         }
@@ -809,11 +1007,11 @@ public class ViewModelBloom : ViewModelBase {
     public bool SelectedCheckBoxRatioAster
     {
         get => _selectedCheckBoxRatioAster;
-        set
-        {
+        set {
             _selectedCheckBoxRatioAster = value;
             OnPropertyChanged();
         }
     }
+
     #endregion
 }

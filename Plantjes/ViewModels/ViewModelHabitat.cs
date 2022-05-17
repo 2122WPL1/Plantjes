@@ -15,12 +15,7 @@ public class ViewModelHabitat : ViewModelBase
     private readonly DAOLogic _dao;
     private DetailService _detailService;
 
-    public ViewModelHabitat(DetailService detailservice) {
-        _dao = DAOLogic.Instance();
-        _detailService = detailservice;
-        _detailService.SelectedPlantChanged += (sender, plant) =>
-        {
-            ClearAllFields();
+    private string _selectedNectarwaarde;
 
             FillPollenNectar();
             FillOntwikkelsnelheid();
@@ -30,7 +25,7 @@ public class ViewModelHabitat : ViewModelBase
             FillStrategie();
         };
 
-    }
+    private string _selectedPollenwaarde;
 
 
 
