@@ -110,6 +110,8 @@ public class ViewModelNameResult : ViewModelBase {
         cmbRatioBladBloei.Clear();
         SelectedNederlandseNaam = null;
 
+        _detailService.SelectedPlant = null;
+
         fillComboboxes();
     }
 

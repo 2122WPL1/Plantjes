@@ -24,7 +24,10 @@ public class ViewModelGrooming : ViewModelBase
         {
             ClearAllFields();
 
-            FillBeheerdaadMaand();
+            if (_detailService.SelectedPlant != null)
+            {
+                FillBeheerdaadMaand();
+            }
         };
 
         cmbBeheerdaad = new ObservableCollection<string>();

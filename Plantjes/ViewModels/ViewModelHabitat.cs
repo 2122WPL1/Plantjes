@@ -22,13 +22,15 @@ public class ViewModelHabitat : ViewModelBase
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
             ClearAllFields();
-
-            FillPollenNectar();
-            FillOntwikkelsnelheid();
-            FillSociabiliteit();
-            FillPlantEigenschappen();
-            FillLevensvorm();
-            FillStrategie();
+            if (_detailService.SelectedPlant != null)
+            {
+                FillPollenNectar();
+                FillOntwikkelsnelheid();
+                FillSociabiliteit();
+                FillPlantEigenschappen();
+                FillLevensvorm();
+                FillStrategie();
+            }
         };
     }
 

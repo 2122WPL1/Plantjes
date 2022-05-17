@@ -21,14 +21,15 @@ public class ViewModelAppearance : ViewModelBase {
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
             ClearAllFields();
-
-            FillBladKleur();
-            FillBladHoogte();
-            FillBladgrootte();
-            FillSpruitFene();
-            FillStengelvormBladvorm();
-            FillLevensvormen();
-            
+            if (_detailService.SelectedPlant !=null)
+            {
+                FillBladKleur();
+                FillBladHoogte();
+                FillBladgrootte();
+                FillSpruitFene();
+                FillStengelvormBladvorm();
+                FillLevensvormen();
+            }
         };
     }
 

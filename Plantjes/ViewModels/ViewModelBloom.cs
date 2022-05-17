@@ -25,12 +25,14 @@ public class ViewModelBloom : ViewModelBase {
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
             ClearAllFields();
-
-            FillBloeikleur();
-            FillBloeiHoogte();
-            FillBloeitIn();
-            FillBloeiwijzevorm();
-            FillBloeiBlad();
+            if (_detailService.SelectedPlant != null)
+            {
+                FillBloeikleur();
+                FillBloeiHoogte();
+                FillBloeitIn();
+                FillBloeiwijzevorm();
+                FillBloeiBlad();
+            }
         };
     }
 

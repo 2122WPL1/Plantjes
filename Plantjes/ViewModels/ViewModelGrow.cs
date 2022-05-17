@@ -16,13 +16,15 @@ public class ViewModelGrow : ViewModelBase {
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
             ClearAllFields();
-
-            FillHabitat();
-            FillBezonning();
-            FillVoedingsbehoefte();
-            FillAntagonisch();
-            FillGrondsoort();
-            FillVochtbehoefte();
+            if (_detailService.SelectedPlant != null)
+            {
+                FillHabitat();
+                FillBezonning();
+                FillVoedingsbehoefte();
+                FillAntagonisch();
+                FillGrondsoort();
+                FillVochtbehoefte();
+            }
         };
     }
 
