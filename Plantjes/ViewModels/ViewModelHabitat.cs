@@ -16,6 +16,16 @@ public class ViewModelHabitat : ViewModelBase
     private DetailService _detailService;
 
     private string _selectedNectarwaarde;
+    private string _selectedPollenwaarde;
+
+
+    public ViewModelHabitat(DetailService _detailService)
+    {
+        detailService = _detailService;
+        _dao = DAOLogic.Instance();
+        _detailService.SelectedPlantChanged += (sender, plant) =>
+        {
+            ClearAllFields();
 
             FillPollenNectar();
             FillOntwikkelsnelheid();
@@ -24,9 +34,7 @@ public class ViewModelHabitat : ViewModelBase
             FillLevensvorm();
             FillStrategie();
         };
-
-    private string _selectedPollenwaarde;
-
+    }
 
 
     #region Filling elements based on plant selection
