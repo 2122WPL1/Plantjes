@@ -12,16 +12,12 @@ namespace Plantjes.ViewModels;
 
 public class ViewModelHabitat : ViewModelBase 
 {
-    private readonly DAOLogic _dao;
+    private DAOLogic _dao;
     private DetailService _detailService;
 
-    private string _selectedNectarwaarde;
-    private string _selectedPollenwaarde;
-
-
-    public ViewModelHabitat(DetailService _detailService)
+    public ViewModelHabitat(DetailService detailService)
     {
-        detailService = _detailService;
+        _detailService = detailService;
         _dao = DAOLogic.Instance();
         _detailService.SelectedPlantChanged += (sender, plant) =>
         {
