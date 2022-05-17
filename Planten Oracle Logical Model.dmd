@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Planten Oracle Logical Model" id="DE1204B6-D303-9D3A-3AC4-4975E9751008" version="3.5">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 18:56:26 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>DE1204B6-D303-9D3A-3AC4-4975E9751008</designId>
+</OSDM_Design>

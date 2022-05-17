@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D574602-7E6B-62D0-4892-B034AE27D18F" name="Comm_Ontwikkelsnelheid">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:48:55 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="40F87E96-357D-2313-92DE-E31A431AEAD1">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:49:44 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Snelheid" id="4E12B8F2-3852-1847-82C0-B6FEBE4E6E9E">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:49:44 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A463422-49CE-DCCE-50ED-EB389B3968B2" name="Comm_Ontwikkelsnelheid_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:49:44 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40F87E96-357D-2313-92DE-E31A431AEAD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

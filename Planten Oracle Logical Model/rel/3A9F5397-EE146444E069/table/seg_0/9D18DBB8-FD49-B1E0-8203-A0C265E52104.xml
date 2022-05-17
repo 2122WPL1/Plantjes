@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D18DBB8-FD49-B1E0-8203-A0C265E52104" name="Comm_Sociabiliteit">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:49:53 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="A478474C-2B29-2774-2899-7D875CD76122">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:50:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sociabiliteit" id="2EA353BF-C281-DA2C-764E-7F2ED817C2F0">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:50:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Waarde" id="CDF76498-46CE-8391-099D-B6FF68F68D99">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:50:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="32FC5FC7-3290-1DEF-DD83-BF569CDC124E" name="Comm_Sociabiliteit_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:50:48 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A478474C-2B29-2774-2899-7D875CD76122"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

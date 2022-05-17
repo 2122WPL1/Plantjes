@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="59D89D2D-BBA2-036C-4900-4BA922452247" name="Fenotype">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:07:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_29</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="2915B0E4-2137-3728-61F3-399FA550F053">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bladgrootte" id="CB36E9BF-317D-4B49-E89E-57EB99C94E59">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bladvorm" id="BED8D3F2-46F0-3DB4-3F08-D23A6C939B61">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RatioBloeiBlad" id="8F8C4118-B52A-6901-DB51-2C59C3657975">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Spruitfenologie" id="B32923C8-94B8-CEF6-AC9C-E996A2285CE8">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bloeiwijze" id="E960DEF0-D50F-1543-A8D6-7AC38370A0EE">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Habitus" id="8E1F34CF-5EF0-AE95-4D3D-0EB82DE44E2A">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Levensvorm" id="F1EA0A9C-0DD8-FB87-7258-FB33BF83F0C3">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="03934E93-220E-FB66-F2FD-B919BD432115">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:36:00 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2526647F-BA18-0C12-CA9C-CD9ACD9618BA" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B06CC317-B17E-1E45-4F22-F474D7DCCB22" name="Fenotype_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:40 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2915B0E4-2137-3728-61F3-399FA550F053"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A04D9A1-5374-52E6-E3E5-A42E6F356EAC" name="Fenotype_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:36:00 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03934E93-220E-FB66-F2FD-B919BD432115"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

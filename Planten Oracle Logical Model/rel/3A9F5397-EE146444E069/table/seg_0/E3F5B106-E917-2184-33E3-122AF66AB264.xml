@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3F5B106-E917-2184-33E3-122AF66AB264" name="Feno_RatioBloeiBlad">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:06:04 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_27</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="70625BB4-8324-4BA5-BF31-BBA92426A7EE">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:06:54 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RatioBloeiBlad" id="8820C433-F15A-D316-61D2-6329198C385C">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:06:54 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="336EBBB1-712A-23C7-E7D1-5C2D2769856B" name="Feno_RatioBloeiBlad_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:06:54 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70625BB4-8324-4BA5-BF31-BBA92426A7EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

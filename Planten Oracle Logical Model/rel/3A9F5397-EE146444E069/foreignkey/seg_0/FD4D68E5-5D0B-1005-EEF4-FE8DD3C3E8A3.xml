@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FD4D68E5-5D0B-1005-EEF4-FE8DD3C3E8A3" containerWithKeyObject="62E3EF27-5B0F-1669-8DEC-9F71EB2623B4" localFKIndex="22799AFC-1F8C-2A94-F5B2-C232A19B9ADF" name="Commensalisme_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:33:25 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<referredTableLongName>Plant</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7D6E5F86-B615-A040-C32B-9E7553CBF841</referredTableID>
+<keyObject>A5924795-6A87-BC20-D2D0-963834D2EA2E</keyObject>
+<referredKeyID>A5924795-6A87-BC20-D2D0-963834D2EA2E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Plant_Id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

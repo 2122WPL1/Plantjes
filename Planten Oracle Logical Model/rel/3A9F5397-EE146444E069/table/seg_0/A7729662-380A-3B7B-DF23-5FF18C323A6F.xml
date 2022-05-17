@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A7729662-380A-3B7B-DF23-5FF18C323A6F" name="Rol">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:17:51 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_35</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="D0533D87-1BAC-0235-7390-9D3CB3C3B145">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:18:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Omschrijving" id="0E1FECD5-DCD5-EF6B-32BD-2AA00A3ED8BF">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:18:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="4D8804C8-81A9-8E21-838F-400EAB9F4939">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:37:51 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFDF8D46-5482-FB09-378D-ED78CB5DE09B" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DEE70CE9-BFCC-FF38-B35D-D80AC3D84CB7" name="Rol_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:18:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0533D87-1BAC-0235-7390-9D3CB3C3B145"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9089164-AE14-F169-5432-470E3A741C09" name="Rol_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:37:51 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D8804C8-81A9-8E21-838F-400EAB9F4939"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

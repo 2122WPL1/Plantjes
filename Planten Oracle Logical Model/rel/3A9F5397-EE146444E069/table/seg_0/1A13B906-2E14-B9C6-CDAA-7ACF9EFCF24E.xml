@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A13B906-2E14-B9C6-CDAA-7ACF9EFCF24E" name="Abio_Reactie_Antagonische_Omg">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:28:30 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="3F17EC59-053F-D9E6-0A22-70B342F53200">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:29:28 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Antagonie" id="90B6E23A-06F9-2E92-638C-5D0E6E5CE375">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:29:28 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6594A7CE-EB4A-9C33-1623-0894374BC4F9" name="Abio_Reactie_Antagonische_Omg_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:29:28 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F17EC59-053F-D9E6-0A22-70B342F53200"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
