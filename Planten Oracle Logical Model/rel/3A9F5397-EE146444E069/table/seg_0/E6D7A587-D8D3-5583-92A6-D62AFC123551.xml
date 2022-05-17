@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E6D7A587-D8D3-5583-92A6-D62AFC123551" name="Abio_Voedingsbehoefte">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:30:33 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="087A772E-18D5-34CB-FBFF-C61DDC98C0AC">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[					]]></commentInRDBMS>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Voedingsbehoefte" id="A568D03D-9D33-3145-DEE0-268E646676F1">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:31:29 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="45709AC8-839F-5232-4C76-9BAB9E72883E" name="Abio_Voedingsbehoefte_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:31:29 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="087A772E-18D5-34CB-FBFF-C61DDC98C0AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

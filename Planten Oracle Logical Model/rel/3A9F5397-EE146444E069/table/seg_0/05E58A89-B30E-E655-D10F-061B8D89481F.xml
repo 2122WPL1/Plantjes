@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="05E58A89-B30E-E655-D10F-061B8D89481F" name="Fenotype_Multi">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:09:52 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_31</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="CBDBA0C7-ED0D-DC4F-276C-BE944D32BEC9">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:10:59 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Eigenschap" id="81D7AAC0-53AB-1C77-4AC3-C29AB34C2B7A">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:10:59 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Maand" id="0113E3D2-4081-68FD-DC08-198849019EC4">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:10:59 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Waarde" id="65205790-0D7D-14D8-19CA-12E90D30EF2F">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:10:59 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="BE79DE77-8E21-B663-9E90-97EE937EDDC3">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:40:46 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C02CFA65-A737-519A-37B7-D4FF18AA1761" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="45292B0A-F900-CF9B-FB61-368D5D1EBCD0" name="Fenotype_Multi_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:10:59 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CBDBA0C7-ED0D-DC4F-276C-BE944D32BEC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C2DA635-A408-B18F-79F1-91ED82AF1AE5" name="Fenotype_Multi_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:40:46 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE79DE77-8E21-B663-9E90-97EE937EDDC3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

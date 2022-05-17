@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CF457CBB-873A-C28B-F953-DD462F64DC14" name="Feno_Bladvorm">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:00:56 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="31896C2D-62DB-4A10-9928-A658DF918A2B">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:01:34 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vorm" id="1B0481C1-D50A-E02B-96C0-FB6F6A33CA04">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:01:34 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3FE6F328-8812-CC74-A64E-E20D1FE1F960" name="Feno_Bladvorm_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:01:34 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31896C2D-62DB-4A10-9928-A658DF918A2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

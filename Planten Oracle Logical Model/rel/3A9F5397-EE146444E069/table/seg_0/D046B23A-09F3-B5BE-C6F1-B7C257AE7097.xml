@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D046B23A-09F3-B5BE-C6F1-B7C257AE7097" name="Commensalisme_Multi">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:52:52 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="0E9A4DD7-2272-C3EC-5BAE-51C3CFB76838">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:53:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Eigenschap" id="FF3D9C72-9CF8-26D9-E5C9-E6B47A4A7913">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:53:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Waarde" id="C4DEDB6B-C3F1-C4BA-9DA3-CF3185827890">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:53:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="8679649E-67C8-3511-8DD6-E79950FE3155">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:33:52 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BBC1E289-8699-2523-6291-EF028B955A12" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBBFE8E8-7D55-50B6-AEDA-72C7F0F399EE" name="Commensalisme_Multi_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:53:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E9A4DD7-2272-C3EC-5BAE-51C3CFB76838"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A45739F9-3284-2D31-F722-56C3893E859A" name="Commensalisme_Multi_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:33:52 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8679649E-67C8-3511-8DD6-E79950FE3155"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

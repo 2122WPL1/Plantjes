@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A5E2151-396D-F816-8BF3-E66CF6677170" name="Abiotiek">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:31:41 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="C03301EF-D795-F803-3898-1B14FE7D6917">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bezonning" id="4CDDFD74-AB43-3361-513A-B15B21359256">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Grondsoort" id="5BB4F63B-BDEE-D816-B248-D7D455E30B08">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vochtbehoefte" id="10C0D24E-5E18-2CBC-8552-777B8A4FEE9C">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Voedingsbehoefte" id="B1079C94-C2D6-4F4B-7A9B-80368AD57A33">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AntagonischeOmgeving" id="B7181FB2-0CE3-297B-1793-0CE794E1E07A">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:34:12 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="45BB535B-4A77-1C6F-B19B-CA17B23BBA03">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:34:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D97E0379-32CE-9A6F-7A62-AA5535099BE8" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="76EC2087-588A-DC23-ECAA-8172AC1C627A" name="Abiotiek_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:33:18 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C03301EF-D795-F803-3898-1B14FE7D6917"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="567D3A69-DE4D-AB83-DB5C-150F2CA7E0B4" name="Abiotiek_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:34:37 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45BB535B-4A77-1C6F-B19B-CA17B23BBA03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

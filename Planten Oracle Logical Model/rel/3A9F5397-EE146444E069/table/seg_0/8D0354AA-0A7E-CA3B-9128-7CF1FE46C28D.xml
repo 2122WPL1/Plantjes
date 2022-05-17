@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8D0354AA-0A7E-CA3B-9128-7CF1FE46C28D" name="Foto">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:11:00 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_32</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FotoId" id="9DAE9085-C38A-6BA0-6564-CCCF0A51C637">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:12:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Eigenschap" id="C3D70482-918F-C2E3-8DF2-2E5A9C0483E0">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:12:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Url/Locatie" id="380E04B6-7C59-33F5-CE4B-619F1155FAA1">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:12:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tumbnail" id="7E09714B-09AF-EA52-91AE-8B2FC6DB3F3F">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:12:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT041</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plant_Plant_Id" id="D41FF35C-A1EB-9BA7-AE75-66D1AEB4775A">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:35:09 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E31A8BA-5D83-4787-4CA5-07841C061750" referredColumn="94904DC7-2F63-FCF5-7B1C-A1DE096E0779"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A1E423D8-7247-65C1-A2A5-EDA042712EDB" name="Foto_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:12:23 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9DAE9085-C38A-6BA0-6564-CCCF0A51C637"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF3017A5-615F-6636-09BF-5244DFB9DA96" name="Foto_Plant_FK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 20:35:09 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D41FF35C-A1EB-9BA7-AE75-66D1AEB4775A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

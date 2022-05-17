@@ -372,3 +372,7 @@ MigrationBackup/
 FodyWeavers.xsd
 /db
 /Plantjes/ClassDiagram1.cd
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store

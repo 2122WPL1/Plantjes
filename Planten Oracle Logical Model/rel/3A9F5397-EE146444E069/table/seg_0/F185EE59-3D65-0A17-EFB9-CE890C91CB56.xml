@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F185EE59-3D65-0A17-EFB9-CE890C91CB56" name="Abio_Grondsoort">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:26:36 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="E9A8A934-D5C4-EED8-0541-6928EEFF19D2">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:27:17 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Grondsoort" id="FF34DC50-B6A7-53BD-F5A3-DD059830947D">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:27:17 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78B1DAC9-AFBD-BC07-F47B-F199B0AABC19" name="Abio_Grondsoort_PK">
+<createdBy>32478</createdBy>
+<createdTime>2022-05-17 19:27:17 UTC</createdTime>
+<ownerDesignName>Planten Oracle Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9A8A934-D5C4-EED8-0541-6928EEFF19D2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
