@@ -23,12 +23,12 @@ public class ViewModelAppearance : ViewModelBase {
             ClearAllFields();
             if (_detailService.SelectedPlant !=null)
             {
-                FillBladKleur();
-                FillBladHoogte();
+                //FillBladKleur();
+                //FillBladHoogte(); ik kan niet terugvinden waar dit in de database zou zitten ik zou zeggen dat dit mag gewist worden (inclusief in de xaml)
                 FillBladgrootte();
-                FillSpruitFene();
-                FillStengelvormBladvorm();
-                FillLevensvormen();
+                //FillSpruitFene();
+                //FillStengelvormBladvorm();
+                //FillLevensvormen(); de waardes zijn wat veranderd in de database, deze zaten vol fouten, ook mogen de dubbele bindings gewist worden
             }
         };
     }

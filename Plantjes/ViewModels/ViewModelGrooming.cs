@@ -26,7 +26,7 @@ public class ViewModelGrooming : ViewModelBase
 
             if (_detailService.SelectedPlant != null)
             {
-                FillBeheerdaadMaand();
+                //FillBeheerdaadMaand();
             }
         };
 

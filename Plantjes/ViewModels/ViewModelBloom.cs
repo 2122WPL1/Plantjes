@@ -27,12 +27,12 @@ public class ViewModelBloom : ViewModelBase {
             ClearAllFields();
             if (_detailService.SelectedPlant != null)
             {
-                FillBloeikleur();
-                FillBloeiHoogte();
-                FillBloeitIn();
-                FillBloeiwijzevorm();
-                FillBloeiBlad();
-            }
+                //FillBloeikleur();
+                //FillBloeiHoogte();
+                //FillBloeitIn();
+                //FillBloeiwijzevorm();
+                //FillBloeiBlad();
+            } //bindings SelectedCheckBoxBloeiHoogteMar etc mogen weg, deze zijn niet logisch te verbinden met plantgegevens
         };
     }
 

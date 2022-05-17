@@ -253,7 +253,7 @@
                         </StackPanel>
                         <!--Kleur-->
                         <StackPanel Grid.RowSpan="2" Grid.Column="1">
-                            <Label Content="Kleur" Style="{StaticResource LabelBorder}"/>
+                            <Label Content="Bladkleur" Style="{StaticResource LabelBorder}"/>
                             <ListBox Height="106">
                                 <ListBoxItem Focusable="False" >
                                     <StackPanel Style="{StaticResource StackPanelColour}">

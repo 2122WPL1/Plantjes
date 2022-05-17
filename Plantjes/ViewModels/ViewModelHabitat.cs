@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
-using System.Windows.Documents;
-using Plantjes.Dao;
+﻿using Plantjes.Dao;
 using Plantjes.Models.Db;
 using Plantjes.Utilities.Attributes;
 using Plantjes.ViewModels.Services;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Plantjes.ViewModels; 
+namespace Plantjes.ViewModels;
 
 public class ViewModelHabitat : ViewModelBase 
 {
@@ -24,11 +21,11 @@ public class ViewModelHabitat : ViewModelBase
             ClearAllFields();
             if (_detailService.SelectedPlant != null)
             {
-                FillPollenNectar();
-                FillOntwikkelsnelheid();
+                //FillPollenNectar();
+                //FillOntwikkelsnelheid();
                 FillSociabiliteit();
                 FillPlantEigenschappen();
-                FillLevensvorm();
+                //FillLevensvorm();
                 FillStrategie();
             }
         };
