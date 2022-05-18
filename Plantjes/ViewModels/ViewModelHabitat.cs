@@ -22,7 +22,7 @@ public class ViewModelHabitat : ViewModelBase
             if (_detailService.SelectedPlant != null)
             {
                 //FillPollenNectar();
-                //FillOntwikkelsnelheid();
+                FillOntwikkelsnelheid();
                 FillSociabiliteit();
                 FillPlantEigenschappen();
                 //FillLevensvorm();
@@ -62,7 +62,21 @@ public class ViewModelHabitat : ViewModelBase
             string field = "SelectedCheckBoxOntwikkelsnelheid";
             if (comm.Ontwikkelsnelheid != null)
             {
-                field += comm.Ontwikkelsnelheid;
+                switch (comm.Ontwikkelsnelheid)
+                {
+                    case "traag":
+                        field += "Traag";
+                        break;
+                    case "matig":
+                        field += "Matig";
+                        break;
+                    case "snel":
+                        field += "Snel";
+                        break;
+                    default:
+                        field += "Onbekend";
+                        break;
+                }
             }
             else
             {

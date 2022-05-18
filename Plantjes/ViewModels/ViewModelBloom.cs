@@ -28,10 +28,9 @@ public class ViewModelBloom : ViewModelBase {
             if (_detailService.SelectedPlant != null)
             {
                 //FillBloeikleur();
-                //FillBloeiHoogte();
                 //FillBloeitIn();
-                //FillBloeiwijzevorm();
-                //FillBloeiBlad();
+                FillBloeiwijzevorm();
+                FillBloeiBlad();
             } //bindings SelectedCheckBoxBloeiHoogteMar etc mogen weg, deze zijn niet logisch te verbinden met plantgegevens
         };
     }
@@ -107,79 +106,6 @@ public class ViewModelBloom : ViewModelBase {
         {
             field += "Onbekend";
         }
-        
-        var prop = modeltype.GetProperty(field);
-        var propsetter = prop.GetSetMethod();
-        propsetter.Invoke(this, new object[] { true });
-    }
-
-    public void FillBloeiHoogte()
-    {
-        var modeltype = typeof(ViewModelBloom);
-        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
-        bool exists = false;
-
-        string field = "SelectedCheckBoxBloeiHoogte";
-        for (int i = 0; i < fenoList.Count; i++)
-        {
-            exists = fenoList[i].Eigenschap.Contains("bloeihoogte");
-        }
-        if (exists)
-        {
-            foreach (FenotypeMulti feno in fenoList)
-            {
-                if (feno.Eigenschap == "bloeihoogte")
-                {
-                    switch (feno.Waarde)
-                    {
-                        case "jan":
-                            field += "Jan";
-                            break;
-                        case "feb":
-                            field += "Feb";
-                            break;
-                        case "mar":
-                            field += "Mar";
-                            break;
-                        case "apr":
-                            field += "Apr";
-                            break;
-                        case "may":
-                            field += "May";
-                            break;
-                        case "jun":
-                            field += "Jun";
-                            break;
-                        case "jul":
-                            field += "Jul";
-                            break;
-                        case "aug":
-                            field += "Aug";
-                            break;
-                        case "sep":
-                            field += "Sep";
-                            break;
-                        case "oct":
-                            field += "Oct";
-                            break;
-                        case "nov":
-                            field += "Nov";
-                            break;
-                        case "dec":
-                            field += "Dec";
-                            break;
-                        default:
-                            field += "Onbekend";
-                            break;
-                    }
-                }
-            }
-        }
-        else
-        {
-            field += "Onbekend";
-        }
-
         var prop = modeltype.GetProperty(field);
         var propsetter = prop.GetSetMethod();
         propsetter.Invoke(this, new object[] { true });
@@ -202,7 +128,7 @@ public class ViewModelBloom : ViewModelBase {
             {
                 if (feno.Eigenschap == "bloeit in")
                 {
-                    switch (feno.Waarde)
+                    switch (feno.Maand)
                     {
                         case "jan":
                             field += "Jan";
@@ -260,21 +186,15 @@ public class ViewModelBloom : ViewModelBase {
     public void FillBloeiwijzevorm()
     {
         var modeltype = typeof(ViewModelBloom);
-        List<FenotypeMulti> fenoList = DAOFenotype.FilterFenotypeMultiFromPlant((int)_detailService.SelectedPlant.PlantId);
-        bool exists = false;
+        List<Fenotype> fenoList = DAOFenotype.filterFenoTypeFromPlant((int)_detailService.SelectedPlant.PlantId);
 
-        string field = "SelectedCheckBoxBloeiwijzeVorm";
-        for (int i = 0; i < fenoList.Count; i++)
+        foreach (Fenotype feno in fenoList)
         {
-            exists = fenoList[i].Eigenschap.Contains("bloeiwijze");
-        }
-        if (exists)
-        {
-            foreach (FenotypeMulti feno in fenoList)
-            {
-                if (feno.Eigenschap == "bloeiwijze")
+            string field = "SelectedCheckBoxBloeiwijzeVorm";
+
+                if (feno.Bloeiwijze != null)
                 {
-                    switch (feno.Waarde)
+                    switch (feno.Bloeiwijze)
                     {
                         case "aar":
                             field += "1";
@@ -299,16 +219,14 @@ public class ViewModelBloom : ViewModelBase {
                             break;
                     }
                 }
-            }
+                else
+                {
+                    field += "Onbekend";
+                }
+                var prop = modeltype.GetProperty(field);
+                var propsetter = prop.GetSetMethod();
+                propsetter.Invoke(this, new object[] { true });
         }
-        else
-        {
-            field += "Onbekend";
-        }
-
-        var prop = modeltype.GetProperty(field);
-        var propsetter = prop.GetSetMethod();
-        propsetter.Invoke(this, new object[] { true });
     }
 
     public void FillBloeiBlad()
@@ -321,16 +239,32 @@ public class ViewModelBloom : ViewModelBase {
             string field = "SelectedCheckBoxRatio";
             if (feno.RatioBloeiBlad != null)
             {
-                field += feno.RatioBloeiBlad;
+                switch (feno.Bloeiwijze)
+                {
+                    case "pachysandra sp.":
+                        field += "Pachysandra";
+                        break;
+                    case "geranium nodosum":
+                        field += "Geranium";
+                        break;
+                    case "salvia nemorosa":
+                        field += "Salvia";
+                        break;
+                    case "Aster sp.":
+                        field += "Aster";
+                        break;
+                    default:
+                        field += "Onbekend";
+                        break;
+                }
             }
             else
             {
                 field += "Onbekend";
             }
-
             var prop = modeltype.GetProperty(field);
             var propsetter = prop.GetSetMethod();
-            propsetter.Invoke(this, new object?[] { true });
+            propsetter.Invoke(this, new object[] { true });
         }
     }
     #endregion
@@ -538,168 +472,6 @@ public class ViewModelBloom : ViewModelBase {
 
     #endregion
 
-    #region Binding Checkbox BloeiHoogte
-
-    private bool _selectedCheckBoxBloeiHoogteOnbekend;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteOnbekend
-    {
-        get => _selectedCheckBoxBloeiHoogteOnbekend;
-
-        set
-        {
-            _selectedCheckBoxBloeiHoogteOnbekend = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteJan;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteJan {
-        get => _selectedCheckBoxBloeiHoogteJan;
-
-        set {
-            _selectedCheckBoxBloeiHoogteJan = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteFeb;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteFeb {
-        get => _selectedCheckBoxBloeiHoogteFeb;
-
-        set {
-            _selectedCheckBoxBloeiHoogteFeb = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteMar;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteMar {
-        get => _selectedCheckBoxBloeiHoogteMar;
-
-        set {
-            _selectedCheckBoxBloeiHoogteMar = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteApr;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteApr {
-        get => _selectedCheckBoxBloeiHoogteApr;
-
-        set {
-            _selectedCheckBoxBloeiHoogteApr = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteMay;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteMay {
-        get => _selectedCheckBoxBloeiHoogteMay;
-
-        set {
-            _selectedCheckBoxBloeiHoogteMay = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteJun;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteJun {
-        get => _selectedCheckBoxBloeiHoogteJun;
-
-        set {
-            _selectedCheckBoxBloeiHoogteJun = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteJul;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteJul {
-        get => _selectedCheckBoxBloeiHoogteJul;
-
-        set {
-            _selectedCheckBoxBloeiHoogteJul = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteAug;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteAug {
-        get => _selectedCheckBoxBloeiHoogteAug;
-
-        set {
-            _selectedCheckBoxBloeiHoogteAug = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteSep;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteSep {
-        get => _selectedCheckBoxBloeiHoogteSep;
-
-        set {
-            _selectedCheckBoxBloeiHoogteSep = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteOct;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteOct {
-        get => _selectedCheckBoxBloeiHoogteOct;
-
-        set {
-            _selectedCheckBoxBloeiHoogteOct = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteNov;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteNov {
-        get => _selectedCheckBoxBloeiHoogteNov;
-
-        set {
-            _selectedCheckBoxBloeiHoogteNov = value;
-            OnPropertyChanged();
-        }
-    }
-
-    private bool _selectedCheckBoxBloeiHoogteDec;
-
-    [Clearable<bool>]
-    public bool SelectedCheckBoxBloeiHoogteDec {
-        get => _selectedCheckBoxBloeiHoogteDec;
-
-        set {
-            _selectedCheckBoxBloeiHoogteDec = value;
-            OnPropertyChanged();
-        }
-    }
-
-    #endregion
-
     #region Binding Checkbox Bloeit In
 
     private bool _selectedCheckBoxBloeitInOnbekend;
@@ -852,10 +624,10 @@ public class ViewModelBloom : ViewModelBase {
 
     [Clearable<bool>]
     public bool SelectedCheckBoxBloeitInDec {
-        get => _selectedCheckBoxBloeiHoogteDec;
+        get => _selectedCheckBoxBloeitInDec;
 
         set {
-            _selectedCheckBoxBloeiHoogteDec = value;
+            _selectedCheckBoxBloeitInDec = value;
             OnPropertyChanged();
         }
     }
