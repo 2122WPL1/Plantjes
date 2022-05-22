@@ -19,10 +19,10 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel>
                             <Label Content="Actie" Style="{StaticResource LabelBorder}"/>
-                            <ComboBox x:Name="CmbBeheerdaad" ItemsSource="{Binding cmbBeheerdaad}" SelectedItem="{Binding BeheerOmschrijving}" />
+                            <ComboBox x:Name="CmbBeheerdaad" ItemsSource="{Binding cmbBeheerdaad}" />
                             <StackPanel>
                                 <Label Content="Opmerking:"/>
-                                <TextBox Height="200" TextWrapping="WrapWithOverflow" Text="{Binding BeheerText}"/>
+                                <TextBox Height="200" TextWrapping="WrapWithOverflow"/>
                             </StackPanel>
                             <StackPanel>
                                 <Label Content="Frequentie per jaar:"/>
