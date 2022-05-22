@@ -51,7 +51,7 @@ namespace Plantjes.ViewModels {
 
         public RelayCommand ImportCsvCommand { get; } = new(()=> {
             DAOUser.AddUsersFromCsv();
-            OnPropertyChanged("users");
+            instance.OnPropertyChanged("users");
         });
     }
 }
