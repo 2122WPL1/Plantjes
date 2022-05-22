@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
+using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Win32;
 using Plantjes.ViewModels;
 
@@ -82,7 +84,7 @@ namespace Plantjes.Dao {
             //import
             importUsersFromCsv();
             //show errors
-            openInExcelAndWait("errors.csv");
+            //openInExcelAndWait("errors.csv");
         }
 
         //legacy - object to csv column names
@@ -118,10 +120,13 @@ namespace Plantjes.Dao {
             }
         }
 
+        private static List<(CsvImportErrorType ErrorType, string Message)> _csvErrors;
+        private static int _csvAdded = 0;
         private static void importUsersFromCsv() {
+            _csvErrors = new();
+            _csvAdded = 0;
             //import from csv
             //open files
-            if (File.Exists("errors.csv")) File.Delete("errors.csv");
             var ofd = new OpenFileDialog() {
                 Multiselect = false,
                 CheckPathExists = true,
@@ -136,7 +141,6 @@ namespace Plantjes.Dao {
 
             if ((bool)!ofd.ShowDialog()) return;
             var ifs = File.OpenText(ofd.FileName);
-            var log = new List<string>();
             //get fields
             var firstline = ifs.ReadLine();
             var separator = ",";
@@ -144,7 +148,7 @@ namespace Plantjes.Dao {
             var fields = firstline.Split(separator).ToList();
             //get student role
             var role = context.Rols.First(x => x.Omschrijving == "Student");
-            int errors = 0, added = 0;
+            
             //read all lines...
             string line = "";
             while ((line = ifs.ReadLine()) != null && line != "") {
@@ -165,35 +169,69 @@ namespace Plantjes.Dao {
                 };
                 //duplicate/data checks
                 if (context.Gebruikers.Any(x => x.Emailadres == user.Emailadres)) {
-                    errors++;
-                    log.Add($"Gebruiker met email {user.Emailadres} bestaat al!");
+                    _csvErrors.Add((CsvImportErrorType.DuplicateEmail, $"Gebruiker met email {user.Emailadres} bestaat al!"));
                 }
                 else if (context.Gebruikers.Any(x => x.Vivesnr == user.Vivesnr)) {
-                    errors++;
-                    log.Add($"Gebruiker met Vives-nummer {user.Vivesnr} bestaat al!");
+                    _csvErrors.Add((CsvImportErrorType.DuplicateRnumber, $"Gebruiker met Vives-nummer {user.Vivesnr} bestaat al!"));
                 }
                 else if (!user.Emailadres.Contains("@")) {
-                    errors++;
-                    log.Add($"Emailadres {user.Emailadres} is geen geldig emailadres!");
+                    _csvErrors.Add((CsvImportErrorType.InvalidEmail, $"Emailadres {user.Emailadres} is geen geldig emailadres!"));
                 }
             else if (user.Vivesnr.Length != 7) {
-                errors++;
-                log.Add($"R-nummer {user.Vivesnr} is geen geldig nummer!");
+                _csvErrors.Add((CsvImportErrorType.InvalidRNumber, $"R-nummer {user.Vivesnr} is geen geldig nummer!"));
             }
                 else {
                     //all checks passed, add to db
                     context.Gebruikers.Add(user);
                     context.SaveChanges();
-                    added++;
+                    _csvAdded++;
                 }
             }
 
-            //add status header
-            log.Insert(0, $"Added: {added},Errors:{errors}");
-            File.WriteAllLines("errors.csv", log);
+            //Show error summary
+            if (!_csvErrors.Any()) MessageBox.Show("Geen fouten bij het importeren.");
+            else
+            {
+                var mbr = MessageBox.Show(GetErrorSummary(), "", MessageBoxButton.YesNo);
+                if (mbr == MessageBoxResult.Yes) {
+                    var wnd = new Window();
+                    var lb = new ListBox();
+                    foreach (var (errorType, message) in _csvErrors) {
+                        lb.Items.Add(message);
+                    }
+
+                    wnd.Content = lb;
+                    wnd.Show();
+                }
+            }
             //close files
             ifs.Close();
         }
+
+        private static string GetErrorSummary() {
+            string summary = $"Toegevoegd: {_csvAdded}, Fouten: {_csvErrors.Count}";
+            if (_csvErrors.Count > 0) summary += "\n\n";
+            if (_csvErrors.Any(x => x.ErrorType == CsvImportErrorType.DuplicateEmail)) summary += $"{_csvErrors.Count(x => x.ErrorType == CsvImportErrorType.DuplicateEmail)} duplicate emails\n";
+            if (_csvErrors.Any(x => x.ErrorType == CsvImportErrorType.DuplicateRnumber)) summary += $"{_csvErrors.Count(x => x.ErrorType == CsvImportErrorType.DuplicateRnumber)} duplicate R-nummers\n";
+            if (_csvErrors.Any(x => x.ErrorType == CsvImportErrorType.InvalidEmail)) summary += $"{_csvErrors.Count(x => x.ErrorType == CsvImportErrorType.InvalidEmail)} ongeldige emails\n";
+            if (_csvErrors.Any(x => x.ErrorType == CsvImportErrorType.InvalidRNumber)) summary += $"{_csvErrors.Count(x => x.ErrorType == CsvImportErrorType.InvalidRNumber)} ongeldige R-nummers\n";
+            return summary + "\nWil je deze weergeven in een lijst?";
+        }
+
+        private string GetErrorList() {
+            string errorList = "";
+            foreach (var (errorType, message) in _csvErrors.OrderBy(x=>x.ErrorType)) {
+                errorList += message + "\n";
+            }
+            return errorList;
+        }
+        private enum CsvImportErrorType {
+            DuplicateEmail,
+            DuplicateRnumber,
+            InvalidRNumber,
+            InvalidEmail,
+        }
+
 
         public static List<Gebruiker> GetAllUsersNoTracking() => context.Gebruikers.AsNoTracking().ToList();
 
