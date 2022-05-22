@@ -2,8 +2,7 @@
 
 namespace Plantjes.ViewModels;
 
-//geschreven door kenny adhv een voorbeeld van roy
-//herschreven door kenny voor gebruik met ioc
+//Written based on original ViewModelRepo by MarijnCo for use to summon UserControls within another UserControl
 public class ViewModelRepo2 {
     //singleton pattern
     //private static ViewModelRepo instance;

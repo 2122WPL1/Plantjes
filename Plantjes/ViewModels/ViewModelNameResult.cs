@@ -49,6 +49,7 @@ public class ViewModelNameResult : ViewModelBase {
 
    
     #region viewmodel things
+    //written by MarijnCo based on what could be found on viewmodel use within the MainWindow.
     public MyICommand<string> mainNavigationCommand { get; set; }
     private ViewModelBase _currentViewModel;
 
