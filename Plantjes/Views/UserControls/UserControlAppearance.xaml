@@ -471,7 +471,7 @@
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
                                         <CheckBox Content="Wintergroen" VerticalContentAlignment="Center"
-                                                  IsChecked="{Binding Path= SelectCheckBoxSpruitWintergroen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                  IsChecked="{Binding Path= SelectedCheckBoxSpruitWintergroen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </ListBoxItem>
                                     <ListBoxItem Focusable="False">
                                         <CheckBox Content="Altijd groen" VerticalContentAlignment="Center"
